@@ -1,4 +1,4 @@
-const giftrawData = [
+const giftrawDataV1 = [
   {
     "name": "維克多",
     "description": "鎮長",
@@ -874,5 +874,33 @@ const giftrawData = [
     "gender": "F"
   }
 ];
+
+const giftrawData = [];
+
+giftrawDataV1.forEach(role => {
+  const roleData = {
+    name: role.name,
+    description: role.description,
+    gender: role.gender,
+    gifts: [],
+  }
+
+  role.first.forEach(gift => {
+    roleData.gifts.push({'name': gift, 'level': 1});
+  });
+  role.second.forEach(gift => {
+    roleData.gifts.push({'name': gift, 'level': 2});
+  });
+  role.third.forEach(gift => {
+    roleData.gifts.push({'name': gift, 'level': 3});
+  });
+  role.fourth.forEach(gift => {
+    roleData.gifts.push({'name': gift, 'level': 4});
+  });
+
+  giftrawData.push(roleData);
+})
+
+console.log(giftrawData);
 
 export default giftrawData;

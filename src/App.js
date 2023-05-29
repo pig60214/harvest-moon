@@ -3,21 +3,34 @@ import './App.css';
 import parse from 'html-react-parser';
 import { useState } from 'react';
 import giftRawData from './giftRawData';
+import { cropRawDataNameAsKey } from './cropRawData';
 
 function TableRow ({data, searchInput}) {
   const isSearchName = data.name.includes(searchInput) || data.description.includes(searchInput);
+  const isMe = (gift, level) => gift.level === level && (isSearchName || JSON.stringify(gift).includes(searchInput));
   return (
     <tr>
       <td width="66" valign="top">{ data.name }<br/>({ data.description })</td>
-      <td width="124" valign="top">{ parse(data.first.filter(word => isSearchName || word.includes(searchInput)).join('<br/>')) }</td>
-      <td width="124" valign="top">{ parse(data.second.filter(word => isSearchName || word.includes(searchInput)).join('<br/>')) }</td>
-      <td width="124" valign="top">{ parse(data.third.filter(word => isSearchName || word.includes(searchInput)).join('<br/>')) }</td>
-      <td width="124" valign="top">{ parse(data.fourth.filter(word => isSearchName || word.includes(searchInput)).join('<br/>')) }</td>
+      <td width="124" valign="top">{ parse(data.gifts.filter(gift => isMe(gift, 1)).map(gift => gift.name).join('<br/>')) }</td>
+      <td width="124" valign="top">{ parse(data.gifts.filter(gift => isMe(gift, 2)).map(gift => gift.name).join('<br/>')) }</td>
+      <td width="124" valign="top">{ parse(data.gifts.filter(gift => isMe(gift, 3)).map(gift => gift.name).join('<br/>')) }</td>
+      <td width="124" valign="top">{ parse(data.gifts.filter(gift => isMe(gift, 4)).map(gift => gift.name).join('<br/>')) }</td>
    </tr>
   )
 }
 
+function addGiftDescription() {
+  giftRawData.forEach(data => {
+    data.gifts.forEach(gift => {
+      if(cropRawDataNameAsKey[gift.name]) {
+        gift['description'] = cropRawDataNameAsKey[gift.name].category;
+      }
+    })
+  });
+}
+
 function Neighborhoods ({searchInput}) {
+  addGiftDescription();
   const row = [];
   giftRawData.forEach(data => {
     if(JSON.stringify(data).includes(searchInput)) {
