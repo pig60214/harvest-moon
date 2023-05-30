@@ -3,7 +3,7 @@ import './App.css';
 import parse from 'html-react-parser';
 import { useState } from 'react';
 import giftRawData from './giftRawData';
-import { cropRawDataNameAsKey } from './cropRawData';
+import { cropRawData, cropRawDataNameAsKey } from './cropRawData';
 
 function TableRow ({data, searchInput}) {
   const isSearchName = data.name.includes(searchInput) || data.description.includes(searchInput);
@@ -33,9 +33,8 @@ function Neighborhoods ({searchInput}) {
   addGiftDescription();
   const row = [];
   giftRawData.forEach(data => {
-    if(JSON.stringify(data).includes(searchInput)) {
-      row.push(<TableRow data={data} key={data.name} searchInput={searchInput} />)
-    }
+    if(!JSON.stringify(data).includes(searchInput)) return;
+    row.push(<TableRow data={data} key={data.name} searchInput={searchInput} />)
   });
   return <table className='border-collapse border border-black'>
   <tbody><tr>
@@ -48,8 +47,61 @@ function Neighborhoods ({searchInput}) {
   </tbody></table>
 }
 
+function Crops({ searchInput }) {
+  const tableRows = [];
+  cropRawData.forEach(data => {
+    if(!JSON.stringify(data).includes(searchInput)) return;
+    tableRows.push(
+      <tr key={data.name}>
+        <td className="border border-slate-600">{data.name}</td>
+        <td className="border border-slate-600 text-center">{data.category}</td>
+        <td className="border border-slate-600">{data.season.join(', ')}</td>
+        <td className="border border-slate-600 text-center">{data.hasVariant ? 'V' : ''}</td>
+      </tr>
+    );
+  });
+
+  return (
+    <table className='border-collapse border border-black'>
+      <tr>
+        <th className="border border-slate-600 w-28">名稱</th>
+        <th className="border border-slate-600 w-20">種類</th>
+        <th className="border border-slate-600 w-32">季節</th>
+        <th className="border border-slate-600 w-12">變種</th>
+      </tr>
+      {tableRows}
+    </table>
+  );
+}
+
+const tabs = ['gift', 'crop'];
+
+function Tabs({ activeTab, setActiveTab }) {
+  const lis = [];
+  tabs.forEach(tab => {
+    lis.push(<li key={tab}>
+      <span className={activeTab === tab ? "active" : "inactive"} onClick={() => setActiveTab(tab)}>
+        {tab}
+      </span>
+    </li>)
+  })
+  return (
+    <ul className="my-tabs">
+        {lis}
+    </ul>
+  );
+}
+
+function TabContent({ activeTab, searchInput }) {
+  if(activeTab === tabs[0]) {
+    return <Neighborhoods searchInput={searchInput}/>
+  }
+  return <Crops searchInput={searchInput}/>
+}
+
 function App() {
   const [searchInput, setSearchInput] = useState('');
+  const [activeTab, setActiveTab] = useState('gift');
   return (
     // <div className="App">
     //   <header className="App-header">
@@ -74,7 +126,8 @@ function App() {
       onChange={e => setSearchInput(e.target.value)}
       value={searchInput}
     />
-    <Neighborhoods searchInput={searchInput}/>
+    <Tabs activeTab={activeTab} setActiveTab={setActiveTab}/>
+    <TabContent activeTab={activeTab} searchInput={searchInput}/>
     </>
   );
 }

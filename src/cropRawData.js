@@ -24,6 +24,96 @@ const cropRawData = [
     'hasVariant': true,
   },
   {
+    "name": "南瓜",
+    "category": "蔬菜",
+    "season": [
+      "夏天"
+    ],
+    "hasVariant": false,
+  },
+  {
+    "name": "甜椒",
+    "category": "蔬菜",
+    "season": [
+      "夏天"
+    ],
+    "hasVariant": false,
+  },
+  {
+    "name": "玉米",
+    "category": "蔬菜",
+    "season": [
+      "夏天"
+    ],
+    "hasVariant": true,
+  },
+  {
+    "name": "節瓜",
+    "category": "蔬菜",
+    "season": [
+      "夏天"
+    ],
+    "hasVariant": false,
+  },
+  {
+    "name": "鳳梨",
+    "category": "蔬菜",
+    "season": [
+      "夏天"
+    ],
+    "hasVariant": false,
+  },
+  {
+    "name": "洋蔥",
+    "category": "蔬菜",
+    "season": [
+      "夏天"
+    ],
+    "hasVariant": false,
+  },
+  {
+    "name": "番茄",
+    "category": "蔬菜",
+    "season": [
+      "夏天"
+    ],
+    "hasVariant": true,
+  },
+  {
+    "name": "哈密瓜",
+    "category": "蔬菜",
+    "season": [
+      "夏天"
+    ],
+    "hasVariant": true,
+  },
+  {
+    "name": "茄子",
+    "category": "蔬菜",
+    "season": [
+      "夏天"
+    ],
+    "hasVariant": true,
+  },
+  {
+    "name": "青椒",
+    "category": "蔬菜",
+    "season": [
+      "夏天"
+    ],
+    "hasVariant": false,
+  },
+  {
+    "name": "櫻桃蘿蔔",
+    "category": "蔬菜",
+    "season": [
+      "春天",
+      "夏天",
+      "秋天"
+    ],
+    "hasVariant": false,
+  },
+  {
     'name': '杏仁',
     'category': '果樹',
     'season': ['夏天'],
