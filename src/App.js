@@ -11,6 +11,7 @@ function TableRow ({data, searchInput}) {
   return (
     <tr>
       <td className="border border-slate-600" width="66" valign="top">{ data.name }<br/>({ data.description })</td>
+      <td className="border border-slate-600" width="124" valign="top">{ data.isMarriageCandidate ? 'true' : 'fasle' }</td>
       <td className="border border-slate-600" width="124" valign="top">{ parse(data.gifts.filter(gift => isMe(gift, 1)).map(gift => gift.name).join('<br/>')) }</td>
       <td className="border border-slate-600" width="124" valign="top">{ parse(data.gifts.filter(gift => isMe(gift, 2)).map(gift => gift.name).join('<br/>')) }</td>
       <td className="border border-slate-600" width="124" valign="top">{ parse(data.gifts.filter(gift => isMe(gift, 3)).map(gift => gift.name).join('<br/>')) }</td>
@@ -38,7 +39,8 @@ function Neighborhoods ({searchInput}) {
   });
   return <table className='border-collapse border border-black'>
   <tbody><tr>
-   <td width="66" className="border border-slate-600" bgcolor="#CCFFFF" valign="top"> </td>
+   <td width="66" className="border border-slate-600" bgcolor="#CCFFFF" valign="top"></td>
+   <td width="124" className="border border-slate-600" bgcolor="#CCFFFF" align="center" valign="top">可結婚</td>
    <td width="124" className="border border-slate-600" bgcolor="#CCFFFF" align="center" valign="top">最愛</td>
    <td width="124" className="border border-slate-600" bgcolor="#CCFFFF" align="center" valign="top">很喜歡</td>
    <td width="124" className="border border-slate-600" bgcolor="#CCFFFF" align="center" valign="top">喜歡</td>

@@ -32,6 +32,7 @@ const giftrawDataV1 = [
       "石頭",
       "玻璃石"
     ],
+    "isMarriageCandidate": false,
     "gender": "M"
   },
   {
@@ -62,6 +63,7 @@ const giftrawDataV1 = [
       "雞蛋",
       "牛奶"
     ],
+    "isMarriageCandidate": false,
     "gender": "M"
   },
   {
@@ -91,6 +93,7 @@ const giftrawDataV1 = [
       "洋蔥",
       "牛奶"
     ],
+    "isMarriageCandidate": false,
     "gender": "M"
   },
   {
@@ -117,6 +120,7 @@ const giftrawDataV1 = [
       "布料加工機",
       "優格加工機"
     ],
+    "isMarriageCandidate": false,
     "gender": "M"
   },
   {
@@ -148,6 +152,7 @@ const giftrawDataV1 = [
       "美式鬆餅",
       "布丁"
     ],
+    "isMarriageCandidate": false,
     "gender": "M"
   },
   {
@@ -182,6 +187,7 @@ const giftrawDataV1 = [
       "醃漬香菇",
       "酸黃瓜"
     ],
+    "isMarriageCandidate": false,
     "gender": "M"
   },
   {
@@ -214,6 +220,7 @@ const giftrawDataV1 = [
       "毛線加工機",
       "優格製造機"
     ],
+    "isMarriageCandidate": false,
     "gender": "M"
   },
   {
@@ -247,6 +254,7 @@ const giftrawDataV1 = [
       "茄汁焗豆",
       "蚌殼湯"
     ],
+    "isMarriageCandidate": false,
     "gender": "M"
   },
   {
@@ -280,6 +288,7 @@ const giftrawDataV1 = [
       "洋蔥",
       "蜂蜜地瓜燒"
     ],
+    "isMarriageCandidate": false,
     "gender": "M"
   },
   {
@@ -305,6 +314,7 @@ const giftrawDataV1 = [
       "沙丁魚",
       "鯖魚"
     ],
+    "isMarriageCandidate": false,
     "gender": "M"
   },
   {
@@ -335,6 +345,7 @@ const giftrawDataV1 = [
       "柳葉魚",
       "竹莢魚"
     ],
+    "isMarriageCandidate": false,
     "gender": "M"
   },
   {
@@ -368,6 +379,7 @@ const giftrawDataV1 = [
       "柳葉魚",
       "竹莢魚"
     ],
+    "isMarriageCandidate": false,
     "gender": "M"
   },
   {
@@ -405,6 +417,7 @@ const giftrawDataV1 = [
       "糖",
       "醋"
     ],
+    "isMarriageCandidate": false,
     "gender": "M"
   },
   {
@@ -438,6 +451,7 @@ const giftrawDataV1 = [
       "菠蘿",
       "沙丁魚"
     ],
+    "isMarriageCandidate": false,
     "gender": "M"
   },
   {
@@ -469,6 +483,7 @@ const giftrawDataV1 = [
       "酸黃瓜",
       "白飯"
     ],
+    "isMarriageCandidate": false,
     "gender": "M"
   },
   {
@@ -499,6 +514,7 @@ const giftrawDataV1 = [
       "鬱金香",
       "奧利哈鋼礦石"
     ],
+    "isMarriageCandidate": false,
     "gender": "F"
   },
   {
@@ -531,6 +547,7 @@ const giftrawDataV1 = [
       "羊毛",
       "薩福克羊羊毛"
     ],
+    "isMarriageCandidate": false,
     "gender": "F"
   },
   {
@@ -564,6 +581,7 @@ const giftrawDataV1 = [
       "小黃瓜",
       "洋蔥"
     ],
+    "isMarriageCandidate": false,
     "gender": "F"
   },
   {
@@ -593,6 +611,7 @@ const giftrawDataV1 = [
       "玻璃石",
       "紅寶石"
     ],
+    "isMarriageCandidate": false,
     "gender": "F"
   },
   {
@@ -631,6 +650,7 @@ const giftrawDataV1 = [
       "豆子",
       "茶葉"
     ],
+    "isMarriageCandidate": false,
     "gender": "F"
   },
   {
@@ -662,6 +682,7 @@ const giftrawDataV1 = [
       "玻璃石",
       "蕃薯"
     ],
+    "isMarriageCandidate": false,
     "gender": "F"
   },
   {
@@ -701,6 +722,7 @@ const giftrawDataV1 = [
       "蜂蜜巢蜜",
       "咖啡"
     ],
+    "isMarriageCandidate": false,
     "gender": "F"
   },
   {
@@ -734,6 +756,7 @@ const giftrawDataV1 = [
       "香蕉",
       "蜂蜜"
     ],
+    "isMarriageCandidate": false,
     "gender": "F"
   },
   {
@@ -770,6 +793,7 @@ const giftrawDataV1 = [
       "鯡魚",
       "鰻魚"
     ],
+    "isMarriageCandidate": false,
     "gender": "F"
   },
   {
@@ -804,6 +828,7 @@ const giftrawDataV1 = [
       "牛奶",
       "烏骨雞雞蛋"
     ],
+    "isMarriageCandidate": false,
     "gender": "F"
   },
   {
@@ -837,6 +862,7 @@ const giftrawDataV1 = [
       "玫瑰",
       "茶葉"
     ],
+    "isMarriageCandidate": false,
     "gender": "F"
   },
   {
@@ -871,8 +897,326 @@ const giftrawDataV1 = [
       "美式鬆餅",
       "餅乾"
     ],
+    "isMarriageCandidate": false,
     "gender": "F"
-  }
+  },
+  {
+    "name": "小琳",
+    "description": "花店老闆的女兒",
+    "first": [
+      "橄欖",
+      "金槍魚",
+      "花束香水",
+      "炎帝華爾滋",
+      "華麗手環"
+    ],
+    "second": [
+      "聖誕玫瑰",
+      "夢幻的面料",
+      "泰式沙拉",
+      "和風牡丹餅三拼",
+      "茶"
+    ],
+    "third": [
+      "鬱金香",
+      "向日葵",
+      "玫瑰",
+      "果香香水",
+      "華麗手環"
+    ],
+    "fourth": [
+      "鬱金香種子",
+      "茶葉",
+      "布料",
+      "紅寶石",
+      "曲奇餅"
+    ],
+    "isMarriageCandidate": true,
+    "gender": "F"
+  },
+  {
+    "name": "布萊兒",
+    "description": "旅館&咖啡廳夫婦的女兒",
+    "first": [
+      "雛菊",
+      "鑽石",
+      "花束香水",
+      "春風行進曲",
+      "華麗手環"
+    ],
+    "second": [
+      "玫瑰",
+      "櫻桃",
+      "蔬菜沙拉",
+      "茶",
+      "珠寶指環"
+    ],
+    "third": [
+      "白色蛋白石",
+      "紅寶石",
+      "藍寶石",
+      "祖母綠",
+      "紅綠柱石"
+    ],
+    "fourth": [
+      "玫瑰種子",
+      "茶葉",
+      "鬱金香",
+      "奶",
+      "紅綠柱石的原石"
+    ],
+    "isMarriageCandidate": true,
+    "gender": "F"
+  },
+  {
+    "name": "菈菈",
+    "description": "觀光導遊",
+    "first": [
+      "橄欖",
+      "金槍魚",
+      "炎帝華爾滋",
+      "花束香水",
+      "華麗手環"
+    ],
+    "second": [
+      "金盞花",
+      "紅寶石",
+      "向日葵",
+      "蔬菜汁"
+    ],
+    "third": [
+      "花香/果香香水",
+      "春風進行曲",
+      "月下小夜曲",
+      "雪華倫舞曲"
+    ],
+    "fourth": [
+      "向日葵的種子",
+      "扶桑花",
+      "橄欖苗",
+      "沙丁魚",
+      "鑽石"
+    ],
+    "isMarriageCandidate": true,
+    "gender": "F"
+  },
+  {
+    "name": "蕾娜",
+    "description": "博物館",
+    "first": [
+      "芒果",
+      "芒果配米餅",
+      "芒果果汁",
+      "芒果果醬",
+      "雪花圓舞曲",
+      "珠寶吊墜"
+    ],
+    "second": [
+      "鐵線蓮",
+      "橙",
+      "玻璃",
+      "橙果醬",
+      "珠寶戒指"
+    ],
+    "third": [
+      "櫻桃",
+      "杏仁",
+      "海玻璃頭",
+      "紅寶石",
+      "花香香水"
+    ],
+    "fourth": [
+      "檸檬苗",
+      "蜜瓜",
+      "牛奶",
+      "沙丁魚",
+      "鐵礦石頭"
+    ],
+    "isMarriageCandidate": true,
+    "gender": "F"
+  },
+  {
+    "name": "布莉琪",
+    "description": "動物商店",
+    "first": [
+      "頂級牛奶",
+      "牛頭牌鮮奶",
+      "彩虹花束",
+      "寶石戒指"
+    ],
+    "second": [
+      "高級飼料",
+      "粉蝶花",
+      "頂級雞蛋",
+      "草莓蛋糕"
+    ],
+    "third": [
+      "普通飼料",
+      "牛奶",
+      "雞蛋",
+      "羊毛",
+      "松鼠雕像"
+    ],
+    "fourth": [
+      "沒有資料"
+    ],
+    "isMarriageCandidate": true,
+    "gender": "F"
+  },
+  {
+    "name": "拉夫",
+    "description": "巡林員",
+    "first": [
+      "家常菜湯",
+      "華麗手環"
+    ],
+    "second": [
+      "黃色濃湯",
+      "混合湯",
+      "貝類湯",
+      "麵包",
+      "閃耀的手錶"
+    ],
+    "third": [
+      "果香香水",
+      "魅惑香水",
+      "春風行進曲",
+      "雪花圓舞曲",
+      "珠寶指環"
+    ],
+    "fourth": [
+      "蕪菁",
+      "大豆",
+      "鬱金香",
+      "奶",
+      "清湯火鍋"
+    ],
+    "isMarriageCandidate": true,
+    "gender": "M"
+  },
+  {
+    "name": "伊織",
+    "description": "",
+    "first": [
+      "松茸",
+      "奇妙釣餌",
+      "飯糰",
+      "閃耀的手錶"
+    ],
+    "second": [
+      "鐵線蓮",
+      "香菇",
+      "魚王釣餌",
+      "醬油",
+      "鯛魚刺身"
+    ],
+    "third": [
+      "米",
+      "杏鮑菇",
+      "小型魚釣餌",
+      "烤魚",
+      "珠寶指環"
+    ],
+    "fourth": [
+      "蕪菁",
+      "鬱金香",
+      "奶",
+      "雞蛋",
+      "沙丁魚"
+    ],
+    "isMarriageCandidate": true,
+    "gender": "M"
+  },
+  {
+    "name": "艾米里歐",
+    "description": "漁夫兒子",
+    "first": [
+      "西瓜",
+      "海鮮番茄意面",
+      "珠寶吊墜",
+      "華麗手環"
+    ],
+    "second": [
+      "向日葵",
+      "醋汁小魚",
+      "海鮮燴",
+      "起司蛋糕",
+      "珠寶戒指"
+    ],
+    "third": [
+      "蕪菁種子",
+      "洋蔥",
+      "番茄",
+      "橙",
+      "奶"
+    ],
+    "fourth": [
+      "蕪菁",
+      "鬱金香",
+      "奶",
+      "雞蛋",
+      "沙丁魚"
+    ],
+    "isMarriageCandidate": true,
+    "gender": "M"
+  },
+  {
+    "name": "傑克",
+    "description": "雜貨店兒子",
+    "first": [
+      "杏仁",
+      "中華炒麵",
+      "閃耀時鐘",
+      "大熊木雕"
+    ],
+    "second": [
+      "南瓜",
+      "布丁",
+      "咖啡",
+      "珠寶戒指",
+      "老舊硬幣"
+    ],
+    "third": [
+      "花香香水",
+      "百花香水",
+      "春風進行曲",
+      "炎帝華爾茲",
+      "月夜夜曲"
+    ],
+    "fourth": [
+      "沒有資料"
+    ],
+    "isMarriageCandidate": true,
+    "gender": "M"
+  },
+  {
+    "name": "戴蒙",
+    "description": "動物商店兒子",
+    "first": [
+      "咖啡",
+      "時髦手環",
+      "閃耀時鐘"
+    ],
+    "second": [
+      "黑色三色堇",
+      "紅寶石",
+      "咖啡布丁",
+      "奧利哈鋼",
+      "羊駝毛布料"
+    ],
+    "third": [
+      "羊駝毛",
+      "紅寶石原礦",
+      "玻璃",
+      "銀礦",
+      "珠寶戒指"
+    ],
+    "fourth": [
+      "沒有資料"
+    ],
+    "isMarriageCandidate": true,
+    "gender": "M"
+  },
 ];
 
 const giftrawData = [];
@@ -881,6 +1225,7 @@ giftrawDataV1.forEach(role => {
   const roleData = {
     name: role.name,
     description: role.description,
+    isMarriageCandidate: role.isMarriageCandidate,
     gender: role.gender,
     gifts: [],
   }
