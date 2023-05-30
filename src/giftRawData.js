@@ -901,6 +901,4 @@ giftrawDataV1.forEach(role => {
   giftrawData.push(roleData);
 })
 
-console.log(giftrawData);
-
 export default giftrawData;
