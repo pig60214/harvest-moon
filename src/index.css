@@ -21,3 +21,15 @@
 .my-tabs span.active {
   @apply text-white bg-blue-600
 }
+
+.my-card {
+  @apply flex flex-col md:flex-row rounded-lg bg-stone-100 border-solid border border-stone-300
+}
+
+.my-card .my-card-header {
+  @apply p-2 bg-stone-200 rounded-t-lg md:rounded-t-none md:rounded-l-lg
+}
+
+.my-card .my-card-body {
+  @apply p-2
+}

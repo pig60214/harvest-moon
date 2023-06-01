@@ -9,14 +9,22 @@ function TableRow ({data, searchInput}) {
   const isSearchName = data.name.includes(searchInput) || data.description.includes(searchInput);
   const isMe = (gift, level) => gift.level === level && (isSearchName || JSON.stringify(gift).includes(searchInput));
   return (
-    <tr>
-      <td className="border border-slate-600" width="66" valign="top">{ data.name }<br/>({ data.description })</td>
-      <td className="border border-slate-600" width="124" valign="top">{ data.isMarriageCandidate ? 'true' : 'fasle' }</td>
-      <td className="border border-slate-600" width="124" valign="top">{ parse(data.gifts.filter(gift => isMe(gift, 1)).map(gift => gift.name).join('<br/>')) }</td>
-      <td className="border border-slate-600" width="124" valign="top">{ parse(data.gifts.filter(gift => isMe(gift, 2)).map(gift => gift.name).join('<br/>')) }</td>
-      <td className="border border-slate-600" width="124" valign="top">{ parse(data.gifts.filter(gift => isMe(gift, 3)).map(gift => gift.name).join('<br/>')) }</td>
-      <td className="border border-slate-600" width="124" valign="top">{ parse(data.gifts.filter(gift => isMe(gift, 4)).map(gift => gift.name).join('<br/>')) }</td>
-   </tr>
+    <div className='my-card m-2 space-y-2'>
+      <div className='my-card-header flex flex-col md:w-1/5'>
+        <div className='font-black'>{ data.name }</div>
+        <div className='flex text-stone-600 divide-x divide-stone-400'>
+          <div className='pr-2'>{ data.description }</div>
+          <div className='px-2'>{ data.gender === 'M' ? '♂' : '♀' }</div>
+          {data.isMarriageCandidate && <div className='px-2'>🩶</div>}
+        </div>
+      </div>
+      <div className='my-card-body flex md:w-4/5'>
+        <div className='w-1/4'>{ parse(data.gifts.filter(gift => isMe(gift, 1)).map(gift => gift.name).join('<br/>')) }</div>
+        <div className='w-1/4'>{ parse(data.gifts.filter(gift => isMe(gift, 2)).map(gift => gift.name).join('<br/>')) }</div>
+        <div className='w-1/4'>{ parse(data.gifts.filter(gift => isMe(gift, 3)).map(gift => gift.name).join('<br/>')) }</div>
+        <div className='w-1/4'>{ parse(data.gifts.filter(gift => isMe(gift, 4)).map(gift => gift.name).join('<br/>')) }</div>
+      </div>
+   </div>
   )
 }
 
@@ -37,16 +45,20 @@ function Neighborhoods ({searchInput}) {
     if(!JSON.stringify(data).includes(searchInput)) return;
     row.push(<TableRow data={data} key={data.name} searchInput={searchInput} />)
   });
-  return <table className='border-collapse border border-black'>
-  <tbody><tr>
-   <td width="66" className="border border-slate-600" bgcolor="#CCFFFF" valign="top"></td>
-   <td width="124" className="border border-slate-600" bgcolor="#CCFFFF" align="center" valign="top">可結婚</td>
-   <td width="124" className="border border-slate-600" bgcolor="#CCFFFF" align="center" valign="top">最愛</td>
-   <td width="124" className="border border-slate-600" bgcolor="#CCFFFF" align="center" valign="top">很喜歡</td>
-   <td width="124" className="border border-slate-600" bgcolor="#CCFFFF" align="center" valign="top">喜歡</td>
-   <td width="124" className="border border-slate-600" bgcolor="#CCFFFF" align="center" valign="top">稍微喜歡</td>
-  </tr>{row}
-  </tbody></table>
+  return (
+    <>
+      <div className='hidden md:flex border-b-2 p-4'>
+        <div className='w-1/5'></div>
+        <div className='w-1/5'>Favorite</div>
+        <div className='w-1/5'>Very Like</div>
+        <div className='w-1/5'>Like</div>
+        <div className='w-1/5'>Okay</div>
+      </div>
+      <div className='space-y-2'>
+        {row}
+      </div>
+    </>
+  );
 }
 
 function Crops({ searchInput }) {
