@@ -9,7 +9,7 @@ function TableRow ({data, searchInput}) {
   const isSearchName = data.name.includes(searchInput) || data.description.includes(searchInput);
   const isMe = (gift, level) => gift.level === level && (isSearchName || JSON.stringify(gift).includes(searchInput));
   return (
-    <div className='my-card m-2 space-y-2'>
+    <div className='my-card space-y-2'>
       <div className='my-card-header flex flex-col md:w-1/5'>
         <div className='font-black'>{ data.name }</div>
         <div className='flex text-stone-600 divide-x divide-stone-400'>
@@ -47,7 +47,7 @@ function Neighborhoods ({searchInput}) {
   });
   return (
     <>
-      <div className='hidden md:flex border-b-2 p-4'>
+      <div className='hidden md:flex px-4 pt-2'>
         <div className='w-1/5'></div>
         <div className='w-1/5'>Favorite</div>
         <div className='w-1/5'>Very Like</div>
@@ -133,16 +133,17 @@ function App() {
     //     </a>
     //   </header>
     // </div>
-    <>
+    <div className='m-2 space-y-2'>
     <input
       type="text"
       placeholder="Search here"
+      className='w-full border-b-2 border-stone-300 text-lg'
       onChange={e => setSearchInput(e.target.value)}
       value={searchInput}
     />
     <Tabs activeTab={activeTab} setActiveTab={setActiveTab}/>
     <TabContent activeTab={activeTab} searchInput={searchInput}/>
-    </>
+    </div>
   );
 }
 

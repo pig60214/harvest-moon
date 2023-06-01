@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .my-tabs {
-  @apply flex flex-wrap text-sm font-medium text-center text-gray-500 dark:text-gray-400
+  @apply flex flex-wrap text-sm font-medium text-center text-stone-500 text-stone-400
 }
 
 .my-tabs li {
@@ -15,11 +15,11 @@
 }
 
 .my-tabs span.inactive {
-  @apply hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white
+  @apply hover:text-stone-900 hover:bg-stone-200
 }
 
 .my-tabs span.active {
-  @apply text-white bg-blue-600
+  @apply text-white bg-stone-600
 }
 
 .my-card {
