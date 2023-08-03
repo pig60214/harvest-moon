@@ -113,6 +113,10 @@ function TabContent({ activeTab, searchInput }) {
   return <Crops searchInput={searchInput}/>
 }
 
+function scrollToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
 function App() {
   const [searchInput, setSearchInput] = useState('');
   const [activeTab, setActiveTab] = useState('gift');
@@ -134,15 +138,21 @@ function App() {
     //   </header>
     // </div>
     <div className='m-2 space-y-2'>
-    <input
-      type="text"
-      placeholder="Search here"
-      className='w-full border-b-2 border-stone-300 text-lg'
-      onChange={e => setSearchInput(e.target.value)}
-      value={searchInput}
-    />
+      <div className='w-full flex'>
+        <input
+          type="text"
+          placeholder="Search here"
+          className='grow border-b-2 border-stone-300 text-lg'
+          onChange={e => setSearchInput(e.target.value)}
+          value={searchInput}
+        />
+        <button className='w-8' onClick={e => setSearchInput('')}>X</button>
+      </div>
     <Tabs activeTab={activeTab} setActiveTab={setActiveTab}/>
     <TabContent activeTab={activeTab} searchInput={searchInput}/>
+    <div className='fixed w-8 right-4 bottom-4'>
+      <button className='w-8' onClick={scrollToTop}>⇧</button>
+    </div>
     </div>
   );
 }
