@@ -89,24 +89,100 @@ function Crops({ searchInput }) {
 }
 
 function Map({ searchInput }) {
+  const locations = [
+    {
+      'name': '巡林員小屋',
+      'rowClass': 'row-start-1',
+      'colClass':'col-start-3',
+    },
+    {
+      'name': '清心庵',
+      'rowClass': 'row-start-2',
+      'colClass':'col-start-1',
+    },
+    {
+      'name': '鎮公所',
+      'rowClass': 'row-start-2',
+      'colClass':'col-start-3 col-span-2',
+    },
+    {
+      'name': '博物館',
+      'rowClass': 'row-start-2',
+      'colClass':'col-start-5 col-span-2',
+    },
+    {
+      'name': '旅館＆咖啡廳',
+      'rowClass': 'row-start-3',
+      'colClass':'col-start-7 col-span-2',
+    },
+    {
+      'name': '最喜翻的家',
+      'rowClass': 'row-start-4',
+      'colClass':'col-start-1',
+    },
+    {
+      'name': '工具行',
+      'rowClass': 'row-start-4',
+      'colClass':'col-start-2',
+    },
+    {
+      'name': '美人沙龍',
+      'rowClass': 'row-start-4',
+      'colClass':'col-start-4',
+    },
+    {
+      'name': '花店',
+      'rowClass': 'row-start-4',
+      'colClass':'col-start-6',
+    },
+    {
+      'name': '觀光服務中心',
+      'rowClass': 'row-start-4',
+      'colClass':'col-start-9',
+    },
+    {
+      'name': '木工店',
+      'rowClass': 'row-start-5',
+      'colClass':'col-start-2',
+    },
+    {
+      'name': '食材店',
+      'rowClass': 'row-start-5',
+      'colClass':'col-start-4',
+    },
+    {
+      'name': '小餐館',
+      'rowClass': 'row-start-5',
+      'colClass':'col-start-6',
+    },
+    {
+      'name': '動物商店',
+      'rowClass': 'row-start-6',
+      'colClass':'col-start-2',
+    },
+    {
+      'name': '雜貨店',
+      'rowClass': 'row-start-6',
+      'colClass':'col-start-4',
+    },
+    {
+      'name': '馬可斯的家',
+      'rowClass': 'row-start-6',
+      'colClass':'col-start-7',
+    },
+  ];
+  const rows = [];
+  locations.forEach(location => {
+    if(!location.name.includes(searchInput)) {
+      location.highlightClass = '';
+    } else {
+      location.highlightClass = 'bg-stone-200';
+    }
+    rows.push(<div className={`border border-stone-600 rounded-lg text-center py-2 ${location.rowClass} ${location.colClass} ${location.highlightClass}`}>{location.name}</div>);
+  });
   return (
     <div className='grid grid-rows-6 grid-cols-9 gap-4'>
-      <div className='border border-stone-600 rounded-lg text-center py-2 row-start-1 col-start-3'>巡林員小屋</div>
-      <div className='border border-stone-600 rounded-lg text-center py-2 row-start-2 col-start-1'>清心庵</div>
-      <div className='border border-stone-600 rounded-lg text-center py-2 row-start-2 col-start-3 col-span-2'>鎮公所</div>
-      <div className='border border-stone-600 rounded-lg text-center py-2 row-start-2 col-start-5 col-span-2'>博物館</div>
-      <div className='border border-stone-600 rounded-lg text-center py-2 row-start-3 col-start-7 col-span-2'>旅館＆咖啡廳</div>
-      <div className='border border-stone-600 rounded-lg text-center py-2 row-start-4 col-start-1'>最喜翻的家</div>
-      <div className='border border-stone-600 rounded-lg text-center py-2 row-start-4 col-start-2'>工具行</div>
-      <div className='border border-stone-600 rounded-lg text-center py-2 row-start-4 col-start-4'>美人沙龍</div>
-      <div className='border border-stone-600 rounded-lg text-center py-2 row-start-4 col-start-6'>花店</div>
-      <div className='border border-stone-600 rounded-lg text-center py-2 row-start-4 col-start-9'>觀光服務中心</div>
-      <div className='border border-stone-600 rounded-lg text-center py-2 row-start-5 col-start-2'>木工店</div>
-      <div className='border border-stone-600 rounded-lg text-center py-2 row-start-5 col-start-4'>食材店</div>
-      <div className='border border-stone-600 rounded-lg text-center py-2 row-start-5 col-start-6'>小餐館</div>
-      <div className='border border-stone-600 rounded-lg text-center py-2 row-start-6 col-start-2'>動物商店</div>
-      <div className='border border-stone-600 rounded-lg text-center py-2 row-start-6 col-start-4'>雜貨店</div>
-      <div className='border border-stone-600 rounded-lg text-center py-2 row-start-6 col-start-7'>馬可斯的家</div>
+      {rows}
     </div>
   );
 }
