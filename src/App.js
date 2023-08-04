@@ -88,7 +88,30 @@ function Crops({ searchInput }) {
   );
 }
 
-const tabs = ['gift', 'crop'];
+function Map({ searchInput }) {
+  return (
+    <div className='grid grid-rows-6 grid-cols-9 gap-4'>
+      <div className='border border-stone-600 rounded-lg text-center py-2 row-start-1 col-start-3'>巡林員小屋</div>
+      <div className='border border-stone-600 rounded-lg text-center py-2 row-start-2 col-start-1'>清心庵</div>
+      <div className='border border-stone-600 rounded-lg text-center py-2 row-start-2 col-start-3 col-span-2'>鎮公所</div>
+      <div className='border border-stone-600 rounded-lg text-center py-2 row-start-2 col-start-5 col-span-2'>博物館</div>
+      <div className='border border-stone-600 rounded-lg text-center py-2 row-start-3 col-start-7 col-span-2'>旅館＆咖啡廳</div>
+      <div className='border border-stone-600 rounded-lg text-center py-2 row-start-4 col-start-1'>最喜翻的家</div>
+      <div className='border border-stone-600 rounded-lg text-center py-2 row-start-4 col-start-2'>工具行</div>
+      <div className='border border-stone-600 rounded-lg text-center py-2 row-start-4 col-start-4'>美人沙龍</div>
+      <div className='border border-stone-600 rounded-lg text-center py-2 row-start-4 col-start-6'>花店</div>
+      <div className='border border-stone-600 rounded-lg text-center py-2 row-start-4 col-start-9'>觀光服務中心</div>
+      <div className='border border-stone-600 rounded-lg text-center py-2 row-start-5 col-start-2'>木工店</div>
+      <div className='border border-stone-600 rounded-lg text-center py-2 row-start-5 col-start-4'>食材店</div>
+      <div className='border border-stone-600 rounded-lg text-center py-2 row-start-5 col-start-6'>小餐館</div>
+      <div className='border border-stone-600 rounded-lg text-center py-2 row-start-6 col-start-2'>動物商店</div>
+      <div className='border border-stone-600 rounded-lg text-center py-2 row-start-6 col-start-4'>雜貨店</div>
+      <div className='border border-stone-600 rounded-lg text-center py-2 row-start-6 col-start-7'>馬可斯的家</div>
+    </div>
+  );
+}
+
+const tabs = ['gift', 'crop', 'map'];
 
 function Tabs({ activeTab, setActiveTab }) {
   const lis = [];
@@ -110,7 +133,12 @@ function TabContent({ activeTab, searchInput }) {
   if(activeTab === tabs[0]) {
     return <Neighborhoods searchInput={searchInput}/>
   }
-  return <Crops searchInput={searchInput}/>
+
+  if(activeTab === tabs[1]) {
+    return <Crops searchInput={searchInput}/>
+  }
+
+  return <Map searchInput={searchInput}/>
 }
 
 function scrollToTop() {
