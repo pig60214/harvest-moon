@@ -88,100 +88,131 @@ function Crops({ searchInput }) {
   );
 }
 
-function Map({ searchInput }) {
-  const locations = [
-    {
-      'name': '巡林員小屋',
-      'rowClass': 'row-start-1',
-      'colClass':'col-start-3',
-    },
-    {
-      'name': '清心庵',
-      'rowClass': 'row-start-2',
-      'colClass':'col-start-1',
-    },
-    {
-      'name': '鎮公所',
-      'rowClass': 'row-start-2',
-      'colClass':'col-start-3 col-span-2',
-    },
-    {
-      'name': '博物館',
-      'rowClass': 'row-start-2',
-      'colClass':'col-start-5 col-span-2',
-    },
-    {
-      'name': '旅館＆咖啡廳',
-      'rowClass': 'row-start-3',
-      'colClass':'col-start-7 col-span-2',
-    },
-    {
-      'name': '最喜翻的家',
-      'rowClass': 'row-start-4',
-      'colClass':'col-start-1',
-    },
-    {
-      'name': '工具行',
-      'rowClass': 'row-start-4',
-      'colClass':'col-start-2',
-    },
-    {
-      'name': '美人沙龍',
-      'rowClass': 'row-start-4',
-      'colClass':'col-start-4',
-    },
-    {
-      'name': '花店',
-      'rowClass': 'row-start-4',
-      'colClass':'col-start-6',
-    },
-    {
-      'name': '觀光服務中心',
-      'rowClass': 'row-start-4',
-      'colClass':'col-start-9',
-    },
-    {
-      'name': '木工店',
-      'rowClass': 'row-start-5',
-      'colClass':'col-start-2',
-    },
-    {
-      'name': '食材店',
-      'rowClass': 'row-start-5',
-      'colClass':'col-start-4',
-    },
-    {
-      'name': '小餐館',
-      'rowClass': 'row-start-5',
-      'colClass':'col-start-6',
-    },
-    {
-      'name': '動物商店',
-      'rowClass': 'row-start-6',
-      'colClass':'col-start-2',
-    },
-    {
-      'name': '雜貨店',
-      'rowClass': 'row-start-6',
-      'colClass':'col-start-4',
-    },
-    {
-      'name': '馬可斯的家',
-      'rowClass': 'row-start-6',
-      'colClass':'col-start-7',
-    },
-  ];
+const initialLocations = [
+  {
+    'name': '巡林員小屋',
+    'rowClass': 'row-start-1',
+    'colClass':'col-start-3',
+    'highlightClass': '',
+  },
+  {
+    'name': '清心庵',
+    'rowClass': 'row-start-2',
+    'colClass':'col-start-1',
+    'highlightClass': '',
+  },
+  {
+    'name': '鎮公所',
+    'rowClass': 'row-start-2',
+    'colClass':'col-start-3 col-span-2',
+    'highlightClass': '',
+  },
+  {
+    'name': '博物館',
+    'rowClass': 'row-start-2',
+    'colClass':'col-start-5 col-span-2',
+    'highlightClass': '',
+  },
+  {
+    'name': '旅館＆咖啡廳',
+    'rowClass': 'row-start-3',
+    'colClass':'col-start-7 col-span-2',
+    'highlightClass': '',
+  },
+  {
+    'name': '最喜翻的家',
+    'rowClass': 'row-start-4',
+    'colClass':'col-start-1',
+    'highlightClass': '',
+  },
+  {
+    'name': '工具行',
+    'rowClass': 'row-start-4',
+    'colClass':'col-start-2',
+    'highlightClass': '',
+  },
+  {
+    'name': '美人沙龍',
+    'rowClass': 'row-start-4',
+    'colClass':'col-start-4',
+    'highlightClass': '',
+  },
+  {
+    'name': '花店',
+    'rowClass': 'row-start-4',
+    'colClass':'col-start-6',
+    'highlightClass': '',
+  },
+  {
+    'name': '觀光服務中心',
+    'rowClass': 'row-start-4',
+    'colClass':'col-start-9',
+    'highlightClass': '',
+  },
+  {
+    'name': '木工店',
+    'rowClass': 'row-start-5',
+    'colClass':'col-start-2',
+    'highlightClass': '',
+  },
+  {
+    'name': '食材店',
+    'rowClass': 'row-start-5',
+    'colClass':'col-start-4',
+    'highlightClass': '',
+  },
+  {
+    'name': '小餐館',
+    'rowClass': 'row-start-5',
+    'colClass':'col-start-6',
+    'highlightClass': '',
+  },
+  {
+    'name': '動物商店',
+    'rowClass': 'row-start-6',
+    'colClass':'col-start-2',
+    'highlightClass': '',
+  },
+  {
+    'name': '雜貨店',
+    'rowClass': 'row-start-6',
+    'colClass':'col-start-4',
+    'highlightClass': '',
+  },
+  {
+    'name': '馬可斯的家',
+    'rowClass': 'row-start-6',
+    'colClass':'col-start-7',
+    'highlightClass': '',
+  },
+];
+
+function Map({ locations, setLocations }) {
+  function toggleLocation(selectedLocationName) {
+    const nextLocations = locations.map(location => {
+      if(location.name === selectedLocationName) {
+        location.highlightClass = location.highlightClass === '' ? 'bg-stone-200' : '';
+      }
+      return location;
+    })
+
+    setLocations(nextLocations);
+  };
+
   const rows = [];
   locations.forEach(location => {
-    if(!location.name.includes(searchInput)) {
-      location.highlightClass = '';
-    } else {
-      location.highlightClass = 'bg-stone-200';
-    }
-    rows.push(<div className={`border border-stone-600 rounded-lg text-center py-2 ${location.rowClass} ${location.colClass} ${location.highlightClass}`}>{location.name}</div>);
+    rows.push(
+      <div
+        key={location.name}
+        className={`border border-stone-600 rounded-lg text-center py-2 h-10 overflow-x-auto ${location.rowClass} ${location.colClass} ${location.highlightClass}`}
+        onClick={() => toggleLocation(location.name)}
+      >
+        <div className='whitespace-nowrap'>{location.name}</div>
+      </div>);
   });
+
   return (
-    <div className='grid grid-rows-6 grid-cols-9 gap-4'>
+    <div className='grid grid-rows-6 grid-cols-9 gap-2 md:gap-4'>
       {rows}
     </div>
   );
@@ -205,17 +236,7 @@ function Tabs({ activeTab, setActiveTab }) {
   );
 }
 
-function TabContent({ activeTab, searchInput }) {
-  if(activeTab === tabs[0]) {
-    return <Neighborhoods searchInput={searchInput}/>
-  }
 
-  if(activeTab === tabs[1]) {
-    return <Crops searchInput={searchInput}/>
-  }
-
-  return <Map searchInput={searchInput}/>
-}
 
 function scrollToTop() {
   document.body.scrollTop = 0;
@@ -224,23 +245,21 @@ function scrollToTop() {
 function App() {
   const [searchInput, setSearchInput] = useState('');
   const [activeTab, setActiveTab] = useState('gift');
+  const [locations, setLocations] = useState(initialLocations);
+
+  function TabContent() {
+    if(activeTab === tabs[0]) {
+      return <Neighborhoods searchInput={searchInput}/>
+    }
+  
+    if(activeTab === tabs[1]) {
+      return <Crops searchInput={searchInput}/>
+    }
+  
+    return <Map locations={locations} setLocations={setLocations} />
+  }
+
   return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
     <div className='m-2 space-y-2'>
       <div className='w-full flex'>
         <input
@@ -253,7 +272,7 @@ function App() {
         <button className='w-8' onClick={e => setSearchInput('')}>X</button>
       </div>
     <Tabs activeTab={activeTab} setActiveTab={setActiveTab}/>
-    <TabContent activeTab={activeTab} searchInput={searchInput}/>
+    <TabContent />
     <div className='fixed w-8 right-4 bottom-4'>
       <button className='w-8' onClick={scrollToTop}>⇧</button>
     </div>
