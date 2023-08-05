@@ -5,9 +5,36 @@ import { useState } from 'react';
 import giftRawData from './giftRawData';
 import { cropRawData, cropRawDataNameAsKey } from './cropRawData';
 
-function TableRow ({data, searchInput}) {
+function Neighborhood ({data, searchInput, toGives, setToGives}) {
   const isSearchName = data.name.includes(searchInput) || data.description.includes(searchInput);
   const isMe = (gift, level) => gift.level === level && (isSearchName || JSON.stringify(gift).includes(searchInput));
+
+  function toggleToGive(neighborhood, gift) {
+    if(toGives.find(toGive => toGive.neighborhood === neighborhood && toGive.gift === gift)) {
+      setToGives(toGives.filter(toGive => toGive.neighborhood !== neighborhood));
+    } else if (toGives.find(toGive => toGive.neighborhood === neighborhood)) {
+      const next = toGives.filter(toGive => toGive.neighborhood !== neighborhood);
+      setToGives([
+        ...next,
+        {neighborhood, gift},
+      ]);
+
+    } else {
+      setToGives([
+        ...toGives,
+        {neighborhood, gift},
+      ]);
+    }
+  }
+
+  function Gifts({ level }) {
+    const rows = [];
+    data.gifts.filter(gift => isMe(gift, level)).map(gift => gift.name).forEach(gift => {
+      rows.push(<div key={gift} className={toGives.find(toGive => toGive.neighborhood === data.name && toGive.gift === gift) ? 'bg-stone-400' : ''} onClick={() => toggleToGive(data.name, gift)}>{gift}</div>);
+    });
+    return rows;
+  }
+
   return (
     <div className='my-card space-y-2'>
       <div className='my-card-header flex flex-col md:w-1/5'>
@@ -19,10 +46,10 @@ function TableRow ({data, searchInput}) {
         </div>
       </div>
       <div className='my-card-body flex md:w-4/5'>
-        <div className='w-1/4'>{ parse(data.gifts.filter(gift => isMe(gift, 1)).map(gift => gift.name).join('<br/>')) }</div>
-        <div className='w-1/4'>{ parse(data.gifts.filter(gift => isMe(gift, 2)).map(gift => gift.name).join('<br/>')) }</div>
-        <div className='w-1/4'>{ parse(data.gifts.filter(gift => isMe(gift, 3)).map(gift => gift.name).join('<br/>')) }</div>
-        <div className='w-1/4'>{ parse(data.gifts.filter(gift => isMe(gift, 4)).map(gift => gift.name).join('<br/>')) }</div>
+        <div className='w-1/4'><Gifts level={1} /></div>
+        <div className='w-1/4'><Gifts level={2} /></div>
+        <div className='w-1/4'><Gifts level={3} /></div>
+        <div className='w-1/4'><Gifts level={4} /></div>
       </div>
    </div>
   )
@@ -38,12 +65,12 @@ function addGiftDescription() {
   });
 }
 
-function Neighborhoods ({searchInput}) {
+function Neighborhoods ({searchInput, toGives, setToGives}) {
   addGiftDescription();
   const row = [];
   giftRawData.forEach(data => {
     if(!JSON.stringify(data).includes(searchInput)) return;
-    row.push(<TableRow data={data} key={data.name} searchInput={searchInput} />)
+    row.push(<Neighborhood data={data} key={data.name} searchInput={searchInput} toGives={toGives} setToGives={setToGives} />)
   });
   return (
     <>
@@ -246,10 +273,11 @@ function App() {
   const [searchInput, setSearchInput] = useState('');
   const [activeTab, setActiveTab] = useState('gift');
   const [locations, setLocations] = useState(initialLocations);
+  const [toGives, setToGives] = useState([]);
 
   function TabContent() {
     if(activeTab === tabs[0]) {
-      return <Neighborhoods searchInput={searchInput}/>
+      return <Neighborhoods searchInput={searchInput} toGives={toGives} setToGives={setToGives} />
     }
   
     if(activeTab === tabs[1]) {
