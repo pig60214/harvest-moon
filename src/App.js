@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import parse from 'html-react-parser';
-import { useState } from 'react';
+import { Children, useState } from 'react';
 import giftRawData from './giftRawData';
 import { cropRawData, cropRawDataNameAsKey } from './cropRawData';
 
@@ -65,7 +65,7 @@ function addGiftDescription() {
   });
 }
 
-function Neighborhoods ({searchInput, toGives, setToGives}) {
+function Neighborhoods ({searchInput, toGives, setToGives, showGiftList}) {
   addGiftDescription();
   const row = [];
   giftRawData.forEach(data => {
@@ -274,10 +274,11 @@ function App() {
   const [activeTab, setActiveTab] = useState('gift');
   const [locations, setLocations] = useState(initialLocations);
   const [toGives, setToGives] = useState([]);
+  const [showGiftList, setShowGiftList] = useState(false);
 
   function TabContent() {
     if(activeTab === tabs[0]) {
-      return <Neighborhoods searchInput={searchInput} toGives={toGives} setToGives={setToGives} />
+      return <Neighborhoods searchInput={searchInput} toGives={toGives} setToGives={setToGives} showGiftList={showGiftList} />
     }
   
     if(activeTab === tabs[1]) {
@@ -285,6 +286,17 @@ function App() {
     }
   
     return <Map locations={locations} setLocations={setLocations} />
+  }
+
+  function ToolButton({ onClick, children }) {
+    return (<button className='w-8' onClick={onClick}>{children}</button>)
+  }
+
+  function GiftListButton() {
+    if(activeTab === tabs[0] && toGives.length>0) {
+      return(<ToolButton onClick={() => setShowGiftList(!showGiftList)} >⊞</ToolButton>);
+    }
+    return (<></>);
   }
 
   return (
@@ -302,7 +314,8 @@ function App() {
     <Tabs activeTab={activeTab} setActiveTab={setActiveTab}/>
     <TabContent />
     <div className='fixed w-8 right-4 bottom-4'>
-      <button className='w-8' onClick={scrollToTop}>⇧</button>
+      <GiftListButton />
+      <ToolButton onClick={scrollToTop} >⇧</ToolButton>
     </div>
     </div>
   );
