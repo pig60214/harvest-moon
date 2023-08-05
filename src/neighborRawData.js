@@ -1,4 +1,4 @@
-const giftrawDataV1 = [
+const neighborRawDataV1 = [
   {
     "name": "維克多",
     "description": "鎮長",
@@ -1254,9 +1254,9 @@ const giftrawDataV1 = [
   },
 ];
 
-const giftrawData = [];
+const neighborRawData = [];
 
-giftrawDataV1.forEach(role => {
+neighborRawDataV1.forEach(role => {
   const roleData = {
     name: role.name,
     description: role.description,
@@ -1279,7 +1279,7 @@ giftrawDataV1.forEach(role => {
     roleData.gifts.push({'name': gift, 'level': 4});
   });
 
-  giftrawData.push(roleData);
+  neighborRawData.push(roleData);
 })
 
-export default giftrawData;
+export default neighborRawData;

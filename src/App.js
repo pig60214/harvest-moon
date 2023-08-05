@@ -1,14 +1,13 @@
 // import logo from './logo.svg';
 import './App.css';
-import parse from 'html-react-parser';
-import { Children, useState } from 'react';
-import giftRawData from './giftRawData';
+import { useState } from 'react';
+import neighborRawData from './neighborRawData';
 import { cropRawData, cropRawDataNameAsKey } from './cropRawData';
 
-function Neighborhoods ({searchInput, toGives, setToGives, showGiftList}) {
+function Neighbors ({searchInput, toGives, setToGives, showGiftList}) {
 
-  function addGiftDescription() {
-    giftRawData.forEach(data => {
+  function addNeighborDescription() {
+    neighborRawData.forEach(data => {
       data.gifts.forEach(gift => {
         if(cropRawDataNameAsKey[gift.name]) {
           gift['description'] = cropRawDataNameAsKey[gift.name].category;
@@ -17,9 +16,9 @@ function Neighborhoods ({searchInput, toGives, setToGives, showGiftList}) {
     });
   }
 
-  function Neighborhood ({data, searchInput, toGives, setToGives}) {
-    const isSearchName = data.name.includes(searchInput) || data.description.includes(searchInput);
-    const isMe = (gift, level) => gift.level === level && (isSearchName || JSON.stringify(gift).includes(searchInput));
+  function Neighbor ({ neighbor }) {
+    const isSearchName = neighbor.name.includes(searchInput) || neighbor.description.includes(searchInput);
+    const isSearched = (gift, level) => gift.level === level && (isSearchName || JSON.stringify(gift).includes(searchInput));
 
     function toggleToGive(neighborhood, level, gift) {
       if(toGives.find(toGive => toGive.neighborhood === neighborhood && toGive.gift === gift)) {
@@ -42,14 +41,13 @@ function Neighborhoods ({searchInput, toGives, setToGives, showGiftList}) {
     function Gifts({ level }) {
       const rows = [];
       if(showGiftList) {
-        const toGive = toGives.find(toGive => toGive.neighborhood === data.name);
+        const toGive = toGives.find(toGive => toGive.neighborhood === neighbor.name);
         if(toGive && toGive.level === level) {
-          rows.push(<div key={toGive.gift} className='bg-stone-400' onClick={() => toggleToGive(data.name, level, toGive.gift)}>{toGive.gift}</div>);
+          rows.push(<div key={toGive.gift} className='bg-stone-400' onClick={() => toggleToGive(neighbor.name, level, toGive.gift)}>{toGive.gift}</div>);
         }
-
       } else {
-        data.gifts.filter(gift => isMe(gift, level)).map(gift => gift.name).forEach(gift => {
-          rows.push(<div key={gift} className={toGives.find(toGive => toGive.neighborhood === data.name && toGive.gift === gift) ? 'bg-stone-400' : ''} onClick={() => toggleToGive(data.name, level, gift)}>{gift}</div>);
+        neighbor.gifts.filter(gift => isSearched(gift, level)).map(gift => gift.name).forEach(gift => {
+          rows.push(<div key={gift} className={toGives.find(toGive => toGive.neighborhood === neighbor.name && toGive.gift === gift) ? 'bg-stone-400' : ''} onClick={() => toggleToGive(neighbor.name, level, gift)}>{gift}</div>);
         });
       }
       return rows;
@@ -58,11 +56,11 @@ function Neighborhoods ({searchInput, toGives, setToGives, showGiftList}) {
     return (
       <div className='my-card space-y-2'>
         <div className='my-card-header flex flex-col md:w-1/5'>
-          <div className='font-black'>{ data.name }</div>
+          <div className='font-black'>{ neighbor.name }</div>
           <div className='flex text-stone-600 divide-x divide-stone-400'>
-            <div className='pr-2'>{ data.description }</div>
-            <div className='px-2'>{ data.gender === 'M' ? '♂' : '♀' }</div>
-            {data.isMarriageCandidate && <div className='px-2'>🩶</div>}
+            <div className='pr-2'>{ neighbor.description }</div>
+            <div className='px-2'>{ neighbor.gender === 'M' ? '♂' : '♀' }</div>
+            {neighbor.isMarriageCandidate && <div className='px-2'>🩶</div>}
           </div>
         </div>
         <div className='my-card-body flex md:w-4/5'>
@@ -75,17 +73,17 @@ function Neighborhoods ({searchInput, toGives, setToGives, showGiftList}) {
     )
   }
 
-  addGiftDescription();
+  addNeighborDescription();
   const row = [];
-  giftRawData.forEach(data => {
+  neighborRawData.forEach(neighbor => {
     if(showGiftList) {
-      if(toGives.find(toGive => toGive.neighborhood === data.name)) {
-        row.push(<Neighborhood data={data} key={data.name} toGives={toGives} setToGives={setToGives} />)
+      if(toGives.find(toGive => toGive.neighborhood === neighbor.name)) {
+        row.push(<Neighbor neighbor={neighbor} key={neighbor.name} />)
       }
       return;
     }
-    if(!JSON.stringify(data).includes(searchInput)) return;
-    row.push(<Neighborhood data={data} key={data.name} searchInput={searchInput} toGives={toGives} setToGives={setToGives} />)
+    if(!JSON.stringify(neighbor).includes(searchInput)) return;
+    row.push(<Neighbor neighbor={neighbor} key={neighbor.name} />)
   });
   return (
     <>
@@ -260,7 +258,7 @@ function Map({ locations, setLocations }) {
   );
 }
 
-const tabs = ['gift', 'crop', 'map'];
+const tabs = ['neighbor', 'crop', 'map'];
 
 function Tabs({ activeTab, setActiveTab }) {
   const lis = [];
@@ -286,14 +284,14 @@ function scrollToTop() {
 }
 function App() {
   const [searchInput, setSearchInput] = useState('');
-  const [activeTab, setActiveTab] = useState('gift');
+  const [activeTab, setActiveTab] = useState('neighbor');
   const [locations, setLocations] = useState(initialLocations);
   const [toGives, setToGives] = useState([]);
   const [showGiftList, setShowGiftList] = useState(false);
 
   function TabContent() {
     if(activeTab === tabs[0]) {
-      return <Neighborhoods searchInput={searchInput} toGives={toGives} setToGives={setToGives} showGiftList={showGiftList} />
+      return <Neighbors searchInput={searchInput} toGives={toGives} setToGives={setToGives} showGiftList={showGiftList} />
     }
   
     if(activeTab === tabs[1]) {
