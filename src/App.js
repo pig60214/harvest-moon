@@ -4,7 +4,7 @@ import { useState } from 'react';
 import neighborRawData from './neighborRawData';
 import { cropRawData, cropRawDataNameAsKey } from './cropRawData';
 
-function Neighbors ({searchInput, toGives, setToGives, showGiftList}) {
+function Neighbors ({searchInput, toGives, setToGives, showGiftList, setShowGiftList}) {
 
   function addNeighborDescription() {
     neighborRawData.forEach(data => {
@@ -22,7 +22,11 @@ function Neighbors ({searchInput, toGives, setToGives, showGiftList}) {
 
     function toggleToGive(neighborhood, level, gift) {
       if(toGives.find(toGive => toGive.neighborhood === neighborhood && toGive.gift === gift)) {
-        setToGives(toGives.filter(toGive => toGive.neighborhood !== neighborhood));
+        const next = toGives.filter(toGive => toGive.neighborhood !== neighborhood);
+        if(next.length === 0) {
+          setShowGiftList(false);
+        }
+        setToGives(next);
       } else if (toGives.find(toGive => toGive.neighborhood === neighborhood)) {
         const next = toGives.filter(toGive => toGive.neighborhood !== neighborhood);
         setToGives([
@@ -347,7 +351,7 @@ function App() {
 
   function TabContent() {
     if(activeTab === tabs[0]) {
-      return <Neighbors searchInput={searchInput} toGives={toGives} setToGives={setToGives} showGiftList={showGiftList} />
+      return <Neighbors searchInput={searchInput} toGives={toGives} setToGives={setToGives} showGiftList={showGiftList} setShowGiftList={setShowGiftList} />
     }
   
     if(activeTab === tabs[1]) {
