@@ -133,105 +133,148 @@ const initialLocations = [
     'name': '巡林員小屋',
     'rowClass': 'row-start-1',
     'colClass':'col-start-3',
-    'highlightClass': '',
   },
   {
     'name': '清心庵',
     'rowClass': 'row-start-2',
     'colClass':'col-start-1',
-    'highlightClass': '',
   },
   {
     'name': '鎮公所',
     'rowClass': 'row-start-2',
     'colClass':'col-start-3 col-span-2',
-    'highlightClass': '',
   },
   {
     'name': '博物館',
     'rowClass': 'row-start-2',
     'colClass':'col-start-5 col-span-2',
-    'highlightClass': '',
   },
   {
     'name': '旅館＆咖啡廳',
     'rowClass': 'row-start-3',
     'colClass':'col-start-7 col-span-2',
-    'highlightClass': '',
   },
   {
     'name': '最喜翻的家',
     'rowClass': 'row-start-4',
     'colClass':'col-start-1',
-    'highlightClass': '',
   },
   {
     'name': '工具行',
     'rowClass': 'row-start-4',
     'colClass':'col-start-2',
-    'highlightClass': '',
   },
   {
     'name': '美人沙龍',
     'rowClass': 'row-start-4',
     'colClass':'col-start-4',
-    'highlightClass': '',
   },
   {
     'name': '花店',
     'rowClass': 'row-start-4',
     'colClass':'col-start-6',
-    'highlightClass': '',
   },
   {
     'name': '觀光服務中心',
     'rowClass': 'row-start-4',
     'colClass':'col-start-9',
-    'highlightClass': '',
   },
   {
     'name': '木工店',
     'rowClass': 'row-start-5',
     'colClass':'col-start-2',
-    'highlightClass': '',
   },
   {
     'name': '食材店',
     'rowClass': 'row-start-5',
     'colClass':'col-start-4',
-    'highlightClass': '',
   },
   {
     'name': '小餐館',
     'rowClass': 'row-start-5',
     'colClass':'col-start-6',
-    'highlightClass': '',
   },
   {
     'name': '動物商店',
     'rowClass': 'row-start-6',
     'colClass':'col-start-2',
-    'highlightClass': '',
   },
   {
     'name': '雜貨店',
     'rowClass': 'row-start-6',
     'colClass':'col-start-4',
-    'highlightClass': '',
   },
   {
     'name': '馬可斯的家',
     'rowClass': 'row-start-6',
     'colClass':'col-start-7',
-    'highlightClass': '',
   },
 ];
+
+function initLocations() {
+  initialLocations.forEach(location => {
+    location.highlight = false;
+    Object.defineProperty(location, 'highlightClass', {
+      get: function() { return this.highlight ? 'bg-stone-200' : '' }
+    });
+
+    location.goToShopping = false;
+    Object.defineProperty(location, 'goToShoppingClass', {
+      get: function() { return this.goToShopping ? 'bg-sky-600' : 'bg-sky-100' }
+    });
+
+    location.goToGiveTheGift = false;
+    Object.defineProperty(location, 'goToGiveTheGiftClass', {
+      get: function() { return this.goToGiveTheGift ? 'bg-pink-600' : 'bg-pink-100' }
+    });
+  });
+}
+
+initLocations();
 
 function Map({ locations, setLocations }) {
   function toggleLocation(selectedLocationName) {
     const nextLocations = locations.map(location => {
       if(location.name === selectedLocationName) {
-        location.highlightClass = location.highlightClass === '' ? 'bg-stone-200' : '';
+        location.highlight = !location.highlight;
+        if(!location.highlight) {
+          location.goToShopping = false;
+          location.goToGiveTheGift = false;
+        }
+      }
+      return location;
+    })
+
+    setLocations(nextLocations);
+  };
+
+  function toggleGoToShopping(selectedLocationName) {
+    const nextLocations = locations.map(location => {
+      if(location.name === selectedLocationName) {
+        location.goToShopping = !location.goToShopping;
+        if(location.goToShopping) {
+          location.highlight = true;
+        }
+        if(!location.goToGiveTheGift && !location.goToShopping) {
+          location.highlight = false;
+        }
+      }
+      return location;
+    })
+
+    setLocations(nextLocations);
+  };
+
+  function toggleGoToGiveTheGift(selectedLocationName) {
+    const nextLocations = locations.map(location => {
+      if(location.name === selectedLocationName) {
+        location.goToGiveTheGift = !location.goToGiveTheGift;
+        if(location.goToGiveTheGift) {
+          location.highlight = true;
+        }
+        if(!location.goToGiveTheGift && !location.goToShopping) {
+          location.highlight = false;
+        }
       }
       return location;
     })
@@ -242,18 +285,33 @@ function Map({ locations, setLocations }) {
   const rows = [];
   locations.forEach(location => {
     rows.push(
-      <div
-        key={location.name}
-        className={`border border-stone-600 rounded-lg text-center py-2 h-10 overflow-x-auto ${location.rowClass} ${location.colClass} ${location.highlightClass}`}
-        onClick={() => toggleLocation(location.name)}
-      >
-        <div className='whitespace-nowrap'>{location.name}</div>
+      <div key={location.name} className={`${location.rowClass} ${location.colClass}`}>
+        <div
+          className={`border border-stone-600 rounded-t-lg border-b-0 text-center py-2 h-10 overflow-x-auto ${location.highlightClass}`}
+          onClick={() => toggleLocation(location.name)}
+        >
+          <div className='whitespace-nowrap'>{location.name}</div>
+        </div>
+        <div className='flex border border-stone-600 rounded-b-lg overflow-x-auto'>
+            <div className={`flex-1 p-2 ${location.goToShoppingClass}`} onClick={() => toggleGoToShopping(location.name)}></div>
+            <div className={`flex-1 p-2 ${location.goToGiveTheGiftClass}`} onClick={() => toggleGoToGiveTheGift(location.name)}></div>
+        </div>
       </div>);
   });
 
   return (
-    <div className='grid grid-rows-6 grid-cols-9 gap-2 md:gap-4'>
-      {rows}
+    <div>
+      <div className='grid grid-rows-6 grid-cols-9 gap-2 md:gap-4'>
+        {rows}
+      </div>
+      <div className='mt-4'>
+        <div className='flex gap-2 items-center'>
+          <div className='bg-sky-600 w-4 h-4'></div><div>Shopping or do someting</div>
+        </div>
+        <div className='flex gap-2 items-center'>
+          <div className='bg-pink-600 w-4 h-4'></div><div>Give the gift</div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -275,8 +333,6 @@ function Tabs({ activeTab, setActiveTab }) {
     </ul>
   );
 }
-
-
 
 function scrollToTop() {
   document.body.scrollTop = 0;
