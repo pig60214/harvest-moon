@@ -33,3 +33,7 @@
 .my-card .my-card-body {
   @apply p-2
 }
+
+td, th {
+  @apply border border-slate-600
+}

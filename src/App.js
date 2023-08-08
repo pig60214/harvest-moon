@@ -3,6 +3,7 @@ import './App.css';
 import { useState } from 'react';
 import neighborRawData from './neighborRawData';
 import { cropRawData, cropRawDataNameAsKey } from './cropRawData';
+import itemRawData from './itemRawData';
 
 function Neighbors ({searchInput, toGives, setToGives, showGiftList, setShowGiftList}) {
 
@@ -111,21 +112,21 @@ function Crops({ searchInput }) {
     if(!JSON.stringify(data).includes(searchInput)) return;
     tableRows.push(
       <tr key={data.name}>
-        <td className="border border-slate-600">{data.name}</td>
-        <td className="border border-slate-600 text-center">{data.category}</td>
-        <td className="border border-slate-600">{data.season.join(', ')}</td>
-        <td className="border border-slate-600 text-center">{data.hasVariant ? 'V' : ''}</td>
+        <td>{data.name}</td>
+        <td className="text-center">{data.category}</td>
+        <td>{data.season.join(', ')}</td>
+        <td className="text-center">{data.hasVariant ? 'V' : ''}</td>
       </tr>
     );
   });
 
   return (
-    <table className='border-collapse border border-black'>
+    <table>
       <tr>
-        <th className="border border-slate-600 w-28">名稱</th>
-        <th className="border border-slate-600 w-20">種類</th>
-        <th className="border border-slate-600 w-32">季節</th>
-        <th className="border border-slate-600 w-12">變種</th>
+        <th className="w-28">名稱</th>
+        <th className="w-20">種類</th>
+        <th className="w-32">季節</th>
+        <th className="w-12">變種</th>
       </tr>
       {tableRows}
     </table>
@@ -320,7 +321,30 @@ function Map({ locations, setLocations }) {
   );
 }
 
-const tabs = ['neighbor', 'crop', 'map'];
+function Item({ searchInput }) {
+  const rows = [];
+
+  Object.entries(itemRawData).forEach(entry => {
+    const [key, value] = entry;
+    if(!key.includes(searchInput)) return;
+    rows.push(<tr>
+      <td>{key}</td>
+      <td>{value}</td>
+    </tr>)
+  });
+
+  return (
+    <table>
+      <tr>
+        <th>名稱</th>
+        <th>取得方式</th>
+      </tr>
+      {rows}
+    </table>
+  );
+}
+
+const tabs = ['neighbor', 'crop', 'item', 'map'];
 
 function Tabs({ activeTab, setActiveTab }) {
   const lis = [];
@@ -353,11 +377,15 @@ function App() {
     if(activeTab === tabs[0]) {
       return <Neighbors searchInput={searchInput} toGives={toGives} setToGives={setToGives} showGiftList={showGiftList} setShowGiftList={setShowGiftList} />
     }
-  
+
     if(activeTab === tabs[1]) {
       return <Crops searchInput={searchInput}/>
     }
-  
+
+    if(activeTab === tabs[2]) {
+      return <Item searchInput={searchInput}/>
+    }
+
     return <Map locations={locations} setLocations={setLocations} />
   }
 
