@@ -4,6 +4,7 @@ import { useState } from 'react';
 import neighborRawData from './neighborRawData';
 import { cropRawData, cropRawDataNameAsKey } from './cropRawData';
 import itemRawData from './itemRawData';
+import locationRawData from './locationRawData';
 
 function Neighbors ({searchInput, toGives, setToGives, showGiftList, setShowGiftList}) {
 
@@ -133,111 +134,8 @@ function Crops({ searchInput }) {
   );
 }
 
-const initialLocations = [
-  {
-    'name': '巡林員小屋',
-    'rowClass': 'row-start-1',
-    'colClass':'col-start-3',
-  },
-  {
-    'name': '清心庵',
-    'rowClass': 'row-start-2',
-    'colClass':'col-start-1',
-  },
-  {
-    'name': '鎮公所',
-    'rowClass': 'row-start-2',
-    'colClass':'col-start-3 col-span-2',
-  },
-  {
-    'name': '博物館',
-    'rowClass': 'row-start-2',
-    'colClass':'col-start-5 col-span-2',
-  },
-  {
-    'name': '旅館＆咖啡廳',
-    'rowClass': 'row-start-3',
-    'colClass':'col-start-7 col-span-2',
-  },
-  {
-    'name': '最喜翻的家',
-    'rowClass': 'row-start-4',
-    'colClass':'col-start-1',
-  },
-  {
-    'name': '工具行',
-    'rowClass': 'row-start-4',
-    'colClass':'col-start-2',
-  },
-  {
-    'name': '美人沙龍',
-    'rowClass': 'row-start-4',
-    'colClass':'col-start-4',
-  },
-  {
-    'name': '花店',
-    'rowClass': 'row-start-4',
-    'colClass':'col-start-6',
-  },
-  {
-    'name': '觀光服務中心',
-    'rowClass': 'row-start-4',
-    'colClass':'col-start-9',
-  },
-  {
-    'name': '木工店',
-    'rowClass': 'row-start-5',
-    'colClass':'col-start-2',
-  },
-  {
-    'name': '食材店',
-    'rowClass': 'row-start-5',
-    'colClass':'col-start-4',
-  },
-  {
-    'name': '小餐館',
-    'rowClass': 'row-start-5',
-    'colClass':'col-start-6',
-  },
-  {
-    'name': '動物商店',
-    'rowClass': 'row-start-6',
-    'colClass':'col-start-2',
-  },
-  {
-    'name': '雜貨店',
-    'rowClass': 'row-start-6',
-    'colClass':'col-start-4',
-  },
-  {
-    'name': '馬可斯的家',
-    'rowClass': 'row-start-6',
-    'colClass':'col-start-7',
-  },
-];
-
-function initLocations() {
-  initialLocations.forEach(location => {
-    location.highlight = false;
-    Object.defineProperty(location, 'highlightClass', {
-      get: function() { return this.highlight ? 'bg-stone-200' : '' }
-    });
-
-    location.goToShopping = false;
-    Object.defineProperty(location, 'goToShoppingClass', {
-      get: function() { return this.goToShopping ? 'bg-sky-600' : 'bg-sky-100' }
-    });
-
-    location.goToGiveTheGift = false;
-    Object.defineProperty(location, 'goToGiveTheGiftClass', {
-      get: function() { return this.goToGiveTheGift ? 'bg-pink-600' : 'bg-pink-100' }
-    });
-  });
-}
-
-initLocations();
-
 function Map({ locations, setLocations }) {
+
   function toggleLocation(selectedLocationName) {
     const nextLocations = locations.map(location => {
       if(location.name === selectedLocationName) {
@@ -292,10 +190,11 @@ function Map({ locations, setLocations }) {
     rows.push(
       <div key={location.name} className={`${location.rowClass} ${location.colClass}`}>
         <div
-          className={`border border-stone-600 rounded-t-lg border-b-0 text-center py-2 h-10 overflow-x-auto ${location.highlightClass}`}
+          className={`border border-stone-600 rounded-t-lg border-b-0 text-center h-15 overflow-x-auto relative ${location.highlightClass}`}
           onClick={() => toggleLocation(location.name)}
         >
-          <div className='whitespace-nowrap'>{location.name}</div>
+          <div className='text-xs text-stone-500 absolute right-1 bottom-0'>{`${location.openTime} ${location.closedDay}`}</div>
+          <div className='whitespace-nowrap py-4'>{location.name}</div>
         </div>
         <div className='flex border border-stone-600 rounded-b-lg overflow-x-auto'>
             <div className={`flex-1 p-2 ${location.goToShoppingClass}`} onClick={() => toggleGoToShopping(location.name)}></div>
@@ -369,7 +268,7 @@ function scrollToTop() {
 function App() {
   const [searchInput, setSearchInput] = useState('');
   const [activeTab, setActiveTab] = useState('neighbor');
-  const [locations, setLocations] = useState(initialLocations);
+  const [locations, setLocations] = useState(locationRawData);
   const [toGives, setToGives] = useState([]);
   const [showGiftList, setShowGiftList] = useState(false);
 
