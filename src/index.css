@@ -10,15 +10,15 @@
   @apply mr-2
 }
 
-.my-tabs span {
+.my-tabs a {
   @apply inline-block px-4 py-3 rounded-lg capitalize
 }
 
-.my-tabs span.inactive {
+.my-tabs a.inactive {
   @apply hover:text-stone-900 hover:bg-stone-200
 }
 
-.my-tabs span.active {
+.my-tabs a.active {
   @apply text-white bg-stone-600
 }
 

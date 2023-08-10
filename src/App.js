@@ -1,69 +1,48 @@
-// import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
-import Map from './Map';
-import Neighbors from './Neignbors';
-import Crops from './Crops';
-import Item from './Item';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSearchInput } from './store/searchInputSlice';
 import { toggleShowGiftList } from './store/showGiftListSlice';
+import { Outlet, Link, useLocation, useMatch, useResolvedPath } from "react-router-dom";
 
-const tabs = ['neighbor', 'crop', 'item', 'map'];
-
-function Tabs({ activeTab, setActiveTab }) {
-  const lis = [];
-  tabs.forEach(tab => {
-    lis.push(<li key={tab}>
-      <span className={activeTab === tab ? "active" : "inactive"} onClick={() => setActiveTab(tab)}>
-        {tab}
-      </span>
-    </li>)
-  })
-  return (
-    <ul className="my-tabs">
-        {lis}
-    </ul>
-  );
-}
 
 function scrollToTop() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
-function App() {
-  const searchInput = useSelector((state) => state.searchInput.value);
+
+function ToolButton({ onClick, children }) {
+  return (<button className='w-8' onClick={onClick}>{children}</button>)
+}
+
+function GiftListButton() {
   const toGives = useSelector((state) => state.toGives);
   const dispatch = useDispatch();
+  const location = useLocation();
 
-  const [activeTab, setActiveTab] = useState('neighbor');
-
-  function TabContent() {
-    if(activeTab === tabs[0]) {
-      return <Neighbors />
-    }
-
-    if(activeTab === tabs[1]) {
-      return <Crops />
-    }
-
-    if(activeTab === tabs[2]) {
-      return <Item />
-    }
-
-    return <Map />
+  if(location.pathname === '/neighbor' && toGives.length > 0) {
+    return(<ToolButton onClick={() => dispatch(toggleShowGiftList())} >⊞</ToolButton>);
   }
+  return (<></>);
+}
 
-  function ToolButton({ onClick, children }) {
-    return (<button className='w-8' onClick={onClick}>{children}</button>)
-  }
+function MyLink({ children, to, ...props }) {
+  let resolved = useResolvedPath(to);
+  let match = useMatch({ path: resolved.pathname, end: true });
 
-  function GiftListButton() {
-    if(activeTab === tabs[0] && toGives.length>0) {
-      return(<ToolButton onClick={() => dispatch(toggleShowGiftList())} >⊞</ToolButton>);
-    }
-    return (<></>);
-  }
+  return (
+      <Link
+        className={ match ? 'active' : 'inactive' }
+        to={to}
+        {...props}
+      >
+        {children}
+      </Link>
+  );
+}
+
+export default function Layout() {
+  const searchInput = useSelector((state) => state.searchInput.value);
+  const dispatch = useDispatch();
 
   return (
     <div className='m-2 space-y-2'>
@@ -77,14 +56,27 @@ function App() {
         />
         <button className='w-8' onClick={() => dispatch(setSearchInput(''))}>X</button>
       </div>
-    <Tabs activeTab={activeTab} setActiveTab={setActiveTab}/>
-    <TabContent />
-    <div className='fixed w-8 right-4 bottom-4'>
-      <GiftListButton />
-      <ToolButton onClick={scrollToTop} >⇧</ToolButton>
-    </div>
+      <nav>
+        <ul className='my-tabs'>
+          <li>
+            <MyLink to="/neighbor">Neighbor</MyLink>
+          </li>
+          <li>
+            <MyLink to="/crop">Crop</MyLink>
+          </li>
+          <li>
+            <MyLink to="/item">Item</MyLink>
+          </li>
+          <li>
+            <MyLink to="/map">Map</MyLink>
+          </li>
+        </ul>
+      </nav>
+      <Outlet />
+      <div className='fixed w-8 right-4 bottom-4'>
+        <GiftListButton />
+        <ToolButton onClick={scrollToTop} >⇧</ToolButton>
+      </div>
     </div>
   );
 }
-
-export default App;
