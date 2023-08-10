@@ -1,6 +1,9 @@
 import { cropRawData } from './cropRawData';
+import { useSelector } from 'react-redux';
 
-export default function Crops({ searchInput }) {
+export default function Crops() {
+  const searchInput = useSelector((state) => state.searchInput.value);
+
   const tableRows = [];
   cropRawData.forEach(data => {
     if(!JSON.stringify(data).includes(searchInput)) return;

@@ -1,6 +1,9 @@
 import itemRawData from './itemRawData';
+import { useSelector } from 'react-redux';
 
-export default function Item({ searchInput }) {
+export default function Item() {
+  const searchInput = useSelector((state) => state.searchInput.value);
+
   const rows = [];
 
   Object.entries(itemRawData).forEach(entry => {

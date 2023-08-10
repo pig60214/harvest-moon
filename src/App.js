@@ -5,6 +5,9 @@ import Map from './Map';
 import Neighbors from './Neignbors';
 import Crops from './Crops';
 import Item from './Item';
+import { useSelector, useDispatch } from 'react-redux';
+import { setSearchInput } from './store/searchInputSlice';
+import { toggleShowGiftList } from './store/showGiftListSlice';
 
 const tabs = ['neighbor', 'crop', 'item', 'map'];
 
@@ -29,22 +32,23 @@ function scrollToTop() {
   document.documentElement.scrollTop = 0;
 }
 function App() {
-  const [searchInput, setSearchInput] = useState('');
+  const searchInput = useSelector((state) => state.searchInput.value);
+  const toGives = useSelector((state) => state.toGives);
+  const dispatch = useDispatch();
+
   const [activeTab, setActiveTab] = useState('neighbor');
-  const [toGives, setToGives] = useState([]);
-  const [showGiftList, setShowGiftList] = useState(false);
 
   function TabContent() {
     if(activeTab === tabs[0]) {
-      return <Neighbors searchInput={searchInput} toGives={toGives} setToGives={setToGives} showGiftList={showGiftList} setShowGiftList={setShowGiftList} />
+      return <Neighbors />
     }
 
     if(activeTab === tabs[1]) {
-      return <Crops searchInput={searchInput}/>
+      return <Crops />
     }
 
     if(activeTab === tabs[2]) {
-      return <Item searchInput={searchInput}/>
+      return <Item />
     }
 
     return <Map />
@@ -56,7 +60,7 @@ function App() {
 
   function GiftListButton() {
     if(activeTab === tabs[0] && toGives.length>0) {
-      return(<ToolButton onClick={() => setShowGiftList(!showGiftList)} >⊞</ToolButton>);
+      return(<ToolButton onClick={() => dispatch(toggleShowGiftList())} >⊞</ToolButton>);
     }
     return (<></>);
   }
@@ -68,10 +72,10 @@ function App() {
           type="text"
           placeholder="Search here"
           className='grow border-b-2 border-stone-300 text-lg'
-          onChange={e => setSearchInput(e.target.value)}
+          onChange={e => dispatch(setSearchInput(e.target.value))}
           value={searchInput}
         />
-        <button className='w-8' onClick={e => setSearchInput('')}>X</button>
+        <button className='w-8' onClick={() => dispatch(setSearchInput(''))}>X</button>
       </div>
     <Tabs activeTab={activeTab} setActiveTab={setActiveTab}/>
     <TabContent />
