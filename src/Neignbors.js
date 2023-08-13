@@ -38,6 +38,10 @@ export default function Neighbors () {
       return rows;
     }
 
+    const heartEmoji = toGives.find(toGive => toGive.neighborhood === neighbor.name)
+                      ? neighbor.isMarriageCandidate ? '🩷' : '🧡'
+                      : neighbor.isMarriageCandidate ? '🩶' : '';
+
     return (
       <div className='my-card space-y-2'>
         <div className='my-card-header flex flex-col md:w-1/5'>
@@ -45,7 +49,7 @@ export default function Neighbors () {
           <div className='flex text-stone-600 divide-x divide-stone-400'>
             <div className='pr-2'>{ neighbor.description }</div>
             <div className='px-2'>{ neighbor.gender }</div>
-            {neighbor.isMarriageCandidate && <div className='px-2'>🩶</div>}
+            {heartEmoji !== '' && <div className='px-2'>{ heartEmoji }</div>}
           </div>
         </div>
         <div className='my-card-body flex md:w-4/5'>
@@ -77,7 +81,7 @@ export default function Neighbors () {
         <div className='w-1/5'>Favorite</div>
         <div className='w-1/5'>Very Like</div>
         <div className='w-1/5'>Like</div>
-        <div className='w-1/5'>Okay</div>
+        <div className='w-1/5'>Slightly Like</div>
       </div>
       <div className='space-y-2'>
         {row}
