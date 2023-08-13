@@ -37,3 +37,19 @@
 td, th {
   @apply border border-slate-600
 }
+
+.my-notification {
+  @apply w-40 h-12 p-3 shadow bg-white border rounded-l-md absolute right-0 top-4;
+}
+
+.my-notification.animation {
+  animation-name: my-notification-animation;
+  animation-duration: 5s;
+}
+
+@keyframes my-notification-animation {
+  0%   {@apply -right-40}
+  25%  {@apply right-0}
+  75%  {@apply right-0}
+  100% {@apply -right-40}
+}
