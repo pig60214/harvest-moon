@@ -44,7 +44,7 @@ export default function Neighbors () {
           <div className='font-black'>{ neighbor.name }</div>
           <div className='flex text-stone-600 divide-x divide-stone-400'>
             <div className='pr-2'>{ neighbor.description }</div>
-            <div className='px-2'>{ neighbor.gender === 'M' ? '♂' : '♀' }</div>
+            <div className='px-2'>{ neighbor.gender }</div>
             {neighbor.isMarriageCandidate && <div className='px-2'>🩶</div>}
           </div>
         </div>
