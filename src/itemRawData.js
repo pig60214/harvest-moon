@@ -56,6 +56,9 @@ const itemRawData = {
   '黃色染料': '花店購買',
   '白色染料': '花店購買',
 
+  '醋': '液體調味料加工機 放入 稻米',
+  '醬油': '液體調味料加工機 放入 豆子',
+
 };
 
 export default itemRawData;
