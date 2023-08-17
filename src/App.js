@@ -35,7 +35,7 @@ function MyLink({ children, to, ...props }) {
         to={to}
         {...props}
       >
-        {children}
+        {match ? <h1>{children}</h1> : children}
       </Link>
   );
 }

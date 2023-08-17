@@ -24,7 +24,7 @@ export default function Map() {
         >
           <div className='text-xs text-stone-500 hidden lg:block absolute right-1 bottom-0'>{`${location.openTime} ${location.closedDay}`}</div>
           <div className='text-xs text-stone-500 block lg:hidden absolute right-1 bottom-0' onClick={() => popInfo(`${location.openTime} ${location.closedDay}`)}>ⓘ</div>
-          <div className='whitespace-nowrap py-4'>{location.name}</div>
+          <div className='whitespace-nowrap py-4'><h2>{location.name}</h2></div>
         </div>
         <div className='flex border border-stone-600 rounded-b-lg overflow-x-auto'>
             <div className={`flex-1 p-2 ${location.goToShoppingClass}`} onClick={() => dispatch(toggleGoToShopping(index))}></div>
