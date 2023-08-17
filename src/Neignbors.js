@@ -78,10 +78,10 @@ export default function Neighbors () {
     <>
       <div className='hidden md:flex px-4 pt-2'>
         <div className='w-1/5'></div>
-        <div className='w-1/5'>Favorite</div>
-        <div className='w-1/5'>Very Like</div>
-        <div className='w-1/5'>Like</div>
-        <div className='w-1/5'>Slightly Like</div>
+        <div className='w-1/5'>最愛</div>
+        <div className='w-1/5'>很喜歡</div>
+        <div className='w-1/5'>喜歡</div>
+        <div className='w-1/5'>稍微喜歡</div>
       </div>
       <div className='space-y-2'>
         {row}

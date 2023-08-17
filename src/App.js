@@ -59,16 +59,16 @@ export default function Layout() {
       <nav>
         <ul className='my-tabs'>
           <li>
-            <MyLink to="/neighbor">Neighbor</MyLink>
+            <MyLink to="/neighbor">居民喜好</MyLink>
           </li>
           <li>
-            <MyLink to="/crop">Crop</MyLink>
+            <MyLink to="/crop">農作物</MyLink>
           </li>
           <li>
-            <MyLink to="/item">Item</MyLink>
+            <MyLink to="/item">物品</MyLink>
           </li>
           <li>
-            <MyLink to="/map">Map</MyLink>
+            <MyLink to="/map">地圖</MyLink>
           </li>
         </ul>
       </nav>
