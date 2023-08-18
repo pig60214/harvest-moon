@@ -19,13 +19,17 @@ export default function Crops() {
 
   return (
     <table>
-      <tr>
-        <th className="w-28">名稱</th>
-        <th className="w-20">種類</th>
-        <th className="w-32">季節</th>
-        <th className="w-12">變種</th>
-      </tr>
-      {tableRows}
+      <thead>
+        <tr>
+          <th className="w-28">名稱</th>
+          <th className="w-20">種類</th>
+          <th className="w-32">季節</th>
+          <th className="w-12">變種</th>
+        </tr>
+      </thead>
+      <tbody>
+        {tableRows}
+      </tbody>
     </table>
   );
 };
