@@ -25,6 +25,21 @@ function GiftListButton() {
   return (<></>);
 }
 
+function PageDescription() {
+  const location = useLocation();
+  const descriptions = {
+    '/neighbor': '不知道居民喜好嗎？知道喜好但背包一堆禮物，配對困難嗎？讓禮物小助手協助你吧～',
+    '/crop': '不知道農作物對應的季節嗎？快來查看看吧',
+    '/item': '物品太多不知道去哪收集嗎？這裡或許可以告訴你答案呦',
+    '/map': '常常忘記到小鎮的時候要做哪些事嗎？快使用地圖小幫手吧～',
+  };
+  if (descriptions[location.pathname]) {
+    return (<p>{descriptions[location.pathname]}</p>);
+  }
+
+  return (<></>);
+}
+
 function MyLink({ children, to, ...props }) {
   let resolved = useResolvedPath(to);
   let match = useMatch({ path: resolved.pathname, end: true });
@@ -76,6 +91,7 @@ export default function Layout() {
           </li>
         </ul>
       </nav>
+      <PageDescription />
       <Outlet />
       <div className='fixed w-8 right-4 bottom-4'>
         <GiftListButton />
