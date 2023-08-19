@@ -25,14 +25,15 @@ export default function Neighbors () {
 
     function Gifts({ level }) {
       const rows = [];
+      const selectdClass = 'bg-stone-400 rounded'
       if(showGiftList) {
         const toGive = toGives.find(toGive => toGive.neighborhood === neighbor.name);
         if(toGive && toGive.level === level) {
-          rows.push(<div key={toGive.gift} className='bg-stone-400' onClick={() => dispatch(toggleToGive({ neighborhood: neighbor.name, level, gift: toGive.gift }))}>{toGive.gift}</div>);
+          rows.push(<div key={toGive.gift} className={`px-1 py-1 md:py-0.5 box-decoration-clone ${selectdClass}`} onClick={() => dispatch(toggleToGive({ neighborhood: neighbor.name, level, gift: toGive.gift }))}>{toGive.gift}</div>);
         }
       } else {
         neighbor.gifts.filter(gift => isSearched(gift, level)).map(gift => gift.name).forEach(gift => {
-          rows.push(<div key={gift} className={toGives.find(toGive => toGive.neighborhood === neighbor.name && toGive.gift === gift) ? 'bg-stone-400' : ''} onClick={() =>dispatch(toggleToGive({ neighborhood: neighbor.name, level, gift }))}>{gift}</div>);
+          rows.push(<div key={gift} className={`px-1 py-1 md:py-0.5 box-decoration-clone ${toGives.find(toGive => toGive.neighborhood === neighbor.name && toGive.gift === gift) ? selectdClass : ''}`} onClick={() =>dispatch(toggleToGive({ neighborhood: neighbor.name, level, gift }))}>{gift}</div>);
         });
       }
       return rows;
