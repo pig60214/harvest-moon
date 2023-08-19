@@ -3,6 +3,7 @@ import searchInputSlice from './searchInputSlice'
 import locationsSlice from './locationsSlice';
 import toGivesSlice from './toGivesSlice';
 import showGiftListSlice from './showGiftListSlice';
+import toDoListSlice from './toDoListSlice';
 
 export default configureStore({
   reducer: {
@@ -10,5 +11,6 @@ export default configureStore({
     locations: locationsSlice,
     toGives: toGivesSlice,
     showGiftList: showGiftListSlice,
+    toDoList: toDoListSlice,
   },
 })

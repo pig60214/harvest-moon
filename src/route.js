@@ -4,6 +4,7 @@ import Map from './Map';
 import Neighbors from './Neignbors';
 import Crops from './Crops';
 import Item from './Item';
+import ToDoList from './ToDoList';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,9 @@ const router = createBrowserRouter([
       }, {
         path: "/map",
         element: <Map />,
+      }, {
+        path: "/todo",
+        element: <ToDoList />,
       },
     ]
   },

@@ -5,6 +5,8 @@ import { toggleShowGiftList } from './store/showGiftListSlice';
 import { Outlet, Link, useLocation, useMatch, useResolvedPath } from "react-router-dom";
 import upArrow from './assets/icons/up-arrow.png';
 import giftBox from './assets/icons/giftbox.png';
+import add from './assets/icons/add.png';
+import { addToDo } from './store/toDoListSlice';
 
 function scrollToTop() {
   document.body.scrollTop = 0;
@@ -22,6 +24,23 @@ function GiftListButton() {
 
   if(location.pathname === '/neighbor' && toGives.length > 0) {
     return(<ToolButton onClick={() => dispatch(toggleShowGiftList())} icon={giftBox} ></ToolButton>);
+  }
+  return (<></>);
+}
+
+function AddToDoButton() {
+  const dispatch = useDispatch();
+  const location = useLocation();
+
+  function writeTodo() {
+    const toDoContent = prompt('484有什麼該做的事要做？');
+    if (toDoContent != null && toDoContent !== '') {
+      dispatch(addToDo(toDoContent));
+    }
+  }
+
+  if(location.pathname === '/todo') {
+    return(<ToolButton onClick={() => writeTodo()} icon={add} ></ToolButton>);
   }
   return (<></>);
 }
@@ -90,12 +109,16 @@ export default function Layout() {
           <li>
             <MyLink to="/map">地圖</MyLink>
           </li>
+          <li>
+            <MyLink to="/todo">待辦清單</MyLink>
+          </li>
         </ul>
       </nav>
       <PageDescription />
       <Outlet />
       <div className='fixed w-8 right-4 top-1/2'>
         <GiftListButton />
+        <AddToDoButton />
         <ToolButton onClick={scrollToTop} icon={upArrow}></ToolButton>
       </div>
     </div>
