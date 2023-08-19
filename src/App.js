@@ -3,15 +3,16 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setSearchInput } from './store/searchInputSlice';
 import { toggleShowGiftList } from './store/showGiftListSlice';
 import { Outlet, Link, useLocation, useMatch, useResolvedPath } from "react-router-dom";
-
+import upArrow from './assets/icons/up-arrow.png';
+import giftBox from './assets/icons/giftbox.png';
 
 function scrollToTop() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
 
-function ToolButton({ onClick, children }) {
-  return (<button className='w-8' onClick={onClick}>{children}</button>)
+function ToolButton({ onClick, icon }) {
+  return (<button className='w-10 h-10 rounded-full shadow-lg' onClick={onClick}><img className='m-auto' src={icon} alt=''/></button>)
 }
 
 function GiftListButton() {
@@ -20,7 +21,7 @@ function GiftListButton() {
   const location = useLocation();
 
   if(location.pathname === '/neighbor' && toGives.length > 0) {
-    return(<ToolButton onClick={() => dispatch(toggleShowGiftList())} >⊞</ToolButton>);
+    return(<ToolButton onClick={() => dispatch(toggleShowGiftList())} icon={giftBox} ></ToolButton>);
   }
   return (<></>);
 }
@@ -93,9 +94,9 @@ export default function Layout() {
       </nav>
       <PageDescription />
       <Outlet />
-      <div className='fixed w-8 right-4 bottom-4'>
+      <div className='fixed w-8 right-4 top-1/2'>
         <GiftListButton />
-        <ToolButton onClick={scrollToTop} >⇧</ToolButton>
+        <ToolButton onClick={scrollToTop} icon={upArrow}></ToolButton>
       </div>
     </div>
   );
