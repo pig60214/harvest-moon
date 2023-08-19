@@ -29,6 +29,10 @@ function MyLink({ children, to, ...props }) {
   let resolved = useResolvedPath(to);
   let match = useMatch({ path: resolved.pathname, end: true });
 
+  if(match) {
+    document.title = `牧場物語-橄欖鎮：${children}`;
+  }
+
   return (
       <Link
         className={ match ? 'active' : 'inactive' }
