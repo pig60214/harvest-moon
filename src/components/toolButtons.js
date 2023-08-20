@@ -18,15 +18,16 @@ export default function ToolButtons() {
     document.documentElement.scrollTop = 0;
   }
 
-  function ToolButton({ onClick, icon }) {
-    return (<button className='w-10 h-10 rounded-full shadow-lg' onClick={onClick}><img className='m-auto' src={icon} alt=''/></button>)
+  function ToolButton({ onClick, icon, light = false }) {
+    return (<button className={`w-10 h-10 rounded-full shadow-lg ${light ? 'bg-stone-100 border border-stone-500' : 'opacity-80'}`} onClick={onClick}><img className='m-auto' src={icon} alt=''/></button>)
   }
 
   function GiftListButton() {
     const toGives = useSelector((state) => state.toGives);
+    const showGiftList = useSelector(state => state.showGiftList.value);
 
     if(location.pathname === '/neighbor' && toGives.length > 0) {
-      return(<ToolButton onClick={() => dispatch(toggleShowGiftList())} icon={giftBox} ></ToolButton>);
+      return(<ToolButton light={showGiftList} onClick={() => dispatch(toggleShowGiftList())} icon={giftBox} ></ToolButton>);
     }
   }
 
@@ -47,7 +48,7 @@ export default function ToolButtons() {
     const toGetCrops = useSelector(state => state.toGetCrops);
 
     if (location.pathname === '/crop' && toGetCrops.crops.length > 0) {
-      return(<ToolButton onClick={() => dispatch(toggleShowToGetCrops())} icon={bag} ></ToolButton>);
+      return(<ToolButton light={toGetCrops.showToGetCrops} onClick={() => dispatch(toggleShowToGetCrops())} icon={bag} ></ToolButton>);
     }
   }
 
