@@ -1260,7 +1260,7 @@ neighborRawDataV1.forEach(role => {
   const roleData = {
     name: role.name,
     description: role.description,
-    location: role.location,
+    // location: role.location,
     isMarriageCandidate: role.isMarriageCandidate,
     gender: role.gender,
     gifts: [],

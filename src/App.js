@@ -49,7 +49,7 @@ export default function Layout() {
       <div className='w-full flex'>
         <input
           type="text"
-          placeholder="Search here"
+          placeholder="查查看吧"
           className='grow border-b-2 border-stone-300 text-lg'
           onChange={e => dispatch(setSearchInput(e.target.value))}
           value={searchInput}

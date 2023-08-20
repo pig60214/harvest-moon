@@ -8,7 +8,7 @@ export default function Item() {
 
   Object.entries(itemRawData).forEach(entry => {
     const [key, value] = entry;
-    if(!key.includes(searchInput)) return;
+    if(!searchInput.trim().split(' ').map(s => key.includes(s)).find(s => s)) return;
     rows.push(<tr key={key}>
       <td>{key}</td>
       <td>{value}</td>

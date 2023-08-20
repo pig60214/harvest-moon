@@ -14,7 +14,7 @@ export default function Crops() {
     if (toGetCrops.showToGetCrops) {
       if (!toGetCrops.crops.find(c => c === data.name)) return;
     } else {
-      if (!data.name.includes(searchInput)) return;
+      if (!searchInput.trim().split(' ').map(s => data.name.includes(s)).find(s => s)) return;
       if (!JSON.stringify(setting.category).includes(data.category)) return;
       if (setting.season !== '全季節' && !data.season.includes(setting.season)) return;
     }

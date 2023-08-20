@@ -20,9 +20,6 @@ export default function Neighbors () {
   }
 
   function Neighbor ({ neighbor }) {
-    const isSearchName = neighbor.name.includes(searchInput) || neighbor.description.includes(searchInput);
-    const isSearched = (gift, level) => gift.level === level && (isSearchName || JSON.stringify(gift).includes(searchInput));
-
     function Gifts({ level }) {
       const rows = [];
       const selectdClass = 'bg-stone-400 rounded'
@@ -32,6 +29,10 @@ export default function Neighbors () {
           rows.push(<div key={toGive.gift} className={`px-1 py-1 md:py-0.5 box-decoration-clone ${selectdClass}`} onClick={() => dispatch(toggleToGive({ neighborhood: neighbor.name, level, gift: toGive.gift }))}>{toGive.gift}</div>);
         }
       } else {
+        const isSearchName = searchInput.trim().split(' ').map(s => neighbor.name.includes(s)).find(s => s) || searchInput.trim().split(' ').map(s => neighbor.description.includes(s)).find(s => s);
+        const isSearchGift = (gift) => searchInput.trim().split(' ').map(s => gift.includes(s)).find(s => s)
+        const isSearched = (gift, level) => gift.level === level && (isSearchName || isSearchGift(gift.name));
+
         neighbor.gifts.filter(gift => isSearched(gift, level)).map(gift => gift.name).forEach(gift => {
           rows.push(<div key={gift} className={`px-1 py-1 md:py-0.5 box-decoration-clone ${toGives.find(toGive => toGive.neighborhood === neighbor.name && toGive.gift === gift) ? selectdClass : ''}`} onClick={() =>dispatch(toggleToGive({ neighborhood: neighbor.name, level, gift }))}>{gift}</div>);
         });
@@ -72,7 +73,11 @@ export default function Neighbors () {
       }
       return;
     }
-    if(!JSON.stringify(neighbor).includes(searchInput)) return;
+
+    const neighborStr = JSON.stringify(neighbor);
+    const searched = searchInput.trim().split(' ').map(s => neighborStr.includes(s)).find(s => s);
+
+    if(!searched) return;
     row.push(<Neighbor neighbor={neighbor} key={neighbor.name} />)
   });
   return (
