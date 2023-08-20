@@ -52,6 +52,7 @@ function PageDescription() {
     '/crop': '不知道農作物對應的季節嗎？快來查看看吧',
     '/item': '物品太多不知道去哪收集嗎？這裡或許可以告訴你答案呦',
     '/map': '常常忘記到小鎮的時候要做哪些事嗎？快使用地圖小幫手吧～',
+    '/todo': '溫馨提醒：今日事，今日畢',
   };
   if (descriptions[location.pathname]) {
     return (<p>{descriptions[location.pathname]}</p>);

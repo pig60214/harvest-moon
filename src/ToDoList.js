@@ -37,6 +37,7 @@ export default function ToDoList() {
       {toGives.map((toGive, index) => <ToDo className="cursor-pointer" key={index} content={`送[${toGive.neighborhood}][${toGive.gift}]`} onClick={() => dispatch(toggleToGive(toGive))} />)}
       {locations.map((todo, index) => <ToDo key={index}>{todo}</ToDo>)}
       {toDoList.map(todo => <ToDo className="cursor-pointer" key={todo} content={todo} onClick={() => dispatch(removeToDo(todo))} />)}
+      {(toGives.length === 0 && locations.length === 0 && toDoList.length === 0) && <ToDo className='bg-gradient-to-r from-purple-500 to-pink-500 text-white' content='哇！太優秀了吧，待辦全空' /> }
     </ul>
   );
 }
