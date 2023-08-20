@@ -2,7 +2,7 @@ import './App.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSearchInput } from './store/searchInputSlice';
 import { Outlet, Link, useLocation, useMatch, useResolvedPath } from "react-router-dom";
-import ToolButtons from 'components/toolButtons';
+import ToolButtons from 'components/ToolButtons';
 
 function PageDescription() {
   const location = useLocation();
