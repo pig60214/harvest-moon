@@ -1,18 +1,24 @@
 import { cropRawData } from './cropRawData';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleCategory, setSeason } from './store/cropSearchSettingSlice';
+import { toggleCrop } from './store/toGetCropsSlice';
 
 export default function Crops() {
   const searchInput = useSelector((state) => state.searchInput.value);
   const setting = useSelector(state => state.cropSearchSetting);
+  const toGetCrops = useSelector(state => state.toGetCrops);
   const dispatch = useDispatch();
 
   const tableRows = [];
   cropRawData.forEach(data => {
-    if(!data.name.includes(searchInput)) return;
-    if(!JSON.stringify(setting.category).includes(data.category)) return;
+    if (toGetCrops.showToGetCrops) {
+      if (!toGetCrops.crops.find(c => c === data.name)) return;
+    } else {
+      if (!data.name.includes(searchInput)) return;
+      if (!JSON.stringify(setting.category).includes(data.category)) return;
+      if (setting.season !== '全季節' && !data.season.includes(setting.season)) return;
+    }
 
-    if(setting.season !== '全季節' && !data.season.includes(setting.season)) return;
     let image;
     try {
       image = <img className='w-12 m-auto' src={require(`./assets/images/crops/${data.name}.jpg`)} alt={data.name}/>;
@@ -20,7 +26,7 @@ export default function Crops() {
       image = <></>;
     }
     tableRows.push(
-      <tr key={data.name}>
+      <tr key={data.name} onClick={() => dispatch(toggleCrop(data.name))} className={toGetCrops.crops.find(c => c === data.name) ? 'bg-stone-300' : ''}>
         <td>{image}</td>
         <td>{data.name}{ data.topPrice ? '💰' : ''}</td>
         <td className="text-center">{data.category}</td>

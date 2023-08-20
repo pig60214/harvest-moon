@@ -1,13 +1,14 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
+import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
+import { persistReducer, persistStore } from 'redux-persist';
+import thunk from 'redux-thunk';
 import searchInputSlice from './searchInputSlice'
 import locationsSlice from './locationsSlice';
 import toGivesSlice from './toGivesSlice';
 import showGiftListSlice from './showGiftListSlice';
 import toDoListSlice from './toDoListSlice';
 import cropSearchSettingSlice from './cropSearchSettingSlice';
-import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
-import { persistReducer, persistStore } from 'redux-persist';
-import thunk from 'redux-thunk';
+import toGetCropsSlice from './toGetCropsSlice';
 
 const appReducer = combineReducers({
   searchInput: searchInputSlice,
@@ -16,6 +17,7 @@ const appReducer = combineReducers({
   showGiftList: showGiftListSlice,
   toDoList: toDoListSlice,
   cropSearchSetting: cropSearchSettingSlice,
+  toGetCrops: toGetCropsSlice
 });
 
 const rootReducer = (state, action) => {

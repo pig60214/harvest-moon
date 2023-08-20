@@ -2,10 +2,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { removeToDo } from "./store/toDoListSlice";
 import { toggleLocation, toggleGoToShopping, toggleGoToGiveTheGift } from './store/locationsSlice';
 import { toggleToGive } from "./store/toGivesSlice";
+import { toggleCrop } from "./store/toGetCropsSlice";
 
 function ToDo({ content, children, className, onClick }) {
   return (
-    <li className={`bg-stone-300 rounded-lg p-4 ${className}`} onClick={onClick}>
+    <li className={`bg-stone-300 rounded-lg p-4 cursor-pointer ${className}`} onClick={onClick}>
       {content}
       {children}
     </li>
@@ -29,15 +30,18 @@ export default function ToDoList() {
 
     return <div>去{name}{shopping ? shoppingDiv : toGiveDiv}</div>
   });
+  const toGetCrops = useSelector(state => state.toGetCrops).crops;
   const toDoList = useSelector((state) => state.toDoList);
+  const nothingToDo = toGives.length === 0 && locations.length === 0 && toDoList.length === 0 && toGetCrops.length === 0
   const dispatch = useDispatch();
 
   return (
     <ul className="flex flex-wrap gap-2">
-      {toGives.map((toGive, index) => <ToDo className="cursor-pointer" key={index} content={`送[${toGive.neighborhood}][${toGive.gift}]`} onClick={() => dispatch(toggleToGive(toGive))} />)}
-      {locations.map((todo, index) => <ToDo key={index}>{todo}</ToDo>)}
-      {toDoList.map(todo => <ToDo className="cursor-pointer" key={todo} content={todo} onClick={() => dispatch(removeToDo(todo))} />)}
-      {(toGives.length === 0 && locations.length === 0 && toDoList.length === 0) && <ToDo className='bg-gradient-to-r from-purple-500 to-pink-500 text-white' content='哇！太優秀了吧，待辦全空' /> }
+      {toGives.map((toGive, index) => <ToDo key={index} content={`送[${toGive.neighborhood}][${toGive.gift}]`} onClick={() => dispatch(toggleToGive(toGive))} />)}
+      {locations.map((todo, index) => <ToDo className='cursor-default' key={index}>{todo}</ToDo>)}
+      {toGetCrops.map(todo => <ToDo key={todo} content={`需要「${todo}」`} onClick={() => dispatch(toggleCrop(todo))} />)}
+      {toDoList.map(todo => <ToDo key={todo} content={todo} onClick={() => dispatch(removeToDo(todo))} />)}
+      {nothingToDo && <ToDo className='bg-gradient-to-r from-purple-500 to-pink-500 text-white' content='哇！太優秀了吧，待辦全空' /> }
     </ul>
   );
 }
