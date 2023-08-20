@@ -15,7 +15,7 @@ export default function Crops() {
     if(setting.season !== '全季節' && !data.season.includes(setting.season)) return;
     let image;
     try {
-      image = <img src={require(`./assets/images/crops/${data.name}.jpg`)} alt={data.name}/>;
+      image = <img className='w-12 m-auto' src={require(`./assets/images/crops/${data.name}.jpg`)} alt={data.name}/>;
     } catch (error) {
       image = <></>;
     }
@@ -43,11 +43,11 @@ export default function Crops() {
     <table>
       <thead>
         <tr>
-          <th className="w-12">圖片</th>
+          <th className="w-16">圖片</th>
           <th className="w-28">名稱</th>
           <th className="w-20">種類</th>
-          <th className="w-32">季節</th>
-          <th className="w-12">變種</th>
+          <th className="w-36">季節</th>
+          <th className="w-16">變種</th>
         </tr>
       </thead>
       <tbody>

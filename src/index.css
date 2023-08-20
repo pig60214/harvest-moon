@@ -42,8 +42,40 @@
   @apply p-2
 }
 
+table {
+  @apply border-separate border-spacing-0
+}
+
+th {
+  @apply bg-stone-100 py-1
+}
+
 td, th {
-  @apply border border-slate-600
+  @apply border border-stone-400 border-l-0 px-2
+}
+
+td {
+  @apply border-t-0
+}
+
+td:first-child {
+  @apply border-l
+}
+
+th:first-child {
+  @apply border-l rounded-tl-lg
+}
+
+th:last-child {
+  @apply rounded-tr-lg
+}
+
+tr:last-child td:first-child {
+  @apply rounded-bl-lg
+}
+
+tr:last-child td:last-child {
+  @apply rounded-br-lg
 }
 
 .my-notification {
