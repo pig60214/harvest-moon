@@ -9,7 +9,7 @@ import storage from 'redux-persist/lib/storage' // defaults to localStorage for 
 import { persistReducer, persistStore } from 'redux-persist';
 import thunk from 'redux-thunk';
 
-const rootReducer = combineReducers({
+const appReducer = combineReducers({
   searchInput: searchInputSlice,
   locations: locationsSlice,
   toGives: toGivesSlice,
@@ -17,6 +17,16 @@ const rootReducer = combineReducers({
   toDoList: toDoListSlice,
   cropSearchSetting: cropSearchSettingSlice,
 });
+
+const rootReducer = (state, action) => {
+  if (process.env.REACT_APP_STORE_VERSION !== localStorage.getItem('sv')) {
+    storage.removeItem('persist:root');
+    localStorage.setItem('sv', process.env.REACT_APP_STORE_VERSION);
+    return appReducer(undefined, action);
+  }
+
+  return appReducer(state, action);
+}
 
 const persistConfig = {
   key: 'root',
