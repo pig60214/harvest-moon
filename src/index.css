@@ -55,7 +55,7 @@ th {
 }
 
 td, th {
-  @apply border border-stone-400 border-l-0 px-2
+  @apply border border-stone-400 border-l-0 px-1 md:px-2
 }
 
 td {
