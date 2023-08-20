@@ -4,6 +4,7 @@ import locationsSlice from './locationsSlice';
 import toGivesSlice from './toGivesSlice';
 import showGiftListSlice from './showGiftListSlice';
 import toDoListSlice from './toDoListSlice';
+import cropSearchSettingSlice from './cropSearchSettingSlice';
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
 import { persistReducer, persistStore } from 'redux-persist';
 import thunk from 'redux-thunk';
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
   toGives: toGivesSlice,
   showGiftList: showGiftListSlice,
   toDoList: toDoListSlice,
+  cropSearchSetting: cropSearchSettingSlice,
 });
 
 const persistConfig = {
