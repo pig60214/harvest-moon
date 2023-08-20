@@ -113,31 +113,4 @@ const locationRawData = [
   },
 ];
 
-function addGetter(location) {
-  Object.defineProperty(location, 'highlightClass', {
-    get: function() { return this.highlight ? 'bg-stone-200' : '' }
-  });
-
-  Object.defineProperty(location, 'goToShoppingClass', {
-    get: function() { return this.goToShopping ? 'bg-sky-600' : 'bg-sky-100' }
-  });
-
-  Object.defineProperty(location, 'goToGiveTheGiftClass', {
-    get: function() { return this.goToGiveTheGift ? 'bg-pink-600' : 'bg-pink-100' }
-  });
-}
-
-function initLocations() {
-  locationRawData.forEach(location => {
-    location.highlight = false;
-    location.goToShopping = false;
-    location.goToGiveTheGift = false;
-
-    addGetter(location);
-  });
-}
-
-initLocations();
-
 export default locationRawData;
-export { addGetter };

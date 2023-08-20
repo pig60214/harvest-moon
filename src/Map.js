@@ -1,9 +1,10 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleLocation, toggleGoToShopping, toggleGoToGiveTheGift } from './store/locationsSlice';
 import { useState } from 'react';
+import locationRawData from './locationRawData';
 
 export default function Map() {
-  const locations = useSelector((state) => state.locations)
+  const toGos = useSelector((state) => state.locations)
   const dispatch = useDispatch()
   const [info, setInfo] = useState('');
   const [showInfo, setShowInfo] = useState(false);
@@ -14,21 +15,26 @@ export default function Map() {
     setTimeout(() => {setShowInfo(false)}, 5000);
   }
 
+  const selected = (name) => toGos.find(toGo => toGo.name === name) ? 'bg-stone-200' : '';
+  const toShopping = (name) => toGos.find(toGo => toGo.name === name && toGo.shopping) ? 'bg-sky-600' : 'bg-sky-100';
+  const toGive = (name) => toGos.find(toGo => toGo.name === name && toGo.toGive) ? 'bg-pink-600' : 'bg-pink-100';
+
   const rows = [];
-  locations.forEach((location, index) => {
+  locationRawData.forEach((location, index) => {
+    const { name, rowClass, colClass, openTime, closedDay } = location;
     rows.push(
-      <div key={location.name} className={`${location.rowClass} ${location.colClass}`}>
+      <div key={name} className={`${rowClass} ${colClass}`}>
         <div
-          className={`border border-stone-600 rounded-t-lg border-b-0 text-center h-15 overflow-x-auto relative ${location.highlightClass}`}
-          onClick={() => dispatch(toggleLocation(index))}
+          className={`border border-stone-600 rounded-t-lg border-b-0 text-center h-15 overflow-x-auto relative ${selected(name)}`}
+          onClick={() => dispatch(toggleLocation(name))}
         >
-          <div className='text-xs text-stone-500 hidden lg:block absolute right-1 bottom-0'>{`${location.openTime} ${location.closedDay}`}</div>
-          <div className='text-xs text-stone-500 block lg:hidden absolute right-1 bottom-0' onClick={() => popInfo(`${location.openTime} ${location.closedDay}`)}>ⓘ</div>
-          <div className='whitespace-nowrap py-4'><h2>{location.name}</h2></div>
+          <div className='text-xs text-stone-500 hidden lg:block absolute right-1 bottom-0'>{`${openTime} ${closedDay}`}</div>
+          <div className='text-xs text-stone-500 block lg:hidden absolute right-1 bottom-0' onClick={() => popInfo(`${openTime} ${closedDay}`)}>ⓘ</div>
+          <div className='whitespace-nowrap py-4'><h2>{name}</h2></div>
         </div>
         <div className='flex border border-stone-600 rounded-b-lg overflow-x-auto'>
-            <div className={`flex-1 p-2 ${location.goToShoppingClass}`} onClick={() => dispatch(toggleGoToShopping(index))}></div>
-            <div className={`flex-1 p-2 ${location.goToGiveTheGiftClass}`} onClick={() => dispatch(toggleGoToGiveTheGift(index))}></div>
+            <div className={`flex-1 p-2 ${toShopping(name)}`} onClick={() => dispatch(toggleGoToShopping(name))}></div>
+            <div className={`flex-1 p-2 ${toGive(name)}`} onClick={() => dispatch(toggleGoToGiveTheGift(name))}></div>
         </div>
       </div>);
   });

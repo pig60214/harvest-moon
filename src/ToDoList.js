@@ -12,7 +12,7 @@ function ToDo({ content, children }) {
 
 export default function ToDoList() {
   const toGives = useSelector((state) => state.toGives).map(toGive => `送[${toGive.neighborhood}][${toGive.gift}]`);
-  const locations = useSelector((state) => state.locations).filter(loc => loc.highlight).map(loc => `去[${loc.name}][${loc.goToShopping ? '買東西' : ''}${loc.goToGiveTheGift ? '送禮物' : ''}]`);
+  const locations = useSelector((state) => state.locations).map(loc => `去[${loc.name}][${loc.shopping ? '買東西' : ''}${loc.toGive ? '送禮物' : ''}]`);
   const toDoList = useSelector((state) => state.toDoList);
   const dispatch = useDispatch();
 
