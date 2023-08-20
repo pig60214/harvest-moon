@@ -45,7 +45,7 @@ export default function Layout() {
   const dispatch = useDispatch();
 
   return (
-    <div className='m-2 space-y-2'>
+    <div className='m-3 md:mx-auto max-w-screen-lg space-y-2'>
       <div className='w-full flex'>
         <input
           type="text"

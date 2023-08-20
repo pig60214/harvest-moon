@@ -6,7 +6,7 @@ import { toggleCrop } from "./store/toGetCropsSlice";
 
 function ToDo({ content, children, className, onClick }) {
   return (
-    <li className={`bg-stone-300 text-stone-600 rounded-lg p-4 cursor-pointer flex ${className}`} onClick={onClick}>
+    <li className={`bg-stone-300 text-stone-600 rounded-lg px-4 py-2 cursor-pointer flex ${className}`} onClick={onClick}>
       <div className="m-auto">
         {content}
         {children}
