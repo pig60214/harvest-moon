@@ -15,44 +15,51 @@ export default function Map() {
     setTimeout(() => {setShowInfo(false)}, 5000);
   }
 
-  const selected = (name) => toGos.find(toGo => toGo.name === name) ? 'bg-stone-200' : '';
-  const toShopping = (name) => toGos.find(toGo => toGo.name === name && toGo.shopping) ? 'bg-sky-600' : 'bg-sky-100';
-  const toGive = (name) => toGos.find(toGo => toGo.name === name && toGo.toGive) ? 'bg-pink-600' : 'bg-pink-100';
-
   const rows = [];
-  locationRawData.forEach((location, index) => {
-    const { name, rowClass, colClass, openTime, closedDay } = location;
+  locationRawData.forEach((location) => {
+    const { name, shortName, rowClass, colClass, openTime, closedDay } = location;
+    const isSelected = toGos.find(toGo => toGo.name === name);
+    const selected = isSelected ? 'bg-stone-200' : '';
+    const toShopping = toGos.find(toGo => toGo.name === name && toGo.shopping) ? 'bg-sky-600' : 'bg-sky-100';
+    const toGive = toGos.find(toGo => toGo.name === name && toGo.toGive) ? 'bg-pink-600' : 'bg-pink-100';
+
+    const infoContent = [openTime, closedDay].join(' ').trim();
     rows.push(
       <div key={name} className={`${rowClass} ${colClass}`}>
         <div
-          className={`border border-stone-600 rounded-t-lg border-b-0 text-center h-15 overflow-x-auto relative ${selected(name)}`}
-          onClick={() => dispatch(toggleLocation(name))}
+          className={`border border-stone-600 rounded-t-lg border-b-0 text-center h-15 overflow-x-auto relative ${selected}`}
+          onClick={() => { dispatch(toggleLocation(name)); infoContent !== '' && !isSelected && popInfo(infoContent);}}
         >
-          <div className='text-xs text-stone-500 hidden lg:block absolute right-1 bottom-0'>{`${openTime} ${closedDay}`}</div>
-          <div className='text-xs text-stone-500 block lg:hidden absolute right-1 bottom-0' onClick={() => popInfo(`${openTime} ${closedDay}`)}>ⓘ</div>
-          <div className='whitespace-nowrap py-4'><h2>{name}</h2></div>
+          <h2 className='whitespace-nowrap py-3 md:py-4'><span className='hidden md:inline'>{name}</span><span className='md:hidden'>{shortName ?? name}</span></h2>
+          <p className='text-xs text-stone-500 hidden md:block absolute right-1 bottom-0'>{infoContent}</p>
+          { infoContent !== '' && <div className='text-xs text-stone-500 block md:hidden absolute right-0.5 bottom-0'>ⓘ</div> }
         </div>
         <div className='flex border border-stone-600 rounded-b-lg overflow-x-auto'>
-            <div className={`flex-1 p-2 ${toShopping(name)}`} onClick={() => dispatch(toggleGoToShopping(name))}></div>
-            <div className={`flex-1 p-2 ${toGive(name)}`} onClick={() => dispatch(toggleGoToGiveTheGift(name))}></div>
+            <div className={`flex-1 p-2 ${toShopping}`} onClick={() => dispatch(toggleGoToShopping(name))}></div>
+            <div className={`flex-1 p-2 ${toGive}`} onClick={() => dispatch(toggleGoToGiveTheGift(name))}></div>
         </div>
       </div>);
   });
 
+  const notification = <div className={`my-notification md:hidden ${showInfo ? 'animation' : 'hidden'}`}>{info}</div>;
+  const description = (
+    <ul className='mt-4'>
+      <li className='flex gap-2 items-center'>
+        <div className='w-4 h-4 bg-sky-600 rounded'></div><div>買東西/找NPC</div>
+      </li>
+      <li className='flex gap-2 items-center'>
+        <div className='w-4 h-4 bg-pink-600 rounded'></div><div>送禮物</div>
+      </li>
+    </ul>
+  );
+
   return (
     <div>
-      <div className={`my-notification ${showInfo ? 'animation' : 'hidden'}`}>{info}</div>
-      <div className='grid grid-rows-6 grid-cols-9 gap-2 md:gap-4'>
+      { notification }
+      <div className='grid grid-rows-6 grid-cols-18 gap-1 md:gap-4'>
         {rows}
       </div>
-      <div className='mt-4'>
-        <div className='flex gap-2 items-center'>
-          <div className='bg-sky-600 w-4 h-4'></div><div>Shopping or do someting</div>
-        </div>
-        <div className='flex gap-2 items-center'>
-          <div className='bg-pink-600 w-4 h-4'></div><div>Give the gift</div>
-        </div>
-      </div>
+      { description }
     </div>
   );
 }

@@ -22,6 +22,10 @@ export default function ToolButtons() {
     return (<button className={`w-10 h-10 rounded-full shadow-lg ${light ? 'bg-stone-100 border border-stone-500' : 'opacity-80'}`} onClick={onClick}><img className='m-auto' src={icon} alt=''/></button>)
   }
 
+  function ScrollToTopButton() {
+    return location.pathname !== '/map' && <ToolButton onClick={scrollToTop} icon={upArrow}></ToolButton>;
+  }
+
   function GiftListButton() {
     const toGives = useSelector((state) => state.toGives);
     const showGiftList = useSelector(state => state.showGiftList.value);
@@ -57,7 +61,7 @@ export default function ToolButtons() {
       <GiftListButton />
       <AddToDoButton />
       <ToGetCropsButton />
-      <ToolButton onClick={scrollToTop} icon={upArrow}></ToolButton>
+      <ScrollToTopButton />
     </div>
   )
 }

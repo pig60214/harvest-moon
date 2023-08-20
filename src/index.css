@@ -93,7 +93,7 @@ tr:last-child td:last-child {
 
 @keyframes my-notification-animation {
   0%   {@apply -right-40}
-  25%  {@apply right-0}
-  75%  {@apply right-0}
+  10%  {@apply right-0}
+  90%  {@apply right-0}
   100% {@apply -right-40}
 }
