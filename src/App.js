@@ -70,13 +70,14 @@ function MyLink({ children, to, ...props }) {
   }
 
   return (
+    <li className={ match ? 'active' : 'inactive' }>
       <Link
-        className={ match ? 'active' : 'inactive' }
         to={to}
         {...props}
       >
         {match ? <h1>{children}</h1> : children}
       </Link>
+    </li>
   );
 }
 
@@ -98,21 +99,11 @@ export default function Layout() {
       </div>
       <nav>
         <ul className='my-tabs'>
-          <li>
             <MyLink to="/neighbor">居民喜好</MyLink>
-          </li>
-          <li>
             <MyLink to="/crop">農作物</MyLink>
-          </li>
-          <li>
             <MyLink to="/item">物品</MyLink>
-          </li>
-          <li>
             <MyLink to="/map">地圖</MyLink>
-          </li>
-          <li>
             <MyLink to="/todo">待辦清單</MyLink>
-          </li>
         </ul>
       </nav>
       <PageDescription />

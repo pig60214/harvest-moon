@@ -3,22 +3,18 @@
 @tailwind utilities;
 
 .my-tabs {
-  @apply flex flex-wrap text-sm font-medium text-center text-stone-500 text-stone-400
+  @apply flex flex-wrap text-sm font-medium text-center text-stone-500 text-stone-400 space-x-2
 }
 
 .my-tabs li {
-  @apply mr-2
-}
-
-.my-tabs a {
   @apply inline-block p-2 md:px-4 md:py-3 rounded-lg capitalize
 }
 
-.my-tabs a.inactive {
+.my-tabs li.inactive {
   @apply hover:text-stone-900 hover:bg-stone-200
 }
 
-.my-tabs a.active {
+.my-tabs li.active {
   @apply text-white bg-stone-600
 }
 
