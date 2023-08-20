@@ -38,10 +38,10 @@ export default function Crops() {
     <div>
     <div className='flex flex-col md:flex-row justify-center gap-1 md:gap-3 mb-1'>
       <ul className='my-tabs sm'>
-        { ['果樹', '蔬菜', '花卉'].map(c => <li key={c} className={setting.category.find(sc => c === sc) ? 'active' : 'inactive'} onClick={() => dispatch(toggleCategory(c))}>{c}</li>) }
+        { ['果樹', '蔬菜', '花卉', '全品種'].map(c => <li key={c} className={setting.category.find(sc => c === sc) ? 'active' : 'inactive'} onClick={() => dispatch(toggleCategory(c))}>{c}</li>) }
       </ul>
       <ul className='my-tabs sm'>
-        { ['春天', '夏天', '秋天', '冬天', '全季節'].map(s => <li key={s} className={setting.season === s ? 'active' : 'inactive'} onClick={() => dispatch(setSeason(s))}>{s}</li>) }
+        { ['春天', '夏天', '秋天', '冬天', '全季節'].map(s => <li key={s} className={setting.season === s || setting.season === '全季節' ? 'active' : 'inactive'} onClick={() => dispatch(setSeason(s))}>{s}</li>) }
       </ul>
     </div>
     <table className='md:mx-auto'>
