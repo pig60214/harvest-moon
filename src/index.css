@@ -11,7 +11,11 @@
 }
 
 .my-tabs li {
-  @apply inline-block p-2 md:px-4 md:py-3 rounded-lg capitalize
+  @apply rounded capitalize cursor-pointer
+}
+
+.my-tabs.nav li a {
+  @apply p-2 md:px-4 inline-block
 }
 
 .my-tabs.sm li {

@@ -98,7 +98,7 @@ export default function Layout() {
         <button className='w-8' onClick={() => dispatch(setSearchInput(''))}>X</button>
       </div>
       <nav>
-        <ul className='my-tabs'>
+        <ul className='my-tabs nav'>
             <MyLink to="/neighbor">居民喜好</MyLink>
             <MyLink to="/crop">農作物</MyLink>
             <MyLink to="/item">物品</MyLink>
