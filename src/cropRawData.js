@@ -453,6 +453,52 @@ const cropRawData = [
     ],
     "topPrice": true,
   },
+
+  {
+    "name": "稻米",
+    "category": "農作物",
+    "season": [
+      "春天",
+      "夏天",
+      "秋天"
+    ],
+  },
+  {
+    "name": "小麥",
+    "category": "農作物",
+    "season": [
+      "春天",
+      "夏天",
+      "秋天"
+    ],
+  },
+  {
+    "name": "茶葉",
+    "category": "農作物",
+    "season": [
+      "春天",
+      "夏天",
+      "秋天"
+    ],
+  },
+  {
+    "name": "豆子",
+    "category": "農作物",
+    "season": [
+      "春天",
+      "夏天",
+      "秋天"
+    ],
+  },
+  {
+    "name": "乾草飼料",
+    "category": "農作物",
+    "season": [
+      "春天",
+      "夏天",
+      "秋天"
+    ],
+  },
 ];
 
 const cropRawDataNameAsKey = {};

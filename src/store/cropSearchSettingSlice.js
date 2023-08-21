@@ -1,17 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+const selectAll = ['果樹', '蔬菜', '花卉', '農作物', '全品種'];
+
 export const cropSearchSettingSlice = createSlice({
   name: 'cropSearchSetting',
   initialState: {
-    category: ['果樹', '蔬菜', '花卉', '全品種'],
+    category: selectAll,
     season: '全季節',
   },
   reducers: {
     toggleCategory: (state, { payload }) => {
-      const selectAll = () => state.category = ['果樹', '蔬菜', '花卉', '全品種'];
-
       if (payload === '全品種') {
-        selectAll();
+        state.category = selectAll;
         return;
       }
 
@@ -23,8 +23,8 @@ export const cropSearchSettingSlice = createSlice({
         state.category = [...state.category, payload];
       }
 
-      if (state.category.filter(c => c !== '全品種').length === 3) {
-        selectAll();
+      if (state.category.filter(c => c !== '全品種').length === selectAll.length - 1) {
+        state.category = selectAll;
       } else {
         state.category = state.category.filter(c => c !== '全品種');
       }

@@ -38,7 +38,7 @@ export default function Crops() {
     <div>
     <div className='flex flex-col md:flex-row justify-center gap-1 md:gap-3 mb-1'>
       <ul className='my-tabs sm'>
-        { ['果樹', '蔬菜', '花卉', '全品種'].map(c => <li key={c} className={setting.category.find(sc => c === sc) ? 'active' : 'inactive'} onClick={() => dispatch(toggleCategory(c))}>{c}</li>) }
+        { ['果樹', '蔬菜', '花卉', '農作物', '全品種'].map(c => <li key={c} className={setting.category.find(sc => c === sc) ? 'active' : 'inactive'} onClick={() => dispatch(toggleCategory(c))}>{c}</li>) }
       </ul>
       <ul className='my-tabs sm'>
         { ['春天', '夏天', '秋天', '冬天', '全季節'].map(s => <li key={s} className={setting.season === s || setting.season === '全季節' ? 'active' : 'inactive'} onClick={() => dispatch(setSeason(s))}>{s}</li>) }
@@ -50,7 +50,7 @@ export default function Crops() {
           <th className="w-12 md:w-24">圖片</th>
           <th className="w-32">名稱</th>
           <th className="w-12 md:w-24">種類</th>
-          <th className="w-32">季節</th>
+          <th className="w-36">季節</th>
           <th className="w-12 md:w-24">變種</th>
         </tr>
       </thead>
