@@ -7,6 +7,7 @@ import giftBox from 'assets/icons/giftbox.png';
 import { toggleShowGiftList } from 'store/showGiftListSlice';
 import bag from 'assets/icons/school-bag.png';
 import { toggleShowToGetCrops } from 'store/toGetCropsSlice';
+import { toggleShowToGetItems } from 'store/toGetItemsSlice';
 
 export default function ToolButtons() {
 
@@ -56,11 +57,20 @@ export default function ToolButtons() {
     }
   }
 
+  function ToGetItemsButton() {
+    const toGetItems = useSelector(state => state.toGetItems);
+
+    if (location.pathname === '/item' && toGetItems.items.length > 0) {
+      return(<ToolButton light={toGetItems.showToGetItems} onClick={() => dispatch(toggleShowToGetItems())} icon={bag} ></ToolButton>);
+    }
+  }
+
   return (
     <div className='fixed w-8 right-4 top-1/2'>
       <GiftListButton />
       <AddToDoButton />
       <ToGetCropsButton />
+      <ToGetItemsButton />
       <ScrollToTopButton />
     </div>
   )

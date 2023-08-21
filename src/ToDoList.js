@@ -3,6 +3,8 @@ import { removeToDo } from "./store/toDoListSlice";
 import { toggleLocation, toggleGoToShopping, toggleGoToGiveTheGift } from './store/locationsSlice';
 import { toggleToGive } from "./store/toGivesSlice";
 import { toggleCrop } from "./store/toGetCropsSlice";
+import { toggleItem } from "store/toGetItemsSlice";
+import itemRawData from 'itemRawData';
 
 function ToDo({ content, children, className, onClick }) {
   return (
@@ -40,8 +42,12 @@ export default function ToDoList() {
     const content = <>需要<span className={hightlighText}>{todo}</span>{image}</>;
     return <ToDo key={todo} onClick={() => dispatch(toggleCrop(todo))}>{content}</ToDo>;
   });
+  const toGetItems = useSelector(state => state.toGetItems).items.map(todo => {
+    const content = <>透過 <span className={hightlighText}>{itemRawData[todo]}</span> 取得 <span className={`${hightlighText} underline decoration-2`}>{todo}</span></>;
+    return <ToDo key={todo} onClick={() => dispatch(toggleItem(todo))}>{content}</ToDo>;
+  });
   const toDoList = useSelector((state) => state.toDoList);
-  const nothingToDo = toGives.length === 0 && locations.length === 0 && toDoList.length === 0 && toGetCrops.length === 0
+  const nothingToDo = toGives.length === 0 && locations.length === 0 && toDoList.length === 0 && toGetCrops.length === 0 && toGetItems.length === 0;
   const dispatch = useDispatch();
 
   return (
@@ -49,6 +55,7 @@ export default function ToDoList() {
       {toGives}
       {locations.map((todo, index) => <ToDo className='cursor-default' key={index}>{todo}</ToDo>)}
       {toGetCrops}
+      {toGetItems}
       {toDoList.map(todo => <ToDo key={todo} content={todo} onClick={() => dispatch(removeToDo(todo))} />)}
       {nothingToDo && <ToDo className='bg-gradient-to-r from-purple-500 to-pink-500 text-white' content='哇！太優秀了吧，待辦全空' /> }
     </ul>

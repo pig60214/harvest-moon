@@ -9,6 +9,7 @@ import showGiftListSlice from './showGiftListSlice';
 import toDoListSlice from './toDoListSlice';
 import cropSearchSettingSlice from './cropSearchSettingSlice';
 import toGetCropsSlice from './toGetCropsSlice';
+import toGetItemsSlice from './toGetItemsSlice';
 
 const appReducer = combineReducers({
   searchInput: searchInputSlice,
@@ -17,7 +18,8 @@ const appReducer = combineReducers({
   showGiftList: showGiftListSlice,
   toDoList: toDoListSlice,
   cropSearchSetting: cropSearchSettingSlice,
-  toGetCrops: toGetCropsSlice
+  toGetCrops: toGetCropsSlice,
+  toGetItems: toGetItemsSlice,
 });
 
 const rootReducer = (state, action) => {

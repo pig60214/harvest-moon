@@ -11,15 +11,15 @@ export default function Crops() {
 
   const tableRows = [];
   cropRawData.forEach(data => {
+    const isSelected = toGetCrops.crops.find(c => c === data.name);
+
     if (toGetCrops.showToGetCrops) {
-      if (!toGetCrops.crops.find(c => c === data.name)) return;
+      if (!isSelected) return;
     } else {
       if (!searchInput.trim().split(' ').map(s => data.name.includes(s)).find(s => s)) return;
       if (!JSON.stringify(setting.category).includes(data.category)) return;
       if (setting.season !== '全季節' && !data.season.includes(setting.season)) return;
     }
-
-    const isSelected = toGetCrops.crops.find(c => c === data.name);
 
     const image = <img className={`w-12 m-auto rounded-full ${isSelected ? 'border border-stone-900' : ''}`} src={require(`assets/images/crops/${data.name}.jpg`)} alt={data.name}/>;
 
