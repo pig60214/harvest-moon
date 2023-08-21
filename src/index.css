@@ -55,22 +55,22 @@ th {
 }
 
 td, th {
-  @apply border border-stone-400 border-l-0 px-1 md:px-2
+  @apply border border-stone-400 border-l-0 border-t-0 px-1 md:px-2
 }
 
-td {
-  @apply border-t-0
-}
-
-td:first-child {
+td:first-child, th:first-child {
   @apply border-l
 }
 
-th:first-child {
+tr:first-child th {
+  @apply border-t
+}
+
+tr:first-child th:first-child {
   @apply border-l rounded-tl-lg
 }
 
-th:last-child {
+tr:first-child th:last-child {
   @apply rounded-tr-lg
 }
 
