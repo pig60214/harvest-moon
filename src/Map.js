@@ -30,8 +30,8 @@ export default function Map() {
           className={`border border-stone-600 rounded-t-lg border-b-0 text-center h-15 overflow-x-auto relative ${selected}`}
           onClick={() => { dispatch(toggleLocation(name)); infoContent !== '' && !isSelected && popInfo(infoContent);}}
         >
-          <h2 className='whitespace-nowrap py-3 md:py-4'><span className='hidden md:inline'>{name}</span><span className='md:hidden'>{shortName ?? name}</span></h2>
-          <p className='text-xs text-stone-500 hidden md:block absolute right-1 bottom-0'>{infoContent}</p>
+          <div className='whitespace-nowrap py-3 md:py-4'><span className='hidden md:inline'>{name}</span><span className='md:hidden'>{shortName ?? name}</span></div>
+          <div className='text-xs text-stone-500 hidden md:block absolute right-1 bottom-0'>{infoContent}</div>
           { infoContent !== '' && <div className='text-xs text-stone-500 block md:hidden absolute right-0.5 bottom-0'>ⓘ</div> }
         </div>
         <div className='flex border border-stone-600 rounded-b-lg overflow-x-auto'>

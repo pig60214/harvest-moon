@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  h1 {
+    @apply font-bold text-stone-800
+  }
+
+  h2 {
+    @apply text-sm font-bold text-stone-500
+  }
+
+  p {
+    @apply text-sm text-stone-500
+  }
+}
+
 .my-tabs {
   @apply flex flex-wrap text-sm font-medium text-center text-stone-500 text-stone-400 space-x-2
 }
