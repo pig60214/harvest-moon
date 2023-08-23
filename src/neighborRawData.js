@@ -821,7 +821,7 @@ const neighborRawDataV1 = [
     "gender": "F"
   },
   {
-    "name": "席尼",
+    "name": "席妮",
     "description": "女強人",
     "first": [
       "優格",

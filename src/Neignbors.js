@@ -2,12 +2,14 @@ import neighborRawData from './neighborRawData';
 import { cropRawDataNameAsKey } from './cropRawData';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleToGive } from './store/toGivesSlice';
+import { useState } from 'react';
 
 export default function Neighbors () {
   const searchInput = useSelector((state) => state.searchInput.value);
   const showGiftList = useSelector((state) => state.showGiftList.value);
   const toGives = useSelector((state) => state.toGives);
   const dispatch = useDispatch();
+  const [showProfile, setShowProfile] = useState({});
 
   function addNeighborDescription() {
     neighborRawData.forEach(data => {
@@ -44,10 +46,23 @@ export default function Neighbors () {
                       ? neighbor.isMarriageCandidate ? '🩷' : '🧡'
                       : neighbor.isMarriageCandidate ? '🩶' : '';
 
+    const toggleProfile = () => {
+      const next = {...showProfile};
+      if (next[neighbor.name]) {
+        next[neighbor.name] = !next[neighbor.name];
+      } else {
+        next[neighbor.name] = true;
+      }
+      setShowProfile(next);
+    }
+
+    const show = showProfile[neighbor.name];
+
     return (
       <div className='my-card space-y-2'>
         <div className='my-card-header flex flex-col md:w-1/5'>
-          <div className='font-black'>{ neighbor.name }</div>
+          <div className='font-black'>{ neighbor.name }<span className='cursor-pointer' onClick={() => toggleProfile()}>{ show ? ' ▲' : ' ▼'}</span></div>
+          {show && <img src={require(`assets/images/neighbors/${neighbor.name}.jpg`)} alt={neighbor.name} />}
           <div className='flex flex-wrap text-stone-600 divide-x divide-stone-400'>
             <div className='pr-2'>{ neighbor.description }</div>
             <div className='px-2'>{ neighbor.gender }</div>
