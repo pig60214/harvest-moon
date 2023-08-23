@@ -361,7 +361,7 @@ const neighborRawDataV1 = [
   },
   {
     "name": "勞爾",
-    "description": "漁夫小弟",
+    "description": "漁夫小弟,桃紅色T恤,武士頭",
     "location": ['馬可斯的家'],
     "first": [
       "香蕉",
@@ -1162,7 +1162,7 @@ const neighborRawDataV1 = [
   },
   {
     "name": "艾米里歐",
-    "description": "漁夫兒子",
+    "description": "漁夫兒子,花襯衫",
     "location": ['馬可斯的家'],
     "first": [
       "西瓜",
