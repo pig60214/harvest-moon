@@ -10,6 +10,7 @@ function PageDescription() {
   const [ showDescription, setShowDescription ] = useState();
   const descriptions = {
     '/neighbor': {
+      'title': '牧場物語橄欖鎮 | 居民喜好 | 禮物小助手：讓你準備禮物和送禮的過程不在耗腦！！',
       'h1': '不知道居民喜好嗎？知道喜好但背包一堆禮物，配對困難嗎？讓禮物小助手協助你吧',
       'h2': '禮物小助手說明',
       'p': '這是一個為了不考驗自己記憶力而生的功能，上方可以搜尋居民名字、居民描述或想送出的物品，快速找到想要的配對。點選物品後，小助手會幫你記錄起來，接著可以點擊出現在右手邊的禮物按鈕一覽要送出的配對。🩶：可結婚的居民，🩷：要送禮物給這位可結婚的居民🧡：要送禮給這位不可結婚居民'
@@ -35,6 +36,9 @@ function PageDescription() {
     },
   };
   if (descriptions[location.pathname]) {
+    if (descriptions[location.pathname].title) {
+      document.title = descriptions[location.pathname].title;
+    }
     return (
     <>
       <h1>{descriptions[location.pathname].h1}</h1>
@@ -54,7 +58,7 @@ function MyLink({ children, to, ...props }) {
   let resolved = useResolvedPath(to);
   let match = useMatch({ path: resolved.pathname, end: true });
 
-  if(match) {
+  if(match && children !== '居民喜好') {
     document.title = `牧場物語-橄欖鎮：${children}`;
   }
 
