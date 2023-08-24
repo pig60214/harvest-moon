@@ -107,6 +107,7 @@ export default function Neighbors () {
       <div className='space-y-2'>
         {row}
       </div>
+      <div className='text-sm text-stone-400'>圖片來源：<a className='underline' href='https://asia.sega.com/bokumono/olive/cht/town/?tab=resident'>-上街去吧-牧場物語 橄欖鎮與希望的大地 官方網站</a></div>
     </>
   );
 }
