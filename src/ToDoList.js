@@ -20,7 +20,13 @@ function ToDo({ content, children, className, onClick }) {
 export default function ToDoList() {
   const hightlighText = 'font-bold text-stone-800';
   const toGives = useSelector((state) => state.toGives).map((toGive, index) => {
-    return <ToDo key={index} onClick={() => dispatch(toggleToGive(toGive))}>將 <span className={hightlighText}>{toGive.gift} </span> 送給 <span className={hightlighText}>{toGive.neighborhood}</span></ToDo>;
+    return (
+      <ToDo key={index}
+        onClick={() => dispatch(toggleToGive(toGive))}>
+        將 <span className={hightlighText}>{toGive.gift} </span> 送給 <span className={hightlighText}>{toGive.neighborhood}</span>
+        <img className='w-10 inline rounded-full ml-2 border border-stone-900' src={require(`assets/images/neighbors/${toGive.neighborhood}-sm.jpg`)} alt={toGive.neighborhood} />
+      </ToDo>
+    );
   });
   const locations = useSelector((state) => state.locations).map(loc => {
     const { name, shopping, toGive } = loc;
