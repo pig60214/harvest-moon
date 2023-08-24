@@ -32,10 +32,10 @@ export default function ToDoList() {
     const shoppingDiv = <span className={`bg-sky-400 rounded p-1 cursor-pointer ${hightlighText}`} onClick={() => dispatch(toggleGoToShopping(name))}>買東西/找NPC</span>;
     const toGiveDiv = <span className={`bg-pink-400 rounded p-1 cursor-pointer ${hightlighText}`} onClick={() => dispatch(toggleGoToGiveTheGift(name))}>送禮物</span>;
     if (shopping && toGive) {
-      return <div>去{name}{shoppingDiv}{toGiveDiv}</div>;
+      return <div className="cursor-pointer" onClick={() => dispatch(toggleLocation(name))}>去{name}{shoppingDiv}{toGiveDiv}</div>;
     }
 
-    return <div>去{name}{shopping ? shoppingDiv : toGiveDiv}</div>
+    return <div className="cursor-pointer" onClick={() => dispatch(toggleLocation(name))}>去{name}{shopping ? shoppingDiv : toGiveDiv}</div>
   });
   const toGetCrops = useSelector(state => state.toGetCrops).crops.map(todo => {
     const image = <img className='w-10 inline rounded-full ml-2 border border-stone-900' src={require(`assets/images/crops/${todo}.jpg`)} alt={todo}/>;
