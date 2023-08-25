@@ -9,15 +9,8 @@ export const toGivesSlice = createSlice({
       const { neighborhood, level, gift } = payload;
 
       if(state.find(toGive => toGive.neighborhood === neighborhood && toGive.gift === gift)) {
-        const next = state.filter(toGive => toGive.neighborhood !== neighborhood);
+        const next = state.filter(toGive => !(toGive.neighborhood === neighborhood && toGive.gift === gift));
         return next;
-      } else if (state.find(toGive => toGive.neighborhood === neighborhood)) {
-        const next = state.filter(toGive => toGive.neighborhood !== neighborhood);
-        return [
-          ...next,
-          {neighborhood, level, gift},
-        ];
-
       } else {
         return [
           ...state,
