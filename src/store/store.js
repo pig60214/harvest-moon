@@ -10,6 +10,7 @@ import toDoListSlice from './toDoListSlice';
 import cropSearchSettingSlice from './cropSearchSettingSlice';
 import toGetCropsSlice from './toGetCropsSlice';
 import toGetItemsSlice from './toGetItemsSlice';
+import toWildAnimalsSlice from './toWildAnimalsSlice';
 
 const appReducer = combineReducers({
   searchInput: searchInputSlice,
@@ -20,6 +21,7 @@ const appReducer = combineReducers({
   cropSearchSetting: cropSearchSettingSlice,
   toGetCrops: toGetCropsSlice,
   toGetItems: toGetItemsSlice,
+  toWildAnimals: toWildAnimalsSlice,
 });
 
 const rootReducer = (state, action) => {

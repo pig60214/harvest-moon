@@ -5,6 +5,7 @@ import Neighbors from './Neignbors';
 import Crops from './Crops';
 import Item from './Item';
 import ToDoList from './ToDoList';
+import WildAnimals from "WildAnimals";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,9 @@ const router = createBrowserRouter([
       }, {
         path: "/map",
         element: <Map />,
+      }, {
+        path: "/wild_animals",
+        element: <WildAnimals />,
       }, {
         path: "/todo",
         element: <ToDoList />,
