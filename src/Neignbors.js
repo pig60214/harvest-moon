@@ -1,5 +1,4 @@
 import neighborRawData from './neighborRawData';
-import { cropRawDataNameAsKey } from './cropRawData';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleToGive } from './store/toGivesSlice';
 import { useState } from 'react';
@@ -11,16 +10,6 @@ export default function Neighbors () {
   const dispatch = useDispatch();
   const [showProfile, setShowProfile] = useState({});
 
-  function addNeighborDescription() {
-    neighborRawData.forEach(data => {
-      data.gifts.forEach(gift => {
-        if(cropRawDataNameAsKey[gift.name]) {
-          gift['description'] = cropRawDataNameAsKey[gift.name].category;
-        }
-      })
-    });
-  }
-
   function Neighbor ({ neighbor }) {
     function Gifts({ level }) {
       const rows = [];
@@ -31,9 +20,9 @@ export default function Neighbors () {
           rows.push(<div key={toGive.gift} className={`px-1 py-1 md:py-0.5 box-decoration-clone cursor-pointer ${selectdClass}`} onClick={() => dispatch(toggleToGive({ neighborhood: neighbor.name, level, gift: toGive.gift }))}>{toGive.gift}</div>);
         })
       } else {
-        const isSearchName = searchInput.trim().split(' ').map(s => neighbor.name.includes(s)).find(s => s) || searchInput.trim().split(' ').map(s => neighbor.description.includes(s)).find(s => s);
+        const isSearchNPC = searchInput.trim().split(' ').map(s => neighbor.name.includes(s)).find(s => s) || searchInput.trim().split(' ').map(s => neighbor.description.includes(s) ).find(s => s) || searchInput.trim().split(' ').map(s => neighbor.locations.join('').includes(s) ).find(s => s);
         const isSearchGift = (gift) => searchInput.trim().split(' ').map(s => gift.includes(s)).find(s => s)
-        const isSearched = (gift, level) => gift.level === level && (isSearchName || isSearchGift(gift.name));
+        const isSearched = (gift, level) => gift.level === level && (isSearchNPC || isSearchGift(gift.name));
 
         neighbor.gifts.filter(gift => isSearched(gift, level)).map(gift => gift.name).forEach(gift => {
           rows.push(<div key={gift} className={`px-1 py-1 md:py-0.5 box-decoration-clone cursor-pointer ${toGives.find(toGive => toGive.neighborhood === neighbor.name && toGive.gift === gift) ? selectdClass : ''}`} onClick={() =>dispatch(toggleToGive({ neighborhood: neighbor.name, level, gift }))}>{gift}</div>);
@@ -66,6 +55,7 @@ export default function Neighbors () {
           <div className='flex flex-wrap text-stone-600 divide-x divide-stone-400'>
             <div className='pr-2'>{ neighbor.description }</div>
             <div className='px-2'>{ neighbor.gender }</div>
+            <div className='px-2'>{ neighbor.locations.join(' ') }</div>
             {heartEmoji !== '' && <div className='px-2'>{ heartEmoji }</div>}
           </div>
         </div>
@@ -79,7 +69,6 @@ export default function Neighbors () {
     )
   }
 
-  addNeighborDescription();
   const row = [];
   neighborRawData.forEach(neighbor => {
     if(showGiftList) {

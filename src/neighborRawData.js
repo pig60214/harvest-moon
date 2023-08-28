@@ -1,8 +1,9 @@
+import locationRawData from "locationRawData";
 const neighborRawDataV1 = [
   {
     "name": "維克多",
     "description": "鎮長",
-    "location": ['鎮公所'],
+    "locations": ['鎮公所'],
     "first": [
       "珠寶哈密瓜",
       "發光手錶"
@@ -39,7 +40,7 @@ const neighborRawDataV1 = [
   {
     "name": "雅科波",
     "description": "橄欖鎮吉祥物/鎮長兒子",
-    "location": ['鎮公所'],
+    "locations": ['鎮公所'],
     "first": [
       "鑽石",
       "巨型海鮮比薩",
@@ -71,7 +72,7 @@ const neighborRawDataV1 = [
   {
     "name": "葛爾克",
     "description": "船長",
-    "location": ['動物商店'],
+    "locations": ['動物商店'],
     "first": [
       "心型菠菜",
       "頂級雞蛋",
@@ -102,7 +103,7 @@ const neighborRawDataV1 = [
   {
     "name": "奈吉爾",
     "description": "木匠",
-    "location": ['木工店'],
+    "locations": ['木工店'],
     "first": [
       "發光手錶"
     ],
@@ -130,7 +131,7 @@ const neighborRawDataV1 = [
   {
     "name": "傑森",
     "description": "旅店老闆",
-    "location": ['旅館＆咖啡廳'],
+    "locations": ['旅館＆咖啡廳'],
     "first": [
       "老舊的羅盤",
       "老舊的地圖"
@@ -163,7 +164,7 @@ const neighborRawDataV1 = [
   {
     "name": "麥奇",
     "description": "小胖子",
-    "location": ['旅館＆咖啡廳'],
+    "locations": ['旅館＆咖啡廳'],
     "first": [
       "香蕉"
     ],
@@ -199,7 +200,7 @@ const neighborRawDataV1 = [
   {
     "name": "克萊門斯",
     "description": "升級工具和做背包的",
-    "location": ['工具行'],
+    "locations": ['工具行'],
     "first": [
       "芬蘭甜菜沙拉",
       "栗子飯",
@@ -233,7 +234,7 @@ const neighborRawDataV1 = [
   {
     "name": "拉修",
     "description": "機車男",
-    "location": ['工具行'],
+    "locations": ['工具行'],
     "first": [
       "栗子飯",
       "披薩",
@@ -268,7 +269,7 @@ const neighborRawDataV1 = [
   {
     "name": "賽門",
     "description": "牛仔帽老爺爺",
-    "location": ['雜貨店'],
+    "locations": ['雜貨店'],
     "first": [
       "田園野菇派",
       "布丁",
@@ -303,7 +304,7 @@ const neighborRawDataV1 = [
   {
     "name": "關",
     "description": "花店爺爺",
-    "location": ['花店'],
+    "locations": ['花店'],
     "first": [
       "神秘的魚餌"
     ],
@@ -330,7 +331,7 @@ const neighborRawDataV1 = [
   {
     "name": "馬可斯",
     "description": "漁夫爸爸",
-    "location": ['馬可斯的家'],
+    "locations": ['馬可斯的家'],
     "first": [
       "巨型地瓜",
       "巨大海鮮披薩",
@@ -362,7 +363,7 @@ const neighborRawDataV1 = [
   {
     "name": "勞爾",
     "description": "漁夫小弟,桃紅色T恤,武士頭",
-    "location": ['馬可斯的家'],
+    "locations": ['馬可斯的家'],
     "first": [
       "香蕉",
       "美乃滋",
@@ -397,7 +398,7 @@ const neighborRawDataV1 = [
   {
     "name": "道節",
     "description": "少主侍從",
-    "location": ['清心庵'],
+    "locations": ['清心庵'],
     "first": [
       "巨大的蔥",
       "飯糰",
@@ -436,7 +437,7 @@ const neighborRawDataV1 = [
   {
     "name": "諾曼",
     "description": "食材店/地中海禿",
-    "location": ['食材店'],
+    "locations": ['食材店'],
     "first": [
       "金蘋果",
       "神秘魚餌",
@@ -471,7 +472,7 @@ const neighborRawDataV1 = [
   {
     "name": "最喜番",
     "description": "孤獨的美食家",
-    "location": ['最喜翻的家'],
+    "locations": ['最喜翻的家'],
     "first": [
       "義式番茄起司沙拉",
       "拿波里水煮魚",
@@ -504,7 +505,7 @@ const neighborRawDataV1 = [
   {
     "name": "葛洛莉雅",
     "description": "鎮長太太",
-    "location": ['鎮公所', '博物館'],
+    "locations": ['鎮公所', '博物館'],
     "first": [
       "金色草莓",
       "百花香水",
@@ -536,7 +537,7 @@ const neighborRawDataV1 = [
   {
     "name": "派翠西亞",
     "description": "動物商店店長",
-    "location": ['動物商店'],
+    "locations": ['動物商店'],
     "first": [
       "黃金桃子",
       "月夜夜曲",
@@ -570,7 +571,7 @@ const neighborRawDataV1 = [
   {
     "name": "莎莉",
     "description": "咖啡廳貴婦",
-    "location": ['旅館＆咖啡廳'],
+    "locations": ['旅館＆咖啡廳'],
     "first": [
       "柳橙果醬",
       "百花香水",
@@ -605,7 +606,7 @@ const neighborRawDataV1 = [
   {
     "name": "貝絲",
     "description": "紅毛雙馬尾眼鏡娘",
-    "location": ['博物館', '旅館＆咖啡廳'],
+    "locations": ['博物館', '旅館＆咖啡廳'],
     "first": [
       "發光手錶",
       "古代飾品",
@@ -636,7 +637,7 @@ const neighborRawDataV1 = [
   {
     "name": "美紗希",
     "description": "小餐館美魔女",
-    "location": ['小餐館'],
+    "locations": ['小餐館'],
     "first": [
       "醃漬小魚",
       "醃漬香菇",
@@ -676,7 +677,7 @@ const neighborRawDataV1 = [
   {
     "name": "潔西",
     "description": "老婆婆",
-    "location": ['雜貨店'],
+    "locations": ['雜貨店'],
     "first": [
       "蜂王漿",
       "蜂蜜布丁",
@@ -709,7 +710,7 @@ const neighborRawDataV1 = [
   {
     "name": "安琪拉",
     "description": "雜貨店老闆娘",
-    "location": ['雜貨店'],
+    "locations": ['雜貨店'],
     "first": [
       "咖啡布丁",
       "春風進行曲",
@@ -750,7 +751,7 @@ const neighborRawDataV1 = [
   {
     "name": "辛蒂",
     "description": "小女孩",
-    "location": ['雜貨店'],
+    "locations": ['雜貨店'],
     "first": [
       "櫻桃冷湯",
       "蜂蜜布丁",
@@ -785,7 +786,7 @@ const neighborRawDataV1 = [
   {
     "name": "曼紐拉",
     "description": "漁夫太太",
-    "location": ['馬可斯的家'],
+    "locations": ['馬可斯的家'],
     "first": [
       "葡萄牙海鮮銅鍋料理",
       "水果歐蕾",
@@ -858,7 +859,7 @@ const neighborRawDataV1 = [
   {
     "name": "卡琳娜",
     "description": "黑皮設計師",
-    "location": ['美人沙龍'],
+    "locations": ['美人沙龍'],
     "first": [
       "巨型鱷梨",
       "花束香水",
@@ -893,7 +894,7 @@ const neighborRawDataV1 = [
   {
     "name": "琴",
     "description": "美容師",
-    "location": ['美人沙龍'],
+    "locations": ['美人沙龍'],
     "first": [
       "拉明頓蛋糕",
       "摩卡",
@@ -929,7 +930,7 @@ const neighborRawDataV1 = [
   {
     "name": "小琳",
     "description": "花店老闆的女兒",
-    "location": ['花店'],
+    "locations": ['花店'],
     "first": [
       "橄欖",
       "金槍魚",
@@ -964,7 +965,7 @@ const neighborRawDataV1 = [
   {
     "name": "布萊兒",
     "description": "旅館&咖啡廳夫婦的女兒",
-    "location": ['旅館＆咖啡廳'],
+    "locations": ['旅館＆咖啡廳'],
     "first": [
       "雛菊",
       "鑽石",
@@ -999,7 +1000,7 @@ const neighborRawDataV1 = [
   {
     "name": "菈菈",
     "description": "觀光導遊",
-    "location": ['食材店', '觀光服務中心'],
+    "locations": ['食材店', '觀光服務中心'],
     "first": [
       "橄欖",
       "金槍魚",
@@ -1032,7 +1033,7 @@ const neighborRawDataV1 = [
   {
     "name": "蕾娜",
     "description": "博物館",
-    "location": ['博物館'],
+    "locations": ['博物館'],
     "first": [
       "芒果",
       "芒果配米餅",
@@ -1068,7 +1069,7 @@ const neighborRawDataV1 = [
   {
     "name": "布莉琪",
     "description": "動物商店",
-    "location": ['動物商店'],
+    "locations": ['動物商店'],
     "first": [
       "頂級牛奶",
       "牛頭牌鮮奶",
@@ -1097,7 +1098,7 @@ const neighborRawDataV1 = [
   {
     "name": "拉夫",
     "description": "巡林員",
-    "location": ['木工店'],
+    "locations": ['木工店'],
     "first": [
       "家常菜湯",
       "華麗手環"
@@ -1129,7 +1130,7 @@ const neighborRawDataV1 = [
   {
     "name": "伊織",
     "description": "武士裝",
-    "location": ['清心庵'],
+    "locations": ['清心庵'],
     "first": [
       "松茸",
       "奇妙釣餌",
@@ -1141,7 +1142,7 @@ const neighborRawDataV1 = [
       "香菇",
       "魚王釣餌",
       "醬油",
-      "鯛魚刺身"
+      "鯛魚生魚片"
     ],
     "third": [
       "米",
@@ -1163,7 +1164,7 @@ const neighborRawDataV1 = [
   {
     "name": "艾米里歐",
     "description": "漁夫兒子,花襯衫",
-    "location": ['馬可斯的家'],
+    "locations": ['馬可斯的家'],
     "first": [
       "西瓜",
       "海鮮番茄意面",
@@ -1197,7 +1198,7 @@ const neighborRawDataV1 = [
   {
     "name": "傑克",
     "description": "雜貨店兒子",
-    "location": ['雜貨店'],
+    "locations": ['雜貨店'],
     "first": [
       "杏仁",
       "中華炒麵",
@@ -1260,7 +1261,7 @@ neighborRawDataV1.forEach(role => {
   const roleData = {
     name: role.name,
     description: role.description,
-    // location: role.location,
+    locations: role.locations ? role.locations.map(rLoc => locationRawData.find(loc => rLoc === loc.name).shortName ) : [],
     isMarriageCandidate: role.isMarriageCandidate,
     gender: role.gender,
     gifts: [],

@@ -120,4 +120,10 @@ const locationRawData = [
   },
 ];
 
+locationRawData.forEach(loc => {
+  if(!loc.shortName) {
+    loc.shortName = loc.name;
+  }
+})
+
 export default locationRawData;

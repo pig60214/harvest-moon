@@ -501,8 +501,4 @@ const cropRawData = [
   },
 ];
 
-const cropRawDataNameAsKey = {};
-
-cropRawData.forEach(data => cropRawDataNameAsKey[data.name] = data);
-
-export { cropRawData, cropRawDataNameAsKey };
+export default cropRawData;
