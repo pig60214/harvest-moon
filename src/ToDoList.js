@@ -17,13 +17,29 @@ function ToDo({ content, children, className, onClick }) {
   );
 }
 
+function getGiftImage(name) {
+  let imgSource;
+  try {
+    imgSource = require(`assets/images/crops/${name}.jpg`);
+  } catch (error) {
+    try {
+      imgSource = require(`assets/images/dishes/${name}.jpg`);
+    } catch (error) {
+      
+    }
+  }
+  const giftImage = imgSource ? <img className='w-10 inline rounded-full border border-stone-900' src={imgSource} alt={name} /> : <></>;
+  return giftImage;
+}
+
 export default function ToDoList() {
   const hightlighText = 'font-bold text-stone-800';
   const toGives = useSelector((state) => state.toGives).map((toGive, index) => {
+    const giftImage = getGiftImage(toGive.gift);
     return (
       <ToDo key={index}
         onClick={() => dispatch(toggleToGive(toGive))}>
-        將 <span className={hightlighText}>{toGive.gift} </span> 送給 <span className={hightlighText}>{toGive.neighborhood}</span>
+        將 <span className={hightlighText}>{toGive.gift} </span>{giftImage} 送給 <span className={hightlighText}>{toGive.neighborhood}</span>
         <img className='w-10 inline rounded-full ml-2 border border-stone-900' src={require(`assets/images/neighbors/${toGive.neighborhood}-sm.jpg`)} alt={toGive.neighborhood} />
       </ToDo>
     );
