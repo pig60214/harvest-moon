@@ -223,7 +223,7 @@ const neighborRawDataV1 = [
       "腐皮烏冬面"
     ],
     "fourth": [
-      "地瓜",
+      "蕃薯",
       "絲線加工機",
       "毛線加工機",
       "優格製造機"
@@ -333,12 +333,12 @@ const neighborRawDataV1 = [
     "description": "漁夫爸爸",
     "locations": ['馬可斯的家'],
     "first": [
-      "巨型地瓜",
+      "巨型蕃薯",
       "巨大海鮮披薩",
       "堅果瑪芬蛋糕"
     ],
     "second": [
-      "地瓜",
+      "蕃薯",
       "拿波里水煮魚",
       "鯛魚生魚片",
       "意大利漁夫麵",
@@ -351,7 +351,7 @@ const neighborRawDataV1 = [
       "捕魚網"
     ],
     "fourth": [
-      "地瓜種子",
+      "蕃薯種子",
       "馬鈴薯",
       "沙丁魚",
       "柳葉魚",
@@ -702,7 +702,7 @@ const neighborRawDataV1 = [
     "fourth": [
       "陸蓮花種子",
       "玻璃石",
-      "地瓜"
+      "蕃薯"
     ],
     "isMarriageCandidate": false,
     "gender": "F"

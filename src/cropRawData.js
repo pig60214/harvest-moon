@@ -91,7 +91,23 @@ const cropRawData = [
     "hasVariant": true,
   },
   {
+    "name": "巨大蕪菁",
+    "category": "蔬菜",
+    "season": [
+      "春",
+    ],
+    "hasVariant": true,
+  },
+  {
     "name": "草莓",
+    "category": "蔬菜",
+    "season": [
+      "春",
+    ],
+    "hasVariant": true,
+  },
+  {
+    "name": "黃金草莓",
     "category": "蔬菜",
     "season": [
       "春",
@@ -145,6 +161,14 @@ const cropRawData = [
     "hasVariant": true,
   },
   {
+    "name": "彩色玉蜀黍",
+    "category": "蔬菜",
+    "season": [
+      "夏"
+    ],
+    "hasVariant": true,
+  },
+  {
     "name": "節瓜",
     "category": "蔬菜",
     "season": [
@@ -170,7 +194,17 @@ const cropRawData = [
     "name": "番茄",
     "category": "蔬菜",
     "season": [
-      "夏"
+      "夏",
+      "秋",
+    ],
+    "hasVariant": true,
+  },
+  {
+    "name": "巨大番茄",
+    "category": "蔬菜",
+    "season": [
+      "夏",
+      "秋",
     ],
     "hasVariant": true,
   },
@@ -184,7 +218,24 @@ const cropRawData = [
     "hasVariant": true,
   },
   {
+    "name": "珠寶哈密瓜",
+    "category": "蔬菜",
+    "season": [
+      "夏",
+      "秋",
+    ],
+    "hasVariant": true,
+  },
+  {
     "name": "茄子",
+    "category": "蔬菜",
+    "season": [
+      "夏"
+    ],
+    "hasVariant": true,
+  },
+  {
+    "name": "圓球茄子",
     "category": "蔬菜",
     "season": [
       "夏"
@@ -208,6 +259,14 @@ const cropRawData = [
     "hasVariant": true,
   },
   {
+    "name": "愛心菠菜",
+    "category": "蔬菜",
+    "season": [
+      "秋",
+    ],
+    "hasVariant": true,
+  },
+  {
     "name": "秋葵",
     "category": "蔬菜",
     "season": [
@@ -215,7 +274,15 @@ const cropRawData = [
     ],
   },
   {
-    "name": "地瓜",
+    "name": "蕃薯",
+    "category": "蔬菜",
+    "season": [
+      "秋",
+    ],
+    "hasVariant": true,
+  },
+  {
+    "name": "巨大蕃薯",
     "category": "蔬菜",
     "season": [
       "秋",
@@ -254,9 +321,27 @@ const cropRawData = [
     ],
     "hasVariant": true,
   },
+  {
+    "name": "黃金白菜",
+    "category": "蔬菜",
+    "season": [
+      "秋",
+      "冬"
+    ],
+    "hasVariant": true,
+  },
 
   {
     "name": "青蔥",
+    "category": "蔬菜",
+    "season": [
+      "冬"
+    ],
+    "hasVariant": true,
+    "topPrice": true,
+  },
+  {
+    "name": "巨大的青蔥",
     "category": "蔬菜",
     "season": [
       "冬"
@@ -273,6 +358,16 @@ const cropRawData = [
   },
   {
     "name": "馬鈴薯",
+    "category": "蔬菜",
+    "season": [
+      "冬",
+      "春",
+      "夏",
+    ],
+    "hasVariant": true,
+  },
+  {
+    "name": "星型馬鈴薯",
     "category": "蔬菜",
     "season": [
       "冬",
@@ -301,6 +396,15 @@ const cropRawData = [
   },
   {
     "name": "白蘿蔔",
+    "category": "蔬菜",
+    "season": [
+      "冬",
+      "春",
+    ],
+    "hasVariant": true
+  },
+  {
+    "name": "分岔白蘿蔔",
     "category": "蔬菜",
     "season": [
       "冬",
