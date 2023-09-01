@@ -17,7 +17,7 @@ function ToDo({ content, children, className, onClick }) {
   );
 }
 
-function getGiftImage(name) {
+function getImage(name) {
   let imgSource;
   try {
     imgSource = require(`assets/images/crops/${name}.jpg`);
@@ -28,7 +28,11 @@ function getGiftImage(name) {
       try {
         imgSource = require(`assets/images/animalProduct/${name}.jpg`);
       } catch (error) {
-        
+        try {
+          imgSource = require(`assets/images/items/${name}.jpg`);
+        } catch (error) {
+          
+        }
       }
     }
   }
@@ -39,7 +43,7 @@ function getGiftImage(name) {
 export default function ToDoList() {
   const hightlighText = 'font-bold text-stone-800';
   const toGives = useSelector((state) => state.toGives).map((toGive, index) => {
-    const giftImage = getGiftImage(toGive.gift);
+    const giftImage = getImage(toGive.gift);
     return (
       <ToDo key={index}
         onClick={() => dispatch(toggleToGive(toGive))}>
@@ -64,12 +68,13 @@ export default function ToDoList() {
     return <div className="cursor-pointer" onClick={() => dispatch(toggleLocation(name))}>去{name}{shopping ? shoppingDiv : toGiveDiv}</div>
   });
   const toGetCrops = useSelector(state => state.toGetCrops).crops.map(todo => {
-    const image = <img className='w-10 inline rounded-full ml-2 border border-stone-900' src={require(`assets/images/crops/${todo}.jpg`)} alt={todo}/>;
-    const content = <>需要<span className={hightlighText}>{todo}</span>{image}</>;
+    const image = getImage(todo);
+    const content = <>需要<span className={hightlighText}>{todo}</span> {image}</>;
     return <ToDo key={todo} onClick={() => dispatch(toggleCrop(todo))}>{content}</ToDo>;
   });
   const toGetItems = useSelector(state => state.toGetItems).items.map(todo => {
-    const content = <>透過 <span className={hightlighText}>{itemRawData[todo]}</span> 取得 <span className={`${hightlighText} underline decoration-2`}>{todo}</span></>;
+    const itemImage = getImage(todo);
+    const content = <>透過 <span className={hightlighText}>{itemRawData[todo]}</span> 取得 <span className={`${hightlighText} underline decoration-2`}>{todo}</span> {itemImage}</>;
     return <ToDo key={todo} onClick={() => dispatch(toggleItem(todo))}>{content}</ToDo>;
   });
   const toDoList = useSelector((state) => state.toDoList);

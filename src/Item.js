@@ -19,7 +19,16 @@ export default function Item() {
       if(!searchInput.trim().split(' ').map(s => key.includes(s)).find(s => s)) return;
     }
 
+    let image;
+    try {
+      const imgSource = require(`assets/images/items/${key}.jpg`);
+      image = <img className={`w-12 m-auto rounded-full ${isSelected ? 'border border-stone-900' : ''}`} src={imgSource} alt={key}/>
+    } catch (error) {
+      
+    }
+
     rows.push(<tr key={key} onClick={() => dispatch(toggleItem(key))} className={isSelected ? 'bg-stone-300' : ''}>
+      <td>{image}</td>
       <td className='h-8'>{key}</td>
       <td>{value}</td>
     </tr>)
@@ -31,6 +40,7 @@ export default function Item() {
     <table className='md:mx-auto'>
       <thead>
         <tr className='h-8'>
+        <th className="w-12 md:w-24">圖片</th>
           <th className='w-36'>名稱</th>
           <th className='w-64'>取得方式</th>
         </tr>
