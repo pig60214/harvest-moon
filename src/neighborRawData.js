@@ -12,7 +12,7 @@ const neighborRawDataV1 = [
       "哈密瓜",
       "拌飯",
       "松茸",
-      "玉米",
+      "玉蜀黍",
       "白米",
       "哈密瓜果醬"
     ],
@@ -223,7 +223,7 @@ const neighborRawDataV1 = [
       "腐皮烏冬面"
     ],
     "fourth": [
-      "蕃薯",
+      "地瓜",
       "絲線加工機",
       "毛線加工機",
       "優格製造機"
@@ -338,7 +338,7 @@ const neighborRawDataV1 = [
       "堅果瑪芬蛋糕"
     ],
     "second": [
-      "蕃薯",
+      "地瓜",
       "拿波里水煮魚",
       "鯛魚生魚片",
       "意大利漁夫麵",
@@ -351,7 +351,7 @@ const neighborRawDataV1 = [
       "捕魚網"
     ],
     "fourth": [
-      "蕃薯種子",
+      "地瓜種子",
       "馬鈴薯",
       "沙丁魚",
       "柳葉魚",
@@ -439,7 +439,7 @@ const neighborRawDataV1 = [
     "description": "食材店/地中海禿",
     "locations": ['食材店'],
     "first": [
-      "金蘋果",
+      "黃金蘋果",
       "神秘魚餌",
       "烤蘋果",
       "蘋果汁",
@@ -462,7 +462,7 @@ const neighborRawDataV1 = [
     "fourth": [
       "蕪菁",
       "洋蔥",
-      "蒜",
+      "大蒜",
       "菠蘿",
       "沙丁魚"
     ],
@@ -702,7 +702,7 @@ const neighborRawDataV1 = [
     "fourth": [
       "陸蓮花種子",
       "玻璃石",
-      "蕃薯"
+      "地瓜"
     ],
     "isMarriageCandidate": false,
     "gender": "F"
@@ -714,7 +714,8 @@ const neighborRawDataV1 = [
     "first": [
       "咖啡布丁",
       "春風進行曲",
-      "時髦手環"
+      "時髦手環",
+      "櫻桃果醬",
     ],
     "second": [
       "風鈴草",
@@ -861,7 +862,7 @@ const neighborRawDataV1 = [
     "description": "黑皮設計師",
     "locations": ['美人沙龍'],
     "first": [
-      "巨型鱷梨",
+      "巨型酪梨",
       "花束香水",
       "果味香水",
       "大地協奏曲",
@@ -876,13 +877,13 @@ const neighborRawDataV1 = [
       "花香香水"
     ],
     "third": [
-      "鱷梨",
+      "酪梨",
       "藍寶石",
       "蔬菜沙拉",
       "醃漬小魚"
     ],
     "fourth": [
-      "鱷梨幼苗",
+      "酪梨幼苗",
       "洋蔥",
       "草莓",
       "玫瑰",
@@ -912,8 +913,8 @@ const neighborRawDataV1 = [
       "可可亞"
     ],
     "third": [
-      "鱷梨",
-      "巨大鱷梨",
+      "酪梨",
+      "巨大酪梨",
       "可可豆",
       "紅寶石",
       "藍寶石"
@@ -1104,7 +1105,7 @@ const neighborRawDataV1 = [
       "華麗手環"
     ],
     "second": [
-      "黃色濃湯",
+      "黃色蔬菜濃湯",
       "混合湯",
       "貝類湯",
       "麵包",
@@ -1201,7 +1202,7 @@ const neighborRawDataV1 = [
     "locations": ['雜貨店'],
     "first": [
       "杏仁",
-      "中華炒麵",
+      "中華拉麵",
       "閃耀時鐘",
       "大熊木雕"
     ],
