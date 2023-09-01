@@ -17,11 +17,11 @@
 }
 
 .my-tabs {
-  @apply flex flex-wrap text-sm font-medium text-center text-stone-500 text-stone-400 space-x-2
+  @apply flex flex-wrap text-sm font-medium text-center text-stone-500 text-stone-400 gap-2
 }
 
 .my-tabs.sm {
-  @apply text-stone-400 space-x-1
+  @apply text-stone-400 gap-1
 }
 
 .my-tabs li {
