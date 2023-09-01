@@ -25,7 +25,11 @@ function getGiftImage(name) {
     try {
       imgSource = require(`assets/images/dishes/${name}.jpg`);
     } catch (error) {
-      
+      try {
+        imgSource = require(`assets/images/animalProduct/${name}.jpg`);
+      } catch (error) {
+        
+      }
     }
   }
   const giftImage = imgSource ? <img className='w-10 inline rounded-full border border-stone-900' src={imgSource} alt={name} /> : <></>;

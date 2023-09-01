@@ -76,12 +76,12 @@ const neighborRawDataV1 = [
     "first": [
       "心型菠菜",
       "頂級雞蛋",
-      "頂級烏骨雞雞蛋",
+      "頂級烏骨雞蛋",
       "雞蛋沙拉"
     ],
     "second": [
       "雞蛋",
-      "烏骨雞雞蛋",
+      "烏骨雞蛋",
       "羊毛毛料",
       "馬鈴薯沙拉",
       "荷包蛋"
@@ -852,7 +852,7 @@ const neighborRawDataV1 = [
       "杏仁",
       "檸檬",
       "牛奶",
-      "烏骨雞雞蛋"
+      "烏骨雞蛋"
     ],
     "isMarriageCandidate": false,
     "gender": "F"
