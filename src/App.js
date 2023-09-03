@@ -98,7 +98,7 @@ export default function Layout() {
             <MyLink to="/crop">農作物</MyLink>
             <MyLink to="/item">物品</MyLink>
             <MyLink to="/map">地圖</MyLink>
-            <MyLink to="/wild_animals">野生動物</MyLink>
+            <MyLink to="/animals">動物</MyLink>
             <MyLink to="/todo">待辦清單</MyLink>
         </ul>
       </nav>

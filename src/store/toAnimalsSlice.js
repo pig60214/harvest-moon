@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export const toWildAnimalsSlice = createSlice({
-  name: 'toWildAnimals',
+export const toAnimalsSlice = createSlice({
+  name: 'toAnimals',
   initialState: [],
   reducers: {
-    toggleToWildAnimal: (state, { payload }) => {
+    toggleToAnimal: (state, { payload }) => {
 
       if(state.find(animal => animal.name === payload.name)) {
         const next = state.filter(animal => animal.name !== payload.name);
@@ -19,6 +19,6 @@ export const toWildAnimalsSlice = createSlice({
   },
 })
 
-export const { toggleToWildAnimal } = toWildAnimalsSlice.actions
+export const { toggleToAnimal } = toAnimalsSlice.actions
 
-export default toWildAnimalsSlice.reducer
+export default toAnimalsSlice.reducer
