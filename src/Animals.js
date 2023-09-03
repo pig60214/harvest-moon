@@ -48,9 +48,10 @@ export default function Animals() {
       <tr key={animal.name} onClick={() => dispatch(toggleToAnimal(animal))} className={isSelected ? 'bg-stone-300' : ''}>
         <td>{image}</td>
         <td>{animal.name}</td>
-        <td>{animal.time}</td>
-        <td>{animal.locations}</td>
-        <td>{animal.weather}</td>
+        <td className='md:hidden'>{animal.time}<br/>{animal.locations}<br/>{animal.weather}</td>
+        <td className='hidden md:table-cell'>{animal.time}</td>
+        <td className='hidden md:table-cell'>{animal.locations}</td>
+        <td className='hidden md:table-cell'>{animal.weather}</td>
       </tr>
     )
   });
@@ -65,10 +66,11 @@ export default function Animals() {
         <tr><th colSpan={5}>{panel}</th></tr>
         <tr className='h-8'>
           <th className="w-12 md:w-24">圖片</th>
-          <th className='w-36'>名稱</th>
-          <th className='w-64'>時間</th>
-          <th className='w-64'>地點</th>
-          <th className='w-64'>天氣</th>
+          <th className='w-24 md:w-36'>名稱</th>
+          <th className='md:hidden w-64' colSpan={3}></th>
+          <th className='hidden md:table-cell md:w-64'>時間</th>
+          <th className='hidden md:table-cell md:w-64'>地點</th>
+          <th className='hidden md:table-cell md:w-64'>天氣</th>
         </tr>
       </thead>
       <tbody>
