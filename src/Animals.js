@@ -38,14 +38,22 @@ export default function Animals() {
   const tabs = ['野生動物', '水中生物'];
   const [selectedTab, setSelectedTab] = useState('野生動物');
   const rawData = selectedTab === '野生動物' ? wildAnimalsRawData : fishesRawData;
-  const rows = rawData.map(animal => (
-    <tr key={animal.name} onClick={() => dispatch(toggleToAnimal(animal))} className={toAnimals.find(a => a.name === animal.name) ? 'bg-stone-300' : ''}>
-      <td>{animal.name}</td>
-      <td>{animal.time}</td>
-      <td>{animal.locations}</td>
-      <td>{animal.weather}</td>
-    </tr>
-  ));
+  const rows = rawData.map(animal => {
+    const isSelected = toAnimals.find(a => a.name === animal.name);
+    let image;
+    try {
+      image = <img className={`w-12 m-auto rounded-full ${isSelected ? 'border border-stone-900' : ''}`} src={require(`assets/images/animals/${animal.name}.jpg`)} alt={animal.name}/>;
+    } catch (error) {}
+    return (
+      <tr key={animal.name} onClick={() => dispatch(toggleToAnimal(animal))} className={isSelected ? 'bg-stone-300' : ''}>
+        <td>{image}</td>
+        <td>{animal.name}</td>
+        <td>{animal.time}</td>
+        <td>{animal.locations}</td>
+        <td>{animal.weather}</td>
+      </tr>
+    )
+  });
   const panel = (<div>
     <ul className='my-tabs sm'>
       { tabs.map(tab => <li key={tab} className={tab === selectedTab ? 'active' : 'inactive'} onClick={() => {setSelectedTab(tab)}}>{tab}</li>) }
@@ -54,8 +62,9 @@ export default function Animals() {
   return (
     <table className='md:mx-auto'>
       <thead>
-        <tr><th colSpan={4}>{panel}</th></tr>
+        <tr><th colSpan={5}>{panel}</th></tr>
         <tr className='h-8'>
+          <th className="w-12 md:w-24">圖片</th>
           <th className='w-36'>名稱</th>
           <th className='w-64'>時間</th>
           <th className='w-64'>地點</th>

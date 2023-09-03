@@ -32,7 +32,11 @@ function getImage(name) {
         try {
           imgSource = require(`assets/images/items/${name}.jpg`);
         } catch (error) {
-          
+          try {
+            imgSource = require(`assets/images/animals/${name}.jpg`);
+          } catch (error) {
+            
+          }
         }
       }
     }
@@ -80,7 +84,8 @@ export default function ToDoList() {
   });
 
   const toAnimals = useSelector(state => state.toAnimals).map(todo => {
-    const content = <>{todo.time ? `在 ${todo.time} ` : ''}{`去 ${todo.locations} 找`} <span className={hightlighText}>{todo.name}</span>{todo.weather ? ` (${todo.weather})` : ''}</>
+    const image = getImage(todo.name);
+    const content = <>{todo.time ? `在 ${todo.time} ` : ''}{`去 ${todo.locations} 找`} <span className={hightlighText}>{todo.name}</span>{image}{todo.weather ? ` (${todo.weather})` : ''}</>
     return <ToDo key={todo.name} onClick={() => dispatch(toggleToAnimal(todo))}>{content}</ToDo>;
   });
   const toDoList = useSelector((state) => state.toDoList);
