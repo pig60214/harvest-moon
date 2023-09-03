@@ -25,12 +25,18 @@ const wildAnimalsRawData = [
   { name: '球馬陸', time: '全年', locations: '礦山 3 入口前有岩石的地方', weather: '大雪不出現'},
 ];
 const fishesRawData = [
-  { name: '龍膽石斑', time: 'AM7~AM11', locations: '區域 1 的海邊', weather: '晴天或雨天'},
-  { name: '大王烏賊', time: '', locations: '釣客島海邊', weather: ''},
+  { name: '湄公河巨鯰👑', time: 'AM7~AM11', locations: '區域 1 河流', weather: ''},
+  { name: '龍膽石斑👑', time: 'AM7~AM11', locations: '區域 1 海邊', weather: '晴、雨'},
+  { name: '旗魚👑', time: 'PM12~AM2', locations: '區域 2 海邊', weather: '晴、雪'},
+  { name: '雪花鴨嘴燕魟👑', time: 'PM2~PM4', locations: '區域 3 海邊', weather: '晴、雪、大雪'},
+  { name: '帝王蟹👑', time: '', locations: '區域 3 礦區', weather: ''},
+  { name: '大王烏賊👑', time: '', locations: '釣客島海邊', weather: ''},
+  { name: '扁鱈👑', time: 'PM9~PM11', locations: '上古之湖', weather: ''},
+  { name: '大雀鱔', time: 'PM5~AM2', locations: '區域 3 海邊、礦區', weather: ''},
   // { name: '', time: '', locations: '', weather: ''},
   // { name: '', time: '', locations: '', weather: ''},
   // { name: '', time: '', locations: '', weather: ''},
-
+  
 ];
 export default function Animals() {
   const dispatch = useDispatch();
