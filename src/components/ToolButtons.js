@@ -9,6 +9,9 @@ import bag from 'assets/icons/school-bag.png';
 import { toggleShowToGetCrops } from 'store/toGetCropsSlice';
 import { toggleShowToGetItems } from 'store/toGetItemsSlice';
 import { setupGAEventTracker } from 'GA';
+import feedback from 'assets/icons/feedback.png';
+
+const FEEDBACK_FORM = 'https://docs.google.com/forms/d/e/1FAIpQLSckoi1QGqUuSgusVMuVgWTqQxrnxvG98YOtWWFbISqtWX3zFQ/viewform';
 
 export default function ToolButtons() {
   const gaEventTracker = setupGAEventTracker('ToolButtons');
@@ -27,6 +30,11 @@ export default function ToolButtons() {
 
   function ScrollToTopButton() {
     return location.pathname !== '/map' && <ToolButton onClick={() => { scrollToTop(); gaEventTracker('ToolButtons-ScrollToTop'); }} icon={upArrow}></ToolButton>;
+  }
+
+  function FeedbackButton() {
+    const openFeedbackForm = () => window.open(FEEDBACK_FORM);
+    return (<ToolButton onClick={openFeedbackForm} icon={feedback}></ToolButton>)
   }
 
   function GiftListButton() {
@@ -68,12 +76,15 @@ export default function ToolButtons() {
   }
 
   return (
-    <div className='fixed w-8 right-4 top-1/2'>
-      <GiftListButton />
-      <AddToDoButton />
-      <ToGetCropsButton />
-      <ToGetItemsButton />
-      <ScrollToTopButton />
-    </div>
+    <>
+      <div className='fixed w-8 right-4 top-1/2'>
+        <GiftListButton />
+        <AddToDoButton />
+        <ToGetCropsButton />
+        <ToGetItemsButton />
+        <ScrollToTopButton />
+      </div>
+      <div className='fixed w-8 right-4 bottom-4'><FeedbackButton /></div>
+    </>
   )
 }
