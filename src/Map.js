@@ -2,8 +2,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { toggleLocation, toggleGoToShopping, toggleGoToGiveTheGift } from './store/locationsSlice';
 import { useState } from 'react';
 import locationRawData from './locationRawData';
+import { setupGAEventTracker } from 'GA';
 
 export default function Map() {
+  const gaEventTracker = setupGAEventTracker('地圖');
   const toGos = useSelector((state) => state.locations)
   const dispatch = useDispatch()
   const [info, setInfo] = useState('');
@@ -28,7 +30,7 @@ export default function Map() {
       <div key={name} className={`${rowClass} ${colClass}`}>
         <div
           className={`border border-stone-600 rounded-t-lg border-b-0 text-center h-15 overflow-x-auto relative ${selected}`}
-          onClick={() => { dispatch(toggleLocation(name)); infoContent !== '' && !isSelected && popInfo(infoContent);}}
+          onClick={() => { dispatch(toggleLocation(name)); infoContent !== '' && !isSelected && popInfo(infoContent); gaEventTracker('地圖-Click Location');}}
         >
           <div className='whitespace-nowrap py-3 md:py-4'><span className='hidden md:inline'>{name}</span><span className='md:hidden'>{shortName}</span></div>
           <div className='text-xs text-stone-500 hidden md:block absolute right-1 bottom-0'>{infoContent}</div>

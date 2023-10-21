@@ -8,8 +8,10 @@ import { toggleShowGiftList } from 'store/showGiftListSlice';
 import bag from 'assets/icons/school-bag.png';
 import { toggleShowToGetCrops } from 'store/toGetCropsSlice';
 import { toggleShowToGetItems } from 'store/toGetItemsSlice';
+import { setupGAEventTracker } from 'GA';
 
 export default function ToolButtons() {
+  const gaEventTracker = setupGAEventTracker('ToolButtons');
 
   const dispatch = useDispatch();
   const location = useLocation();
@@ -24,7 +26,7 @@ export default function ToolButtons() {
   }
 
   function ScrollToTopButton() {
-    return location.pathname !== '/map' && <ToolButton onClick={scrollToTop} icon={upArrow}></ToolButton>;
+    return location.pathname !== '/map' && <ToolButton onClick={() => { scrollToTop(); gaEventTracker('ToolButtons-ScrollToTop'); }} icon={upArrow}></ToolButton>;
   }
 
   function GiftListButton() {
@@ -32,7 +34,7 @@ export default function ToolButtons() {
     const showGiftList = useSelector(state => state.showGiftList.value);
 
     if(location.pathname === '/neighbor' && toGives.length > 0) {
-      return(<ToolButton light={showGiftList} onClick={() => dispatch(toggleShowGiftList())} icon={giftBox} ></ToolButton>);
+      return(<ToolButton light={showGiftList} onClick={() => { dispatch(toggleShowGiftList()); gaEventTracker('ToolButtons-GiftList'); }} icon={giftBox} ></ToolButton>);
     }
   }
 
@@ -45,7 +47,7 @@ export default function ToolButtons() {
     }
 
     if(location.pathname === '/todo') {
-      return(<ToolButton onClick={() => writeTodo()} icon={add} ></ToolButton>);
+      return(<ToolButton onClick={() => { writeTodo(); gaEventTracker('ToolButtons-AddToDo'); }} icon={add} ></ToolButton>);
     }
   }
 
@@ -53,7 +55,7 @@ export default function ToolButtons() {
     const toGetCrops = useSelector(state => state.toGetCrops);
 
     if (location.pathname === '/crop' && toGetCrops.crops.length > 0) {
-      return(<ToolButton light={toGetCrops.showToGetCrops} onClick={() => dispatch(toggleShowToGetCrops())} icon={bag} ></ToolButton>);
+      return(<ToolButton light={toGetCrops.showToGetCrops} onClick={() => { dispatch(toggleShowToGetCrops()); gaEventTracker('ToolButtons-ToGetCrops');}} icon={bag} ></ToolButton>);
     }
   }
 
@@ -61,7 +63,7 @@ export default function ToolButtons() {
     const toGetItems = useSelector(state => state.toGetItems);
 
     if (location.pathname === '/item' && toGetItems.items.length > 0) {
-      return(<ToolButton light={toGetItems.showToGetItems} onClick={() => dispatch(toggleShowToGetItems())} icon={bag} ></ToolButton>);
+      return(<ToolButton light={toGetItems.showToGetItems} onClick={() => { dispatch(toggleShowToGetItems()); gaEventTracker('ToolButtons-ToGetItems');}} icon={bag} ></ToolButton>);
     }
   }
 

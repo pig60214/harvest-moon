@@ -56,7 +56,8 @@ function PageDescription() {
 
 function MyLink({ children, to, ...props }) {
   let resolved = useResolvedPath(to);
-  let match = useMatch({ path: resolved.pathname, end: true });
+  const path = resolved.pathname;
+  let match = useMatch({ path, end: true });
 
   if(match && children !== '居民喜好') {
     document.title = `牧場物語-橄欖鎮：${children}`;
