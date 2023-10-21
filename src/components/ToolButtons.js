@@ -34,7 +34,7 @@ export default function ToolButtons() {
 
   function FeedbackButton() {
     const openFeedbackForm = () => window.open(FEEDBACK_FORM);
-    return (<ToolButton onClick={openFeedbackForm} icon={feedback}></ToolButton>)
+    return process.env.REACT_APP_ENV !== 'test' && (<ToolButton onClick={openFeedbackForm} icon={feedback}></ToolButton>)
   }
 
   function GiftListButton() {
