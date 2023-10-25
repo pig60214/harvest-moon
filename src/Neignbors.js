@@ -2,8 +2,10 @@ import neighborRawData from './neighborRawData';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleToGive } from './store/toGivesSlice';
 import { useState } from 'react';
+import { setupGAEventTracker } from 'GA';
 
 export default function Neighbors () {
+  const gaEventTracker = setupGAEventTracker('Neighbors');
   const searchInput = useSelector((state) => state.searchInput.value);
   const showGiftList = useSelector((state) => state.showGiftList.value);
   const toGives = useSelector((state) => state.toGives);
@@ -13,7 +15,8 @@ export default function Neighbors () {
   function Neighbor ({ neighbor }) {
     function Gift({gift, isSelected, neighborName, level }) {
       const selectdClass = 'bg-stone-400 rounded';
-      return (<div key={gift} className={`px-1 py-1 md:py-0.5 box-decoration-clone cursor-pointer ${isSelected ? selectdClass : ''}`} onClick={() => dispatch(toggleToGive({ neighborhood: neighborName, level, gift }))}>{gift}</div>);
+      return (<div key={gift} className={`px-1 py-1 md:py-0.5 box-decoration-clone cursor-pointer ${isSelected ? selectdClass : ''}`}
+                onClick={() => { dispatch(toggleToGive({ neighborhood: neighborName, level, gift })); gaEventTracker('Neighbors-Click Gift') }}>{gift}</div>);
     }
 
     function Gifts({ level }) {
