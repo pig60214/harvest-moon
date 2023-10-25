@@ -6,11 +6,13 @@ import { toggleCrop } from "./store/toGetCropsSlice";
 import { toggleItem } from "store/toGetItemsSlice";
 import { toggleToAnimal } from "store/toAnimalsSlice";
 import itemRawData from 'itemRawData';
+import { setupGAEventTracker } from 'GA';
 
 function ToDo({ content, children, className, onClick }) {
+  const gaEventTracker = setupGAEventTracker('ToDo');
   return (
     <li className={`bg-stone-300 text-stone-600 rounded-lg px-4 py-2 cursor-pointer flex ${className}`} onClick={onClick}>
-      <div className="m-auto">
+      <div className="m-auto" onClick={() => gaEventTracker('ToDo-Click Item')}>
         {content}
         {children}
       </div>
