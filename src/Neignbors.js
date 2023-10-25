@@ -15,7 +15,7 @@ export default function Neighbors () {
   function Neighbor ({ neighbor }) {
     function Gift({gift, isSelected, neighborName, level }) {
       const selectdClass = 'bg-stone-400 rounded';
-      return (<div key={gift} className={`px-1 py-1 md:py-0.5 box-decoration-clone cursor-pointer ${isSelected ? selectdClass : ''}`}
+      return (<div className={`px-1 py-1 md:py-0.5 box-decoration-clone cursor-pointer ${isSelected ? selectdClass : ''}`}
                 onClick={() => { dispatch(toggleToGive({ neighborhood: neighborName, level, gift })); gaEventTracker('Neighbors-Click Gift') }}>{gift}</div>);
     }
 
@@ -25,7 +25,7 @@ export default function Neighbors () {
         const toGivesOfThis = toGives.filter(toGive => toGive.neighborhood === neighbor.name && toGive.level === level);
         toGivesOfThis.forEach(toGive => {
           const gift = toGive.gift;
-          rows.push(<Gift gift={gift} isSelected={true} neighborName={neighbor.name} level={level} />);
+          rows.push(<Gift key={gift} gift={gift} isSelected={true} neighborName={neighbor.name} level={level} />);
         })
       } else {
         const isSearchNPC = searchInput.trim().split(' ').map(s => neighbor.name.includes(s)).find(s => s) || searchInput.trim().split(' ').map(s => neighbor.description.includes(s) ).find(s => s) || searchInput.trim().split(' ').map(s => neighbor.locations.join('').includes(s) ).find(s => s);
@@ -34,7 +34,7 @@ export default function Neighbors () {
 
         neighbor.gifts.filter(gift => isSearched(gift, level)).map(gift => gift.name).forEach(gift => {
           const isSelected = toGives.find(toGive => toGive.neighborhood === neighbor.name && toGive.gift === gift);
-          rows.push(<Gift gift={gift} isSelected={isSelected} neighborName={neighbor.name} level={level} />);
+          rows.push(<Gift key={gift} gift={gift} isSelected={isSelected} neighborName={neighbor.name} level={level} />);
         });
       }
       return rows;
