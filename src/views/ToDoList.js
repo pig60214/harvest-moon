@@ -9,10 +9,10 @@ import itemRawData from 'rawData/itemRawData';
 import { setupGAEventTracker } from 'GA';
 
 function ToDo({ content, children, className, onClick }) {
-  const gaEventTracker = setupGAEventTracker('ToDo');
+  const gaEventTracker = setupGAEventTracker('代辦清單');
   return (
     <li className={`bg-stone-300 text-stone-600 rounded-lg px-4 py-2 cursor-pointer flex ${className}`} onClick={onClick}>
-      <div className="m-auto" onClick={() => gaEventTracker('ToDo-Click Item')}>
+      <div className="m-auto" onClick={() => gaEventTracker('代辦清單-Click Item')}>
         {content}
         {children}
       </div>
