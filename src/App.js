@@ -4,6 +4,7 @@ import { setSearchInput } from './store/searchInputSlice';
 import { Outlet, Link, useLocation, useMatch, useResolvedPath } from "react-router-dom";
 import ToolButtons from 'components/ToolButtons';
 import { useState } from 'react';
+import { setupGAEventTracker } from 'GA';
 
 function PageDescription() {
   const location = useLocation();
@@ -76,6 +77,7 @@ function MyLink({ children, to, ...props }) {
 }
 
 export default function Layout() {
+  const gaEventTracker = setupGAEventTracker();
   const searchInput = useSelector((state) => state.searchInput.value);
   const dispatch = useDispatch();
   const searchInputEle = document.getElementById('searchInput');
@@ -89,6 +91,7 @@ export default function Layout() {
           placeholder="空白間隔可以搜尋多個關鍵字呦，例如：維克多 日式 珠寶"
           className='grow border-b-2 border-stone-300'
           onChange={e => dispatch(setSearchInput(e.target.value))}
+          onFocus={() => gaEventTracker('Search Bar Focus')}
           value={searchInput}
         />
         <button className='w-8' onClick={() => {dispatch(setSearchInput('')); searchInputEle.focus()}}>X</button>
