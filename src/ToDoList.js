@@ -5,7 +5,7 @@ import { toggleToGive } from "./store/toGivesSlice";
 import { toggleCrop } from "./store/toGetCropsSlice";
 import { toggleItem } from "store/toGetItemsSlice";
 import { toggleToAnimal } from "store/toAnimalsSlice";
-import itemRawData from 'itemRawData';
+import itemRawData from 'rawData/itemRawData';
 import { setupGAEventTracker } from 'GA';
 
 function ToDo({ content, children, className, onClick }) {

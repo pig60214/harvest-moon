@@ -1,4 +1,4 @@
-import locationRawData from "locationRawData";
+import locationRawData from "rawData/locationRawData";
 const neighborRawDataV1 = [
   {
     "name": "維克多",
