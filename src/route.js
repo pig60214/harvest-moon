@@ -1,11 +1,11 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import App from "./App";
-import Map from './Map';
-import Neighbors from './Neignbors';
-import Crops from './Crops';
-import Item from './Item';
-import ToDoList from './ToDoList';
-import Animals from "./Animals";
+import Map from './views/Map';
+import Neighbors from './views/Neighbors';
+import Crops from './views/Crops';
+import Item from './views/Item';
+import ToDoList from './views/ToDoList';
+import Animals from "./views/Animals";
 
 const router = createBrowserRouter([
   {

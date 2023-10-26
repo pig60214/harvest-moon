@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleLocation, toggleGoToShopping, toggleGoToGiveTheGift } from './store/locationsSlice';
+import { toggleLocation, toggleGoToShopping, toggleGoToGiveTheGift } from '../store/locationsSlice';
 import { useState } from 'react';
-import locationRawData from './rawData/locationRawData';
+import locationRawData from '../rawData/locationRawData';
 import { setupGAEventTracker } from 'GA';
 
 export default function Map() {

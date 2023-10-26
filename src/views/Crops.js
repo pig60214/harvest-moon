@@ -1,7 +1,7 @@
-import cropRawData from './rawData/cropRawData';
+import cropRawData from '../rawData/cropRawData';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleCategory, setSeason } from './store/cropSearchSettingSlice';
-import { toggleCrop } from './store/toGetCropsSlice';
+import { toggleCategory, setSeason } from '../store/cropSearchSettingSlice';
+import { toggleCrop } from '../store/toGetCropsSlice';
 import { setupGAEventTracker } from 'GA';
 
 export default function Crops() {

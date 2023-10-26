@@ -1,4 +1,4 @@
-import itemRawData from './rawData/itemRawData';
+import itemRawData from '../rawData/itemRawData';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleItem } from 'store/toGetItemsSlice';
 

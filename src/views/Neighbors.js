@@ -1,6 +1,6 @@
-import neighborRawData from './rawData/neighborRawData';
+import neighborRawData from '../rawData/neighborRawData';
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleToGive } from './store/toGivesSlice';
+import { toggleToGive } from '../store/toGivesSlice';
 import { useState } from 'react';
 import { setupGAEventTracker } from 'GA';
 

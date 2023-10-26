@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import { removeToDo } from "./store/toDoListSlice";
-import { toggleLocation, toggleGoToShopping, toggleGoToGiveTheGift } from './store/locationsSlice';
-import { toggleToGive } from "./store/toGivesSlice";
-import { toggleCrop } from "./store/toGetCropsSlice";
+import { removeToDo } from "../store/toDoListSlice";
+import { toggleLocation, toggleGoToShopping, toggleGoToGiveTheGift } from '../store/locationsSlice';
+import { toggleToGive } from "../store/toGivesSlice";
+import { toggleCrop } from "../store/toGetCropsSlice";
 import { toggleItem } from "store/toGetItemsSlice";
 import { toggleToAnimal } from "store/toAnimalsSlice";
 import itemRawData from 'rawData/itemRawData';
