@@ -26,7 +26,7 @@ export default function Crops() {
     const image = <img className={`w-12 m-auto rounded-full ${isSelected ? 'border border-stone-900' : ''}`} src={require(`assets/images/crops/${data.name}.jpg`)} alt={data.name}/>;
 
     tableRows.push(
-      <tr key={data.name} onClick={() => dispatch(toggleCrop(data.name))} className={isSelected ? 'bg-stone-300' : ''}>
+      <tr key={data.name} onClick={() => { dispatch(toggleCrop(data.name)); gaEventTracker('農作物-Click Item') }} className={isSelected ? 'bg-stone-300' : ''}>
         <td>{image}</td>
         <td>{data.name}{data.topPrice && <span className="ml-1 inline-block w-7 h-7 text-center font-bold bg-amber-400 border border-stone-500 rounded-full">$</span>}</td>
         <td className="text-center">{data.category}</td>
