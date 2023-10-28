@@ -6,6 +6,11 @@ import { setupGAEventTracker } from 'GA';
 
 export default function Neighbors () {
   const gaEventTracker = setupGAEventTracker('居民喜好');
+  const notForMarriage = <span className='text-orange-300'>♥</span>
+  const forMarriage = <span className='text-pink-300'>♥</span>
+  const notForMarriageWithGift = <span className='text-orange-500'>♥</span>
+  const forMarriageWithGift = <span className='text-pink-500'>♥</span>
+
   const searchInput = useSelector((state) => state.searchInput.value);
   const showGiftList = useSelector((state) => state.showGiftList.value);
   const toGives = useSelector((state) => state.toGives);
@@ -41,8 +46,8 @@ export default function Neighbors () {
     }
 
     const heartEmoji = toGives.find(toGive => toGive.neighborhood === neighbor.name)
-                      ? neighbor.isMarriageCandidate ? '🩷' : '🧡'
-                      : neighbor.isMarriageCandidate ? '🩶' : '';
+                      ? neighbor.isMarriageCandidate ? forMarriageWithGift : notForMarriageWithGift
+                      : neighbor.isMarriageCandidate ? forMarriage : notForMarriage;
 
     const toggleProfile = () => {
       const next = {...showProfile};
@@ -95,6 +100,10 @@ export default function Neighbors () {
   });
   return (
     <>
+      <article>
+        <p>點選物品後，畫面右邊會出現禮物按鈕，點它可以一覽要送出的配對。</p>
+        <p>{notForMarriageWithGift}：不可結婚居民，{forMarriageWithGift}：可結婚居民</p>
+      </article>
       <div className='hidden md:flex px-4 pt-2'>
         <div className='w-1/5'></div>
         <div className='w-1/5'>最愛</div>
