@@ -30,7 +30,7 @@ export default function Crops() {
     tableRows.push(
       <tr key={data.name} onClick={() => { dispatch(toggleCrop(data.name)); gaEventTracker('農作物-Click Item') }} className={isSelected ? 'bg-stone-300' : ''}>
         <td>{image}</td>
-        <td>{data.name}{data.topPrice && <MoneyIcon className='ml-1' />}</td>
+        <td>{data.name}{data.topPrice && <MoneyIcon className='md:ml-1' />}{data.name === '聖誕玫瑰' && <p className='text-xs'>*加工成蜂蜜才賺</p>}</td>
         <td className="text-center">{data.category}</td>
         <td className="text-center">{data.season.join(', ')}</td>
         <td className="text-center">{data.hasVariant ? 'V' : ''}</td>
@@ -52,10 +52,10 @@ export default function Crops() {
   return (
     <div>
       <article>
-        <p>點選物品後，畫面右邊會出現背包按鈕，點它可以一覽你現在需要的農作物。</p>
+        <p>點選作物後，畫面右邊會出現背包按鈕，點它可以一覽你現在需要的農作物。</p>
         <p><MoneyIcon />：該季節最有價值的作物</p>
       </article>
-      <table className='md:mx-auto'>
+      <table className='md:mx-auto mt-2'>
         <thead>
           <tr><th colSpan={5} className='py-1 font-normal'><SearchInput placeholder='可搜尋多個關鍵字，Ex：芒果 花椰菜' /></th></tr>
           <tr><th colSpan={5}>{panel}</th></tr>
