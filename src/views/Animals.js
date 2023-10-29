@@ -68,7 +68,7 @@ export default function Animals() {
     )
   });
   const panel = (<div>
-    <ul className='my-tabs sm'>
+    <ul className='my-tabs'>
       { tabs.map(tab => <li key={tab} className={tab === selectedTab ? 'active' : 'inactive'} onClick={() => {setSelectedTab(tab);gaEventTracker(`動物-Tab-${tab}`)}}>{tab}</li>) }
     </ul>
   </div>);

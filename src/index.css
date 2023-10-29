@@ -16,24 +16,40 @@
   }
 }
 
-.my-tabs {
-  @apply flex flex-wrap text-sm font-medium text-center text-stone-500 text-stone-400 gap-1 md:gap-2
+.my-nav {
+  @apply flex flex-wrap text-sm font-medium text-center text-stone-500 mt-3 gap-1 md:gap-2
 }
 
-.my-tabs.sm {
-  @apply text-stone-400 gap-1
+.my-nav li {
+  @apply cursor-pointer rounded
+}
+
+.my-nav li:first-child {
+  @apply cursor-pointer rounded-l-none
+}
+
+.my-nav li.inactive {
+  @apply hover:text-stone-900 hover:bg-stone-300
+}
+
+.my-nav li.active {
+  @apply text-white bg-stone-500
+}
+
+.my-nav li a {
+  @apply p-2 md:px-3 inline-block
+}
+
+.my-nav li:first-child a {
+  @apply ps-3 md:ps-5
+}
+
+.my-tabs {
+  @apply flex flex-wrap text-sm font-medium text-center text-stone-400 gap-1
 }
 
 .my-tabs li {
-  @apply rounded capitalize cursor-pointer
-}
-
-.my-tabs.nav li a {
-  @apply py-2 px-1.5 md:px-4 inline-block
-}
-
-.my-tabs.sm li {
-  @apply px-3 py-1 md:px-3 rounded capitalize
+  @apply rounded capitalize cursor-pointer px-3 py-1 md:px-3
 }
 
 .my-tabs li.inactive {
@@ -41,10 +57,6 @@
 }
 
 .my-tabs li.active {
-  @apply text-white bg-stone-600
-}
-
-.my-tabs.sm li.active {
   @apply text-white bg-stone-400
 }
 

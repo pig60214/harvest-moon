@@ -75,9 +75,9 @@ function MyLink({ children, to, ...props }) {
 
 export default function Layout() {
   return (
-    <div className='m-3 md:mx-5 lg:mx-auto max-w-screen-lg space-y-2'>
-      <nav>
-        <ul className='my-tabs nav'>
+    <>
+    <nav>
+        <ul className='my-nav'>
             <MyLink to="/neighbor">居民喜好</MyLink>
             <MyLink to="/crop">農作物</MyLink>
             <MyLink to="/item">物品</MyLink>
@@ -86,9 +86,12 @@ export default function Layout() {
             <MyLink to="/todo">待辦清單</MyLink>
         </ul>
       </nav>
+    <div className='m-3 md:mx-5 lg:mx-auto max-w-screen-lg space-y-2'>
+      
       <PageDescription />
       <Outlet />
       <ToolButtons />
     </div>
+    </>
   );
 }

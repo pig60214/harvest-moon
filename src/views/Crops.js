@@ -40,10 +40,10 @@ export default function Crops() {
 
   const panel = (
     <div className='flex flex-col md:flex-row justify-between gap-1 my-1'>
-      <ul className='my-tabs sm'>
+      <ul className='my-tabs'>
         { ['果樹', '蔬菜', '花卉', '農作物', '全品種'].map(c => <li key={c} className={setting.category.find(sc => c === sc) ? 'active' : 'inactive'} onClick={() => {dispatch(toggleCategory(c));gaEventTracker(`農作物-Tab-${c}`)}}>{c}</li>) }
       </ul>
-      <ul className='my-tabs sm'>
+      <ul className='my-tabs'>
         { ['春', '夏', '秋', '冬', '全季節'].map(s => <li key={s} className={setting.season === s || setting.season === '全季節' ? 'active' : 'inactive'} onClick={() => {dispatch(setSeason(s));gaEventTracker(`農作物-Tab-${s}`)}}>{s}</li>) }
       </ul>
     </div>
