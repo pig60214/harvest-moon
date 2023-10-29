@@ -279,6 +279,7 @@ const cropRawData = [
     "season": [
       "秋",
     ],
+    "topPrice": true,
     "hasVariant": true,
   },
   {
@@ -287,6 +288,7 @@ const cropRawData = [
     "season": [
       "秋",
     ],
+    "topPrice": true,
     "hasVariant": true,
   },
   {
@@ -383,7 +385,6 @@ const cropRawData = [
       "冬",
       "春",
     ],
-    "topPrice": false,
   },
   {
     "name": "花椰菜",

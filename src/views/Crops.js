@@ -11,6 +11,7 @@ export default function Crops() {
   const setting = useSelector(state => state.cropSearchSetting);
   const toGetCrops = useSelector(state => state.toGetCrops);
   const dispatch = useDispatch();
+  const MoneyIcon = ({className}) => (<span className={`${className} inline-block bg-amber-400 rounded-full border border-stone-500`}><span className="inline-block w-6 h-6 leading-6 text-center font-bold ">$</span></span>);
 
   const tableRows = [];
   cropRawData.forEach(data => {
@@ -29,7 +30,7 @@ export default function Crops() {
     tableRows.push(
       <tr key={data.name} onClick={() => { dispatch(toggleCrop(data.name)); gaEventTracker('農作物-Click Item') }} className={isSelected ? 'bg-stone-300' : ''}>
         <td>{image}</td>
-        <td>{data.name}{data.topPrice && <span className="ml-1 inline-block w-7 h-7 text-center font-bold bg-amber-400 border border-stone-500 rounded-full">$</span>}</td>
+        <td>{data.name}{data.topPrice && <MoneyIcon className='ml-1' />}</td>
         <td className="text-center">{data.category}</td>
         <td className="text-center">{data.season.join(', ')}</td>
         <td className="text-center">{data.hasVariant ? 'V' : ''}</td>
@@ -50,22 +51,26 @@ export default function Crops() {
 
   return (
     <div>
-    <table className='md:mx-auto'>
-      <thead>
-        <tr><th colSpan={5} className='py-1 font-normal'><SearchInput placeholder='可搜尋多個關鍵字，Ex：芒果 花椰菜' /></th></tr>
-        <tr><th colSpan={5}>{panel}</th></tr>
-        <tr className='md:h-10'>
-          <th className="w-12 md:w-24">圖片</th>
-          <th className="w-28 md:w-36">名稱</th>
-          <th className="w-16 md:w-28">種類</th>
-          <th className="w-28 md:w-32">季節</th>
-          <th className="w-12 md:w-24">變種</th>
-        </tr>
-      </thead>
-      <tbody>
-        {tableRows}
-      </tbody>
-    </table>
+      <article>
+        <p>點選物品後，畫面右邊會出現背包按鈕，點它可以一覽你現在需要的農作物。</p>
+        <p><MoneyIcon />：該季節最有價值的作物</p>
+      </article>
+      <table className='md:mx-auto'>
+        <thead>
+          <tr><th colSpan={5} className='py-1 font-normal'><SearchInput placeholder='可搜尋多個關鍵字，Ex：芒果 花椰菜' /></th></tr>
+          <tr><th colSpan={5}>{panel}</th></tr>
+          <tr className='md:h-10'>
+            <th className="w-12 md:w-24">圖片</th>
+            <th className="w-28 md:w-36">名稱</th>
+            <th className="w-16 md:w-28">種類</th>
+            <th className="w-28 md:w-32">季節</th>
+            <th className="w-12 md:w-24">變種</th>
+          </tr>
+        </thead>
+        <tbody>
+          {tableRows}
+        </tbody>
+      </table>
     </div>
   );
 };
