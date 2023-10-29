@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toggleCategory, setSeason } from '../store/cropSearchSettingSlice';
 import { toggleCrop } from '../store/toGetCropsSlice';
 import { setupGAEventTracker } from 'GA';
+import SearchInput from 'components/SearchInput';
 
 export default function Crops() {
   const gaEventTracker = setupGAEventTracker('農作物');
@@ -51,6 +52,7 @@ export default function Crops() {
     <div>
     <table className='md:mx-auto'>
       <thead>
+        <tr><th colSpan={5} className='py-1 font-normal'><SearchInput placeholder='可搜尋多個關鍵字，Ex：芒果 花椰菜' /></th></tr>
         <tr><th colSpan={5}>{panel}</th></tr>
         <tr className='md:h-10'>
           <th className="w-12 md:w-24">圖片</th>

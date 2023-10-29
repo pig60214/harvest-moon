@@ -1,6 +1,7 @@
 import itemRawData from '../rawData/itemRawData';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleItem } from 'store/toGetItemsSlice';
+import SearchInput from 'components/SearchInput';
 
 export default function Item() {
   const searchInput = useSelector((state) => state.searchInput.value);
@@ -39,6 +40,7 @@ export default function Item() {
     <p>{ process.env.REACT_APP_ENV === 'test' ? '' : '不過此表格多有殘缺，還在慢慢補齊中，如果受不了它這麼破，也可以點擊右下角的回饋按鈕，填寫表單告訴我，歡迎一起來補齊，謝謝～～' }</p>
     <table className='md:mx-auto'>
       <thead>
+        <tr><th colSpan={3} className='py-1 font-normal'><SearchInput placeholder='可搜尋多個關鍵字，Ex：橄欖結晶 醬油' /></th></tr>
         <tr className='h-8'>
         <th className="w-12 md:w-24">圖片</th>
           <th className='w-36'>名稱</th>

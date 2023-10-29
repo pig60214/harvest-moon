@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { toggleToGive } from '../store/toGivesSlice';
 import { useState } from 'react';
 import { setupGAEventTracker } from 'GA';
+import SearchInput from 'components/SearchInput';
 
 export default function Neighbors () {
   const gaEventTracker = setupGAEventTracker('居民喜好');
@@ -104,6 +105,7 @@ export default function Neighbors () {
         <p>點選物品後，畫面右邊會出現禮物按鈕，點它可以一覽要送出的配對。</p>
         <p>{notForMarriageWithGift}：不可結婚居民，{forMarriageWithGift}：可結婚居民</p>
       </article>
+      <SearchInput placeholder='可搜尋多個關鍵字，Ex：維克多 食材店 手錶' />
       <div className='hidden md:flex px-4 pt-2'>
         <div className='w-1/5'></div>
         <div className='w-1/5'>最愛</div>

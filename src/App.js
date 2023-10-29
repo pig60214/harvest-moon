@@ -1,10 +1,7 @@
 import './App.css';
-import { useSelector, useDispatch } from 'react-redux';
-import { setSearchInput } from './store/searchInputSlice';
 import { Outlet, Link, useLocation, useMatch, useResolvedPath } from "react-router-dom";
 import ToolButtons from 'components/ToolButtons';
 import { useState } from 'react';
-import { setupGAEventTracker } from 'GA';
 
 function PageDescription() {
   const location = useLocation();
@@ -77,25 +74,8 @@ function MyLink({ children, to, ...props }) {
 }
 
 export default function Layout() {
-  const gaEventTracker = setupGAEventTracker();
-  const searchInput = useSelector((state) => state.searchInput.value);
-  const dispatch = useDispatch();
-  const searchInputEle = document.getElementById('searchInput');
-
   return (
     <div className='m-3 md:mx-5 lg:mx-auto max-w-screen-lg space-y-2'>
-      <div className='w-full flex'>
-        <input
-          id='searchInput'
-          type="text"
-          placeholder="空白間隔可以搜尋多個關鍵字呦，例如：維克多 日式 珠寶"
-          className='grow border-b-2 border-stone-300'
-          onChange={e => dispatch(setSearchInput(e.target.value))}
-          onFocus={() => gaEventTracker('Search Bar Focus')}
-          value={searchInput}
-        />
-        <button className='w-8' onClick={() => {dispatch(setSearchInput('')); searchInputEle.focus()}}>X</button>
-      </div>
       <nav>
         <ul className='my-tabs nav'>
             <MyLink to="/neighbor">居民喜好</MyLink>
