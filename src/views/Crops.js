@@ -1,6 +1,6 @@
 import cropRawData from '../rawData/cropRawData';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleCategory, setSeason } from '../store/cropSearchSettingSlice';
+import { setCategory, setSeason } from '../store/cropSearchSettingSlice';
 import { toggleCrop } from '../store/toGetCropsSlice';
 import { setupGAEventTracker } from 'GA';
 import SearchInput from 'components/SearchInput';
@@ -11,6 +11,9 @@ export default function Crops() {
   const setting = useSelector(state => state.cropSearchSetting);
   const toGetCrops = useSelector(state => state.toGetCrops);
   const dispatch = useDispatch();
+  if(typeof setting.category === 'object') { // 因為把 category 改成 string，所以把以前的狀態改成全品種 2023-11-29 可以拿掉
+    dispatch(setCategory('全品種'));
+  }
   const MoneyIcon = ({className}) => (<span className={`${className} inline-block bg-amber-400 rounded-full border border-stone-500`}><span className="inline-block w-6 h-6 leading-6 text-center font-bold ">$</span></span>);
 
   const tableRows = [];
@@ -21,7 +24,7 @@ export default function Crops() {
       if (!isSelected) return;
     } else {
       if (!searchInput.trim().split(' ').map(s => data.name.includes(s)).find(s => s)) return;
-      if (!JSON.stringify(setting.category).includes(data.category)) return;
+      if (setting.category !== '全品種' && !data.category.includes(setting.category)) return;
       if (setting.season !== '全季節' && !data.season.includes(setting.season)) return;
     }
 
@@ -38,10 +41,14 @@ export default function Crops() {
     );
   });
 
+  if (setting.season === '冬' && (setting.category === '果樹' || setting.category === '農作物')) {
+    tableRows.push(<tr key='notice'><td colSpan={5} className='text-center py-1'>冬天不能種果樹和農作物喔</td></tr>)
+  }
+
   const panel = (
     <div className='flex flex-col md:flex-row justify-between gap-1 my-1'>
       <ul className='my-tabs'>
-        { ['果樹', '蔬菜', '花卉', '農作物', '全品種'].map(c => <li key={c} className={setting.category.find(sc => c === sc) ? 'active' : 'inactive'} onClick={() => {dispatch(toggleCategory(c));gaEventTracker(`農作物-Tab-${c}`)}}>{c}</li>) }
+        { ['果樹', '蔬菜', '花卉', '農作物', '全品種'].map(c => <li key={c} className={setting.category === c || setting.category === '全品種' ? 'active' : 'inactive'} onClick={() => {dispatch(setCategory(c));gaEventTracker(`農作物-Tab-${c}`)}}>{c}</li>) }
       </ul>
       <ul className='my-tabs'>
         { ['春', '夏', '秋', '冬', '全季節'].map(s => <li key={s} className={setting.season === s || setting.season === '全季節' ? 'active' : 'inactive'} onClick={() => {dispatch(setSeason(s));gaEventTracker(`農作物-Tab-${s}`)}}>{s}</li>) }
