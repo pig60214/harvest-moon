@@ -95,6 +95,12 @@ export default function ToDoList() {
   const dispatch = useDispatch();
 
   return (
+    <>
+    <article>
+      <h1>溫馨提醒：今日事，今日畢</h1>
+      <p className="md:inline md:mr-4">- 新增自訂代辦：點擊右側新增按鈕</p>
+      <p className="md:inline">- 移除代辦：點擊事項即可移除</p>
+    </article>
     <ul className="flex flex-wrap gap-2">
       {toGives}
       {locations.map((todo, index) => <ToDo className='cursor-default' key={index}>{todo}</ToDo>)}
@@ -104,5 +110,6 @@ export default function ToDoList() {
       {toDoList.map(todo => <ToDo key={todo} content={todo} onClick={() => dispatch(removeToDo(todo))} />)}
       {nothingToDo && <ToDo className='bg-gradient-to-r from-purple-500 to-pink-500 text-white' content='哇！太優秀了吧，待辦全空' /> }
     </ul>
+    </>
   );
 }
