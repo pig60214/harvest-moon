@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleToAnimal } from "store/toAnimalsSlice";
-import { setupGAEventTracker } from 'GA';
+import { gaEventTracker } from 'GA';
 
 const wildAnimalsRawData = [
   { name: '松鼠', time: '春、夏、秋', locations: '區域1有數的地方', weather: '颱風不出現'},
@@ -44,7 +44,6 @@ const fishesRawData = [
 
 
 export default function Animals() {
-  const gaEventTracker = setupGAEventTracker('動物');
   const dispatch = useDispatch();
   const toAnimals = useSelector(state => state.toAnimals);
   const tabs = ['野生動物', '水中生物'];
@@ -69,7 +68,7 @@ export default function Animals() {
   });
   const panel = (<div>
     <ul className='my-tabs'>
-      { tabs.map(tab => <li key={tab} className={tab === selectedTab ? 'active' : 'inactive'} onClick={() => {setSelectedTab(tab);gaEventTracker(`動物-Tab-${tab}`)}}>{tab}</li>) }
+      { tabs.map(tab => <li key={tab} className={tab === selectedTab ? 'active' : 'inactive'} onClick={() => {setSelectedTab(tab);gaEventTracker('動物-Click Tab', {tab_name: tab})}}>{tab}</li>) }
     </ul>
   </div>);
   return (

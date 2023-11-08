@@ -1,9 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { setSearchInput } from '../store/searchInputSlice';
-import { setupGAEventTracker } from '../GA';
+import { gaEventTracker } from '../GA';
 
 export default function SearchInput({ placeholder }) {
-  const gaEventTracker = setupGAEventTracker();
   const searchInput = useSelector((state) => state.searchInput.value);
   const dispatch = useDispatch();
   const searchInputEle = document.getElementById('searchInput');

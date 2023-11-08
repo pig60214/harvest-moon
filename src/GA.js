@@ -9,5 +9,9 @@ const setupGAEventTracker = (category="Blog category") => {
   return eventTracker;
 }
 
+const gaEventTracker = (eventName, params = {}) => {
+  ReactGA.event(eventName, params);
+}
+
 export default ReactGA;
-export { setupGAEventTracker };
+export { setupGAEventTracker, gaEventTracker };

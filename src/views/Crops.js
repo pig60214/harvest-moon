@@ -2,11 +2,10 @@ import cropRawData from '../rawData/cropRawData';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCategory, setSeason } from '../store/cropSearchSettingSlice';
 import { toggleCrop } from '../store/toGetCropsSlice';
-import { setupGAEventTracker } from 'GA';
+import { gaEventTracker } from 'GA';
 import SearchInput from 'components/SearchInput';
 
 export default function Crops() {
-  const gaEventTracker = setupGAEventTracker('農作物');
   const searchInput = useSelector((state) => state.searchInput.value);
   const setting = useSelector(state => state.cropSearchSetting);
   const toGetCrops = useSelector(state => state.toGetCrops);
@@ -31,7 +30,7 @@ export default function Crops() {
     const image = <img className={`w-12 m-auto rounded-full ${isSelected ? 'border border-stone-900' : ''}`} src={require(`assets/images/crops/${data.name}.jpg`)} alt={data.name}/>;
 
     tableRows.push(
-      <tr key={data.name} onClick={() => { dispatch(toggleCrop(data.name)); gaEventTracker('農作物-Click Item') }} className={isSelected ? 'bg-stone-300' : ''}>
+      <tr key={data.name} onClick={() => { dispatch(toggleCrop(data.name)); gaEventTracker('農作物-Click Item', {crop_name: data.name}) }} className={isSelected ? 'bg-stone-300' : ''}>
         <td>{image}</td>
         <td>{data.name}{data.topPrice && <MoneyIcon className='md:ml-1' />}{data.name === '聖誕玫瑰' && <p className='text-xs'>*加工成蜂蜜才賺</p>}</td>
         <td className="text-center">{data.category}</td>
@@ -48,10 +47,10 @@ export default function Crops() {
   const panel = (
     <div className='flex flex-col md:flex-row justify-between gap-1 my-1'>
       <ul className='my-tabs'>
-        { ['果樹', '蔬菜', '花卉', '農作物', '全品種'].map(c => <li key={c} className={setting.category === c || setting.category === '全品種' ? 'active' : 'inactive'} onClick={() => {dispatch(setCategory(c));gaEventTracker(`農作物-Tab-${c}`)}}>{c}</li>) }
+        { ['果樹', '蔬菜', '花卉', '農作物', '全品種'].map(c => <li key={c} className={setting.category === c || setting.category === '全品種' ? 'active' : 'inactive'} onClick={() => {dispatch(setCategory(c));gaEventTracker('農作物-Click Tab', {tab_name: c})}}>{c}</li>) }
       </ul>
       <ul className='my-tabs'>
-        { ['春', '夏', '秋', '冬', '全季節'].map(s => <li key={s} className={setting.season === s || setting.season === '全季節' ? 'active' : 'inactive'} onClick={() => {dispatch(setSeason(s));gaEventTracker(`農作物-Tab-${s}`)}}>{s}</li>) }
+        { ['春', '夏', '秋', '冬', '全季節'].map(s => <li key={s} className={setting.season === s || setting.season === '全季節' ? 'active' : 'inactive'} onClick={() => {dispatch(setSeason(s));gaEventTracker('農作物-Click Tab', {tab_name: s})}}>{s}</li>) }
       </ul>
     </div>
   )

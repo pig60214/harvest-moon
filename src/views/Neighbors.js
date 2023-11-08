@@ -2,11 +2,10 @@ import neighborRawData from '../rawData/neighborRawData';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleToGive } from '../store/toGivesSlice';
 import { useState } from 'react';
-import { setupGAEventTracker } from 'GA';
+import { gaEventTracker } from 'GA';
 import SearchInput from 'components/SearchInput';
 
 export default function Neighbors () {
-  const gaEventTracker = setupGAEventTracker('居民喜好');
   const notForMarriage = <span className='text-orange-300'>♥</span>
   const forMarriage = <span className='text-pink-300'>♥</span>
   const notForMarriageWithGift = <span className='text-orange-500'>♥</span>
@@ -22,7 +21,7 @@ export default function Neighbors () {
     function Gift({gift, isSelected, neighborName, level }) {
       const selectdClass = 'bg-stone-400 rounded';
       return (<div className={`px-1 py-1 md:py-0.5 box-decoration-clone cursor-pointer ${isSelected ? selectdClass : ''}`}
-                onClick={() => { dispatch(toggleToGive({ neighborhood: neighborName, level, gift })); gaEventTracker('居民喜好-Click Gift') }}>{gift}</div>);
+                onClick={() => { dispatch(toggleToGive({ neighborhood: neighborName, level, gift })); gaEventTracker('居民喜好-Click Gift', {neighbor_name: neighborName, gift_name: gift}) }}>{gift}</div>);
     }
 
     function Gifts({ level }) {
