@@ -74,10 +74,10 @@ export default function Neighbors () {
           </div>
         </div>
         <div className='my-card-body flex md:w-4/5'>
-          <div className='w-1/4'><Gifts level={1} /></div>
-          <div className='w-1/4'><Gifts level={2} /></div>
-          <div className='w-1/4'><Gifts level={3} /></div>
-          <div className='w-1/4'><Gifts level={4} /></div>
+          <div className='w-1/3'><Gifts level={1} /></div>
+          <div className='w-1/3'><Gifts level={2} /></div>
+          <div className='w-1/3'><Gifts level={3} /></div>
+          {/* <div className='w-1/4'><Gifts level={4} /></div> */}
         </div>
      </div>
     )
@@ -106,11 +106,11 @@ export default function Neighbors () {
       </article>
       <SearchInput placeholder='可搜尋多個關鍵字，Ex：維克多 食材店 手錶' />
       <div className='hidden md:flex px-4 pt-2'>
-        <div className='w-1/5'></div>
-        <div className='w-1/5'>最愛</div>
-        <div className='w-1/5'>很喜歡</div>
-        <div className='w-1/5'>喜歡</div>
-        <div className='w-1/5'>稍微喜歡</div>
+        <div className='w-1/4'></div>
+        <div className='w-1/4'>最愛</div>
+        <div className='w-1/4'>很喜歡</div>
+        <div className='w-1/4'>喜歡</div>
+        {/* <div className='w-1/5'>稍微喜歡</div> */}
       </div>
       <div className='space-y-2'>
         {row}
