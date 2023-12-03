@@ -8,31 +8,27 @@ export default function Item() {
   const toGetItems = useSelector(state => state.toGetItems);
   const dispatch = useDispatch();
 
-  const rows = [];
-
-  Object.entries(itemRawData).forEach(entry => {
-    const [key, value] = entry;
+  const rows =itemRawData.map(item => {
+    const { key, name, way } = item;
     const isSelected = toGetItems.items.find(i => i === key);
 
     if (toGetItems.showToGetItems) {
-      if (!isSelected) return;
+      if (!isSelected) return null;
     } else {
-      if(!searchInput.trim().split(' ').map(s => key.includes(s)).find(s => s)) return;
+      if(!searchInput.toLowerCase().trim().split(' ').map(s => name.toLowerCase().includes(s)).find(s => s)) return null;
     }
 
     let image;
     try {
       const imgSource = require(`assets/images/items/${key}.jpg`);
-      image = <img className={`w-12 m-auto rounded-full ${isSelected ? 'border border-stone-900' : ''}`} src={imgSource} alt={key}/>
-    } catch (error) {
-      
-    }
+      image = <img className={`w-12 m-auto rounded-full ${isSelected ? 'border border-stone-900' : ''}`} src={imgSource} alt={name}/>
+    } catch (error) {}
 
-    rows.push(<tr key={key} onClick={() => dispatch(toggleItem(key))} className={isSelected ? 'bg-stone-300' : ''}>
+    return (<tr key={name} onClick={() => dispatch(toggleItem(key))} className={isSelected ? 'bg-stone-300' : ''}>
       <td>{image}</td>
-      <td className='h-8'>{key}</td>
-      <td>{value}</td>
-    </tr>)
+      <td className='h-8'>{ name }</td>
+      <td>{way}</td>
+    </tr>);
   });
 
   return (

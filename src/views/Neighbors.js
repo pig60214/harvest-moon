@@ -4,6 +4,7 @@ import { toggleToGive } from '../store/toGivesSlice';
 import { useState } from 'react';
 import { gaEventTracker } from 'GA';
 import SearchInput from 'components/SearchInput';
+import lang from 'rawData/resourse';
 
 export default function Neighbors () {
   const notForMarriage = <span className='text-orange-300'>♥</span>
@@ -18,34 +19,34 @@ export default function Neighbors () {
   const [showProfile, setShowProfile] = useState({});
 
   function Neighbor ({ neighbor }) {
-    function Gift({gift, isSelected, neighborName, level }) {
+    function Gift({gift, isSelected, neighborKey, level }) {
       const selectdClass = 'bg-stone-400 rounded';
       return (<div className={`px-1 py-1 md:py-0.5 box-decoration-clone cursor-pointer ${isSelected ? selectdClass : ''}`}
-                onClick={() => { dispatch(toggleToGive({ neighborhood: neighborName, level, gift })); gaEventTracker('居民喜好-Click Gift', {neighbor_name: neighborName, gift_name: gift}) }}>{gift}</div>);
+                onClick={() => { dispatch(toggleToGive({ neighborhood: neighborKey, level, gift })); gaEventTracker('居民喜好-Click Gift', {neighbor_name: neighborKey, gift_name: gift}) }}>{lang(gift)}</div>);
     }
 
     function Gifts({ level }) {
       const rows = [];
       if(showGiftList) {
-        const toGivesOfThis = toGives.filter(toGive => toGive.neighborhood === neighbor.name && toGive.level === level);
+        const toGivesOfThis = toGives.filter(toGive => toGive.neighborhood === neighbor.key && toGive.level === level);
         toGivesOfThis.forEach(toGive => {
           const gift = toGive.gift;
-          rows.push(<Gift key={gift} gift={gift} isSelected={true} neighborName={neighbor.name} level={level} />);
+          rows.push(<Gift key={gift} gift={gift} isSelected={true} neighborKey={neighbor.key} level={level} />);
         })
       } else {
-        const isSearchNPC = searchInput.trim().split(' ').map(s => neighbor.name.includes(s)).find(s => s) || searchInput.trim().split(' ').map(s => neighbor.description.includes(s) ).find(s => s) || searchInput.trim().split(' ').map(s => neighbor.locations.join('').includes(s) ).find(s => s);
-        const isSearchGift = (gift) => searchInput.trim().split(' ').map(s => gift.includes(s)).find(s => s)
+        const isSearchNPC = searchInput.toLowerCase().trim().split(' ').map(s => neighbor.name.toLowerCase().includes(s)).find(s => s) || searchInput.toLowerCase().trim().split(' ').map(s => neighbor.description.toLowerCase().includes(s) ).find(s => s) || searchInput.toLowerCase().trim().split(' ').map(s => neighbor.locations.join('').toLowerCase().includes(s) ).find(s => s);
+        const isSearchGift = (gift) => searchInput.toLowerCase().trim().split(' ').map(s => gift.toLowerCase().includes(s)).find(s => s)
         const isSearched = (gift, level) => gift.level === level && (isSearchNPC || isSearchGift(gift.name));
 
-        neighbor.gifts.filter(gift => isSearched(gift, level)).map(gift => gift.name).forEach(gift => {
-          const isSelected = toGives.find(toGive => toGive.neighborhood === neighbor.name && toGive.gift === gift);
-          rows.push(<Gift key={gift} gift={gift} isSelected={isSelected} neighborName={neighbor.name} level={level} />);
+        neighbor.gifts.filter(gift => isSearched(gift, level)).map(gift => gift.key).forEach(gift => {
+          const isSelected = toGives.find(toGive => toGive.neighborhood === neighbor.key && toGive.gift === gift);
+          rows.push(<Gift key={gift} gift={gift} isSelected={isSelected} neighborKey={neighbor.key} level={level} />);
         });
       }
       return rows;
     }
 
-    const heartEmoji = toGives.find(toGive => toGive.neighborhood === neighbor.name)
+    const heartEmoji = toGives.find(toGive => toGive.neighborhood === neighbor.key)
                       ? neighbor.isMarriageCandidate ? forMarriageWithGift : notForMarriageWithGift
                       : neighbor.isMarriageCandidate ? forMarriage : notForMarriage;
 
@@ -65,7 +66,7 @@ export default function Neighbors () {
       <div className='my-card space-y-2'>
         <div className='my-card-header flex flex-col md:w-1/5'>
           <div className='font-black'>{ neighbor.name }<span className='cursor-pointer' onClick={() => toggleProfile()}>{ show ? ' ▲' : ' ▼'}</span></div>
-          {show && <img src={require(`assets/images/neighbors/${neighbor.name}.jpg`)} alt={neighbor.name} />}
+          {show && <img src={require(`assets/images/neighbors/${neighbor.key}.jpg`)} alt={neighbor.name} />}
           <div className='flex flex-wrap text-stone-600 divide-x divide-stone-400'>
             <div className='pr-2'>{ neighbor.description }</div>
             <div className='px-2'>{ neighbor.gender }</div>
@@ -86,14 +87,14 @@ export default function Neighbors () {
   const row = [];
   neighborRawData.forEach(neighbor => {
     if(showGiftList) {
-      if(toGives.find(toGive => toGive.neighborhood === neighbor.name)) {
+      if(toGives.find(toGive => toGive.neighborhood === neighbor.key)) {
         row.push(<Neighbor neighbor={neighbor} key={neighbor.name} />)
       }
       return;
     }
 
     const neighborStr = JSON.stringify(neighbor);
-    const searched = searchInput.trim().split(' ').map(s => neighborStr.includes(s)).find(s => s);
+    const searched = searchInput.toLowerCase().trim().split(' ').map(s => neighborStr.toLowerCase().includes(s)).find(s => s);
 
     if(!searched) return;
     row.push(<Neighbor neighbor={neighbor} key={neighbor.name} />)
@@ -101,15 +102,15 @@ export default function Neighbors () {
   return (
     <>
       <article>
-        <p>點選物品後，畫面右邊會出現禮物按鈕，點它可以一覽要送出的配對。</p>
-        <p>{notForMarriageWithGift}：不可結婚居民，{forMarriageWithGift}：可結婚居民</p>
+        <p>{ lang('page_neighbors_instruction') }</p>
+        <p>{notForMarriageWithGift}：{ lang('page_neighbors_non_marriage_candidate') }，{forMarriageWithGift}：{ lang('page_neighbors_marriage_candidate' )}</p>
       </article>
-      <SearchInput placeholder='可搜尋多個關鍵字，Ex：維克多 食材店 手錶' />
+      <SearchInput placeholder={lang('page_neighbors_search_bar_instruction')} />
       <div className='hidden md:flex px-4 pt-2'>
         <div className='w-1/4'></div>
-        <div className='w-1/4'>最愛</div>
-        <div className='w-1/4'>很喜歡</div>
-        <div className='w-1/4'>喜歡</div>
+        <div className='w-1/4'>{lang('page_neighbors_favorite')}</div>
+        <div className='w-1/4'>{lang('page_neighbors_loved')}</div>
+        <div className='w-1/4'>{lang('page_neighbors_liked')}</div>
         {/* <div className='w-1/5'>稍微喜歡</div> */}
       </div>
       <div className='space-y-2'>

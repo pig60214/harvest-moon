@@ -1,4 +1,5 @@
 import locationRawData from "rawData/locationRawData";
+import lang from "./resourse";
 const neighborRawDataV1 = [
   {
     "name": "維克多",
@@ -13,7 +14,7 @@ const neighborRawDataV1 = [
       "拌飯",
       "松茸",
       "玉蜀黍",
-      "白米",
+      "白飯",
       "哈密瓜果醬"
     ],
     "third": [
@@ -74,7 +75,7 @@ const neighborRawDataV1 = [
     "description": "船長",
     "locations": ['動物商店'],
     "first": [
-      "心型菠菜",
+      "愛心菠菜",
       "頂級雞蛋",
       "頂級烏骨雞蛋",
       "雞蛋沙拉"
@@ -89,7 +90,7 @@ const neighborRawDataV1 = [
     "third": [
       "羊毛",
       "頂級羊毛",
-      "綿羊線"
+      "羊毛線"
     ],
     "fourth": [
       "蘿蔔種子",
@@ -936,7 +937,7 @@ const neighborRawDataV1 = [
       "橄欖",
       "金槍魚",
       "花束香水",
-      "炎帝華爾滋",
+      "炎帝華爾茲",
       "華麗手環"
     ],
     "second": [
@@ -1005,7 +1006,7 @@ const neighborRawDataV1 = [
     "first": [
       "橄欖",
       "金槍魚",
-      "炎帝華爾滋",
+      "炎帝華爾茲",
       "花束香水",
       "華麗手環"
     ],
@@ -1259,25 +1260,23 @@ const neighborRawData = [];
 
 neighborRawDataV1.forEach(role => {
   const roleData = {
-    name: role.name,
-    description: role.description,
-    locations: role.locations ? role.locations.map(rLoc => locationRawData.find(loc => rLoc === loc.name).shortName ) : [],
+    key: role.name,
+    name: lang(role.name),
+    description: lang(role.description),
+    locations: role.locations ? role.locations.map(rLoc => lang(locationRawData.find(loc => rLoc === loc.name).shortName) ) : [],
     isMarriageCandidate: role.isMarriageCandidate,
     gender: role.gender,
     gifts: [],
   }
 
   role.first.forEach(gift => {
-    roleData.gifts.push({'name': gift, 'level': 1});
+    roleData.gifts.push({key: gift, name: lang(gift), level: 1});
   });
   role.second.forEach(gift => {
-    roleData.gifts.push({'name': gift, 'level': 2});
+    roleData.gifts.push({key: gift, name: lang(gift), level: 2});
   });
   role.third.forEach(gift => {
-    roleData.gifts.push({'name': gift, 'level': 3});
-  });
-  role.fourth.forEach(gift => {
-    roleData.gifts.push({'name': gift, 'level': 4});
+    roleData.gifts.push({key: gift, name: lang(gift), level: 3});
   });
 
   neighborRawData.push(roleData);

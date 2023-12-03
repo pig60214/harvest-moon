@@ -1,4 +1,6 @@
-const cropRawData = [
+import lang from "./resourse";
+
+const cropRawDataZHTW = [
   {
     'name': '咖啡豆',
     'category': '果樹',
@@ -20,7 +22,12 @@ const cropRawData = [
     'season': ['春'],
     'hasVariant': true,
   },
-
+  {
+    'name': '巨大酪梨',
+    'category': '果樹',
+    'season': ['春'],
+    'hasVariant': true,
+  },
   {
     'name': '杏仁',
     'category': '果樹',
@@ -53,6 +60,12 @@ const cropRawData = [
     'hasVariant': true,
   },
   {
+    'name': '黃金桃子',
+    'category': '果樹',
+    'season': ['夏'],
+    'hasVariant': true,
+  },
+  {
     'name': '芒果',
     'category': '果樹',
     'season': ['夏'],
@@ -73,7 +86,12 @@ const cropRawData = [
     'season': ['秋'],
     'hasVariant': true,
   },
-
+  {
+    'name': '黃金蘋果',
+    'category': '果樹',
+    'season': ['秋'],
+    'hasVariant': true,
+  },
   {
     "name": "洋蔥",
     "category": "蔬菜",
@@ -605,5 +623,17 @@ const cropRawData = [
     ],
   },
 ];
+
+const cropRawData = cropRawDataZHTW.map(crop => {
+  const translatedCrop = {
+    key: crop.name,
+    name: lang(crop.name),
+    category: crop.category,
+    season: crop.season,
+    hasVariant: crop.hasVariant ?? false,
+    topPrice: crop.topPrice ?? false,
+  }
+  return translatedCrop;
+})
 
 export default cropRawData;

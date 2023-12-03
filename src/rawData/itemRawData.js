@@ -1,4 +1,6 @@
-const itemRawData = {
+import lang from "./resourse";
+
+const itemRawDataZHTW = {
   '香菇菌種': '菌種加工機、雜貨店',
   '鴻禧菇菌種': '菌種加工機、雜貨店',
   '杏鮑菇菌種': '菌種加工機、雜貨店',
@@ -69,4 +71,12 @@ const itemRawData = {
 
 };
 
+const itemRawData = [];
+for (const [key, value] of Object.entries(itemRawDataZHTW)) {
+  itemRawData.push({
+    key,
+    name: lang(key),
+    way: value,
+  })
+}
 export default itemRawData;

@@ -7,6 +7,7 @@ import { toggleItem } from "store/toGetItemsSlice";
 import { toggleToAnimal } from "store/toAnimalsSlice";
 import itemRawData from 'rawData/itemRawData';
 import { setupGAEventTracker } from 'GA';
+import lang from "rawData/resourse";
 
 function ToDo({ content, children, className, onClick }) {
   const gaEventTracker = setupGAEventTracker('代辦清單');
@@ -54,7 +55,7 @@ export default function ToDoList() {
     return (
       <ToDo key={index}
         onClick={() => dispatch(toggleToGive(toGive))}>
-        將 <span className={hightlighText}>{toGive.gift} </span>{giftImage} 送給 <span className={hightlighText}>{toGive.neighborhood}</span>
+        將 <span className={hightlighText}>{lang(toGive.gift)} </span>{giftImage} 送給 <span className={hightlighText}>{lang(toGive.neighborhood)}</span>
         <img className='w-10 inline rounded-full ml-2 border border-stone-900' src={require(`assets/images/neighbors/${toGive.neighborhood}-sm.jpg`)} alt={toGive.neighborhood} />
       </ToDo>
     );
@@ -76,12 +77,13 @@ export default function ToDoList() {
   });
   const toGetCrops = useSelector(state => state.toGetCrops).crops.map(todo => {
     const image = getImage(todo);
-    const content = <>需要<span className={hightlighText}>{todo}</span> {image}</>;
+    const content = <>需要<span className={hightlighText}>{lang(todo)}</span> {image}</>;
     return <ToDo key={todo} onClick={() => dispatch(toggleCrop(todo))}>{content}</ToDo>;
   });
   const toGetItems = useSelector(state => state.toGetItems).items.map(todo => {
     const itemImage = getImage(todo);
-    const content = <>透過 <span className={hightlighText}>{itemRawData[todo]}</span> 取得 <span className={`${hightlighText} underline decoration-2`}>{todo}</span> {itemImage}</>;
+    const way = itemRawData.find(i => i.key === todo).way;
+    const content = <>透過 <span className={hightlighText}>{way}</span> 取得 <span className={`${hightlighText} underline decoration-2`}>{lang(todo)}</span> {itemImage}</>;
     return <ToDo key={todo} onClick={() => dispatch(toggleItem(todo))}>{content}</ToDo>;
   });
 

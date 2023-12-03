@@ -2,6 +2,7 @@ import './App.css';
 import { Outlet, Link, useLocation, useMatch, useResolvedPath } from "react-router-dom";
 import ToolButtons from 'components/ToolButtons';
 import { useState } from 'react';
+import lang from 'rawData/resourse';
 
 function PageDescription() {
   const location = useLocation();
@@ -78,12 +79,12 @@ export default function Layout() {
     <>
     <nav>
         <ul className='my-nav'>
-            <MyLink to="/neighbor">居民喜好</MyLink>
-            <MyLink to="/crop">農作物</MyLink>
-            <MyLink to="/item">物品</MyLink>
-            <MyLink to="/map">地圖</MyLink>
-            <MyLink to="/animals">動物</MyLink>
-            <MyLink to="/todo">待辦清單</MyLink>
+            <MyLink to="/neighbor">{ lang('居民喜好') }</MyLink>
+            <MyLink to="/crop">{ lang('農作物') }</MyLink>
+            <MyLink to="/item">{ lang('物品') }</MyLink>
+            <MyLink to="/map">{ lang('地圖') }</MyLink>
+            <MyLink to="/animals">{ lang('動物') }</MyLink>
+            <MyLink to="/todo">{ lang('待辦清單') }</MyLink>
         </ul>
       </nav>
     <div className='m-3 md:mx-5 lg:mx-auto max-w-screen-lg space-y-2'>
