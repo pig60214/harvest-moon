@@ -45,7 +45,7 @@ export default function Dishes() {
   }
   const panel = (
     <ul className='my-tabs my-1'>
-      { ['沙拉', '其他', '湯', '主餐', '甜點', '全品項'].map(c => <li key={c} className={setting.category === c || setting.category === '全品項' ? 'active' : 'inactive'} onClick={() => {dispatch(setCategory(c));}}>{lang(c)}</li>) }
+      { ['沙拉', '其他', '湯', '主餐', '甜點', '全品項'].map(c => <li key={c} className={setting.category === c || setting.category === '全品項' ? 'active' : 'inactive'} onClick={() => {dispatch(setCategory(c));resetRandomIndex()}}>{lang(c)}</li>) }
     </ul>
 )
   return (
