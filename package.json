@@ -17,14 +17,16 @@
     "react-router-dom": "^6.14.2",
     "react-scripts": "5.0.1",
     "redux-persist": "^6.0.0",
+    "sitemap": "^7.1.1",
     "sort-by": "^1.2.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run sitemap & react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sitemap": "node sitemap.js"
   },
   "eslintConfig": {
     "extends": [
