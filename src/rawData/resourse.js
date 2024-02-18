@@ -117,7 +117,7 @@ const resourse = {
   },
   '可可豆': {
     zhtw: '可可豆',
-    en: 'Cacao',
+    en: 'Cocoa',
   },
   '芒果': {
     zhtw: '芒果',
@@ -1586,6 +1586,42 @@ const resourse = {
   '聖誕玫瑰': {
     zhtw: '聖誕玫瑰',
     en: 'Hellebore',
+  },
+  '小麥': {
+    zhtw: '小麥',
+    en: 'Wheat',
+  },
+  '茶葉': {
+    zhtw: '茶葉',
+    en: 'Tea Leaves',
+  },
+  '乾草飼料': {
+    zhtw: '乾草飼料',
+    en: 'Fodder',
+  },
+  '香菇種菌': {
+    zhtw: '香菇種菌',
+    en: 'Shiitake Spores',
+  },
+  '鴻喜菇種菌': {
+    zhtw: '鴻喜菇種菌',
+    en: 'Shimeji Spores',
+  },
+  '杏鮑菇種菌': {
+    zhtw: '杏鮑菇種菌',
+    en: 'Trumpet Spores',
+  },
+  '粉紅珊瑚菇種菌': {
+    zhtw: '粉紅珊瑚菇種菌',
+    en: 'Coral Spores',
+  },
+  '洋菇種菌': {
+    zhtw: '洋菇種菌',
+    en: 'Common Spores',
+  },
+  '松茸種菌': {
+    zhtw: '松茸種菌',
+    en: 'Matsutake Spores',
   }
   // '砂糖': {
   //   zhtw: '砂糖',

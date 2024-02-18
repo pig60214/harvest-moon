@@ -508,7 +508,7 @@ const neighborRawDataV1 = [
     "description": "鎮長太太",
     "locations": ['鎮公所', '博物館'],
     "first": [
-      "金色草莓",
+      "黃金草莓",
       "百花香水",
       "大地協奏曲",
       "珠寶墜子"
@@ -689,7 +689,7 @@ const neighborRawDataV1 = [
       "蜂巢蜜",
       "工蜂乳",
       "蜂蜜優格",
-      "蜂蜜番薯",
+      "蜂蜜地瓜燒",
       "布丁"
     ],
     "third": [
@@ -778,7 +778,7 @@ const neighborRawDataV1 = [
     "fourth": [
       "櫻桃幼苗",
       "粉蝶花",
-      "三色蓳",
+      "三色堇",
       "香蕉",
       "蜂蜜"
     ],
@@ -905,12 +905,12 @@ const neighborRawDataV1 = [
       "果香香水"
     ],
     "second": [
-      "三色蓳",
+      "三色堇",
       "祖母綠",
       "可可粉",
       "巧克力蛋糕",
       "提拉米蘇",
-      "巧克力曲奇",
+      "巧克力餅乾",
       "可可亞"
     ],
     "third": [
@@ -969,7 +969,7 @@ const neighborRawDataV1 = [
     "description": "旅館&咖啡廳夫婦的女兒",
     "locations": ['旅館＆咖啡廳'],
     "first": [
-      "雛菊",
+      "瑪格麗特",
       "鑽石",
       "花束香水",
       "春風行進曲",
@@ -1011,7 +1011,7 @@ const neighborRawDataV1 = [
       "華麗手環"
     ],
     "second": [
-      "金盞花",
+      "萬壽菊",
       "紅寶石",
       "向日葵",
       "蔬菜汁"
