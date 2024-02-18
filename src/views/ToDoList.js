@@ -82,7 +82,7 @@ export default function ToDoList() {
   });
   const toGetItems = useSelector(state => state.toGetItems).items.map(todo => {
     const itemImage = getImage(todo);
-    const way = itemRawData.find(i => i.key === todo).way;
+    const way = itemRawData.find(i => i.key === todo)?.way;
     const content = <>透過 <span className={hightlighText}>{way}</span> 取得 <span className={`${hightlighText} underline decoration-2`}>{lang(todo)}</span> {itemImage}</>;
     return <ToDo key={todo} onClick={() => dispatch(toggleItem(todo))}>{content}</ToDo>;
   });
