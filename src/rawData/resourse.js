@@ -1165,3 +1165,7 @@ const lang = (key) => {
 }
 
 export default lang;
+
+export function getLang() {
+  return REACT_APP_LANG;
+}

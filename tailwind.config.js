@@ -16,6 +16,10 @@ module.exports = {
         '16': '16',
         '17': '17',
       },
+      width: {
+        'screen-md': '768px',
+        'screen-lg': '1024px',
+      }
     },
   },
   plugins: [],

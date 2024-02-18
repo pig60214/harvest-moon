@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { setCategory } from '../store/dishesSettingSlice';
-import lang from 'rawData/resourse';
+import lang, { getLang } from 'rawData/resourse';
 import { useState } from "react";
 import dishRawData from "rawData/dishRawData";
 import { gaEventTracker } from '../GA';
@@ -50,7 +50,7 @@ export default function Dishes() {
 )
   return (
     <>
-    <table className='md:mx-auto mt-2'>
+    <table className={`md:mx-auto mt-2 ${ getLang() === 'en' ?'md:w-screen-lg' : 'md:w-screen-md'}`}>
       <thead>
         <tr><th colSpan={4}>{panel}</th></tr>
         <tr>
