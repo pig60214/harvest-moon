@@ -117,6 +117,14 @@ tr:last-child td:last-child {
   animation-duration: 5s;
 }
 
+.my-secondary-button {
+  @apply text-sm font-medium text-center text-stone-400 px-2 py-1 rounded
+}
+
+.my-secondary-button:hover {
+  @apply bg-stone-400 text-white
+}
+
 @keyframes my-notification-animation {
   0%   {@apply -right-40}
   10%  {@apply right-0}

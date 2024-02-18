@@ -85,6 +85,7 @@ export default function Layout() {
             <MyLink to="/map">{ lang('地圖') }</MyLink>
             <MyLink to="/animals">{ lang('動物') }</MyLink>
             <MyLink to="/todo">{ lang('待辦清單') }</MyLink>
+            <MyLink to="/cooking">{ lang('烹飪') }</MyLink>
         </ul>
       </nav>
     <div className='m-3 md:mx-5 lg:mx-auto max-w-screen-lg space-y-2'>

@@ -471,8 +471,8 @@ const resourse = {
     zhtw: '香菇',
     en: 'Shiitake Mushroom',
   },
-  '鴻禧菇': {
-    zhtw: '鴻禧菇',
+  '鴻喜菇': {
+    zhtw: '鴻喜菇',
     en: 'Shimeji Mushroom',
   },
   '杏鮑菇': {
@@ -491,10 +491,118 @@ const resourse = {
     zhtw: '松茸',
     en: 'Matsutake Mushroom',
   },
-  // '鳳梨': {
-  //   zhtw: '鳳梨',
-  //   en: 'Pineapple',
-  // }
+  '烹飪': {
+    zhtw: '烹飪',
+    en: 'Cooking',
+  },
+  '沙拉': {
+    zhtw: '沙拉',
+    en: 'Salad',
+  },
+  '其他': {
+    zhtw: '其他',
+    en: 'Other',
+  },
+  '湯': {
+    zhtw: '湯',
+    en: 'Soup',
+  },
+  '主餐': {
+    zhtw: '主餐',
+    en: 'Entrée',
+  },
+  '甜點': {
+    zhtw: '甜點',
+    en: 'Dessert',
+  },
+  '全品項': {
+    zhtw: '全品項',
+    en: 'All',
+  },
+  '今晚吃什麼': {
+    zhtw: '今晚吃什麼',
+    en: 'Today Dinner',
+  },
+  'ingredients': {
+    zhtw: '材料',
+    en: 'Ingredients',
+  },
+  '蔬菜類': {
+    zhtw: '蔬菜類',
+    en: 'Vegetable Group',
+  },
+  '山菜類': {
+    zhtw: '山菜類',
+    en: 'Wild Plant Group',
+  },
+  '馬鈴薯類': {
+    zhtw: '馬鈴薯類',
+    en: 'Potato Group',
+  },
+  '蘋果類': {
+    zhtw: '蘋果類',
+    en: 'Apple Group',
+  },
+  '蔬菜沙拉': {
+    zhtw: '蔬菜沙拉',
+    en: 'Vegetable Salad',
+  },
+  '綜合沙拉': {
+    zhtw: '綜合沙拉',
+    en: 'Mixed Salad',
+  },
+  '泰式涼拌冬粉沙拉': {
+    zhtw: '泰式涼拌冬粉沙拉',
+    en: 'Yum Woon Sen',
+  },
+  '鬚赤蝦': {
+    zhtw: '鬚赤蝦',
+    en: 'Whiskered Velvet Shrimp',
+  },
+  '烏賊類': {
+    zhtw: '烏賊類',
+    en: 'Squid Group',
+  },
+  '哈密瓜類': {
+    zhtw: '哈密瓜類',
+    en: 'Melon Group',
+  },
+  '洋蔥拌炒馬鈴薯': {
+    zhtw: '洋蔥拌炒馬鈴薯',
+    en: 'Lyonnaise Potatoes',
+  },
+  '奧勒岡葉': {
+    zhtw: '奧勒岡葉',
+    en: 'Oregano',
+  },
+  '美乃滋': {
+    zhtw: '美乃滋',
+    en: 'Mayonnaise',
+  },
+  '橄欖油': {
+    zhtw: '橄欖油',
+    en: 'Olive Oil',
+  },
+  '酪梨類': {
+    zhtw: '酪梨類',
+    en: 'Avocado Group',
+  },
+  '蛋類': {
+    zhtw: '蛋類',
+    en: 'Egg Group',
+  },
+  '櫻桃蘿蔔': {
+    zhtw: '櫻桃蘿蔔',
+    en: 'Radish',
+  },
+  '水果沙拉': {
+    zhtw: '水果沙拉',
+    en: 'Fruit Salad',
+  },
+  '水果類': {
+    zhtw: '水果類',
+    en: 'Fruit Group',
+  },
 }
 
 // const REACT_APP_LANG = 'en';

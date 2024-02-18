@@ -6,6 +6,7 @@ import Crops from './views/Crops';
 import Item from './views/Item';
 import ToDoList from './views/ToDoList';
 import Animals from "./views/Animals";
+import Cooking from "views/Cooking";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,9 @@ const router = createBrowserRouter([
       }, {
         path: "/todo",
         element: <ToDoList />,
+      }, {
+        path: "/cooking",
+        element: <Cooking />,
       },
     ]
   },

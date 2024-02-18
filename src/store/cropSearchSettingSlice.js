@@ -1,11 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
-import lang from 'rawData/resourse';
 
 export const cropSearchSettingSlice = createSlice({
   name: 'cropSearchSetting',
   initialState: {
-    category: lang('全品種'),
-    season: lang('全季節'),
+    category: '全品種',
+    season: '全季節',
   },
   reducers: {
     // toggleCategory: (state, { payload }) => {
