@@ -452,7 +452,7 @@ const resourse = {
     en: 'Most valuable crop of the season',
   },
   'page_crops_search_bar_instruction': {
-    zhtw: '可搜尋多個關鍵字，Ex：芒果 花椰菜',
+    zhtw: '可搜尋多個關鍵字，Ex：芒果 綠花椰菜',
     en: 'Allow multi-search, ex: onion Garlic',
   },
   'page_crops_no_trees_and_crops_in_winter': {
@@ -483,8 +483,8 @@ const resourse = {
     zhtw: '粉紅珊瑚菇',
     en: 'Coral Mushroom',
   },
-  '蘑菇': {
-    zhtw: '蘑菇',
+  '洋菇': {
+    zhtw: '洋菇',
     en: 'Common Mushroom',
   },
   '松茸': {
@@ -603,6 +603,554 @@ const resourse = {
     zhtw: '水果類',
     en: 'Fruit Group',
   },
+  '醃漬小魚': {
+    zhtw: '醃漬小魚',
+    en: 'Small Fish Marinade',
+  },
+  '小型魚類': {
+    zhtw: '小型魚類',
+    en: 'Small Fish Group',
+  },
+  '醋': {
+    zhtw: '醋',
+    en: 'Vinegar',
+  },
+  '豆子沙拉': {
+    zhtw: '豆子沙拉',
+    en: 'Bean Salad',
+  },
+  '蕪菁類': {
+    zhtw: '蕪菁類',
+    en: 'Turnip Group',
+  },
+  '豆子': {
+    zhtw: '豆子',
+    en: 'Beans',
+  },
+  '番茄類': {
+    zhtw: '番茄類',
+    en: 'Tomato Group',
+  },
+  '酸黃瓜': {
+    zhtw: '酸黃瓜',
+    en: 'Pickles',
+  },
+  '白蘿蔔': {
+    zhtw: '白蘿蔔',
+    en: 'Daikon Radish',
+  },
+  '分岔白蘿蔔': {
+    zhtw: '分岔白蘿蔔',
+    en: 'Fork-root Daikon',
+  },
+  '白蘿蔔類': {
+    zhtw: '白蘿蔔類',
+    en: 'Daikon Radish Group',
+  },
+  '醃漬香菇': {
+    zhtw: '醃漬香菇',
+    en: 'Mushroom Marinade',
+  },
+  '香料咖哩炒秋葵': {
+    zhtw: '香料咖哩炒秋葵',
+    en: 'Bhindi Masala',
+  },
+  '秋葵': {
+    zhtw: '秋葵',
+    en: 'Okra',
+  },
+  '辛辣調味料': {
+    zhtw: '辛辣調味料',
+    en: 'Mixed Spices',
+  },
+  '日式炒牛蒡': {
+    zhtw: '日式炒牛蒡',
+    en: 'Kinpira Gobo',
+  },
+  '牛蒡': {
+    zhtw: '牛蒡',
+    en: 'Burdock',
+  },
+  '胡蘿蔔': {
+    zhtw: '胡蘿蔔',
+    en: 'Carrot',
+  },
+  '醬油': {
+    zhtw: '醬油',
+    en: 'Soy Sauce',
+  },
+  '辣椒': {
+    zhtw: '辣椒',
+    en: 'Chili Pepper',
+  },
+  '香草調味料': {
+    zhtw: '香草調味料',
+    en: 'Mixed Herbs',
+  },
+  '義式番茄起司沙拉': {
+    zhtw: '義式番茄起司沙拉',
+    en: 'Caprese Salad',
+  },
+  '起司': {
+    zhtw: '起司',
+    en: 'Cheese',
+  },
+  '菠菜泥優格沙拉': {
+    zhtw: '菠菜泥優格沙拉',
+    en: 'Spinach Salad',
+  },
+  '菠菜類': {
+    zhtw: '菠菜類',
+    en: 'Spinach Group',
+  },
+  '優格': {
+    zhtw: '優格',
+    en: 'Yogurt',
+  },
+  '胡椒': {
+    zhtw: '胡椒',
+    en: 'Pepper',
+  },
+  '鹽': {
+    zhtw: '鹽',
+    en: 'Salt',
+  },
+  '芬蘭甜菜沙拉': {
+    zhtw: '芬蘭甜菜沙拉',
+    en: 'Rosolli',
+  },
+  '泡菜': {
+    zhtw: '泡菜',
+    en: 'Kimchi',
+  },
+  '白菜': {
+    zhtw: '白菜',
+    en: 'Napa Cabbage',
+  },
+  '黃金白菜': {
+    zhtw: '黃金白菜',
+    en: 'Golden Napa Cabbage',
+  },
+  '白菜類': {
+    zhtw: '白菜類',
+    en: 'Napa Cabbage Group',
+  },
+  '青江菜': {
+    zhtw: '青江菜',
+    en: 'Bok Choy',
+  },
+  '砂糖': {
+    zhtw: '砂糖',
+    en: 'Sugar',
+  },
+  '蚌殼湯': {
+    zhtw: '蚌殼湯',
+    en: 'Shellfish Soup',
+  },
+  '赤貝': {
+    zhtw: '赤貝',
+    en: 'Blood Clam',
+  },
+  '青蔥': {
+    zhtw: '青蔥',
+    en: 'Leek',
+  },
+  '巨大的青蔥': {
+    zhtw: '巨大的青蔥',
+    en: 'Giant Leek',
+  },
+  '青蔥類': {
+    zhtw: '青蔥類',
+    en: 'Leek Group',
+  },
+  '綜合蔬菜湯': {
+    zhtw: '綜合蔬菜湯',
+    en: 'Mixed Soup',
+  },
+  '黃色蔬菜濃湯': {
+    zhtw: '黃色蔬菜濃湯',
+    en: 'Yellow Potage',
+  },
+  '奶類': {
+    zhtw: '奶類',
+    en: 'Milk Group',
+  },
+  '綠色蔬菜濃湯': {
+    zhtw: '綠色蔬菜濃湯',
+    en: 'Green Potage',
+  },
+  '酸辣湯': {
+    zhtw: '酸辣湯',
+    en: 'Hot & Sour Soup',
+  },
+  '西班牙冷湯': {
+    zhtw: '西班牙冷湯',
+    en: 'Gazpacho',
+  },
+  '秋葵湯': {
+    zhtw: '秋葵湯',
+    en: 'Okra Soup',
+  },
+  '大型魚類': {
+    zhtw: '大型魚類',
+    en: 'Large Fish Group',
+  },
+  '蛤蜊巧達濃湯': {
+    zhtw: '蛤蜊巧達濃湯',
+    en: 'Clam Chowder',
+  },
+  '貝類': {
+    zhtw: '貝類',
+    en: 'Shellfish Group',
+  },
+  '拿波里水煮魚': {
+    zhtw: '拿波里水煮魚',
+    en: 'Acqua Pazza',
+  },
+  '白星笛鯛': {
+    zhtw: '白星笛鯛',
+    en: 'Star Snapper',
+  },
+  '螃蟹類': {
+    zhtw: '螃蟹類',
+    en: 'Crab Group',
+  },
+  '馬賽魚湯': {
+    zhtw: '馬賽魚湯',
+    en: 'Bouillabaisse',
+  },
+  '軟絲': {
+    zhtw: '軟絲',
+    en: 'Bigfin Reef Squid',
+  },
+  '綠花椰菜': {
+    zhtw: '綠花椰菜',
+    en: 'Broccoli',
+  },
+  '泰式酸辣湯': {
+    zhtw: '泰式酸辣湯',
+    en: 'Tom Yum Goong',
+  },
+  '大龍蝦': {
+    zhtw: '大龍蝦',
+    en: 'Lobster',
+  },
+  '淡菜': {
+    zhtw: '淡菜',
+    en: 'Mussel',
+  },
+  '焗烤洋蔥湯': {
+    zhtw: '焗烤洋蔥湯',
+    en: 'Onion Soup',
+  },
+  '奶油': {
+    zhtw: '奶油',
+    en: 'Butter',
+  },
+  '麵包類': {
+    zhtw: '麵包類',
+    en: 'Bread Group',
+  },
+  '韓式年糕湯': {
+    zhtw: '韓式年糕湯',
+    en: 'Tteokguk',
+  },
+  '紫萁': {
+    zhtw: '紫萁',
+    en: 'Royal Fern',
+  },
+  '西班牙香蒜湯': {
+    zhtw: '西班牙香蒜湯',
+    en: 'Sopa de Ajo',
+  },
+  '義式蔬菜湯': {
+    zhtw: '義式蔬菜湯',
+    en: 'Minestrone',
+  },
+  '高麗菜': {
+    zhtw: '高麗菜',
+    en: 'Cabbage',
+  },
+  '日式蔬菜豆腐湯': {
+    zhtw: '日式蔬菜豆腐湯',
+    en: 'Kenchin-jiru',
+  },
+  '龍宮湯': {
+    zhtw: '龍宮湯',
+    en: 'Oarfish Soup',
+  },
+  '皇帶魚': {
+    zhtw: '皇帶魚',
+    en: 'Oarfish',
+  },
+  '櫻桃冷湯': {
+    zhtw: '櫻桃冷湯',
+    en: 'Sour Cherry Soup',
+  },
+  '金雨迷迭香': {
+    zhtw: '金雨迷迭香',
+    en: 'Golden Rain Rosemary',
+  },
+  '法式燉菜湯': {
+    zhtw: '法式燉菜湯',
+    en: 'Pot-au-Feu',
+  },
+  '羅宋湯': {
+    zhtw: '羅宋湯',
+    en: 'Borscht',
+  },
+  '希臘檸檬湯': {
+    zhtw: '希臘檸檬湯',
+    en: 'Lemon Soup',
+  },
+  '烤魚': {
+    zhtw: '烤魚',
+    en: 'Grilled Fish',
+  },
+  '蔬菜三明治': {
+    zhtw: '蔬菜三明治',
+    en: 'Vegetable Sandwich',
+  },
+  '咖哩飯': {
+    zhtw: '咖哩飯',
+    en: 'Curry Rice',
+  },
+  '雞蛋三明治': {
+    zhtw: '雞蛋三明治',
+    en: 'Egg Sandwich',
+  },
+  '歐姆蛋': {
+    zhtw: '歐姆蛋',
+    en: 'Omelet',
+  },
+  '麻辣螯蝦': {
+    zhtw: '麻辣螯蝦',
+    en: 'Mala Crayfish',
+  },
+  '泰式炸蝦吐司': {
+    zhtw: '泰式炸蝦吐司',
+    en: 'Shrimp Toast',
+  },
+  '異國風味咖哩': {
+    zhtw: '異國風味咖哩',
+    en: 'Okra Curry',
+  },
+  '鯛魚生魚片': {
+    zhtw: '鯛魚生魚片',
+    en: 'Sea Bream Sashimi',
+  },
+  '中華拉麵': {
+    zhtw: '中華拉麵',
+    en: 'Chuka Soba',
+  },
+  '乾燒明蝦': {
+    zhtw: '乾燒明蝦',
+    en: 'Chili Shrimp',
+  },
+  '天婦羅': {
+    zhtw: '天婦羅',
+    en: 'Tempura',
+  },
+  '鰻魚飯': {
+    zhtw: '鰻魚飯',
+    en: 'Unaju',
+  },
+  '茄汁焗豆': {
+    zhtw: '茄汁焗豆',
+    en: 'Baked Beans',
+  },
+  '豆皮烏龍麵': {
+    zhtw: '豆皮烏龍麵',
+    en: 'Kitsune Udon',
+  },
+  '日式拿坡里義大利麵': {
+    zhtw: '日式拿坡里義大利麵',
+    en: 'Neapolitan Pasta',
+  },
+  '栗子飯': {
+    zhtw: '栗子飯',
+    en: 'Chestnut Rice',
+  },
+  '日式煮魚': {
+    zhtw: '日式煮魚',
+    en: 'Boiled Fish',
+  },
+  '普羅旺斯燉菜': {
+    zhtw: '普羅旺斯燉菜',
+    en: 'Ratatouille',
+  },
+  '西班牙烤大蔥': {
+    zhtw: '西班牙烤大蔥',
+    en: 'Calçots',
+  },
+  '海鮮蓋飯': {
+    zhtw: '海鮮蓋飯',
+    en: 'Sashimi Bowl',
+  },
+  '葡萄牙海鮮銅鍋料理': {
+    zhtw: '葡萄牙海鮮銅鍋料理',
+    en: 'Seafood Cataplana',
+  },
+  '日式炸浸蔬菜': {
+    zhtw: '日式炸浸蔬菜',
+    en: 'Brothy Fried Vegetables',
+  },
+  '果醬三明治': {
+    zhtw: '果醬三明治',
+    en: 'Jam Sandwich',
+  },
+  '日式燉菜': {
+    zhtw: '日式燉菜',
+    en: 'Boiled Vegetables',
+  },
+  '法式吐司': {
+    zhtw: '法式吐司',
+    en: 'French Toast',
+  },
+  '鮪魚三明治': {
+    zhtw: '鮪魚三明治',
+    en: 'Tuna Sandwich',
+  },
+  '法式煎蔬菜': {
+    zhtw: '法式煎蔬菜',
+    en: 'Sugar',
+  },
+  '燉馬鈴薯': {
+    zhtw: '燉馬鈴薯',
+    en: 'Boiled Sweet Potatoes',
+  },
+  '白醬義大利麵': {
+    zhtw: '白醬義大利麵',
+    en: 'Cream Sauce Pasta',
+  },
+  '焗烤通心粉': {
+    zhtw: '焗烤通心粉',
+    en: 'Gratin',
+  },
+  '奶油培根蛋黃麵': {
+    zhtw: '奶油培根蛋黃麵',
+    en: 'Carbonara',
+  },
+  '西班牙風醃漬沙丁魚': {
+    zhtw: '西班牙風醃漬沙丁魚',
+    en: 'Boquerones en Vinagre',
+  },
+  '法式鹹派': {
+    zhtw: '法式鹹派',
+    en: 'Quiche',
+  },
+  '田園野菇派': {
+    zhtw: '田園野菇派',
+    en: 'Mushroom Pie',
+  },
+  '酥炸鮪魚塊': {
+    zhtw: '酥炸鮪魚塊',
+    en: 'Fried Tuna Cutlet',
+  },
+  '碗豆燉飯': {
+    zhtw: '碗豆燉飯',
+    en: 'Risi e Bisi',
+  },
+  '松茸炊飯': {
+    zhtw: '松茸炊飯',
+    en: 'Matsutake Rice',
+  },
+  '泰式咖哩蟹': {
+    zhtw: '泰式咖哩蟹',
+    en: 'Boo Paht Pong Karee',
+  },
+  '西班牙式鐵板煎菇': {
+    zhtw: '西班牙式鐵板煎菇',
+    en: 'Champiñones a la Plancha',
+  },
+  '蒜味辣椒義大利麵': {
+    zhtw: '蒜味辣椒義大利麵',
+    en: 'Peperoncino Pasta',
+  },
+  '奶油燉菜': {
+    zhtw: '奶油燉菜',
+    en: 'Stew',
+  },
+  '洋菇高麗菜捲': {
+    zhtw: '洋菇高麗菜捲',
+    en: 'Mushroom Cabbage Rolls',
+  },
+  '泰式酸辣鯰魚湯': {
+    zhtw: '泰式酸辣鯰魚湯',
+    en: 'Tom Yum Pla',
+  },
+  '烤大雀鱔': {
+    zhtw: '烤大雀鱔',
+    en: 'Grilled Gar',
+  },
+  '大碗海鮮抓飯': {
+    zhtw: '大碗海鮮抓飯',
+    en: 'Seafood Pilaf Platter',
+  },
+  '墨西哥玉米湯餅': {
+    zhtw: '墨西哥玉米湯餅',
+    en: 'Tortilla Soup',
+  },
+  '旗魚壽司': {
+    zhtw: '旗魚壽司',
+    en: 'Marlin Sushi',
+  },
+  '瑞士起司火鍋': {
+    zhtw: '瑞士起司火鍋',
+    en: 'Cheese Fondue',
+  },
+  '義式烤扁鱈': {
+    zhtw: '義式烤扁鱈',
+    en: 'Halibut al Cartoccio',
+  },
+  '泡菜鍋': {
+    zhtw: '泡菜鍋',
+    en: 'Kimchi Hot Pot',
+  },
+  '日式白湯鍋': {
+    zhtw: '日式白湯鍋',
+    en: 'Hot Pot',
+  },
+  '蕃薯': {
+    zhtw: '蕃薯',
+    en: 'Sweet Potato',
+  },
+  '巨大蕃薯': {
+    zhtw: '巨大蕃薯',
+    en: 'Giant Sweet Potato',
+  },
+  // '砂糖': {
+  //   zhtw: '砂糖',
+  //   en: 'Sugar',
+  // },
+  // '砂糖': {
+  //   zhtw: '砂糖',
+  //   en: 'Sugar',
+  // },
+  // '砂糖': {
+  //   zhtw: '砂糖',
+  //   en: 'Sugar',
+  // },
+  // '砂糖': {
+  //   zhtw: '砂糖',
+  //   en: 'Sugar',
+  // },
+  // '砂糖': {
+  //   zhtw: '砂糖',
+  //   en: 'Sugar',
+  // },
+  // '砂糖': {
+  //   zhtw: '砂糖',
+  //   en: 'Sugar',
+  // },
+  // '砂糖': {
+  //   zhtw: '砂糖',
+  //   en: 'Sugar',
+  // },
+  // '砂糖': {
+  //   zhtw: '砂糖',
+  //   en: 'Sugar',
+  // },
 }
 
 // const REACT_APP_LANG = 'en';

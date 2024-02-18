@@ -24,11 +24,11 @@ export default function Dishes() {
     <td>
       <div className="hidden md:block">
         { dish.ingredients.required.join(', ') }&nbsp;
-        <span className="text-stone-400">{ dish.ingredients.addon ? `(${dish.ingredients.addon})` : '' }</span>
+        <span className="text-stone-400">{ dish.ingredients.topping ? `(${dish.ingredients.topping})` : '' }</span>
       </div>
       <div className="md:hidden">
         { dish.ingredients.required.map(i => <div key={i}>{i}</div>) }
-        <div className="text-stone-400">{ dish.ingredients.addon }</div>
+        <div className="text-stone-400">{ dish.ingredients.topping }</div>
       </div>
     </td>
   </tr>);
@@ -62,7 +62,7 @@ export default function Dishes() {
         <tr>
           <th className="w-12 md:w-24">{ lang('image') }</th>
           <th className="md:w-48">{ lang('name') }</th>
-          <th className="w-16 md:w-28">{ lang('category') }</th>
+          <th className="w-24">{ lang('category') }</th>
           <th>{ lang('ingredients') }</th>
         </tr>
       </thead>

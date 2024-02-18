@@ -405,7 +405,7 @@ const cropRawDataZHTW = [
     ],
   },
   {
-    "name": "花椰菜",
+    "name": "綠花椰菜",
     "category": "蔬菜",
     "season": [
       "冬",
