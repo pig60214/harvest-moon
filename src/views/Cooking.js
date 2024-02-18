@@ -3,6 +3,7 @@ import { setCategory } from '../store/dishesSettingSlice';
 import lang from 'rawData/resourse';
 import { useState } from "react";
 import dishRawData from "rawData/dishRawData";
+import { gaEventTracker } from '../GA';
 
 export default function Dishes() {
   const setting = useSelector(state => state.dishesSetting);
@@ -36,6 +37,7 @@ export default function Dishes() {
   const getDinner = () => {
     const random = Math.floor(Math.random() * dishesWithFilter.length);
     setrandomIndex(random);
+    gaEventTracker('烹飪-Click getDinner');
   }
 
   const resetRandomIndex = () => {
