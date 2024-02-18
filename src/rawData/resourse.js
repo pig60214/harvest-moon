@@ -1507,6 +1507,86 @@ const resourse = {
     zhtw: '水果歐蕾',
     en: 'Fruit au Lait',
   },
+  '鬱金香': {
+    zhtw: '鬱金香',
+    en: 'Tulip',
+  },
+  '粉蝶花': {
+    zhtw: '粉蝶花',
+    en: 'Nemophila',
+  },
+  '三色堇': {
+    zhtw: '三色堇',
+    en: 'Pansy',
+  },
+  '陸蓮花': {
+    zhtw: '陸蓮花',
+    en: 'Buttercup',
+  },
+  '黑色三色堇': {
+    zhtw: '黑色三色堇',
+    en: 'Black Pansy',
+  },
+  '扶桑花': {
+    zhtw: '扶桑花',
+    en: 'Hibiscus',
+  },
+  '矮牽牛': {
+    zhtw: '矮牽牛',
+    en: 'Petunia',
+  },
+  '萬壽菊': {
+    zhtw: '萬壽菊',
+    en: 'Marigold',
+  },
+  '向日葵': {
+    zhtw: '向日葵',
+    en: 'Sunflower',
+  },
+  '百合': {
+    zhtw: '百合',
+    en: 'Lily',
+  },
+  '玫瑰': {
+    zhtw: '玫瑰',
+    en: 'Rose',
+  },
+  '乒乓菊': {
+    zhtw: '乒乓菊',
+    en: 'Mum',
+  },
+  '鐵線蓮': {
+    zhtw: '鐵線蓮',
+    en: 'Clematis',
+  },
+  '瑪格麗特': {
+    zhtw: '瑪格麗特',
+    en: 'Daisy',
+  },
+  '黑薔薇': {
+    zhtw: '黑薔薇',
+    en: 'Black Rose',
+  },
+  '富貴菊': {
+    zhtw: '富貴菊',
+    en: 'Cineraria',
+  },
+  '報春花': {
+    zhtw: '報春花',
+    en: 'Primrose',
+  },
+  '秋海棠': {
+    zhtw: '秋海棠',
+    en: 'Begonia',
+  },
+  '風鈴草': {
+    zhtw: '風鈴草',
+    en: 'Campanula',
+  },
+  '聖誕玫瑰': {
+    zhtw: '聖誕玫瑰',
+    en: 'Hellebore',
+  }
   // '砂糖': {
   //   zhtw: '砂糖',
   //   en: 'Sugar',
