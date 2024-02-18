@@ -255,7 +255,7 @@ const dishRawDataZHTW = [
     "name": "義式蔬菜湯",
     "category": "湯",
     "ingredients": {
-      "required": ["番茄類", "高麗菜", "節瓜"],
+      "required": ["番茄類", "高麗菜", "櫛瓜"],
       "topping": "大蒜",
     },
   },
@@ -311,239 +311,475 @@ const dishRawDataZHTW = [
   // 主餐 // 主餐 // 主餐 //
   {
     "name": "烤魚",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["魚類"],
+      "topping": "檸檬",
+    },
   },
   {
     "name": "荷包蛋",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["蛋類"],
+      "topping": "醬油",
+    },
   },
   {
     "name": "蔬菜三明治",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["麵包類", "蔬菜類", "野莓"],
+      "topping": "美乃滋",
+    },
   },
   {
     "name": "咖哩飯",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["白飯", "辛辣調味料", "馬鈴薯類"],
+      "topping": "洋蔥",
+    },
   },
   {
     "name": "雞蛋三明治",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["麵包類", "蛋類"],
+      "topping": "美乃滋",
+    },
   },
   {
     "name": "歐姆蛋",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["蛋類", "番茄類"],
+      "topping": "美乃滋",
+    },
   },
   {
     "name": "麻辣螯蝦",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["螯蝦", "辛辣調味料", "香草調味料"],
+      "topping": "胡椒",
+    },
   },
   {
     "name": "泰式炸蝦吐司",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["蝦類", "醬油", "麵包類"],
+      "topping": "甜椒",
+    },
   },
   {
     "name": "異國風味咖哩",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["白飯", "秋葵", "甜椒", "辛辣調味料"],
+      "topping": "優格",
+    },
   },
   {
     "name": "鯛魚生魚片",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["鯛魚", "醬油"],
+      "topping": "比目魚",
+    },
   },
   {
     "name": "中華拉麵",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["醬油", "小型魚類", "麵粉"],
+      "topping": "竹筍",
+    },
   },
   {
     "name": "乾燒明蝦",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["泰國蝦", "番茄類", "辣椒"],
+      "topping": "辛辣調味料",
+    },
   },
   {
     "name": "天婦羅",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["麵粉", "草蝦", "蔬菜類", "牡蠣"],
+      "topping": "鹽",
+    },
   },
   {
     "name": "義大利漁夫麵",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["麵粉", "蝦類", "淡菜", "番茄類"],
+      "topping": "鼠尾草",
+    },
   },
   {
     "name": "鰻魚飯",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["白飯", "鰻魚", "醬油", "砂糖"],
+      "topping": "香草調味料",
+    },
   },
   {
     "name": "茄汁焗豆",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["豆子", "青椒", "甜椒"],
+      "topping": "橄欖",
+    },
   },
   {
     "name": "披薩",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["麵粉", "番茄類", "起司"],
+      "topping": "鳳梨",
+    },
   },
   {
     "name": "豆皮烏龍麵",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["醬油", "豆子", "麵粉"],
+      "topping": "青蔥類",
+    },
   },
   {
     "name": "日式拿坡里義大利麵",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["麵粉", "番茄類", "洋蔥", "青椒"],
+      "topping": "鼠尾草",
+    },
   },
   {
     "name": "栗子飯",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["白飯", "栗子", "蕃薯類"],
+      "topping": "松茸",
+    },
   },
   {
     "name": "日式煮魚",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["中型魚類", "白蘿蔔類", "醬油"],
+      "topping": "砂糖",
+    },
   },
   {
     "name": "蔬食披薩",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["麵粉", "蔬菜類", "綠花椰菜", "起司"],
+      "topping": "野莓",
+    },
   },
   {
     "name": "普羅旺斯燉菜",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["辣椒", "櫛瓜", "甜椒", "茄子類"],
+      "topping": "橄欖",
+    },
   },
   {
     "name": "西班牙烤大蔥",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["青蔥類", "橄欖油", "鹽", "胡椒"],
+      "topping": "杏仁",
+    },
   },
   {
     "name": "海鮮蓋飯",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["白飯", "鮭魚", "牡蠣", "伊勢龍蝦"],
+      "topping": "醬油",
+    },
   },
   {
     "name": "葡萄牙海鮮銅鍋料理",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["青江菜", "鬼頭刀", "螃蟹類", "墨魚"],
+      "topping": "鮑魚",
+    },
   },
   {
     "name": "日式炸浸蔬菜",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["茄子類", "南瓜", "秋葵"],
+      "topping": "醬油",
+    },
   },
   {
     "name": "果醬三明治",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["麵包類", "果醬類", "奶油"],
+      "topping": "優格",
+    },
   },
   {
     "name": "日式燉菜",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["白蘿蔔類", "秋葵", "醬油"],
+      "topping": "砂糖",
+    },
   },
   {
     "name": "法式吐司",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["麵包類", "蛋類", "奶類", "蜂巢蜜"],
+      "topping": "柳橙",
+    },
   },
   {
     "name": "拌飯",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["白飯", "鴻喜菇", "牛蒡", "胡蘿蔔"],
+      "topping": "竹筍",
+    },
   },
   {
     "name": "鮪魚三明治",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["麵包類", "蛋類", "蔬菜類", "鮪魚"],
+      "topping": "鼠尾草",
+    },
   },
   {
     "name": "法式煎蔬菜",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["高麗菜", "菠菜類", "胡蘿蔔"],
+      "topping": "大蒜",
+    },
   },
   {
     "name": "燉馬鈴薯",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["馬鈴薯類", "辣椒", "工蜂乳"],
+      "topping": "砂糖",
+    },
   },
   {
     "name": "白醬義大利麵",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["麵粉", "菠菜類", "奶類"],
+      "topping": "鼠尾草",
+    },
   },
   {
     "name": "焗烤通心粉",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["麵粉", "奶類", "綠花椰菜", "起司"],
+      "topping": "香菇",
+    },
   },
   {
     "name": "奶油培根蛋黃麵",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["麵粉", "起司", "蛋類", "奶類"],
+      "topping": "橄欖油",
+    },
   },
   {
     "name": "西班牙風醃漬沙丁魚",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["沙丁魚", "橄欖油", "大蒜", "醋"],
+      "topping": "香草調味料",
+    },
   },
   {
     "name": "法式鹹派",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["麵粉", "起司", "綠花椰菜", "玉蜀黍類"],
+      "topping": "茄子類",
+    },
   },
   {
     "name": "田園野菇派",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["麵粉", "起司", "杏鮑菇", "洋菇"],
+      "topping": "鴻喜菇",
+    },
   },
   {
     "name": "酥炸鮪魚塊",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["鮪魚", "橄欖油", "蛋類", "麵包類"],
+      "topping": "美乃滋",
+    },
   },
   {
     "name": "碗豆燉飯",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["白飯", "豆子", "胡蘿蔔", "奶油"],
+      "topping": "橄欖",
+    },
   },
   {
     "name": "松茸炊飯",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["白飯", "松茸", "竹筍"],
+      "topping": "醬油",
+    },
   },
   {
     "name": "泰式咖哩蟹",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["辛辣調味料", "椰子", "蛋類", "塔斯馬尼亞帝王蟹👑"],
+      "topping": "白飯",
+    },
   },
   {
     "name": "西班牙式鐵板煎菇",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["洋菇", "蝦類", "大蒜", "橄欖油"],
+      "topping": "菇類",
+    },
   },
   {
     "name": "蒜味辣椒義大利麵",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["麵粉", "橄欖油", "辣椒", "大蒜"],
+      "topping": "鼠尾草",
+    },
   },
   {
     "name": "奶油燉菜",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["奶類", "奶油", "綠花椰菜", "胡蘿蔔"],
+      "topping": "洋菇",
+    },
   },
   {
     "name": "洋菇高麗菜捲",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["洋菇", "高麗菜", "番茄類"],
+      "topping": "橄欖油",
+    },
   },
   {
     "name": "泰式酸辣鯰魚湯",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["椰子", "湄公河巨鯰👑", "香草調味料"],
+      "topping": "胡椒",
+    },
   },
   {
     "name": "烤大雀鱔",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["大雀鱔", "鹽", "檸檬"],
+      "topping": "醬油",
+    },
   },
   {
     "name": "大碗海鮮抓飯",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["白飯", "雪花鴨嘴燕魟👑", "青椒", "奶油"],
+      "topping": "胡椒",
+    },
   },
   {
     "name": "墨西哥玉米湯餅",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["玉蜀黍類", "櫛瓜", "酪梨類", "辛辣調味料"],
+      "topping": "奧勒岡葉",
+    },
   },
   {
     "name": "旗魚壽司",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["稻米", "旗魚👑", "醬油", "醋"],
+      "topping": "砂糖",
+    },
   },
   {
     "name": "瑞士起司火鍋",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["起司", "綠花椰菜", "巨大蕃薯", "南瓜"],
+      "topping": "胡蘿蔔",
+    },
   },
   {
     "name": "義式烤扁鱈",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["扁鱈👑", "番茄類", "馬鈴薯類", "檸檬"],
+      "topping": "貝類",
+    },
   },
   {
     "name": "青醬義大利麵",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["麵粉", "巨大酪梨", "起司", "橄欖油"],
+      "topping": "鼠尾草",
+    },
   },
   {
     "name": "巨大海鮮披薩",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["麵粉", "龍膽石斑👑", "大王烏賊👑", "起司"],
+      "topping": "橄欖油",
+    },
   },
   {
     "name": "泡菜鍋",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["黃金白菜", "青江菜", "青蔥類", "辣椒"],
+      "topping": "松茸",
+    },
   },
   {
     "name": "日式白湯鍋",
-    "category": "主餐"
+    "category": "主餐",
+    "ingredients": {
+      "required": ["高麗菜", "松茸", "牛蒡", "巨大的青蔥"],
+      "topping": "香菇",
+    },
   },
   // Onigiri: Unlocks after completing all of Lovett's Gourmet Requests
 
@@ -787,7 +1023,7 @@ const dishRawDataZHTW = [
     "category": "其他",
   },
   {
-    "name": "水果歐雷",
+    "name": "水果歐蕾",
     "category": "其他",
   },
   {

@@ -31,7 +31,7 @@ const fishesRawData = [
   { name: '龍膽石斑👑', time: 'AM7~AM11', locations: '區域 1 海邊', weather: '晴、雨'},
   { name: '旗魚👑', time: 'PM12~AM2', locations: '區域 2 海邊', weather: '晴、雪'},
   { name: '雪花鴨嘴燕魟👑', time: 'PM2~PM4', locations: '區域 3 海邊', weather: '晴、雪、大雪'},
-  { name: '帝王蟹👑', time: '', locations: '區域 3 礦區', weather: ''},
+  { name: '塔斯馬尼亞帝王蟹👑', time: '', locations: '區域 3 礦區', weather: ''},
   { name: '大王烏賊👑', time: '', locations: '釣客島海邊', weather: ''},
   { name: '扁鱈👑', time: 'PM9~PM11', locations: '上古之湖', weather: ''},
   { name: '大雀鱔', time: 'PM5~AM2', locations: '區域 3 海邊、礦區', weather: ''},

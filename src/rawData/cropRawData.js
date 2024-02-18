@@ -187,7 +187,7 @@ const cropRawDataZHTW = [
     "hasVariant": true,
   },
   {
-    "name": "節瓜",
+    "name": "櫛瓜",
     "category": "蔬菜",
     "season": [
       "夏"
