@@ -279,10 +279,6 @@ const resourse = {
     zhtw: '船長',
     en: "Captain",
   },
-  '發光手錶': {
-    zhtw: '發光手錶',
-    en: 'Shiny Watch',
-  },
   '拌飯': {
     zhtw: '拌飯',
     en: 'Mixed Rice',
@@ -307,10 +303,6 @@ const resourse = {
     zhtw: '豪華路燈',
     en: 'Gorgeous Street Lamp',
   },
-  '珠寶戒指': {
-    zhtw: '珠寶戒指',
-    en: 'Jewelry Ring',
-  },
   '木製長椅': {
     zhtw: '木製長椅',
     en: 'Wooden Bench',
@@ -323,10 +315,6 @@ const resourse = {
     zhtw: '鐵製長椅',
     en: 'Iron Bench',
   },
-  '鑽石': {
-    zhtw: '鑽石',
-    en: 'Diamond',
-  },
   '巨大海鮮披薩': {
     zhtw: '巨大海鮮披薩',
     en: 'Giant Seafood Pizza',
@@ -334,10 +322,6 @@ const resourse = {
   '青醬義大利麵': {
     zhtw: '青醬義大利麵',
     en: 'Genovese Pasta',
-  },
-  '珠寶墜子': {
-    zhtw: '珠寶墜子',
-    en: 'Jewelry Locket',
   },
   '義大利漁夫麵': {
     zhtw: '義大利漁夫麵',
@@ -1013,7 +997,7 @@ const resourse = {
   },
   '法式煎蔬菜': {
     zhtw: '法式煎蔬菜',
-    en: 'Sugar',
+    en: 'Vegetable Sauté',
   },
   '燉馬鈴薯': {
     zhtw: '燉馬鈴薯',
@@ -1139,10 +1123,6 @@ const resourse = {
     zhtw: '扁鱈👑',
     en: 'Halibut',
   },
-  '麵粉': {
-    zhtw: '麵粉',
-    en: 'Flour',
-  },
   '龍膽石斑👑': {
     zhtw: '龍膽石斑👑',
     en: 'Giant Grouper👑',
@@ -1179,10 +1159,6 @@ const resourse = {
     zhtw: '鮪魚',
     en: 'Tuna',
   },
-  '工蜂乳': {
-    zhtw: '工蜂乳',
-    en: 'Worker Jelly',
-  },
   '沙丁魚': {
     zhtw: '沙丁魚',
     en: 'Sardine',
@@ -1194,10 +1170,6 @@ const resourse = {
   '竹筍': {
     zhtw: '竹筍',
     en: 'Bamboo Shoot',
-  },
-  '蜂巢蜜': {
-    zhtw: '蜂巢蜜',
-    en: 'Comb Honey',
   },
   '果醬類': {
     zhtw: '果醬類',
@@ -1622,7 +1594,97 @@ const resourse = {
   '松茸種菌': {
     zhtw: '松茸種菌',
     en: 'Matsutake Spores',
-  }
+  },
+  '草莓類': {
+    zhtw: '草莓類',
+    en: 'Strawberry Group',
+  },
+  '蜂蜜巢蜜': { zhtw:'蜂蜜巢蜜', en:'Honey Hive', },
+  '蜂巢巢蜜': { zhtw:'蜂巢巢蜜', en:'Honeycomb Hive', },
+  '工蜂巢蜜': { zhtw:'工蜂巢蜜', en:'Worker Hive', },
+  '蜂王巢蜜': { zhtw:'蜂王巢蜜', en:'Royal Hive', },
+  '蜂蜜': { zhtw:'蜂蜜', en:'Honey', },
+  '蜂蜜類': { zhtw:'蜂蜜類', en:'Honey Group', },
+  '蜂巢蜜': { zhtw:'蜂巢蜜', en:'Comb Honey', },
+  '工蜂乳': { zhtw:'工蜂乳', en:'Worker Jelly', },
+  '蜂王乳': { zhtw:'蜂王乳', en:'Royal Jelly', },
+  '咖啡粉': {zhtw:'咖啡粉', en:'Coffee Powder'},
+  '可可粉': {zhtw:'可可粉', en:'Cocoa Powder'},
+  '麵粉': {zhtw:'麵粉', en:'Flour'},
+  '石塊': {zhtw:'石塊', en:'Stone'},
+  '鐵礦石': {zhtw:'鐵礦石', en:'Iron Ore'},
+  '銀礦石': {zhtw:'銀礦石', en:'Silver Ore'},
+  '金礦石': {zhtw:'金礦石', en:'Gold Ore'},
+  '奧利哈鋼礦石': {zhtw:'奧利哈鋼礦石', en:'Orichalcum Ore'},
+  '玻璃石': {zhtw:'玻璃石', en:'Glass Rock'},
+  '石炭塊': {zhtw:'石炭塊', en:'Coal Lump'},
+  '白色蛋白石原石': {zhtw:'白色蛋白石原石', en:'Raw White Opal'},
+  '紅綠柱石原石': {zhtw:'紅綠柱石原石', en:'Raw Red Beryl'},
+  '紅寶石原石': {zhtw:'紅寶石原石', en:'Raw Ruby'},
+  '藍寶石原石': {zhtw:'藍寶石原石', en:'Raw Sapphire'},
+  '祖母綠原石': {zhtw:'祖母綠原石', en:'Raw Emerald'},
+  '鑽石原石': {zhtw:'鑽石原石', en:'Raw Diamond'},
+  '白色蛋白石': {zhtw:'白色蛋白石', en:'White Opal'},
+  '紅綠柱石': {zhtw:'紅綠柱石', en:'Red Beryl'},
+  '紅寶石': {zhtw:'紅寶石', en:'Ruby'},
+  '藍寶石': {zhtw:'藍寶石', en:'Sapphire'},
+  '祖母綠': {zhtw:'祖母綠', en:'Emerald'},
+  '鑽石': {zhtw:'鑽石', en:'Diamond'},
+  '春風進行曲': {zhtw:'春風進行曲', en:'Springtime March'},
+  '炎帝華爾滋': {zhtw:'炎帝華爾滋', en:'Blazing Waltz'},
+  '月夜夜曲': {zhtw:'月夜夜曲', en:'Moonlight Nocturne'},
+  '雪花輪舞曲': {zhtw:'雪花輪舞曲', en:'Winter Bloom Rondo'},
+  '大地協奏曲': {zhtw:'大地協奏曲', en:'Earth Concerto'},
+  '彩虹花束': {zhtw:'彩虹花束', en:'Rainbow Bouquet'},
+  '珠寶戒指': {zhtw:'珠寶戒指', en:'Jewelry Ring'},
+  '珠寶墜子': {zhtw:'珠寶墜子', en:'Jewelry Locket'},
+  '時髦手環': {zhtw:'時髦手環', en:'Fashionable Bracelet'},
+  '發光手錶': {zhtw:'發光手錶', en:'Shiny Watch'},
+
+  '木材加工機': { zhtw: '木材加工機', en: 'Lumber Maker'},
+  '巨大木材加工機': { zhtw: '巨大木材加工機', en: 'Giant Lumber Maker'},
+  '絲線加工機': { zhtw: '絲線加工機', en: 'Thread Maker'},
+  '巨大絲線加工機': { zhtw: '巨大絲線加工機', en: 'Giant Thread Maker'},
+  '布料加工機': { zhtw: '布料加工機', en: 'Textile Maker'},
+  '巨大布料加工機': { zhtw: '巨大布料加工機', en: 'Giant Textile Maker'},
+  '金屬塊加工機': { zhtw: '金屬塊加工機', en: 'Ingot Maker'},
+  '巨大金屬塊加工機': { zhtw: '巨大金屬塊加工機', en: 'Giant Ingot Maker'},
+  '珠寶加工機': { zhtw: '珠寶加工機', en: 'Jewel Maker'},
+  '巨大珠寶加工機': { zhtw: '珠寶加工機', en: 'Giant Jewel Maker'},
+  '磚頭加工機': { zhtw: '磚頭加工機', en: 'Brick Maker'},
+  '巨大磚頭加工機': { zhtw: '磚頭加工機', en: 'Giant Brick Maker'},
+  '農作物種子加工機': { zhtw: '農作物種子加工機', en: 'Seed Maker'},
+  '巨大農作物種子加工機': { zhtw: '巨大農作物種子加工機', en: 'Giant Seed Maker'},
+  '粉末加工機': { zhtw: '粉末加工機', en: 'Powder Maker'},
+  '巨大粉末加工機': { zhtw: '巨大粉末加工機', en: 'Giant Powder Maker'},
+  '幼苗加工機': { zhtw: '幼苗加工機', en: 'Seedling Maker'},
+  '巨大幼苗加工機': { zhtw: '巨大幼苗加工機', en: 'Giant Seedling Maker'},
+  '果醬加工機': { zhtw: '果醬加工機', en: 'Jam Maker'},
+  '巨大果醬加工機': { zhtw: '巨大果醬加工機', en: 'Giant Jam Maker'},
+  '菇類種菌加工機': { zhtw: '菇類種菌加工機', en: 'Spore Maker'},
+  '巨大菇類種菌加工機': { zhtw: '巨大菇類種菌加工機', en: 'Giant Spore Maker'},
+  '蜂蜜加工機': { zhtw: '蜂蜜加工機', en: 'Honey Maker'},
+  '巨大蜂蜜加工機': { zhtw: '巨大蜂蜜加工機', en: 'Giant Honey Maker'},
+  '毛線加工機': { zhtw: '毛線加工機', en: 'Yarn Maker'},
+  '巨大毛線加工機': { zhtw: '巨大毛線加工機', en: 'Giant Yarn Maker'},
+  '毛料加工機': { zhtw: '毛料加工機', en: 'Cloth Maker'},
+  '巨大毛料加工機': { zhtw: '巨大毛料加工機', en: 'Giant Cloth Maker'},
+  '起司加工機': { zhtw: '起司加工機', en: 'Cheese Maker'},
+  '巨大起司加工機': { zhtw: '巨大起司加工機', en: 'Giant Cheese Maker'},
+  '奶油加工機': { zhtw: '奶油加工機', en: 'Butter Maker'},
+  '巨大奶油加工機': { zhtw: '巨大奶油加工機', en: 'Giant Butter Maker'},
+  '優格加工機': { zhtw: '優格加工機', en: 'Yogurt Maker'},
+  '巨大優格加工機': { zhtw: '巨大優格加工機', en: 'Giant Yogurt Maker'},
+  '美乃滋加工機': { zhtw: '美乃滋加工機', en: 'Mayonnaise Maker'},
+  '巨大美乃滋加工機': { zhtw: '巨大美乃滋加工機', en: 'Giant Mayonnaise Maker'},
+  '調味料加工機': { zhtw: '調味料加工機', en: 'Seasoning Maker'},
+  '巨大調味料加工機': { zhtw: '巨大調味料加工機', en: 'Giant Seasoning Maker'},
+  '液體調味料加工機': { zhtw: '液體調味料加工機', en: 'Condiment Maker'},
+  '巨大液體調味料加工機': { zhtw: '巨大液體調味料加工機', en: 'Giant Condiment Maker'},
+  '香精加工機': { zhtw: '香精加工機', en: 'Essence Maker'},
+  '巨大香精加工機': { zhtw: '巨大香精加工機', en: 'Giant Essence Maker'},
+  '染料加工機': { zhtw: '染料加工機', en: 'Dye Maker'},
+  '巨大染料加工機': { zhtw: '染料加工機', en: 'Giant Dye Maker'},
   // '砂糖': {
   //   zhtw: '砂糖',
   //   en: 'Sugar',
@@ -1650,6 +1712,17 @@ const lang = (key) => {
     return resourse[key][REACT_APP_LANG] ? resourse[key][REACT_APP_LANG] : resourse[key]['zhtw'];
   }
   return key;
+}
+
+export const findZhtw = (en) => {
+  let result;
+  Object.values(resourse).forEach(r => {
+    if (r.en === en) {
+      result = r.zhtw;
+      return;
+    }
+  })
+  return result;
 }
 
 export default lang;

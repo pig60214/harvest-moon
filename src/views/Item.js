@@ -39,7 +39,7 @@ export default function Item() {
         <tr><th colSpan={3} className='py-1 font-normal'><SearchInput placeholder='可搜尋多個關鍵字，Ex：橄欖結晶 醬油' /></th></tr>
         <tr className='h-8'>
         <th className="w-12 md:w-24">圖片</th>
-          <th className='w-36'>名稱</th>
+          <th className='w-48'>名稱</th>
           <th className='w-64'>取得方式</th>
         </tr>
       </thead>

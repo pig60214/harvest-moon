@@ -786,139 +786,275 @@ const dishRawDataZHTW = [
   // 甜點 // 甜點 // 甜點 //
   {
     "name": "艾草大福",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["稻米", "茶葉"],
+      "topping": "鹽",
+    },
   },
   {
     "name": "糖漬水果",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["水果類", "砂糖"],
+      "topping": "櫻桃",
+    },
   },
   {
     "name": "紅豆麻糬湯",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["豆子", "稻米", "砂糖"],
+      "topping": "鹽",
+    },
   },
   {
     "name": "草莓大福",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["稻米", "草莓類", "砂糖"],
+      "topping": "鹽",
+    },
   },
   {
     "name": "栗子最中餅",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["豆子", "稻米", "栗子"],
+      "topping": "砂糖",
+    },
   },
   {
     "name": "三種牡丹餅",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["稻米", "茶葉", "砂糖", "豆子"],
+      "topping": "鹽",
+    },
   },
   {
     "name": "布丁",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["蛋類", "奶類", "砂糖"],
+      "topping": "櫻桃",
+    },
   },
   {
     "name": "美式鬆餅",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["麵粉", "蛋類", "奶類"],
+      "topping": "杏仁",
+    },
   },
   {
     "name": "蜂蜜優格",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["優格", "蜂蜜"],
+      "topping": "柳橙",
+    },
   },
   {
     "name": "地瓜燒",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["麵粉", "蕃薯類"],
+      "topping": "砂糖",
+    },
   },
   {
     "name": "蒙布朗",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["麵粉", "栗子", "蛋類", "奶類"],
+      "topping": "砂糖",
+    },
   },
   {
     "name": "黃豆粉烤年糕吐司",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["麵包類", "豆子", "蜂蜜", "稻米"],
+      "topping": "可可粉",
+    },
   },
   {
     "name": "楓糖瑪芬蛋糕",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["麵粉", "蛋類", "奶類", "蜂蜜"],
+      "topping": "蜂蜜類",
+    },
   },
   {
     "name": "烤蘋果",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["蘋果類", "蜂蜜", "奶油",],
+      "topping": "杏仁",
+    },
   },
   {
     "name": "咖啡布丁",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["蛋類", "奶類", "砂糖", "咖啡粉"],
+      "topping": "可可粉",
+    },
   },
   {
     "name": "餅乾",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["麵粉", "蛋類", "奶類", "奶油"],
+      "topping": "茶葉",
+    },
   },
   {
     "name": "草莓奶油蛋糕",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["麵粉", "草莓類", "蛋類", "奶類"],
+      "topping": "芒果",
+    },
   },
   {
     "name": "水果蛋糕",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["麵粉", "水果類", "蛋類", "奶類"],
+      "topping": "哈密瓜類",
+    },
   },
   {
     "name": "起司蛋糕",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["麵粉", "起司", "蛋類", "奶類"],
+      "topping": "檸檬",
+    },
   },
   {
     "name": "杏仁餅乾",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["麵粉", "蛋類", "奶類", "杏仁"],
+      "topping": "可可粉",
+    },
   },
   {
     "name": "堅果瑪芬蛋糕",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["麵粉", "蛋類", "奶類", "杏仁"],
+      "topping": "香草調味料",
+    },
   },
   {
     "name": "巧克力瑪芬蛋糕",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["麵粉", "蛋類", "奶類", "可可粉"],
+      "topping": "咖啡粉",
+    },
   },
   {
     "name": "蜂蜜布丁",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["蛋類", "奶類", "砂糖", "工蜂乳"],
+      "topping": "蜂蜜類",
+    },
   },
   {
     "name": "巧克力蛋糕",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["麵粉", "可可粉", "蛋類", "奶類"],
+      "topping": "香蕉",
+    },
   },
   {
     "name": "薩赫蛋糕",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["蛋類", "奶油", "麵粉", "可可粉"],
+      "topping": "果醬類",
+    },
   },
   {
     "name": "巧克力餅乾",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["麵粉", "蛋類", "可可粉", "杏仁"],
+      "topping": "茶葉",
+    },
   },
   {
     "name": "提拉米蘇",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["奶類", "蛋類", "咖啡粉", "起司"],
+      "topping": "可可粉",
+    },
   },
   {
     "name": "布朗尼蛋糕",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["可可粉", "奶油", "奶類", "蛋類"],
+      "topping": "咖啡粉",
+    },
   },
   {
     "name": "黑森林蛋糕",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["麵粉", "蛋類", "可可粉", "櫻桃"],
+      "topping": "奶類",
+    },
   },
   {
     "name": "拉明頓蛋糕",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["麵粉", "砂糖", "可可粉", "椰子"],
+      "topping": "咖啡粉",
+    },
   },
   {
     "name": "芒果糯米飯",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["稻米", "芒果", "椰子", "鹽"],
+      "topping": "砂糖",
+    },
   },
   {
     "name": "西班牙杏仁糕點",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["杏仁", "蕃薯類", "椰子", "蛋類"],
+      "topping": "咖啡粉",
+    },
   },
   {
     "name": "蜂蜜地瓜燒",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["麵粉", "蕃薯類", "椰子", "蜂巢蜜"],
+      "topping": "砂糖",
+    },
   },
   {
     "name": "義式奶酪",
-    "category": "甜點"
+    "category": "甜點",
+    "ingredients": {
+      "required": ["奶類", "蜂王乳", "柳橙", "金雨迷迭香"],
+      "topping": "可可粉",
+    },
   },
 
   // 其他 // 其他 // 其他 //
