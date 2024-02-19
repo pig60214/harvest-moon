@@ -28,7 +28,7 @@ export default function Dishes() {
         <span className="text-stone-400">{ dish.ingredients.topping ? `(${dish.ingredients.topping})` : '' }</span>
       </div>
       <div className="md:hidden">
-        { dish.ingredients.required.map(i => <div key={i}>{i}</div>) }
+        { dish.ingredients.required.map((ingredient, index) => <div key={index}>{ingredient}</div>) }
         <div className="text-stone-400">{ dish.ingredients.topping }</div>
       </div>
     </td>
