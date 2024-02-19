@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
-import { setCategory } from '../store/dishesSettingSlice';
+import { setCookingCategory } from '../store/panelSettingSlice';
 import lang, { getLang } from 'rawData/resourse';
 import { useState } from "react";
 import dishRawData from "rawData/dishRawData";
 import { gaEventTracker } from '../GA';
 
 export default function Dishes() {
-  const setting = useSelector(state => state.dishesSetting);
+  const setting = useSelector(state => state.panelSetting.cooking);
   const dispatch = useDispatch();
   const [randomIndex, setrandomIndex] = useState(-1);
 
@@ -45,9 +45,9 @@ export default function Dishes() {
   }
   const panel = (
     <ul className='my-tabs my-1'>
-      { ['沙拉', '其他', '湯', '主餐', '甜點', '全品項'].map(c => <li key={c} className={setting.category === c || setting.category === '全品項' ? 'active' : 'inactive'} onClick={() => {dispatch(setCategory(c));resetRandomIndex()}}>{lang(c)}</li>) }
+      { ['沙拉', '其他', '湯', '主餐', '甜點', '全品項'].map(c => <li key={c} className={setting.category === c || setting.category === '全品項' ? 'active' : 'inactive'} onClick={() => {dispatch(setCookingCategory(c));resetRandomIndex()}}>{lang(c)}</li>) }
     </ul>
-)
+  )
   return (
     <>
     <table className={`md:mx-auto mt-2 ${ getLang() === 'en' ?'md:w-screen-lg' : 'md:w-screen-md'}`}>

@@ -1685,6 +1685,15 @@ const resourse = {
   '巨大香精加工機': { zhtw: '巨大香精加工機', en: 'Giant Essence Maker'},
   '染料加工機': { zhtw: '染料加工機', en: 'Dye Maker'},
   '巨大染料加工機': { zhtw: '染料加工機', en: 'Giant Dye Maker'},
+
+  'way': { zhtw: '取得方式', en: 'Way'},
+  '香菇類': { zhtw: '菇類', en: 'Mushroom'},
+  '石頭': { zhtw: '石頭', en: 'Stone'},
+  '寶石': { zhtw: '寶石', en: 'Jewel'},
+  '調味料': { zhtw: '調味料', en: 'Seasoning'},
+  '加工機': { zhtw: '加工機', en: 'Maker'},
+  '花束': { zhtw: '花束', en: 'Bouquet'},
+  '飾品': { zhtw: '飾品', en: 'Accessory'},
   // '砂糖': {
   //   zhtw: '砂糖',
   //   en: 'Sugar',
