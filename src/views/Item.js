@@ -37,16 +37,16 @@ export default function Item() {
 
   const panel = (
     <ul className='my-tabs my-1'>
-      { ['香菇類', '蜂蜜', '石頭', '寶石', '調味料', '加工機', '花束', '飾品', '全品項'].map(c => <li key={c} className={setting.category === c || setting.category === '全品項' ? 'active' : 'inactive'} onClick={() => {dispatch(setItemCategory(c));}}>{lang(c)}</li>) }
+      { ['香菇類', '蜂蜜', '木頭', '草', '石頭', '金屬塊','山菜', '香草', '寶石', '調味料', '果醬', '釣餌', '花束', '香水', '飾品', '寶物', '染料', '加工機', '全品項'].map(c => <li key={c} className={setting.category === c || setting.category === '全品項' ? 'active' : 'inactive'} onClick={() => {dispatch(setItemCategory(c));}}>{lang(c)}</li>) }
     </ul>
   )
 
   return (
     <>
-    <p>{ process.env.REACT_APP_ENV === 'test' ? '' : '不過此表格多有殘缺，還在慢慢補齊中，如果受不了它這麼破，也可以點擊右下角的回饋按鈕，填寫表單告訴我，歡迎一起來補齊，謝謝～～' }</p>
+    {/* <p>{ process.env.REACT_APP_ENV === 'test' ? '' : '不過此表格多有殘缺，還在慢慢補齊中，如果受不了它這麼破，也可以點擊右下角的回饋按鈕，填寫表單告訴我，歡迎一起來補齊，謝謝～～' }</p> */}
     <table className='md:mx-auto'>
       <thead>
-        <tr><th colSpan={4} className='py-1 font-normal'><SearchInput placeholder='可搜尋多個關鍵字，Ex：橄欖結晶 醬油' /></th></tr>
+        <tr><th colSpan={4} className='py-1 font-normal'><SearchInput placeholder={ lang('page_item_search_bar_instruction') } /></th></tr>
         <tr><th colSpan={4}>{panel}</th></tr>
         <tr className='h-8'>
         <th className="w-12 md:w-24">{ lang('image') }</th>

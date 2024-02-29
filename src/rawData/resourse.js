@@ -147,14 +147,6 @@ const resourse = {
     zhtw: '橄欖',
     en: 'Olive',
   },
-  // '馬鈴薯': {
-  //   zhtw: '馬鈴薯',
-  //   en: 'Potato',
-  // },
-  // '馬鈴薯': {
-  //   zhtw: '馬鈴薯',
-  //   en: 'Potato',
-  // },
   '馬鈴薯': {
     zhtw: '馬鈴薯',
     en: 'Potato',
@@ -279,6 +271,8 @@ const resourse = {
     zhtw: '船長',
     en: "Captain",
   },
+  '賽門': { zhtw: '賽門', en: 'Simon'},
+  '艾米里歐': { zhtw: '艾米里歐', en: 'Emilio'},
   '拌飯': {
     zhtw: '拌飯',
     en: 'Mixed Rice',
@@ -286,14 +280,6 @@ const resourse = {
   '白飯': {
     zhtw: '白飯',
     en: 'Cooked White Rice',
-  },
-  '哈密瓜果醬': {
-    zhtw: '哈密瓜果醬',
-    en: 'Melon Jam',
-  },
-  '花香香水': {
-    zhtw: '花香香水',
-    en: 'Floral Perfume',
   },
   '氣派的路燈': {
     zhtw: '氣派的路燈',
@@ -335,22 +321,10 @@ const resourse = {
     zhtw: '披薩',
     en: 'Pizza',
   },
-  '魅惑香水': {
-    zhtw: '魅惑香水',
-    en: 'Charming Perfume',
-  },
-  '果香香水': {
-    zhtw: '果香香水',
-    en: 'Fruit Perfume',
-  },
-  '春風三月': {
-    zhtw: '春風三月',
-    en: 'Springtime March',
-  },
-  '炎帝華爾茲': {
-    zhtw: '炎帝華爾茲',
-    en: 'Blazing Waltz',
-  },
+  '花香香水': { zhtw: '花香香水', en: 'Floral Perfume', },
+  '果香香水': { zhtw: '果香香水', en: 'Fruit Perfume', },
+  '百花香水': { zhtw: '百花香水', en: 'Bouquet Perfume', },
+  '魅惑香水': { zhtw: '魅惑香水', en: 'Charming Perfume', },
   '雞蛋': {
     zhtw: '雞蛋',
     en: 'Egg',
@@ -442,6 +416,10 @@ const resourse = {
   'page_crops_no_trees_and_crops_in_winter': {
     zhtw: '冬天不能種果樹和農作物喔',
     en: "Can't plant trees and crops in winter",
+  },
+  'page_item_search_bar_instruction': {
+    zhtw: '可搜尋多個關鍵字，Ex：橄欖結晶 醬油',
+    en: 'Allow multi-search, ex: log Mushroom',
   },
   '鎮公所': {
     zhtw: '鎮公所',
@@ -554,10 +532,6 @@ const resourse = {
   '洋蔥拌炒馬鈴薯': {
     zhtw: '洋蔥拌炒馬鈴薯',
     en: 'Lyonnaise Potatoes',
-  },
-  '奧勒岡葉': {
-    zhtw: '奧勒岡葉',
-    en: 'Oregano',
   },
   '美乃滋': {
     zhtw: '美乃滋',
@@ -839,10 +813,6 @@ const resourse = {
     zhtw: '韓式年糕湯',
     en: 'Tteokguk',
   },
-  '紫萁': {
-    zhtw: '紫萁',
-    en: 'Royal Fern',
-  },
   '西班牙香蒜湯': {
     zhtw: '西班牙香蒜湯',
     en: 'Sopa de Ajo',
@@ -870,10 +840,6 @@ const resourse = {
   '櫻桃冷湯': {
     zhtw: '櫻桃冷湯',
     en: 'Sour Cherry Soup',
-  },
-  '金雨迷迭香': {
-    zhtw: '金雨迷迭香',
-    en: 'Golden Rain Rosemary',
   },
   '法式燉菜湯': {
     zhtw: '法式燉菜湯',
@@ -1131,10 +1097,6 @@ const resourse = {
     zhtw: '大王烏賊👑',
     en: 'Giant Squid👑',
   },
-  '鼠尾草': {
-    zhtw: '鼠尾草',
-    en: 'Sage',
-  },
   '大雀鱔': {
     zhtw: '大雀鱔',
     en: 'Alligator Gar',
@@ -1167,10 +1129,6 @@ const resourse = {
     zhtw: '茄子類',
     en: 'Eggplant Group',
   },
-  '竹筍': {
-    zhtw: '竹筍',
-    en: 'Bamboo Shoot',
-  },
   '果醬類': {
     zhtw: '果醬類',
     en: 'Jam Group',
@@ -1199,17 +1157,9 @@ const resourse = {
     zhtw: '伊勢龍蝦',
     en: 'Rock Lobster',
   },
-  '野莓': {
-    zhtw: '野莓',
-    en: 'Wild Berry',
-  },
   '中型魚類': {
     zhtw: '中型魚類',
     en: 'Medium Fish Group',
-  },
-  '栗子': {
-    zhtw: '栗子',
-    en: 'Chestnut',
   },
   '蕃薯類': {
     zhtw: '蕃薯類',
@@ -1479,6 +1429,7 @@ const resourse = {
     zhtw: '水果歐蕾',
     en: 'Fruit au Lait',
   },
+  '飯糰': { zhtw: '飯糰', en: 'Onigiri', },
   '鬱金香': {
     zhtw: '鬱金香',
     en: 'Tulip',
@@ -1624,6 +1575,14 @@ const resourse = {
   '藍寶石原石': {zhtw:'藍寶石原石', en:'Raw Sapphire'},
   '祖母綠原石': {zhtw:'祖母綠原石', en:'Raw Emerald'},
   '鑽石原石': {zhtw:'鑽石原石', en:'Raw Diamond'},
+
+  '鐵塊': {zhtw:'鐵塊', en:'Iron Ingot'},
+  '銀塊': {zhtw:'銀塊', en:'Silver Ingot'},
+  '金塊': {zhtw:'金塊', en:'Gold Ingot'},
+  '奧利哈鋼金屬塊': {zhtw:'奧利哈鋼金屬塊', en:'Orichalcum Ingot'},
+  '煤炭': {zhtw:'煤炭', en:'Refined Coal'},
+  '玻璃': {zhtw:'玻璃', en:'Glass'},
+
   '白色蛋白石': {zhtw:'白色蛋白石', en:'White Opal'},
   '紅綠柱石': {zhtw:'紅綠柱石', en:'Red Beryl'},
   '紅寶石': {zhtw:'紅寶石', en:'Ruby'},
@@ -1686,14 +1645,137 @@ const resourse = {
   '染料加工機': { zhtw: '染料加工機', en: 'Dye Maker'},
   '巨大染料加工機': { zhtw: '染料加工機', en: 'Giant Dye Maker'},
 
+  '草莓果醬': {zhtw:'草莓果醬', en:'Strawberry Jam'},
+  '櫻桃果醬': {zhtw:'櫻桃果醬', en:'Cherry Jam'},
+  '柳橙果醬': {zhtw:'柳橙果醬', en:'Orange Marmalade'},
+  '西瓜果醬': {zhtw:'西瓜果醬', en:'Watermelon Jam'},
+  '哈密瓜果醬': {zhtw:'哈密瓜果醬', en:'Melon Jam'},
+  '鳳梨果醬': {zhtw:'鳳梨果醬', en:'Pineapple Jam'},
+  '檸檬果醬': {zhtw:'檸檬果醬', en:'Lemon Jam'},
+  '芒果果醬': {zhtw:'芒果果醬', en:'Mango Jam'},
+  '椰子果醬': {zhtw:'椰子果醬', en:'Coconut Jam'},
+  '香蕉果醬': {zhtw:'香蕉果醬', en:'Banana Jam'},
+  '桃子果醬': {zhtw:'桃子果醬', en:'Peach Jam'},
+  '蘋果果醬': {zhtw:'蘋果果醬', en:'Apple Jam'},
+  '葡萄果醬': {zhtw:'葡萄果醬', en:'Grape Jam'},
+
+  '原木': {zhtw:'原木', en:'Log'},
+  '堅硬的原木': {zhtw:'堅硬的原木', en:'Solid Log'},
+  '柔韌的原木': {zhtw:'柔韌的原木', en:'Supple Log'},
+  '粗壯的原木': {zhtw:'粗壯的原木', en:'Durable Log'},
+  '夢幻原木': {zhtw:'夢幻原木', en:'Mirage Log'},
+  '樹汁': {zhtw:'樹汁', en:'Sap'},
+
+  '草': {zhtw:'草', en:'Grass'},
+  '柔軟的草': {zhtw:'柔軟的草', en:'Flexible Grass'},
+  '堅韌的草': {zhtw:'堅韌的草', en:'Tough Grass'},
+  '觸感柔滑的草': {zhtw:'觸感柔滑的草', en:'Smooth Grass'},
+  '夢幻草': {zhtw:'夢幻草', en:'Mirage Grass'},
+
+  '野莓': {zhtw:'野莓', en:'Wild Berry'},
+  '紫萁': {zhtw:'紫萁', en:'Royal Fern'},
+  '款冬': {zhtw:'款冬', en:'Butterbur'},
+  '筆頭菜': {zhtw:'筆頭菜', en:'Horsetail'},
+  '栗子': {zhtw:'栗子', en:'Chestnut'},
+  '竹筍': {zhtw:'竹筍', en:'Bamboo Shoot'},
+
+  '奧勒岡葉': {zhtw:'奧勒岡葉', en:'Oregano'},
+  '鼠尾草': {zhtw:'鼠尾草', en:'Sage'},
+  '芳香萬壽菊': {zhtw:'芳香萬壽菊', en:'Lemon Marigold'},
+  '金雨迷迭香': {zhtw:'金雨迷迭香', en:'Golden Rain Rosemary'},
+
+  '月落草': {zhtw:'月落草', en:'Moondrop Flower'},
+  '粉色貓薄荷': {zhtw:'粉色貓薄荷', en:'Pink Cat Flower'},
+  '魔法藍草': {zhtw:'魔法藍草', en:'Magic Blue Flower'},
+  '魔法紅草': {zhtw:'魔法紅草', en:'Magic Red Flower'},
+
+  '閃電熔結岩': {zhtw:'閃電熔結岩', en:'Fulgurite'},
+  '水砷鐵銅石': {zhtw:'水砷鐵銅石', en:'Arthurite'},
+  '沙漠玫瑰': {zhtw:'沙漠玫瑰', en:'Desert Rose'},
+  '兔尾石': {zhtw:'兔尾石', en:'Okenite'},
+  '吉丙隕石': {zhtw:'吉丙隕石', en:'Gibeon Stone'},
+  '橄欖隕鐵': {zhtw:'橄欖隕鐵', en:'Parasite Stone'},
+  '龍涎香': {zhtw:'龍涎香', en:'Ambergris'},
+  '洞穴珍珠': {zhtw:'洞穴珍珠', en:'Cave Pearl'},
+  '琥珀結晶': {zhtw:'琥珀結晶', en:'Crystallized Amber'},
+  '橄欖結晶': {zhtw:'橄欖結晶', en:'Olive Crystal'},
+  '古代飾品': {zhtw:'古代飾品', en:'Antique Accessory'},
+  '古代鏡子': {zhtw:'古代鏡子', en:'Antique Mirror'},
+  '古代擺飾': {zhtw:'古代擺飾', en:'Antique Decoration'},
+  '古代石碑': {zhtw:'古代石碑', en:'Antique Monument'},
+  '老舊的硬幣': {zhtw:'老舊的硬幣', en:'Timeworn Coin'},
+  '老舊的團扇': {zhtw:'老舊的團扇', en:'Timeworn Fan'},
+  '老舊的卷軸': {zhtw:'老舊的卷軸', en:'Timeworn Scroll'},
+  '老舊的羅盤': {zhtw:'老舊的羅盤', en:'Timeworn Compass'},
+  '老舊的地圖': {zhtw:'老舊的地圖', en:'Timeworn Map'},
+  '閃亮的馬刺': {zhtw:'閃亮的馬刺', en:'Sparkling Spur'},
+  '閃亮的冠軍皮帶扣': {zhtw:'閃亮的冠軍皮帶扣', en:'Shiny Trophy Buckle'},
+  '黃金牛角頭盔': {zhtw:'黃金牛角頭盔', en:'Cow Helm'},
+  '黃金號角': {zhtw:'黃金號角', en:'Golden Horn'},
+  '黑色古文書': {zhtw:'黑色古文書', en:'Ancient Black Tome'},
+  '白色古文書': {zhtw:'白色古文書', en:'Ancient White Tome'},
+  '玻璃鞋': {zhtw:'玻璃鞋', en:'Glass Slipper'},
+  '古老的齒輪': {zhtw:'古老的齒輪', en:'Prehistoric Gear'},
+  '古代貝類化石': {zhtw:'古代貝類化石', en:'Ancient Shell Fossil'},
+  '古代節肢動物化石': {zhtw:'古代節肢動物化石', en:'Ancient Bug Fossil'},
+  '恐龍化石': {zhtw:'恐龍化石', en:'Dinosaur Fossil'},
+
+  '紅色染料': { zhtw :'紅色染料', en: 'Red Dye' },
+  '藍色染料': { zhtw :'藍色染料', en: 'Blue Dye' },
+  '綠色染料': { zhtw :'綠色染料', en: 'Green Dye' },
+  '黃色染料': { zhtw :'黃色染料', en: 'Yellow Dye' },
+  '紫色染料': { zhtw :'紫色染料', en: 'Purple Dye' },
+  '桃色染料': { zhtw :'桃色染料', en: 'Pink Dye' },
+  '白色染料': { zhtw :'白色染料', en: 'White Dye' },
+  '黑色染料': { zhtw :'黑色染料', en: 'Black Dye' },
+
+  '小型魚類釣餌': {zhtw:'小型魚類釣餌', en:'Small Fish Bait'},
+  '中型魚類釣餌': {zhtw:'中型魚類釣餌', en:'Medium Fish Bait'},
+  '大型魚類釣餌': {zhtw:'大型魚類釣餌', en:'Large Fish Bait'},
+  '烏賊類釣餌': {zhtw:'烏賊類釣餌', en:'Squid Bait'},
+  '蝦類釣餌': {zhtw:'蝦類釣餌', en:'Shrimp Bait'},
+  '蟹類釣餌': {zhtw:'蟹類釣餌', en:'Crab Bait'},
+  '水中霸主釣餌': {zhtw:'水中霸主釣餌', en:'Guardian Bait'},
+  '奇妙的釣餌': {zhtw:'奇妙的釣餌', en:'Mysterious Bait'},
+
   'way': { zhtw: '取得方式', en: 'Way'},
   '香菇類': { zhtw: '菇類', en: 'Mushroom'},
+  '木頭': { zhtw: '原木', en: 'Wood'},
   '石頭': { zhtw: '石頭', en: 'Stone'},
+  '山菜': { zhtw: '山菜', en: 'Wild Plant'},
+  '香草': { zhtw: '香草', en: 'Herb'},
   '寶石': { zhtw: '寶石', en: 'Jewel'},
   '調味料': { zhtw: '調味料', en: 'Seasoning'},
   '加工機': { zhtw: '加工機', en: 'Maker'},
   '花束': { zhtw: '花束', en: 'Bouquet'},
   '飾品': { zhtw: '飾品', en: 'Accessory'},
+  '香水': { zhtw: '香水', en: 'Perfume'},
+  '果醬': { zhtw: '果醬', en: 'Jam'},
+  '寶物': { zhtw: '寶物', en: 'Treasure'},
+  '染料': { zhtw: '染料', en: 'Dye'},
+  '金屬塊': { zhtw: '金屬塊', en: 'Ingot'},
+  '釣餌': { zhtw: '釣餌', en: 'Bait'},
+
+  '葛洛莉雅': { zhtw: '葛洛莉雅', en: 'Gloria' },
+  '鎮長太太': { zhtw: '鎮長太太', en: 'Mayor Wife' },
+  '博物館': { zhtw: '博物館', en: 'Museum' },
+  '貝絲': { zhtw: '貝絲', en: 'Beth' },
+  '紅毛雙馬尾眼鏡娘': { zhtw: '紅毛雙馬尾眼鏡娘', en: 'Red-haired, double ponytails, glasses' },
+  '咖啡廳': { zhtw: '咖啡廳', en: 'Café' },
+  '蕾娜': { zhtw: '蕾娜', en: 'Reina' },
+  '伊織': { zhtw: '伊織', en: 'Iori' },
+  '日本武士': { zhtw: '日本武士', en: 'Japanese Warrior' },
+  '清心庵': { zhtw: '清心庵', en: 'Seishin-an' },
+  '席妮': { zhtw: '席妮', en: 'Sydney' },
+  '女強人': { zhtw: '女強人', en: 'Businesswoman' },
+
+
+
+
+
+  // '': { zhtw: '', en: '' },
+  // '': { zhtw: '', en: '' },
+
   // '砂糖': {
   //   zhtw: '砂糖',
   //   en: 'Sugar',

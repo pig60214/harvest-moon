@@ -1162,19 +1162,6 @@ const dishRawDataZHTW = [
     "name": "水果歐蕾",
     "category": "其他",
   },
-  {
-    "name": "柳橙果醬",
-    "category": "其他",
-  },
-  {
-    "name": "芒果果醬",
-    "category": "其他",
-  },
-  {
-    "name": "椰子果醬",
-    "category": "其他",
-  },
-  //TODO: 各種果醬圖
 ]
 
 
