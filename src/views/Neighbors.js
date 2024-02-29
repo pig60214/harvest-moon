@@ -53,9 +53,12 @@ export default function Neighbors () {
     const toggleProfile = () => {
       const next = {...showProfile};
       if (next[neighbor.name]) {
-        next[neighbor.name] = !next[neighbor.name];
+        const newValue = !next[neighbor.name];
+        next[neighbor.name] = newValue;
+        gaEventTracker('居民喜好-ToggleProfile', { value: newValue});
       } else {
         next[neighbor.name] = true;
+        gaEventTracker('居民喜好-ToggleProfile', { value: true});
       }
       setShowProfile(next);
     }
