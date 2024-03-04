@@ -1,76 +1,21 @@
 import lang from "./resourse";
 
 const itemRawDataZHTW = [
-  {
-    "name": "香菇種菌",
-    "category": "香菇類",
-    "way": "種菌加工機、雜貨店"
-  },
-  {
-    "name": "鴻喜菇種菌",
-    "category": "香菇類",
-    "way": "種菌加工機、雜貨店"
-  },
-  {
-    "name": "杏鮑菇種菌",
-    "category": "香菇類",
-    "way": "種菌加工機、雜貨店"
-  },
-  {
-    "name": "粉紅珊瑚菇種菌",
-    "category": "香菇類",
-    "way": "種菌加工機、雜貨店"
-  },
-  {
-    "name": "洋菇種菌",
-    "category": "香菇類",
-    "way": "種菌加工機、雜貨店"
-  },
-  {
-    "name": "松茸種菌",
-    "category": "香菇類",
-    "way": "種菌加工機、雜貨店"
-  },
-  {
-    "name": "香菇",
-    "category": "香菇類",
-    "way": "區域2採集全年、食材店"
-  },
-  {
-    "name": "鴻喜菇",
-    "category": "香菇類",
-    "way": "區域2採集全年、食材店"
-  },
-  {
-    "name": "杏鮑菇",
-    "category": "香菇類",
-    "way": "區域3採集全年、食材店"
-  },
-  {
-    "name": "粉紅珊瑚菇",
-    "category": "香菇類",
-    "way": "區域3採集全年、食材店"
-  },
-  {
-    "name": "洋菇",
-    "category": "香菇類",
-    "way": "碎石山谷全年、食材店"
-  },
-  {
-    "name": "松茸",
-    "category": "香菇類",
-    "way": "伐木採集（全年）"
-  },
-  {
-    "name": "乾草飼料",
-    "category": "",
-    "way": "栽培、照顧可樂波、雜貨店"
-  },
-  {
-    "name": "釣餌素材",
-    "category": "",
-    "way": "釣魚可樂波、雜貨店"
-  },
+  { "name": "香菇種菌", "category": "種菌", "way": "種菌加工機、雜貨店" },
+  { "name": "鴻喜菇種菌", "category": "種菌", "way": "種菌加工機、雜貨店" },
+  { "name": "杏鮑菇種菌", "category": "種菌", "way": "種菌加工機、雜貨店" },
+  { "name": "粉紅珊瑚菇種菌", "category": "種菌", "way": "種菌加工機、雜貨店" },
+  { "name": "洋菇種菌", "category": "種菌", "way": "種菌加工機、雜貨店" },
+  { "name": "松茸種菌", "category": "種菌", "way": "種菌加工機、雜貨店" },
+
+  { "name": "香菇", "category": "菇", "way": "區域2採集全年、食材店" },
+  { "name": "鴻喜菇", "category": "菇", "way": "區域2採集全年、食材店" },
+  { "name": "杏鮑菇", "category": "菇", "way": "區域3採集全年、食材店" },
+  { "name": "粉紅珊瑚菇", "category": "菇", "way": "區域3採集全年、食材店" },
+  { "name": "洋菇", "category": "菇", "way": "碎石山谷全年、食材店" },
+  { "name": "松茸", "category": "菇", "way": "伐木採集（全年）" },
+  { "name": "乾草飼料", "category": "", "way": "栽培、照顧可樂波、雜貨店" },
+  { "name": "釣餌素材", "category": "", "way": "釣魚可樂波、雜貨店" },
   { "name": "月落草", "category": "", "way": "可樂商店、區域1" },
   { "name": "粉色貓薄荷", "category": "", "way": "可樂商店、區域2" },
   { "name": "魔法藍草", "category": "", "way": "可樂商店、區域3" },
@@ -115,18 +60,19 @@ const itemRawDataZHTW = [
   { 'name': '灰色兔毛線', 'category': '線', 'way': '' },
   { 'name': '桃色兔毛線', 'category': '線', 'way': '' },
 
-  { 'name': '布', 'category': '布', 'way': '' },
-  { 'name': '柔軟的布料', 'category': '布', 'way': '' },
-  { 'name': '堅韌的布料', 'category': '布', 'way': '' },
-  { 'name': '觸感柔滑的布料', 'category': '布', 'way': '' },
-  { 'name': '夢幻布料', 'category': '布', 'way': '' },
-  { 'name': '羊毛毛料', 'category': '布', 'way': '' },
-  { 'name': '薩福克羊毛毛料', 'category': '布', 'way': '' },
-  { 'name': '羊駝毛毛料', 'category': '布', 'way': '' },
-  { 'name': '茶色羊駝毛毛料', 'category': '布', 'way': '' },
-  { 'name': '兔毛毛料', 'category': '布', 'way': '' },
-  { 'name': '灰色兔毛毛料', 'category': '布', 'way': '' },
-  { 'name': '桃色兔毛毛料', 'category': '布', 'way': '' },
+  { 'name': '布料', 'category': '布料', 'way': '' },
+  { 'name': '柔軟的布料', 'category': '布料', 'way': '' },
+  { 'name': '堅韌的布料', 'category': '布料', 'way': '' },
+  { 'name': '觸感柔滑的布料', 'category': '布料', 'way': '' },
+  { 'name': '夢幻布料', 'category': '布料', 'way': '' },
+
+  { 'name': '羊毛毛料', 'category': '布料', 'way': '' },
+  { 'name': '薩福克羊毛毛料', 'category': '布料', 'way': '' },
+  { 'name': '羊駝毛毛料', 'category': '布料', 'way': '' },
+  { 'name': '茶色羊駝毛毛料', 'category': '布料', 'way': '' },
+  { 'name': '兔毛毛料', 'category': '布料', 'way': '' },
+  { 'name': '灰色兔毛毛料', 'category': '布料', 'way': '' },
+  { 'name': '桃色兔毛毛料', 'category': '布料', 'way': '' },
 
   { "name": "石塊", "category": "石頭", "way": "可樂商店" },
   { "name": "鐵礦石", "category": "石頭", "way": "可樂商店" },
@@ -149,6 +95,13 @@ const itemRawDataZHTW = [
   { 'name': '煤炭', 'category': '金屬塊', 'way': '' },
   { 'name': '玻璃', 'category': '金屬塊', 'way': '' },
 
+  { "name": "白色蛋白石", "category": "寶石", "way": "" },
+  { "name": "紅綠柱石", "category": "寶石", "way": "" },
+  { "name": "紅寶石", "category": "寶石", "way": "" },
+  { "name": "藍寶石", "category": "寶石", "way": "" },
+  { "name": "祖母綠", "category": "寶石", "way": "" },
+  { "name": "鑽石", "category": "寶石", "way": "" },
+
   { 'name': '野莓', 'category': '山菜', 'way': '可樂商店' },
   { 'name': '紫萁', 'category': '山菜', 'way': '可樂商店' },
   { 'name': '款冬', 'category': '山菜', 'way': '可樂商店' },
@@ -160,44 +113,15 @@ const itemRawDataZHTW = [
   { 'name': '鼠尾草', 'category': '香草', 'way': '可樂商店' },
   { 'name': '芳香萬壽菊', 'category': '香草', 'way': '可樂商店' },
   { 'name': '金雨迷迭香', 'category': '香草', 'way': '可樂商店' },
-  {
-    "name": "白色蛋白石",
-    "category": "寶石",
-    "way": ""
-  },
-  {
-    "name": "紅綠柱石",
-    "category": "寶石",
-    "way": ""
-  },
-  {
-    "name": "紅寶石",
-    "category": "寶石",
-    "way": ""
-  },
-  {
-    "name": "藍寶石",
-    "category": "寶石",
-    "way": ""
-  },
-  {
-    "name": "祖母綠",
-    "category": "寶石",
-    "way": ""
-  },
-  {
-    "name": "鑽石",
-    "category": "寶石",
-    "way": ""
-  },
-  { "name": "紅色染料", "category": "染料", "way": "花店" },
-  { "name": "藍色染料", "category": "染料", "way": "花店" },
-  { "name": "綠色染料", "category": "染料", "way": "花店" },
-  { "name": "黃色染料", "category": "染料", "way": "花店" },
-  { "name": "紫色染料", "category": "染料", "way": "花店" },
-  { "name": "桃色染料", "category": "染料", "way": "花店" },
-  { "name": "白色染料", "category": "染料", "way": "花店" },
-  { "name": "黑色染料", "category": "染料", "way": "花店" },
+
+  { "name": "紅色染料", "category": "染料", "way": "花店、染料加工機" },
+  { "name": "藍色染料", "category": "染料", "way": "花店、染料加工機" },
+  { "name": "綠色染料", "category": "染料", "way": "花店、染料加工機" },
+  { "name": "黃色染料", "category": "染料", "way": "花店、染料加工機" },
+  { "name": "紫色染料", "category": "染料", "way": "花店、染料加工機" },
+  { "name": "桃色染料", "category": "染料", "way": "花店、染料加工機" },
+  { "name": "白色染料", "category": "染料", "way": "花店、染料加工機" },
+  { "name": "黑色染料", "category": "染料", "way": "花店、染料加工機" },
   {
     "name": "岩鹽",
     "category": "調味料",

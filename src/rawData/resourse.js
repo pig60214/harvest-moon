@@ -1770,7 +1770,8 @@ const resourse = {
   '桃色兔毛毛料': {zhtw:'桃色兔毛毛料', en:'Pink Rabbit Cloth'},
 
   'way': { zhtw: '取得方式', en: 'Way'},
-  '香菇類': { zhtw: '菇類', en: 'Mushroom'},
+  '菇': { zhtw: '菇', en: 'Mushroom'},
+  '種菌': { zhtw: '種菌', en: 'Spore'},
   '木頭': { zhtw: '原木', en: 'Wood'},
   '石頭': { zhtw: '石頭', en: 'Stone'},
   '山菜': { zhtw: '山菜', en: 'Wild Plant'},
@@ -1784,6 +1785,8 @@ const resourse = {
   '香水': { zhtw: '香水', en: 'Perfume'},
   '果醬': { zhtw: '果醬', en: 'Jam'},
   '寶物': { zhtw: '寶物', en: 'Treasure'},
+  '寶物仿製品': { zhtw: '寶物仿製品', en: 'Faux Treasure'},
+  '動物雕像': { zhtw: '動物雕像', en: 'Animal Statue'},
   '染料': { zhtw: '染料', en: 'Dye'},
   '金屬塊': { zhtw: '金屬塊', en: 'Ingot'},
   '釣餌': { zhtw: '釣餌', en: 'Bait'},
@@ -1791,6 +1794,9 @@ const resourse = {
   '毛': { zhtw: '毛', en: 'Animal Wool/Fur'},
   '寵物用品': { zhtw: '寵物用品', en: 'Pet Supplies'},
   '家具': { zhtw: '家具', en: 'Furniture'},
+  '布料': {zhtw:'布料', en:'Cloth'},
+  '開拓': {zhtw:'開拓', en:'Pioneering'},
+  '釣魚': {zhtw:'釣魚', en:'Fishing'},
 
   '葛洛莉雅': { zhtw: '葛洛莉雅', en: 'Gloria' },
   '鎮長太太': { zhtw: '鎮長太太', en: 'Mayor Wife' },
