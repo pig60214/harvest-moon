@@ -560,6 +560,28 @@ const itemRawDataZHTW = [
   { 'name': '高級寵物零食', 'category': '寵物用品', 'way': '雜貨店' },
   { 'name': '軟軟球', 'category': '寵物用品', 'way': '雜貨店' },
   { 'name': '老鼠球', 'category': '寵物用品', 'way': '雜貨店' },
+
+  { 'name': '白色天堂鳥', 'category': '家具', 'way': '花店' },
+  { 'name': '大果木棉', 'category': '家具', 'way': '花店' },
+  { 'name': '愛心榕', 'category': '家具', 'way': '花店' },
+  { 'name': '花瓶', 'category': '家具', 'way': '花店' },
+  { 'name': '單朵插花', 'category': '家具', 'way': '花店' },
+  { 'name': '細葉榕', 'category': '家具', 'way': '花店' },
+  { 'name': '盆栽', 'category': '家具', 'way': '花店' },
+
+  { 'name': '高級座椅', 'category': '家具', 'way': '木工店' },
+  { 'name': '高級沙發', 'category': '家具', 'way': '木工店' },
+  { 'name': '居家沙發', 'category': '家具', 'way': '木工店' },
+  { 'name': '大型桌子', 'category': '家具', 'way': '木工店' },
+  { 'name': '大型圓桌', 'category': '家具', 'way': '木工店' },
+  { 'name': '書架', 'category': '家具', 'way': '木工店' },
+  { 'name': '餐具櫃', 'category': '家具', 'way': '木工店' },
+  { 'name': '梳妝台', 'category': '家具', 'way': '木工店' },
+  { 'name': '方形紙罩座燈', 'category': '家具', 'way': '木工店' },
+  { 'name': '屏風', 'category': '家具', 'way': '木工店' },
+
+  { 'name': '穿衣鏡', 'category': '家具', 'way': '筆記本 > 加工' },
+  { 'name': '磚紋地毯', 'category': '家具', 'way': '筆記本 > 加工' },
 ];
 
 const itemRawData = itemRawDataZHTW.map(i => {
