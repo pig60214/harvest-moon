@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleToAnimal } from "store/toAnimalsSlice";
 import { gaEventTracker } from 'GA';
+import lang from "rawData/resourse";
 
 const wildAnimalsRawData = [
   { name: '松鼠', time: '春、夏、秋', locations: '區域1有數的地方', weather: '颱風不出現'},
@@ -58,7 +59,7 @@ export default function Animals() {
     return (
       <tr key={animal.name} onClick={() => dispatch(toggleToAnimal(animal))} className={isSelected ? 'bg-stone-300' : ''}>
         <td>{image}</td>
-        <td>{animal.name}</td>
+        <td>{lang(animal.name)}</td>
         <td className='md:hidden'>{animal.time}<br/>{animal.locations}<br/>{animal.weather}</td>
         <td className='hidden md:table-cell'>{animal.time}</td>
         <td className='hidden md:table-cell'>{animal.locations}</td>

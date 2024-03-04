@@ -18,7 +18,9 @@ export default function Item() {
     if (toGetItems.showToGetItems) {
       if (!isSelected) return null;
     } else {
-      if(!searchInput.toLowerCase().trim().split(' ').map(s => name.toLowerCase().includes(s)).find(s => s)) return null;
+      const keywords = searchInput.toLowerCase().trim().split(' ');
+      const searchContent = name + lang(category) + lang(way);
+      if(searchInput !== '' && !keywords.find(s => searchContent.toLowerCase().includes(s))) return null;
     }
 
     let image;

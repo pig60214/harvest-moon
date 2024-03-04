@@ -400,8 +400,8 @@ const resourse = {
     en: "Can't plant trees and crops in winter",
   },
   'page_item_search_bar_instruction': {
-    zhtw: '可搜尋多個關鍵字，Ex：橄欖結晶 醬油',
-    en: 'Allow multi-search, ex: log Mushroom',
+    zhtw: '可搜尋多個關鍵字，Ex：橄欖結晶 菇類 雜貨店',
+    en: 'Allow multi-search in Name, Category and Way. Ex: log Treasure',
   },
   '鎮公所': {
     zhtw: '鎮公所',
@@ -1880,8 +1880,27 @@ const resourse = {
   '軟軟球': {zhtw:'軟軟球', en:'Bouncy Ball'},
   '老鼠球': {zhtw:'老鼠球', en:'Mouse Ball'},
 
-
-
+  '松鼠': {zhtw:'松鼠', en:'Squirrel'},
+  '黃色狐狸': {zhtw:'黃色狐狸', en:'Orange Fox'},
+  '白色狐狸': {zhtw:'白色狐狸', en:'White Fox'},
+  '茶色白鼬': {zhtw:'茶色白鼬', en:'Brown Ermine'},
+  '白色白鼬': {zhtw:'白色白鼬', en:'White Ermine'},
+  '熊': {zhtw:'熊', en:'Bear'},
+  '猴子': {zhtw:'猴子', en:'Monkey'},
+  '麻雀': {zhtw:'麻雀', en:'Sparrow'},
+  '貓頭鷹': {zhtw:'貓頭鷹', en:'Owl'},
+  '青鳥': {zhtw:'青鳥', en:'Bluebird'},
+  '岩雷鳥': {zhtw:'岩雷鳥', en:'Ptarmigan'},
+  '老鷹': {zhtw:'老鷹', en:'Eagle'},
+  '游隼': {zhtw:'游隼', en:'Falcon'},
+  '日本獨角仙': {zhtw:'日本獨角仙', en:'Rhinoceros Beetle'},
+  '大鍬形蟲': {zhtw:'大鍬形蟲', en:'Stag Beetle'},
+  '長戢獨角仙': {zhtw:'長戢獨角仙', en:'Hercules Beetle'},
+  '紋白蝶': {zhtw:'紋白蝶', en:'White Butterfly'},
+  '鳳蝶': {zhtw:'鳳蝶', en:'Swallowtail'},
+  '大藍閃蝶': {zhtw:'大藍閃蝶', en:'Morpho'},
+  '螃蟹': {zhtw:'螃蟹', en:'Crab'},
+  '球馬陸': {zhtw:'球馬陸', en:'G.P. Millipede'},
 
 
   // '': { zhtw: '', en: '' },
