@@ -37,7 +37,7 @@ export default function Item() {
 
   const panel = (
     <ul className='my-tabs my-1'>
-      { ['香菇類', '蜂蜜', '木頭', '草', '石頭', '金屬塊','山菜', '香草', '寶石', '調味料', '果醬', '釣餌', '花束', '香水', '飾品', '寶物', '染料', '加工機', '全品項'].map(c => <li key={c} className={setting.category === c || setting.category === '全品項' ? 'active' : 'inactive'} onClick={() => {dispatch(setItemCategory(c));}}>{lang(c)}</li>) }
+      { ['香菇類', '蜂蜜', '木頭', '草', '線', '布', '石頭', '金屬塊','山菜', '香草', '寶石', '調味料', '果醬', '釣餌', '花束', '香水', '飾品', '寶物', '染料', '加工機', '全品項'].map(c => <li key={c} className={setting.category === c || setting.category === '全品項' ? 'active' : 'inactive'} onClick={() => {dispatch(setItemCategory(c));}}>{lang(c)}</li>) }
     </ul>
   )
 

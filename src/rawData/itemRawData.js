@@ -88,11 +88,45 @@ const itemRawDataZHTW = [
   { 'name': '夢幻原木', 'category': '木頭', 'way': '可樂商店' },
   { 'name': '樹汁', 'category': '木頭', 'way': '可樂商店' },
 
+  { 'name': '木材', 'category': '木材', 'way': '' },
+  { 'name': '堅硬的木材', 'category': '木材', 'way': '' },
+  { 'name': '柔韌的木材', 'category': '木材', 'way': '' },
+  { 'name': '粗壯的木材', 'category': '木材', 'way': '' },
+  { 'name': '夢幻木材', 'category': '木材', 'way': '' },
+  { 'name': '木炭', 'category': '木材', 'way': '' },
+
   { 'name': '草', 'category': '草', 'way': '可樂商店' },
   { 'name': '柔軟的草', 'category': '草', 'way': '可樂商店' },
   { 'name': '堅韌的草', 'category': '草', 'way': '可樂商店' },
   { 'name': '觸感柔滑的草', 'category': '草', 'way': '可樂商店' },
   { 'name': '夢幻草', 'category': '草', 'way': '可樂商店' },
+
+  { 'name': '繩子', 'category': '線', 'way': '' },
+  { 'name': '絲線', 'category': '線', 'way': '' },
+  { 'name': '柔軟的絲線', 'category': '線', 'way': '' },
+  { 'name': '堅韌的絲線', 'category': '線', 'way': '' },
+  { 'name': '觸感柔滑的絲線', 'category': '線', 'way': '' },
+  { 'name': '夢幻絲線', 'category': '線', 'way': '' },
+  { 'name': '羊毛線', 'category': '線', 'way': '' },
+  { 'name': '薩福克羊毛線', 'category': '線', 'way': '' },
+  { 'name': '羊駝毛線', 'category': '線', 'way': '' },
+  { 'name': '茶色羊駝毛線', 'category': '線', 'way': '' },
+  { 'name': '兔毛線', 'category': '線', 'way': '' },
+  { 'name': '灰色兔毛線', 'category': '線', 'way': '' },
+  { 'name': '桃色兔毛線', 'category': '線', 'way': '' },
+
+  { 'name': '布', 'category': '布', 'way': '' },
+  { 'name': '柔軟的布料', 'category': '布', 'way': '' },
+  { 'name': '堅韌的布料', 'category': '布', 'way': '' },
+  { 'name': '觸感柔滑的布料', 'category': '布', 'way': '' },
+  { 'name': '夢幻布料', 'category': '布', 'way': '' },
+  { 'name': '羊毛毛料', 'category': '布', 'way': '' },
+  { 'name': '薩福克羊毛毛料', 'category': '布', 'way': '' },
+  { 'name': '羊駝毛毛料', 'category': '布', 'way': '' },
+  { 'name': '茶色羊駝毛毛料', 'category': '布', 'way': '' },
+  { 'name': '兔毛毛料', 'category': '布', 'way': '' },
+  { 'name': '灰色兔毛毛料', 'category': '布', 'way': '' },
+  { 'name': '桃色兔毛毛料', 'category': '布', 'way': '' },
 
   { "name": "石塊", "category": "石頭", "way": "可樂商店" },
   { "name": "鐵礦石", "category": "石頭", "way": "可樂商店" },
@@ -272,56 +306,22 @@ const itemRawDataZHTW = [
   { 'name': '桃子果醬', 'category': '果醬', 'way': '' },
   { 'name': '蘋果果醬', 'category': '果醬', 'way': '' },
   { 'name': '葡萄果醬', 'category': '果醬', 'way': '' },
-  {
-    "name": "春風進行曲",
-    "category": "花束",
-    "way": ""
-  },
-  {
-    "name": "炎帝華爾滋",
-    "category": "花束",
-    "way": ""
-  },
-  {
-    "name": "月夜夜曲",
-    "category": "花束",
-    "way": ""
-  },
-  {
-    "name": "雪花輪舞曲",
-    "category": "花束",
-    "way": ""
-  },
-  {
-    "name": "大地協奏曲",
-    "category": "花束",
-    "way": ""
-  },
-  {
-    "name": "彩虹花束",
-    "category": "花束",
-    "way": ""
-  },
-  {
-    "name": "花香香水",
-    "category": "香水",
-    "way": ""
-  },
-  {
-    "name": "果香香水",
-    "category": "香水",
-    "way": ""
-  },
-  {
-    "name": "百花香水",
-    "category": "香水",
-    "way": ""
-  },
-  {
-    "name": "魅惑香水",
-    "category": "香水",
-    "way": ""
-  },
+
+  { "name": "春風進行曲", "category": "花束", "way": "鬱金香、粉蝶花、三色堇、陸蓮花(都是春天的花)" },
+  { "name": "炎帝華爾滋", "category": "花束", "way": "扶桑花、矮牽牛、萬壽菊、向日葵(都是夏天的花)" },
+  { "name": "月夜夜曲", "category": "花束", "way": "玫瑰、乒乓菊、鐵線蓮、瑪格麗特(都是秋天的花)" },
+  { "name": "雪花輪舞曲", "category": "花束", "way": "富貴菊、報春花、秋海棠、風鈴草(都是冬天的花)" },
+  { "name": "彩虹花束", "category": "花束", "way": "鬱金香、向日葵、鐵線蓮、報春花" },
+  { "name": "大地協奏曲", "category": "花束", "way": "(月落草、粉色貓薄荷、魔法藍草、魔法紅草)*3" },
+
+  { "name": "花香香精", "category": "香精", "way": "花、香精加工機" },
+  { "name": "果香香精", "category": "香精", "way": "花、香精加工機" },
+  { "name": "百花香精", "category": "香精", "way": "花束(大地協奏曲除外)、香精加工機" },
+
+  { "name": "果香香水", "category": "香水", "way": "花店、果香香精*3" },
+  { "name": "花香香水", "category": "香水", "way": "花店、花香香精*3" },
+  { "name": "百花香水", "category": "香水", "way": "花店、百花香精*3" },
+  { "name": "魅惑香水", "category": "香水", "way": "花店、果香香水、花香香水、百花香水" },
   {
     "name": "珠寶戒指",
     "category": "飾品",
@@ -482,6 +482,60 @@ const itemRawDataZHTW = [
     "category": "加工機",
     "way": ""
   },
+  { 'name': '大熊木雕', 'category': '', 'way': '筆記本 > 加工' },
+  { 'name': '閃電熔結岩的仿製品', 'category': '', 'way': '捐贈寶物給博物館後可找貝絲購買' },
+  { 'name': '水砷鐵銅石的仿製品', 'category': '', 'way': '捐贈寶物給博物館後可找貝絲購買' },
+  { 'name': '沙漠玫瑰的仿製品', 'category': '', 'way': '捐贈寶物給博物館後可找貝絲購買' },
+  { 'name': '兔尾石的仿製品', 'category': '', 'way': '捐贈寶物給博物館後可找貝絲購買' },
+  { 'name': '吉丙隕石的仿製品', 'category': '', 'way': '捐贈寶物給博物館後可找貝絲購買' },
+  { 'name': '橄欖隕鐵的仿製品', 'category': '', 'way': '捐贈寶物給博物館後可找貝絲購買' },
+  { 'name': '龍涎香的仿製品', 'category': '', 'way': '捐贈寶物給博物館後可找貝絲購買' },
+  { 'name': '洞穴珍珠的仿製品', 'category': '', 'way': '捐贈寶物給博物館後可找貝絲購買' },
+  { 'name': '琥珀結晶的仿製品', 'category': '', 'way': '捐贈寶物給博物館後可找貝絲購買' },
+  { 'name': '橄欖結晶的仿製品', 'category': '', 'way': '捐贈寶物給博物館後可找貝絲購買' },
+  { 'name': '古代飾品的仿製品', 'category': '', 'way': '捐贈寶物給博物館後可找貝絲購買' },
+  { 'name': '古代鏡子的仿製品', 'category': '', 'way': '捐贈寶物給博物館後可找貝絲購買' },
+  { 'name': '古代擺飾的仿製品', 'category': '', 'way': '捐贈寶物給博物館後可找貝絲購買' },
+  { 'name': '古代石碑的仿製品', 'category': '', 'way': '捐贈寶物給博物館後可找貝絲購買' },
+  { 'name': '老舊的硬幣的仿製品', 'category': '', 'way': '捐贈寶物給博物館後可找貝絲購買' },
+  { 'name': '老舊的團扇的仿製品', 'category': '', 'way': '捐贈寶物給博物館後可找貝絲購買' },
+  { 'name': '老舊的卷軸的仿製品', 'category': '', 'way': '捐贈寶物給博物館後可找貝絲購買' },
+  { 'name': '老舊的羅盤的仿製品', 'category': '', 'way': '捐贈寶物給博物館後可找貝絲購買' },
+  { 'name': '老舊的地圖的仿製品', 'category': '', 'way': '捐贈寶物給博物館後可找貝絲購買' },
+  { 'name': '閃亮的馬刺的仿製品', 'category': '', 'way': '捐贈寶物給博物館後可找貝絲購買' },
+  { 'name': '閃亮的冠軍皮帶扣的仿製品', 'category': '', 'way': '捐贈寶物給博物館後可找貝絲購買' },
+  { 'name': '黃金牛角頭盔的仿製品', 'category': '', 'way': '捐贈寶物給博物館後可找貝絲購買' },
+  { 'name': '黃金號角的仿製品', 'category': '', 'way': '捐贈寶物給博物館後可找貝絲購買' },
+  { 'name': '黑色古文書的仿製品', 'category': '', 'way': '捐贈寶物給博物館後可找貝絲購買' },
+  { 'name': '白色古文書的仿製品', 'category': '', 'way': '捐贈寶物給博物館後可找貝絲購買' },
+  { 'name': '玻璃鞋的仿製品', 'category': '', 'way': '捐贈寶物給博物館後可找貝絲購買' },
+  { 'name': '古老的齒輪的仿製品', 'category': '', 'way': '捐贈寶物給博物館後可找貝絲購買' },
+  { 'name': '古代貝類化石的仿製品', 'category': '', 'way': '捐贈寶物給博物館後可找貝絲購買' },
+  { 'name': '古代節肢動物化石的仿製品', 'category': '', 'way': '捐贈寶物給博物館後可找貝絲購買' },
+  { 'name': '恐龍化石的仿製品', 'category': '', 'way': '捐贈寶物給博物館後可找貝絲購買' },
+  { 'name': '羊毛', 'category': '毛', 'way': '' },
+  { 'name': '頂級羊毛', 'category': '毛', 'way': '' },
+  { 'name': '薩福克羊毛', 'category': '毛', 'way': '' },
+  { 'name': '頂級薩福克羊毛', 'category': '毛', 'way': '' },
+  { 'name': '羊駝毛', 'category': '毛', 'way': '' },
+  { 'name': '頂級羊駝毛', 'category': '毛', 'way': '' },
+  { 'name': '茶色羊駝毛', 'category': '毛', 'way': '' },
+  { 'name': '頂級茶色羊駝毛', 'category': '毛', 'way': '' },
+  { 'name': '兔毛', 'category': '毛', 'way': '' },
+  { 'name': '頂級兔毛', 'category': '毛', 'way': '' },
+  { 'name': '灰色兔毛', 'category': '毛', 'way': '' },
+  { 'name': '頂級灰色兔毛', 'category': '毛', 'way': '' },
+  { 'name': '桃色兔毛', 'category': '毛', 'way': '' },
+  { 'name': '頂級桃色兔毛', 'category': '毛', 'way': '' },
+
+  { 'name': '捕魚網', 'category': '捕魚網', 'way': '筆記本 > 加工、繩子*2、堅硬的木材*2' },
+  { 'name': '萬能捕魚網', 'category': '捕魚網', 'way': '筆記本 > 加工、繩子*3、堅韌的木材*2' },
+  { 'name': '巨大捕魚網', 'category': '捕魚網', 'way': '筆記本 > 加工、繩子*5、粗壯的木材*2' },
+
+  { 'name': '寵物零食', 'category': '寵物用品', 'way': '雜貨店' },
+  { 'name': '高級寵物零食', 'category': '寵物用品', 'way': '雜貨店' },
+  { 'name': '軟軟球', 'category': '寵物用品', 'way': '雜貨店' },
+  { 'name': '老鼠球', 'category': '寵物用品', 'way': '雜貨店' },
 ];
 
 const itemRawData = itemRawDataZHTW.map(i => {

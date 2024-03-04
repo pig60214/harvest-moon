@@ -37,8 +37,8 @@ const locationRawData = [
     'closedDay': 'Tue'
   },
   {
-    'name': '最喜翻的家',
-    'shortName': '最喜翻',
+    'name': '最喜番的家',
+    'shortName': '最喜番',
     'rowClass': 'row-start-4',
     'colClass':'col-start-1 col-span-3',
     'openTime': '',
