@@ -49,8 +49,7 @@ export default function Animals() {
   const toAnimals = useSelector(state => state.toAnimals);
   const tabs = ['野生動物', '水中生物'];
   const [selectedTab, setSelectedTab] = useState('野生動物');
-  const rawData = selectedTab === '野生動物' ? wildAnimalsRawData : fishesRawData;
-  const rows = rawData.map(animal => {
+  const wildAnimalRows = wildAnimalsRawData.map(animal => {
     const isSelected = toAnimals.find(a => a.name === animal.name);
     let image;
     try {
@@ -67,12 +66,32 @@ export default function Animals() {
       </tr>
     )
   });
+
+  const fishRows = fishesRawData.map(animal => {
+    const isSelected = toAnimals.find(a => a.name === animal.name);
+    let image;
+    try {
+      image = <img className={`w-12 m-auto rounded-full ${isSelected ? 'border border-stone-900' : ''}`} src={require(`assets/images/animals/${animal.name}.jpg`)} alt={animal.name}/>;
+    } catch (error) {}
+    return (
+      <tr key={animal.name} onClick={() => dispatch(toggleToAnimal(animal))} className={isSelected ? 'bg-stone-300' : ''}>
+        <td>{image}</td>
+        <td>{lang(animal.name)}</td>
+        <td className='md:hidden'>{animal.time}<br/>{animal.locations}<br/>{animal.weather}</td>
+        <td className='hidden md:table-cell'>{animal.time}</td>
+        <td className='hidden md:table-cell'>{animal.locations}</td>
+        <td className='hidden md:table-cell'>{animal.weather}</td>
+      </tr>
+    )
+  });
+
   const panel = (<div>
     <ul className='my-tabs'>
       { tabs.map(tab => <li key={tab} className={tab === selectedTab ? 'active' : 'inactive'} onClick={() => {setSelectedTab(tab);gaEventTracker('動物-Click Tab', {tab_name: tab})}}>{tab}</li>) }
     </ul>
   </div>);
-  return (
+
+  const wildAnimalHeader = (
     <table className='md:mx-auto'>
       <thead>
         <tr><th colSpan={5}>{panel}</th></tr>
@@ -86,8 +105,32 @@ export default function Animals() {
         </tr>
       </thead>
       <tbody>
-        {rows}
+        { wildAnimalRows }
       </tbody>
     </table>
+  );
+
+  const fishHeader = (
+    <table className='md:mx-auto'>
+      <thead>
+        <tr><th colSpan={5}>{panel}</th></tr>
+        <tr className='h-8'>
+          <th className="w-12 md:w-24">圖片</th>
+          <th className='w-24 md:w-36'>名稱</th>
+          <th className='md:hidden w-64' colSpan={3}></th>
+          <th className='hidden md:table-cell md:w-64'>時間</th>
+          <th className='hidden md:table-cell md:w-64'>地點</th>
+          <th className='hidden md:table-cell md:w-64'>天氣</th>
+        </tr>
+      </thead>
+      <tbody>
+        { fishRows }
+      </tbody>
+    </table>
+  );
+  return (
+    <>
+    { selectedTab === '野生動物' ? wildAnimalHeader : fishHeader }
+    </>
   );
 }
