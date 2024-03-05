@@ -43,7 +43,7 @@ export default function Crops() {
   }
 
   const panel = (
-    <div className='flex flex-col md:flex-row justify-between gap-1 my-1'>
+    <div className='flex flex-col md:flex-row justify-between'>
       <ul className='my-tabs'>
         { ['果樹', '蔬菜', '花卉', '農作物', '全品種'].map(c => <li key={c} className={setting.category === c || setting.category === '全品種' ? 'active' : 'inactive'} onClick={() => {dispatch(setCategory(c));gaEventTracker('農作物-Click Tab', {tab_name: c})}}>{lang(c)}</li>) }
       </ul>
@@ -61,7 +61,7 @@ export default function Crops() {
       </article>
       <table className='md:mx-auto mt-2'>
         <thead>
-          <tr><th colSpan={5} className='py-1 font-normal'><SearchInput placeholder={ lang('page_crops_search_bar_instruction') } /></th></tr>
+          <tr><th colSpan={5} className='font-normal'><SearchInput placeholder={ lang('page_crops_search_bar_instruction') } /></th></tr>
           <tr><th colSpan={5}>{panel}</th></tr>
           <tr className='md:h-10'>
             <th className="w-12 md:w-24">{ lang('image') }</th>

@@ -45,7 +45,7 @@
 }
 
 .my-tabs {
-  @apply flex flex-wrap text-sm font-medium text-center text-stone-400 gap-1
+  @apply flex flex-wrap text-sm font-medium text-center text-stone-400 gap-1 my-1
 }
 
 .my-tabs li {
@@ -73,7 +73,7 @@
 }
 
 table {
-  @apply border-separate border-spacing-0
+  @apply border-collapse
 }
 
 th {
@@ -81,31 +81,7 @@ th {
 }
 
 td, th {
-  @apply border border-stone-400 border-l-0 border-t-0 px-1 md:px-2
-}
-
-td:first-child, th:first-child {
-  @apply border-l
-}
-
-tr:first-child th {
-  @apply border-t
-}
-
-tr:first-child th:first-child {
-  @apply border-l rounded-tl-lg
-}
-
-tr:first-child th:last-child {
-  @apply rounded-tr-lg
-}
-
-tr:last-child td:first-child {
-  @apply rounded-bl-lg
-}
-
-tr:last-child td:last-child {
-  @apply rounded-br-lg
+  @apply border border-stone-400 px-1 md:px-2
 }
 
 .my-notification {

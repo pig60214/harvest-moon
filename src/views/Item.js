@@ -44,7 +44,7 @@ export default function Item() {
   }
 
   const panel = (
-    <ul className='my-tabs my-1'>
+    <ul className='my-tabs'>
       { ['菇', '蜂蜜', '木頭', '草', '石頭', '全品項'].map(c => <li key={c} className={setting.category === c || setting.category === '全品項' ? 'active' : 'inactive'} onClick={() => {selectCategory(c)}}>{lang(c)}</li>) }
       <li>
         <select name="category" onChange={(e) => {selectCategory(e.target.value)}} value={setting.category}>
@@ -87,7 +87,7 @@ export default function Item() {
     {/* <p>{ process.env.REACT_APP_ENV === 'test' ? '' : '不過此表格多有殘缺，還在慢慢補齊中，如果受不了它這麼破，也可以點擊右下角的回饋按鈕，填寫表單告訴我，歡迎一起來補齊，謝謝～～' }</p> */}
     <table className='md:mx-auto'>
       <thead>
-        <tr><th colSpan={4} className='py-1 font-normal'><SearchInput placeholder={ lang('page_item_search_bar_instruction') } /></th></tr>
+        <tr><th colSpan={4} className='font-normal'><SearchInput placeholder={ lang('page_item_search_bar_instruction') } /></th></tr>
         <tr><th colSpan={4}>{panel}</th></tr>
         <tr className='h-8'>
         <th className="w-12 md:w-24">{ lang('image') }</th>
