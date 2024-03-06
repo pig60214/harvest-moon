@@ -5,9 +5,13 @@ export const toAnimalsSlice = createSlice({
   initialState: [],
   reducers: {
     toggleToAnimal: (state, { payload }) => {
-
-      if(state.find(animal => animal.name === payload.name)) {
-        const next = state.filter(animal => animal.name !== payload.name);
+      const find = (animal) => {
+        const stateKey = animal.key ? animal.key : animal.name + animal.locations;
+        const payloadKey = payload.key ? payload.key : payload.name + payload.locations;
+        return stateKey === payloadKey;
+      }
+      if(state.find(animal => find(animal))) {
+        const next = state.filter(animal => !find(animal));
         return next;
       } else {
         return [

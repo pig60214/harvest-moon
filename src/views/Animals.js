@@ -1,8 +1,9 @@
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleToAnimal } from "store/toAnimalsSlice";
 import { gaEventTracker } from 'GA';
 import lang from "rawData/resourse";
+import fishesRawData from "rawData/fishesRawData";
+import { setAnimalCategory } from '../store/panelSettingSlice';
 
 const wildAnimalsRawData = [
   { name: '松鼠', time: '春、夏、秋', locations: '區域1有數的地方', weather: '颱風不出現'},
@@ -27,28 +28,15 @@ const wildAnimalsRawData = [
   { name: '螃蟹', time: '冬，白天', locations: '區域 2 的海邊', weather: '大雪不出現'},
   { name: '球馬陸', time: '全年', locations: '礦山 3 入口前有岩石的地方', weather: '大雪不出現'},
 ];
-const fishesRawData = [
-  { name: '湄公河巨鯰', time: 'AM7~AM11', locations: '區域 1 河流', weather: ''},
-  { name: '龍膽石斑', time: 'AM7~AM11', locations: '區域 1 海邊', weather: '晴、雨'},
-  { name: '旗魚', time: 'PM12~AM2', locations: '區域 2 海邊', weather: '晴、雪'},
-  { name: '雪花鴨嘴燕魟', time: 'PM2~PM4', locations: '區域 3 海邊', weather: '晴、雪、大雪'},
-  { name: '塔斯馬尼亞帝王蟹', time: '', locations: '區域 3 礦區', weather: ''},
-  { name: '大王烏賊', time: '', locations: '釣客島海邊', weather: ''},
-  { name: '扁鱈', time: 'PM9~PM11', locations: '上古之湖', weather: ''},
-  { name: '大雀鱔', time: 'PM5~AM2', locations: '區域 3 海邊、礦區', weather: ''},
-  // { name: '', time: '', locations: '', weather: ''},
-  // { name: '', time: '', locations: '', weather: ''},
-  // { name: '', time: '', locations: '', weather: ''},
-  
-];
-
-
+wildAnimalsRawData.forEach(w => {
+  w.key = w.name + w.locations;
+})
 
 export default function Animals() {
   const dispatch = useDispatch();
   const toAnimals = useSelector(state => state.toAnimals);
   const tabs = ['野生動物', '水中生物'];
-  const [selectedTab, setSelectedTab] = useState('野生動物');
+  const selectedTab = useSelector(state => state.panelSetting.animal)?.category ?? '野生動物';
   const wildAnimalRows = wildAnimalsRawData.map(animal => {
     const isSelected = toAnimals.find(a => a.name === animal.name);
     let image;
@@ -68,26 +56,44 @@ export default function Animals() {
   });
 
   const fishRows = fishesRawData.map(animal => {
-    const isSelected = toAnimals.find(a => a.name === animal.name);
+    const isAnimalSelected = toAnimals.find(a => a.name === animal.name);
     let image;
     try {
-      image = <img className={`w-12 m-auto rounded-full ${isSelected ? 'border border-stone-900' : ''}`} src={require(`assets/images/animals/${animal.name}.jpg`)} alt={animal.name}/>;
+      image = <img className={`w-12 m-auto rounded-lg ${isAnimalSelected ? 'border border-stone-900' : ''}`} src={require(`assets/images/animals/${animal.name}.jpg`)} alt={animal.name}/>;
     } catch (error) {}
-    return (
-      <tr key={animal.name} onClick={() => dispatch(toggleToAnimal(animal))} className={isSelected ? 'bg-stone-300' : ''}>
-        <td>{image}</td>
-        <td>{lang(animal.name)}</td>
-        <td className='md:hidden'>{animal.time}<br/>{animal.locations}<br/>{animal.weather}</td>
-        <td className='hidden md:table-cell'>{animal.time}</td>
-        <td className='hidden md:table-cell'>{animal.locations}</td>
-        <td className='hidden md:table-cell'>{animal.weather}</td>
-      </tr>
-    )
+    const rows = animal.way.map((way, index) => {
+      const data = {
+        key: animal.name + way.locations,
+        name: animal.name,
+        category: animal.category,
+        rod: way.rod,
+        time: way.seasons + way.weather + ' ' +way.time,
+        locations: way.locations,
+      };
+      const isWaySelected = toAnimals.find(a => a.name === data.name && a.locations === data.locations);
+      return (
+        <tr key={animal.name + way.locations} onClick={() => dispatch(toggleToAnimal(data))}>
+          { index === 0 && <>
+            <td rowSpan={animal.way.length} className={isAnimalSelected ? 'bg-stone-300' : ''}>{image}</td>
+            <td rowSpan={animal.way.length} className={isAnimalSelected ? 'bg-stone-300' : ''}>
+              {lang(data.name)}
+              <div className="md:hidden text-stone-400">{data.category}</div>
+            </td>
+            <td rowSpan={animal.way.length} className={`hidden md:table-cell ${isAnimalSelected ? 'bg-stone-300' : ''}`}>{data.category}</td>
+          </> }
+          <td className={`md:hidden ${isWaySelected ? 'bg-stone-300' : ''}`}>{data.rod}{lang('rod-mobile-table-content')}<br/>{data.time}<br/>{data.locations}</td>
+          <td className={`hidden md:table-cell ${isWaySelected ? 'bg-stone-300' : ''}`}>{data.rod}</td>
+          <td className={`hidden md:table-cell ${isWaySelected ? 'bg-stone-300' : ''}`}>{data.time}</td>
+          <td className={`hidden md:table-cell ${isWaySelected ? 'bg-stone-300' : ''}`}>{data.locations}</td>
+        </tr>
+      )
+    })
+    return rows;
   });
 
   const panel = (<div>
     <ul className='my-tabs'>
-      { tabs.map(tab => <li key={tab} className={tab === selectedTab ? 'active' : 'inactive'} onClick={() => {setSelectedTab(tab);gaEventTracker('動物-Click Tab', {tab_name: tab})}}>{tab}</li>) }
+      { tabs.map(tab => <li key={tab} className={tab === selectedTab ? 'active' : 'inactive'} onClick={() => {dispatch(setAnimalCategory(tab));gaEventTracker('動物-Click Tab', {tab_name: tab})}}>{tab}</li>) }
     </ul>
   </div>);
 
@@ -113,14 +119,15 @@ export default function Animals() {
   const fishHeader = (
     <table className='md:mx-auto'>
       <thead>
-        <tr><th colSpan={5}>{panel}</th></tr>
+        <tr><th colSpan={7}>{panel}</th></tr>
         <tr className='h-8'>
           <th className="w-12 md:w-24">圖片</th>
           <th className='w-24 md:w-36'>名稱</th>
           <th className='md:hidden w-64' colSpan={3}></th>
-          <th className='hidden md:table-cell md:w-64'>時間</th>
-          <th className='hidden md:table-cell md:w-64'>地點</th>
-          <th className='hidden md:table-cell md:w-64'>天氣</th>
+          <th className='hidden md:table-cell md:w-64'>{lang('category')}</th>
+          <th className='hidden md:table-cell md:w-64'>{lang('rod-table-header')}</th>
+          <th className='hidden md:table-cell md:w-64'>{lang('time')}</th>
+          <th className='hidden md:table-cell md:w-64'>{lang('location')}</th>
         </tr>
       </thead>
       <tbody>

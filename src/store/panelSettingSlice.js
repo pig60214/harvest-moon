@@ -8,6 +8,9 @@ export const panelSettingSlice = createSlice({
     },
     item: {
       category: '全品項',
+    },
+    animal: {
+      category: '野生動物'
     }
   },
   reducers: {
@@ -17,9 +20,15 @@ export const panelSettingSlice = createSlice({
     setItemCategory: (state, { payload }) => {
       state.item.category = payload;
     },
+    setAnimalCategory: (state, { payload }) => {
+      if(!state.animal) {
+        state.animal = { category: '野生動物' };
+      }
+      state.animal.category = payload;
+    },
   },
 })
 
-export const { setCookingCategory, setItemCategory } = panelSettingSlice.actions
+export const { setCookingCategory, setItemCategory, setAnimalCategory } = panelSettingSlice.actions
 
 export default panelSettingSlice.reducer
