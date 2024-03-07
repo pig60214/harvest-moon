@@ -5,6 +5,8 @@ import lang from "rawData/resourse";
 import fishesRawData from "rawData/fishesRawData";
 import { setAnimalCategory, setAnimalFishCategory, setAnimalLocation, setAnimalSeason } from '../store/panelSettingSlice';
 import fishingLocationRawData from "rawData/fishingLocationRawData";
+import SearchInput from "components/SearchInput";
+import { setSearchInput } from "store/searchInputSlice";
 
 const wildAnimalsRawData = [
   { name: '松鼠', time: '春、夏、秋', location: '區域1有數的地方', weather: '颱風不出現'},
@@ -57,8 +59,12 @@ export default function Animals() {
     )
   });
 
+  const searchInput = useSelector((state) => state.searchInput.value);
   const fishsData = fishesRawData
-  .filter(fish => setting.fishCategory === '全種類' || setting.fishCategory === fish.category)
+  .filter(fish => {
+    return (setting.fishCategory === '全種類' || setting.fishCategory === fish.category)
+    && fish.name.includes(searchInput);
+  })
   .flatMap(fish => {
     const ways = fish.way.filter(way => {
       return (setting.season === '全季節' || way.seasons.length === 0 || way.seasons.includes(setting.season))
@@ -149,11 +155,12 @@ export default function Animals() {
   const seasons = ['全季節', '春', '夏', '秋', '冬'];
 
   const AllTab = () => {
-    const className = setting.fishCategory === '全種類' && setting.season === '全季節' && setting.location === '全區域' ? 'active' : 'inactive';
+    const className = setting.fishCategory === '全種類' && setting.season === '全季節' && setting.location === '全區域' && searchInput === '' ? 'active' : 'inactive';
     const onClick = () => {
       dispatch(setAnimalFishCategory('全種類'));
       dispatch(setAnimalSeason('全季節'));
       dispatch(setAnimalLocation('全區域'));
+      dispatch(setSearchInput(''));
     }
     return <li className={className} onClick={onClick}>{ lang('全部') }</li>
   }
@@ -170,6 +177,7 @@ export default function Animals() {
         <option value='全區域'>{ lang('全區域') }</option>
         { fishingLocationRawData.map(l => <option key={l} value={l}>{ lang(l) }</option>) }
       </select>
+      <SearchInput placeholder='名稱' />
       <AllTab/>
     </ul>
   </div>);

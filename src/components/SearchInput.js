@@ -8,7 +8,7 @@ export default function SearchInput({ placeholder }) {
   const searchInputEle = document.getElementById('searchInput');
 
   return (
-    <div className='w-full flex'>
+    <div className='flex'>
       <input
         id='searchInput'
         type="text"
