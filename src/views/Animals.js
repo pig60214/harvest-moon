@@ -79,27 +79,35 @@ export default function Animals() {
   });
 
   const fishRows = fishsData.map(fish => {
-    let firstRow = <></>;
+    let mergedCells = <></>;
     if(fish.rowSpan > 0) {
       const isAnimalSelected = toAnimals.find(a => a.name === fish.name);
       let image;
       try {
         image = <img className={`w-12 m-auto rounded-lg ${isAnimalSelected ? 'border border-stone-900' : ''}`} src={require(`assets/images/animals/${fish.name}.jpg`)} alt={fish.name}/>;
       } catch (error) {}
-      firstRow = <>
-        <td rowSpan={fish.rowSpan} className={isAnimalSelected ? 'bg-stone-300' : ''}>{image}</td>
-        <td rowSpan={fish.rowSpan} className={isAnimalSelected ? 'bg-stone-300' : ''}>
+
+      const onClick = (e) => {
+        if (isAnimalSelected) {
+          toAnimals.filter(a => a.name === fish.name).forEach((a) => dispatch(toggleToAnimal(a)));
+          e.stopPropagation();
+        }
+      }
+
+      mergedCells = <>
+        <td onClick={onClick} rowSpan={fish.rowSpan} className={isAnimalSelected ? 'bg-stone-300' : ''}>{image}</td>
+        <td onClick={onClick} rowSpan={fish.rowSpan} className={isAnimalSelected ? 'bg-stone-300' : ''}>
           {lang(fish.name)}
           <div className="md:hidden text-stone-400">{fish.category}</div>
         </td>
-        <td rowSpan={fish.rowSpan} className={`hidden md:table-cell ${isAnimalSelected ? 'bg-stone-300' : ''}`}>{fish.category}</td>
+        <td onClick={onClick} rowSpan={fish.rowSpan} className={`hidden md:table-cell ${isAnimalSelected ? 'bg-stone-300' : ''}`}>{fish.category}</td>
       </>;
     }
 
     const isWaySelected = toAnimals.find(a => a.name === fish.name && a.location === fish.location);
     return (
       <tr key={fish.key} onClick={() => dispatch(toggleToAnimal(fish))}>
-        { firstRow }
+        { mergedCells }
         <td className={`md:hidden ${isWaySelected ? 'bg-stone-300' : ''}`}>{fish.rod}{lang('rod-mobile-table-content')}<br/>{fish.time}<br/>{fish.location}</td>
         <td className={`hidden md:table-cell ${isWaySelected ? 'bg-stone-300' : ''}`}>{fish.rod}</td>
         <td className={`hidden md:table-cell ${isWaySelected ? 'bg-stone-300' : ''}`}>{fish.time}</td>
