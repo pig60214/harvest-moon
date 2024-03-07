@@ -89,7 +89,7 @@ export default function ToDoList() {
 
   const toAnimals = useSelector(state => state.toAnimals).map(todo => {
     const image = getImage(todo.name);
-    const content = <>{todo.time ? `在 ${todo.time} ` : ''}{`去 ${todo.locations} 找`} <span className={hightlighText}>{todo.name}</span>{image}{todo.weather ? ` (${todo.weather})` : ''}</>
+    const content = <>{todo.time ? `在 ${todo.time} ` : ''}{`去 ${todo.location} 找`} <span className={hightlighText}>{todo.name}</span>{image}{todo.weather ? ` (${todo.weather})` : ''}</>
     return <ToDo key={todo.key ?? todo.name} onClick={() => dispatch(toggleToAnimal(todo))}>{content}</ToDo>;
   });
   const toDoList = useSelector((state) => state.toDoList);

@@ -37,7 +37,7 @@ const rootReducer = (state, action) => {
 }
 
 const migrations = {
-  1: (state) => {
+  0: (state) => {
     return {
       ...state,
       panelSetting: {
@@ -57,7 +57,7 @@ const migrations = {
 const persistConfig = {
   key: 'root',
   storage,
-  version: 1,
+  version: 0,
   migrate: createMigrate(migrations, { debug: false}),
 };
 

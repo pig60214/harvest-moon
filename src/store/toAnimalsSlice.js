@@ -22,9 +22,6 @@ export const toAnimalsSlice = createSlice({
 export const toAnimalsMigration = (state) => {
   const newState = [...state];
   return newState.map(animal => {
-    if(!animal.key) {
-      animal.key = animal.name + animal.locations;
-    }
     if(animal.locations === '區域 1 河流') {
       animal.locations = '區域 1 河流(礦區旁)';
     }
@@ -37,6 +34,9 @@ export const toAnimalsMigration = (state) => {
     if(animal.locations === '區域 3 海邊、礦區') {
       animal.locations = '區域 3 海邊';
     }
+    animal.key = animal.name + animal.locations;
+    animal.location = animal.locations;
+
     return animal;
   })
 };
