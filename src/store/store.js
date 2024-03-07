@@ -1,6 +1,6 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
-import { persistReducer, persistStore } from 'redux-persist';
+import { persistReducer, persistStore, createMigrate } from 'redux-persist';
 import thunk from 'redux-thunk';
 import searchInputSlice from './searchInputSlice'
 import locationsSlice from './locationsSlice';
@@ -10,7 +10,7 @@ import toDoListSlice from './toDoListSlice';
 import cropSearchSettingSlice from './cropSearchSettingSlice';
 import toGetCropsSlice from './toGetCropsSlice';
 import toGetItemsSlice from './toGetItemsSlice';
-import toAnimalsSlice from './toAnimalsSlice';
+import toAnimalsSlice, { toAnimalsMigration } from './toAnimalsSlice';
 import panelSettingSlice from './panelSettingSlice';
 
 const appReducer = combineReducers({
@@ -36,10 +36,30 @@ const rootReducer = (state, action) => {
   return appReducer(state, action);
 }
 
+const migrations = {
+  1: (state) => {
+    return {
+      ...state,
+      panelSetting: {
+        ...state.panelSetting,
+        animal: {
+          category: '野生動物',
+          fishCategory: '全種類',
+          season: '全季節',
+          location: '全區域',
+        }
+      },
+      toAnimals: toAnimalsMigration(state.toAnimals),
+    }
+  }
+};
+
 const persistConfig = {
   key: 'root',
   storage,
-}
+  version: 1,
+  migrate: createMigrate(migrations, { debug: false}),
+};
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 

@@ -3,7 +3,8 @@ import { toggleToAnimal } from "store/toAnimalsSlice";
 import { gaEventTracker } from 'GA';
 import lang from "rawData/resourse";
 import fishesRawData from "rawData/fishesRawData";
-import { setAnimalCategory } from '../store/panelSettingSlice';
+import { setAnimalCategory, setAnimalFishCategory, setAnimalLocation, setAnimalSeason } from '../store/panelSettingSlice';
+import fishingLocationRawData from "rawData/fishingLocationRawData";
 
 const wildAnimalsRawData = [
   { name: '松鼠', time: '春、夏、秋', locations: '區域1有數的地方', weather: '颱風不出現'},
@@ -36,7 +37,8 @@ export default function Animals() {
   const dispatch = useDispatch();
   const toAnimals = useSelector(state => state.toAnimals);
   const tabs = ['野生動物', '水中生物'];
-  const selectedTab = useSelector(state => state.panelSetting.animal)?.category ?? '野生動物';
+  const setting = useSelector(state => state.panelSetting.animal);
+  const selectedTab = setting.category;
   const wildAnimalRows = wildAnimalsRawData.map(animal => {
     const isSelected = toAnimals.find(a => a.name === animal.name);
     let image;
@@ -55,40 +57,55 @@ export default function Animals() {
     )
   });
 
-  const fishRows = fishesRawData.map(animal => {
-    const isAnimalSelected = toAnimals.find(a => a.name === animal.name);
-    let image;
-    try {
-      image = <img className={`w-12 m-auto rounded-lg ${isAnimalSelected ? 'border border-stone-900' : ''}`} src={require(`assets/images/animals/${animal.name}.jpg`)} alt={animal.name}/>;
-    } catch (error) {}
-    const rows = animal.way.map((way, index) => {
-      const data = {
-        key: animal.name + way.locations,
-        name: animal.name,
-        category: animal.category,
+  const fishsData = fishesRawData
+  .filter(fish => setting.fishCategory === '全種類' || setting.fishCategory === fish.category)
+  .flatMap(fish => {
+    const ways = fish.way.filter(way => {
+      return (setting.season === '全季節' || way.seasons.length === 0 || way.seasons.includes(setting.season))
+      && (setting.location === '全區域' || setting.location === way.locations)
+    })
+    return ways.map((way, index) => {
+      return {
+        rowSpan: index === 0 ? ways.length : 0,
+        key: fish.name + way.locations,
+        name: fish.name,
+        category: fish.category,
         rod: way.rod,
         time: way.seasons + way.weather + ' ' +way.time,
+        seasons: way.seasons,
         locations: way.locations,
-      };
-      const isWaySelected = toAnimals.find(a => a.name === data.name && a.locations === data.locations);
-      return (
-        <tr key={animal.name + way.locations} onClick={() => dispatch(toggleToAnimal(data))}>
-          { index === 0 && <>
-            <td rowSpan={animal.way.length} className={isAnimalSelected ? 'bg-stone-300' : ''}>{image}</td>
-            <td rowSpan={animal.way.length} className={isAnimalSelected ? 'bg-stone-300' : ''}>
-              {lang(data.name)}
-              <div className="md:hidden text-stone-400">{data.category}</div>
-            </td>
-            <td rowSpan={animal.way.length} className={`hidden md:table-cell ${isAnimalSelected ? 'bg-stone-300' : ''}`}>{data.category}</td>
-          </> }
-          <td className={`md:hidden ${isWaySelected ? 'bg-stone-300' : ''}`}>{data.rod}{lang('rod-mobile-table-content')}<br/>{data.time}<br/>{data.locations}</td>
-          <td className={`hidden md:table-cell ${isWaySelected ? 'bg-stone-300' : ''}`}>{data.rod}</td>
-          <td className={`hidden md:table-cell ${isWaySelected ? 'bg-stone-300' : ''}`}>{data.time}</td>
-          <td className={`hidden md:table-cell ${isWaySelected ? 'bg-stone-300' : ''}`}>{data.locations}</td>
-        </tr>
-      )
-    })
-    return rows;
+      }
+    });
+  });
+
+  const fishRows = fishsData.map(fish => {
+    let firstRow = <></>;
+    if(fish.rowSpan > 0) {
+      const isAnimalSelected = toAnimals.find(a => a.name === fish.name);
+      let image;
+      try {
+        image = <img className={`w-12 m-auto rounded-lg ${isAnimalSelected ? 'border border-stone-900' : ''}`} src={require(`assets/images/animals/${fish.name}.jpg`)} alt={fish.name}/>;
+      } catch (error) {}
+      firstRow = <>
+        <td rowSpan={fish.rowSpan} className={isAnimalSelected ? 'bg-stone-300' : ''}>{image}</td>
+        <td rowSpan={fish.rowSpan} className={isAnimalSelected ? 'bg-stone-300' : ''}>
+          {lang(fish.name)}
+          <div className="md:hidden text-stone-400">{fish.category}</div>
+        </td>
+        <td rowSpan={fish.rowSpan} className={`hidden md:table-cell ${isAnimalSelected ? 'bg-stone-300' : ''}`}>{fish.category}</td>
+      </>;
+    }
+
+    const isWaySelected = toAnimals.find(a => a.name === fish.name && a.locations === fish.locations);
+    return (
+      <tr key={fish.key} onClick={() => dispatch(toggleToAnimal(fish))}>
+        { firstRow }
+        <td className={`md:hidden ${isWaySelected ? 'bg-stone-300' : ''}`}>{fish.rod}{lang('rod-mobile-table-content')}<br/>{fish.time}<br/>{fish.locations}</td>
+        <td className={`hidden md:table-cell ${isWaySelected ? 'bg-stone-300' : ''}`}>{fish.rod}</td>
+        <td className={`hidden md:table-cell ${isWaySelected ? 'bg-stone-300' : ''}`}>{fish.time}</td>
+        <td className={`hidden md:table-cell ${isWaySelected ? 'bg-stone-300' : ''}`}>{fish.locations}</td>
+      </tr>
+    )
   });
 
   const panel = (<div>
@@ -116,10 +133,29 @@ export default function Animals() {
     </table>
   );
 
+  const fishCategory = ['全種類', '小型魚', '中型魚', '大型魚', '水中霸主', '稀有魚', '蝦子', '螃蟹', '烏賊', '貝'];
+  const seasons = ['全季節', '春', '夏', '秋', '冬'];
+
+  const fishPanel = (<div>
+    <ul className='my-tabs'>
+      <select value={setting.fishCategory} onChange={(e) => {dispatch(setAnimalFishCategory(e.target.value))}}>
+        { fishCategory.map(c => <option key={c} value={c}>{ lang(c) }</option>) }
+      </select>
+      <select value={setting.season} onChange={(e) => {dispatch(setAnimalSeason(e.target.value))}}>
+        { seasons.map(s => <option key={s} value={s}>{ lang(s) }</option>) }
+      </select>
+      <select value={setting.location} onChange={(e) => {dispatch(setAnimalLocation(e.target.value))}}>
+        <option value='全區域'>{ lang('全區域') }</option>
+        { fishingLocationRawData.map(l => <option key={l} value={l}>{ lang(l) }</option>) }
+      </select>
+    </ul>
+  </div>);
+
   const fishHeader = (
     <table className='md:mx-auto'>
       <thead>
         <tr><th colSpan={7}>{panel}</th></tr>
+        <tr><th colSpan={7}>{fishPanel}</th></tr>
         <tr className='h-8'>
           <th className="w-12 md:w-24">圖片</th>
           <th className='w-24 md:w-36'>名稱</th>
