@@ -6,6 +6,7 @@ import lang from 'rawData/resourse';
 import { Store } from 'react-notifications-component';
 import { useDispatch, useSelector } from 'react-redux';
 import { setNotificationShowed } from 'store/versionNotificationSlice';
+import { gaEventTracker } from 'GA';
 
 function PageDescription() {
   const location = useLocation();
@@ -97,6 +98,7 @@ export default function Layout() {
         }
       });
       dispatch(setNotificationShowed());
+      gaEventTracker('版本更新通知', { value: versionNotification });
     }
   }, [dispatch, versionNotification]);
   return (
