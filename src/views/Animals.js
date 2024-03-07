@@ -144,6 +144,16 @@ export default function Animals() {
   const fishCategory = ['全種類', '小型魚', '中型魚', '大型魚', '水中霸主', '稀有魚', '蝦子', '螃蟹', '烏賊', '貝'];
   const seasons = ['全季節', '春', '夏', '秋', '冬'];
 
+  const AllTab = () => {
+    const className = setting.fishCategory === '全種類' && setting.season === '全季節' && setting.location === '全區域' ? 'active' : 'inactive';
+    const onClick = () => {
+      dispatch(setAnimalFishCategory('全種類'));
+      dispatch(setAnimalSeason('全季節'));
+      dispatch(setAnimalLocation('全區域'));
+    }
+    return <li className={className} onClick={onClick}>{ lang('全部') }</li>
+  }
+
   const fishPanel = (<div>
     <ul className='my-tabs'>
       <select value={setting.fishCategory} onChange={(e) => {dispatch(setAnimalFishCategory(e.target.value))}}>
@@ -156,6 +166,7 @@ export default function Animals() {
         <option value='全區域'>{ lang('全區域') }</option>
         { fishingLocationRawData.map(l => <option key={l} value={l}>{ lang(l) }</option>) }
       </select>
+      <AllTab/>
     </ul>
   </div>);
 
