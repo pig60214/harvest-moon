@@ -107,3 +107,12 @@ td, th {
   90%  {@apply right-0}
   100% {@apply -right-40}
 }
+
+.rnc__notification-item--version-update {
+  border-left: 8px solid;
+  @apply bg-stone-400 border-stone-500;
+}
+
+.rnc__notification-item--version-update .rnc__notification-timer-filler {
+  background-color: white;
+}

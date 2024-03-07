@@ -13,7 +13,12 @@ import 'react-notifications-component/dist/theme.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ReactNotifications />
+    <ReactNotifications types={[
+          {
+            htmlClasses: ['rnc__notification-item--version-update'],
+            name: 'version-update'
+          }
+        ]} />
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <RouterProvider router={router} />

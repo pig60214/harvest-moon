@@ -85,11 +85,15 @@ export default function Layout() {
       Store.addNotification({
         title: "版本更新",
         message: versionNotification,
-        type: "success",
+        type: "version-update",
         container: "top-right",
         dismiss: {
           duration: 5000,
-          onScreen: true
+          onScreen: true,
+          pauseOnHover: true,
+          click: true,
+          touch: true,
+          showIcon: true,
         }
       });
       dispatch(setNotificationShowed());
