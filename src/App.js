@@ -1,8 +1,11 @@
 import './App.css';
 import { Outlet, Link, useLocation, useMatch, useResolvedPath } from "react-router-dom";
 import ToolButtons from 'components/ToolButtons';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import lang from 'rawData/resourse';
+import { Store } from 'react-notifications-component';
+import { useDispatch, useSelector } from 'react-redux';
+import { setNotificationShowed } from 'store/versionNotificationSlice';
 
 function PageDescription() {
   const location = useLocation();
@@ -75,6 +78,23 @@ function MyLink({ children, to, ...props }) {
 }
 
 export default function Layout() {
+  const dispatch = useDispatch();
+  const versionNotification = useSelector(state => state.versionNotification);
+  useEffect(() => {
+    if(versionNotification !== '') {
+      Store.addNotification({
+        title: "版本更新",
+        message: versionNotification,
+        type: "success",
+        container: "top-right",
+        dismiss: {
+          duration: 5000,
+          onScreen: true
+        }
+      });
+      dispatch(setNotificationShowed());
+    }
+  }, [dispatch, versionNotification]);
   return (
     <>
     <nav>

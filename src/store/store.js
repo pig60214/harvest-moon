@@ -12,6 +12,7 @@ import toGetCropsSlice from './toGetCropsSlice';
 import toGetItemsSlice from './toGetItemsSlice';
 import toAnimalsSlice, { toAnimalsMigration } from './toAnimalsSlice';
 import panelSettingSlice from './panelSettingSlice';
+import versionNotificationSlice from './versionNotificationSlice';
 
 const appReducer = combineReducers({
   searchInput: searchInputSlice,
@@ -24,6 +25,7 @@ const appReducer = combineReducers({
   toGetItems: toGetItemsSlice,
   toAnimals: toAnimalsSlice,
   panelSetting: panelSettingSlice,
+  versionNotification: versionNotificationSlice,
 });
 
 const rootReducer = (state, action) => {
@@ -49,15 +51,16 @@ const migrations = {
           location: '全區域',
         }
       },
-      toAnimals: toAnimalsMigration(state.toAnimals),
+      toAnimals: toAnimalsMigration(state.toAnimals)
     }
   },
   1: (state) => {
     return {
       ...state,
       searchInput: searchInputMigration(state.searchInput),
+      versionNotification: '[動物 > 水中生物]補齊資料囉，歡迎去看看',
     }
-  }
+  },
 };
 
 const persistConfig = {
