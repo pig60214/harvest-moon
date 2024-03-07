@@ -59,7 +59,7 @@ export default function Animals() {
     )
   });
 
-  const searchInput = useSelector((state) => state.searchInput.value);
+  const searchInput = useSelector((state) => state.searchInput.fish);
   const fishsData = fishesRawData
   .filter(fish => {
     return (setting.fishCategory === '全種類' || setting.fishCategory === fish.category)
@@ -160,7 +160,7 @@ export default function Animals() {
       dispatch(setAnimalFishCategory('全種類'));
       dispatch(setAnimalSeason('全季節'));
       dispatch(setAnimalLocation('全區域'));
-      dispatch(setSearchInput(''));
+      dispatch(setSearchInput({ key: 'fish', value: '' }));
     }
     return <li className={className} onClick={onClick}>{ lang('全部') }</li>
   }
@@ -177,7 +177,7 @@ export default function Animals() {
         <option value='全區域'>{ lang('全區域') }</option>
         { fishingLocationRawData.map(l => <option key={l} value={l}>{ lang(l) }</option>) }
       </select>
-      <SearchInput placeholder='名稱' />
+      <SearchInput storeKey='fish' placeholder='名稱' />
       <AllTab/>
     </ul>
   </div>);

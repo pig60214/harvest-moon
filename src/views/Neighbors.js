@@ -12,7 +12,7 @@ export default function Neighbors () {
   const notForMarriageWithGift = <span className='text-orange-500'>♥</span>
   const forMarriageWithGift = <span className='text-pink-500'>♥</span>
 
-  const searchInput = useSelector((state) => state.searchInput.value);
+  const searchInput = useSelector((state) => state.searchInput.neighbor);
   const showGiftList = useSelector((state) => state.showGiftList.value);
   const toGives = useSelector((state) => state.toGives);
   const dispatch = useDispatch();
@@ -108,7 +108,7 @@ export default function Neighbors () {
         <p>{ lang('page_neighbors_instruction') }</p>
         <p>{notForMarriageWithGift}：{ lang('page_neighbors_non_marriage_candidate') }，{forMarriageWithGift}：{ lang('page_neighbors_marriage_candidate' )}</p>
       </article>
-      <SearchInput placeholder={lang('page_neighbors_search_bar_instruction')} />
+      <SearchInput storeKey='neighbor' placeholder={lang('page_neighbors_search_bar_instruction')} />
       <div className='hidden md:flex px-4 pt-2'>
         <div className='w-1/4'></div>
         <div className='w-1/4'>{lang('page_neighbors_favorite')}</div>

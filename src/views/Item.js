@@ -8,7 +8,7 @@ import { gaEventTracker } from 'GA';
 
 export default function Item() {
   const setting = useSelector(state => state.panelSetting.item);
-  const searchInput = useSelector((state) => state.searchInput.value);
+  const searchInput = useSelector((state) => state.searchInput.item);
   const toGetItems = useSelector(state => state.toGetItems);
   const dispatch = useDispatch();
 
@@ -87,7 +87,7 @@ export default function Item() {
     {/* <p>{ process.env.REACT_APP_ENV === 'test' ? '' : '不過此表格多有殘缺，還在慢慢補齊中，如果受不了它這麼破，也可以點擊右下角的回饋按鈕，填寫表單告訴我，歡迎一起來補齊，謝謝～～' }</p> */}
     <table className='md:mx-auto'>
       <thead>
-        <tr><th colSpan={4} className='font-normal'><SearchInput placeholder={ lang('page_item_search_bar_instruction') } /></th></tr>
+        <tr><th colSpan={4} className='font-normal'><SearchInput storeKey='item' placeholder={ lang('page_item_search_bar_instruction') } /></th></tr>
         <tr><th colSpan={4}>{panel}</th></tr>
         <tr className='h-8'>
         <th className="w-12 md:w-24">{ lang('image') }</th>

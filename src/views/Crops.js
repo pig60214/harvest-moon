@@ -7,7 +7,7 @@ import SearchInput from 'components/SearchInput';
 import lang from 'rawData/resourse';
 
 export default function Crops() {
-  const searchInput = useSelector((state) => state.searchInput.value);
+  const searchInput = useSelector((state) => state.searchInput.crop);
   const setting = useSelector(state => state.cropSearchSetting);
   const toGetCrops = useSelector(state => state.toGetCrops);
   const dispatch = useDispatch();
@@ -61,7 +61,7 @@ export default function Crops() {
       </article>
       <table className='md:mx-auto mt-2'>
         <thead>
-          <tr><th colSpan={5} className='font-normal'><SearchInput placeholder={ lang('page_crops_search_bar_instruction') } /></th></tr>
+          <tr><th colSpan={5} className='font-normal'><SearchInput storeKey='crop' placeholder={ lang('page_crops_search_bar_instruction') } /></th></tr>
           <tr><th colSpan={5}>{panel}</th></tr>
           <tr className='md:h-10'>
             <th className="w-12 md:w-24">{ lang('image') }</th>
