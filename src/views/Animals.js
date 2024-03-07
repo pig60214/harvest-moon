@@ -71,7 +71,7 @@ export default function Animals() {
         name: fish.name,
         category: fish.category,
         rod: way.rod,
-        time: way.seasons + way.weather + ' ' +way.time,
+        time: (way.seasons + way.weather + ' ' +way.time).trim(),
         seasons: way.seasons,
         location: way.location,
       }
@@ -108,7 +108,11 @@ export default function Animals() {
     return (
       <tr key={fish.key} onClick={() => dispatch(toggleToAnimal(fish))}>
         { mergedCells }
-        <td className={`md:hidden ${isWaySelected ? 'bg-stone-300' : ''}`}>{fish.rod}{lang('rod-mobile-table-content')}<br/>{fish.time}<br/>{fish.location}</td>
+        <td className={`md:hidden ${isWaySelected ? 'bg-stone-300' : ''}`}>
+          {fish.rod}{lang('rod-mobile-table-content')}<br/>
+          { fish.time !== '' && <>{fish.time}<br/></>}
+          {fish.location}
+        </td>
         <td className={`hidden md:table-cell ${isWaySelected ? 'bg-stone-300' : ''}`}>{fish.rod}</td>
         <td className={`hidden md:table-cell ${isWaySelected ? 'bg-stone-300' : ''}`}>{fish.time}</td>
         <td className={`hidden md:table-cell ${isWaySelected ? 'bg-stone-300' : ''}`}>{fish.location}</td>
