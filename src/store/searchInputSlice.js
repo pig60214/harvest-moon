@@ -7,6 +7,7 @@ export const searchInputSlice = createSlice({
     item: '',
     crop: '',
     fish: '',
+    cooking: '',
   },
   reducers: {
     setSearchInput: (state, { payload }) => {

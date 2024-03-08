@@ -4,11 +4,13 @@ import lang, { getLang } from 'rawData/resourse';
 import { useState } from "react";
 import dishRawData from "rawData/dishRawData";
 import { gaEventTracker } from '../GA';
+import SearchInput from "components/SearchInput";
 
 export default function Dishes() {
   const setting = useSelector(state => state.panelSetting.cooking);
   const dispatch = useDispatch();
   const [randomIndex, setrandomIndex] = useState(-1);
+  const searchInput = useSelector((state) => state.searchInput.cooking) ?? '';
 
   const dishes = dishRawData.map(image => {
     return {
@@ -16,7 +18,10 @@ export default function Dishes() {
       image: require(`assets/images/dishes/${image.key}.jpg`),
     }
   });
-  let dishesWithFilter = dishes.filter(image => setting.category === '全品項' ? true : image.category === setting.category)
+  let dishesWithFilter = dishes.filter(dish => {
+    return (setting.category === '全品項' ? true : dish.category === setting.category)
+    && dish.name.toLowerCase().includes(searchInput);
+  })
   let dishesWithRandomIndex = dishesWithFilter.filter((_, index) => randomIndex === -1 ? true : index === randomIndex);
   const tableRows = dishesWithRandomIndex.map(dish => <tr key={ dish.key }>
     <td><img src={ dish.image } alt={ dish.name } className="w-12 m-auto rounded-full" /></td>
@@ -46,6 +51,7 @@ export default function Dishes() {
   const panel = (
     <ul className='my-tabs my-1'>
       { ['沙拉', '其他', '湯', '主餐', '甜點', '全品項'].map(c => <li key={c} className={setting.category === c || setting.category === '全品項' ? 'active' : 'inactive'} onClick={() => {dispatch(setCookingCategory(c));resetRandomIndex()}}>{lang(c)}</li>) }
+      <SearchInput storeKey='cooking' placeholder='名稱' />
     </ul>
   )
   return (
