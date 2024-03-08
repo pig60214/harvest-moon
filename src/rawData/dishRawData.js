@@ -1061,106 +1061,210 @@ const dishRawDataZHTW = [
   {
     "name": "茶",
     "category": "其他",
+    "ingredients": {
+      "required": ["茶葉"],
+      "topping": "砂糖",
+    },
   },
   {
     "name": "蔬菜汁",
     "category": "其他",
+    "ingredients": {
+      "required": ["蔬菜類", "蔬菜類"],
+      "topping": "檸檬",
+    },
   },
   {
     "name": "白飯",
     "category": "其他",
+    "ingredients": {
+      "required": ["稻米"],
+      "topping": "蛋類",
+    },
   },
   {
     "name": "番茄汁",
     "category": "其他",
+    "ingredients": {
+      "required": ["番茄類"],
+      "topping": "鹽",
+    },
   },
   {
     "name": "香草茶",
     "category": "其他",
+    "ingredients": {
+      "required": ["茶葉", "鼠尾草"],
+      "topping": "果醬類",
+    },
   },
   {
     "name": "麵包",
     "category": "其他",
+    "ingredients": {
+      "required": ["麵粉"],
+      "topping": "美乃滋",
+    },
   },
   {
     "name": "熱牛奶",
     "category": "其他",
+    "ingredients": {
+      "required": ["奶類"],
+      "topping": "蜂蜜類",
+    },
   },
   {
     "name": "優酪乳",
     "category": "其他",
+    "ingredients": {
+      "required": ["優格"],
+      "topping": "葡萄",
+    },
   },
   {
     "name": "咖啡",
     "category": "其他",
+    "ingredients": {
+      "required": ["咖啡粉"],
+      "topping": "蜂蜜類",
+    },
   },
   {
     "name": "柳橙汁",
     "category": "其他",
+    "ingredients": {
+      "required": ["柳橙"],
+      "topping": "草莓類",
+    },
   },
   {
     "name": "奶茶",
     "category": "其他",
+    "ingredients": {
+      "required": ["茶葉", "奶類"],
+      "topping": "蜂蜜類",
+    },
   },
   {
     "name": "印度奶茶",
     "category": "其他",
+    "ingredients": {
+      "required": ["茶葉", "奶類", "香草調味料"],
+      "topping": "可可粉",
+    },
   },
   {
     "name": "草莓牛奶",
     "category": "其他",
+    "ingredients": {
+      "required": ["草莓類", "奶類"],
+      "topping": "西瓜",
+    },
   },
   {
     "name": "蘋果汁",
     "category": "其他",
+    "ingredients": {
+      "required": ["蘋果類"],
+      "topping": "柳橙",
+    },
   },
   {
     "name": "可可亞",
     "category": "其他",
+    "ingredients": {
+      "required": ["可可粉", "奶類"],
+      "topping": "香草調味料",
+    },
   },
   {
     "name": "洋蔥麵包",
     "category": "其他",
+    "ingredients": {
+      "required": ["麵粉", "奶油", "洋蔥"],
+      "topping": "蜂蜜類",
+    },
   },
   {
     "name": "椰子汁",
     "category": "其他",
+    "ingredients": {
+      "required": ["椰子", "芳香萬壽菊"],
+      "topping": "西瓜",
+    },
   },
   {
     "name": "葡萄汁",
     "category": "其他",
+    "ingredients": {
+      "required": ["葡萄"],
+      "topping": "蘋果類",
+    },
   },
   {
     "name": "香蕉牛奶",
     "category": "其他",
+    "ingredients": {
+      "required": ["香蕉", "奶類"],
+      "topping": "優格",
+    },
   },
   {
     "name": "摩卡",
     "category": "其他",
+    "ingredients": {
+      "required": ["咖啡粉", "奶類", "可可粉"],
+      "topping": "砂糖",
+    },
   },
   {
     "name": "玉米麵包",
     "category": "其他",
+    "ingredients": {
+      "required": ["麵粉", "奶油", "玉蜀黍類", "奶類"],
+      "topping": "優格",
+    },
   },
   {
     "name": "蜂蜜拿鐵",
     "category": "其他",
+    "ingredients": {
+      "required": ["咖啡粉", "奶類", "工蜂乳"],
+      "topping": "香草調味料",
+    },
   },
   {
     "name": "蜂蜜牛奶可可",
     "category": "其他",
+    "ingredients": {
+      "required": ["可可粉", "奶類", "工蜂乳"],
+      "topping": "砂糖",
+    },
   },
   {
     "name": "芒果汁",
     "category": "其他",
+    "ingredients": {
+      "required": ["芒果", "芒果果醬"],
+      "topping": "草莓類",
+    },
   },
   {
     "name": "蜂蜜檸檬汁",
     "category": "其他",
+    "ingredients": {
+      "required": ["蜂王乳", "金雨迷迭香", "檸檬"],
+      "topping": "砂糖",
+    },
   },
   {
     "name": "水果歐蕾",
     "category": "其他",
+    "ingredients": {
+      "required": ["草莓類", "鳳梨", "桃子類", "奶類"],
+      "topping": "香蕉",
+    },
   },
 ]
 

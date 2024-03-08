@@ -139,6 +139,7 @@ const resourse = {
   '山菜類': { zhtw: '山菜類', en: 'Wild Plant Group', },
   '馬鈴薯類': { zhtw: '馬鈴薯類', en: 'Potato Group', },
   '蘋果類': { zhtw: '蘋果類', en: 'Apple Group', },
+  '桃子類': { zhtw: '桃子類', en: 'Peach Group', },
   '蔬菜沙拉': { zhtw: '蔬菜沙拉', en: 'Vegetable Salad', },
   '綜合沙拉': { zhtw: '綜合沙拉', en: 'Mixed Salad', },
   '泰式涼拌冬粉沙拉': { zhtw: '泰式涼拌冬粉沙拉', en: 'Yum Woon Sen', },
