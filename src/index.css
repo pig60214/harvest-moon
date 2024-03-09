@@ -116,3 +116,7 @@ td, th {
 .rnc__notification-item--version-update .rnc__notification-timer-filler {
   background-color: white;
 }
+
+select {
+  @apply border border-stone-400 rounded bg-transparent
+}
