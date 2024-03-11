@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply font-bold text-stone-800
+  }
+
+  h2 {
+    @apply text-sm font-bold text-stone-500
+  }
+
+  p {
+    @apply text-sm text-stone-500
+  }
+}
+
+.my-nav {
+  @apply flex flex-wrap text-sm font-medium text-center text-stone-500 mt-3 gap-1 md:gap-2;
+
+  li {
+    @apply cursor-pointer rounded;
+
+    &:first-child {
+      @apply cursor-pointer rounded-l-none;
+
+      a {
+        @apply ps-3 md:ps-5
+      }
+    }
+
+    &.inactive {
+      @apply hover:text-stone-900 hover:bg-stone-300
+    }
+
+    &.active {
+      @apply text-white bg-stone-500
+    }
+
+    a {
+      @apply p-2 md:px-3 inline-block
+    }
+  }
+}
+
+.my-tabs {
+  @apply flex flex-wrap text-sm font-medium text-center text-stone-400 gap-1 my-1;
+
+  li {
+    @apply rounded capitalize cursor-pointer px-3 py-1 md:px-3;
+
+    &.inactive {
+      @apply hover:text-stone-900 hover:bg-stone-200
+    }
+
+    &.active {
+      @apply text-white bg-stone-400
+    }
+  }
+}
+
+.my-card {
+  @apply flex flex-col md:flex-row rounded-lg bg-stone-100 border-solid border border-stone-300;
+
+  .my-card-header {
+    @apply p-2 bg-stone-200 rounded-t-lg md:rounded-t-none md:rounded-l-lg
+  }
+
+  .my-card-body {
+    @apply p-2
+  }
+}
+
+table {
+  @apply border-collapse;
+
+  th {
+    @apply bg-stone-100 py-1
+  }
+
+  td, th {
+    @apply border border-stone-400 px-1 md:px-2
+  }
+}
+
+.my-notification {
+  @apply w-40 h-12 p-3 shadow bg-white border rounded-l-md absolute right-0 top-4;
+
+  &.animation {
+    animation-name: my-notification-animation;
+    animation-duration: 5s;
+  }
+}
+
+@keyframes my-notification-animation {
+  0%   {@apply -right-40}
+  10%  {@apply right-0}
+  90%  {@apply right-0}
+  100% {@apply -right-40}
+}
+
+.my-secondary-button {
+  @apply text-sm font-medium text-center text-stone-400 px-2 py-1 rounded;
+
+  &:hover {
+    @apply bg-stone-400 text-white
+  }
+}
+
+.rnc__notification-item--version-update {
+  border-left: 8px solid;
+  @apply bg-stone-400 border-stone-500;
+
+  .rnc__notification-timer-filler {
+    background-color: white;
+  }
+}
+
+select {
+  @apply border border-stone-400 rounded bg-transparent
+}
