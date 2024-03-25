@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import lang from 'rawData/resourse';
 import { Store } from 'react-notifications-component';
 import { useDispatch, useSelector } from 'react-redux';
-import { setNotificationShowed } from 'store/versionNotificationSlice';
+import { setNotificationShowed } from 'store/notificationsSlice';
 import { gaEventTracker } from 'GA';
 
 function PageDescription() {
@@ -80,27 +80,31 @@ function MyLink({ children, to, ...props }) {
 
 export default function Layout() {
   const dispatch = useDispatch();
-  const versionNotification = useSelector(state => state.versionNotification);
+  const notifications = useSelector(state => state.notifications);
   useEffect(() => {
-    if(versionNotification !== '') {
-      Store.addNotification({
-        title: "版本更新",
-        message: versionNotification,
-        type: "version-update",
-        container: "top-right",
-        dismiss: {
-          duration: 5000,
-          onScreen: true,
-          pauseOnHover: true,
-          click: true,
-          touch: true,
-          showIcon: true,
+    if(notifications.length > 0) {
+      notifications.forEach(notification => {
+        const { title, message } = notification;
+        Store.addNotification({
+          title,
+          message,
+          type: "version-update",
+          container: "top-right",
+          dismiss: {
+            onScreen: true,
+            pauseOnHover: true,
+            click: true,
+            touch: true,
+            showIcon: true,
+          }
+        });
+        if(title === "版本更新") {
+          gaEventTracker('版本更新通知', { value: message });
         }
-      });
+      })
       dispatch(setNotificationShowed());
-      gaEventTracker('版本更新通知', { value: versionNotification });
     }
-  }, [dispatch, versionNotification]);
+  }, [dispatch, notifications]);
   return (
     <>
     <nav>

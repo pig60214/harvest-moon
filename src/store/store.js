@@ -12,7 +12,7 @@ import toGetCropsSlice from './toGetCropsSlice';
 import toGetItemsSlice from './toGetItemsSlice';
 import toAnimalsSlice, { toAnimalsMigration } from './toAnimalsSlice';
 import panelSettingSlice from './panelSettingSlice';
-import versionNotificationSlice from './versionNotificationSlice';
+import notificationsSlice from './notificationsSlice';
 
 const appReducer = combineReducers({
   searchInput: searchInputSlice,
@@ -25,7 +25,7 @@ const appReducer = combineReducers({
   toGetItems: toGetItemsSlice,
   toAnimals: toAnimalsSlice,
   panelSetting: panelSettingSlice,
-  versionNotification: versionNotificationSlice,
+  notifications: notificationsSlice,
 });
 
 const rootReducer = (state, action) => {
@@ -61,12 +61,25 @@ const migrations = {
       versionNotification: '[動物 > 水中生物]補齊資料囉，歡迎去看看',
     }
   },
+  2: (state) => {
+    const newNotification = { title: '尋人啟事', message: '尋找填過右下角意見回饋的那位大恩人，我表單忘記請您留聯絡資訊了，再幫我填一次，讓我找到你，拜託🙏', duration: 10000 };
+    if (state.versionNotification !== '') {
+      return {
+        ...state,
+        notifications: [ { title: '版本更新', message: state.versionNotification }, newNotification ],
+      }
+    }
+    return {
+      ...state,
+      notifications: [ newNotification ],
+    };
+  }
 };
 
 const persistConfig = {
   key: 'root',
   storage,
-  version: 1,
+  version: 2,
   migrate: createMigrate(migrations, { debug: false}),
 };
 
