@@ -100,6 +100,8 @@ export default function Layout() {
         });
         if(title === "版本更新") {
           gaEventTracker('版本更新通知', { value: message });
+        } else {
+          gaEventTracker('通知', { value: message });
         }
       })
       dispatch(setNotificationShowed());
