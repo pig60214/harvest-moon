@@ -73,13 +73,19 @@ const migrations = {
       ...state,
       notifications: [ newNotification ],
     };
-  }
+  },
+  3: (state) => {
+    return {
+      ...state,
+      notifications: [ { title: '版本更新', message: "[農作物]加上成長天數囉，歡迎去看看" } ],
+    }
+  },
 };
 
 const persistConfig = {
   key: 'root',
   storage,
-  version: 2,
+  version: 3,
   migrate: createMigrate(migrations, { debug: false}),
 };
 
