@@ -77,7 +77,7 @@ const migrations = {
   3: (state) => {
     return {
       ...state,
-      notifications: [ { title: '版本更新', message: "[農作物]加上成長天數囉，歡迎去看看" } ],
+      notifications: [ { title: '版本更新', message: "[農作物] 根據表單回饋，加上成長天數囉，歡迎去看看" } ],
     }
   },
 };
