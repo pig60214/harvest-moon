@@ -33,13 +33,14 @@ export default function Crops() {
         <td>{data.name}{data.topPrice && <MoneyIcon className='md:ml-1' />}{data.key === '聖誕玫瑰' && <p className='text-xs'>*加工成蜂蜜才賺</p>}</td>
         <td className="text-center">{ lang(data.category) }</td>
         <td className="text-center">{data.season.map(s => lang(s)).join(', ')}</td>
+        <td className="text-center">{data.growthDays}</td>
         <td className="text-center">{data.hasVariant ? 'V' : ''}</td>
       </tr>
     );
   });
 
   if (setting.season === '冬' && (setting.category === '果樹' || setting.category === '農作物')) {
-    tableRows.push(<tr key='notice'><td colSpan={5} className='text-center py-1'>{ lang('page_crops_no_trees_and_crops_in_winter') }</td></tr>)
+    tableRows.push(<tr key='notice'><td colSpan={6} className='text-center py-1'>{ lang('page_crops_no_trees_and_crops_in_winter') }</td></tr>)
   }
 
   const panel = (
@@ -61,13 +62,14 @@ export default function Crops() {
       </article>
       <table className='md:mx-auto mt-2'>
         <thead>
-          <tr><th colSpan={5} className='font-normal'><SearchInput storeKey='crop' placeholder={ lang('page_crops_search_bar_instruction') } /></th></tr>
-          <tr><th colSpan={5}>{panel}</th></tr>
+          <tr><th colSpan={6} className='font-normal'><SearchInput storeKey='crop' placeholder={ lang('page_crops_search_bar_instruction') } /></th></tr>
+          <tr><th colSpan={6}>{panel}</th></tr>
           <tr className='md:h-10'>
             <th className="w-12 md:w-24">{ lang('image') }</th>
             <th className="w-28 md:w-40">{ lang('name') }</th>
             <th className="w-16 md:w-28">{ lang('category') }</th>
             <th className="w-28 md:w-32">{ lang('season') }</th>
+            <th className="w-16 md:w-24">{ lang('growthDays') }</th>
             <th className="w-12 md:w-24">{ lang('variant') }</th>
           </tr>
         </thead>

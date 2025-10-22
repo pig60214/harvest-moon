@@ -19,6 +19,7 @@ const resourse = {
   'category': { zhtw: '種類', en: 'Category', },
   'season': { zhtw: '季節', en: 'Season', },
   'variant': { zhtw: '變種', en: 'Variant', },
+  'growthDays': { zhtw: '成長天數', en: 'Growth Days', },
   '咖啡豆': { zhtw: '咖啡豆', en: 'Coffee Bean', },
   '櫻桃': { zhtw: '櫻桃', en: 'Cherry', },
   '柳橙': { zhtw: '柳橙', en: 'Orange', },

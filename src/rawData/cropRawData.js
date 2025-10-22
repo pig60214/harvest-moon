@@ -5,92 +5,109 @@ const cropRawDataZHTW = [
     'name': '咖啡豆',
     'category': '果樹',
     'season': ['春'],
+    'growthDays': '15+8',
   },
   {
     'name': '柳橙',
     'category': '果樹',
     'season': ['春'],
+    'growthDays': '15+8',
   },
   {
     'name': '櫻桃',
     'category': '果樹',
     'season': ['春'],
+    'growthDays': '15+8',
   },
   {
     'name': '酪梨',
     'category': '果樹',
     'season': ['春'],
     'hasVariant': true,
+    'growthDays': '15+8',
   },
   {
     'name': '巨大酪梨',
     'category': '果樹',
     'season': ['春'],
     'hasVariant': true,
+    'growthDays': '15+8',
   },
   {
     'name': '杏仁',
     'category': '果樹',
     'season': ['夏'],
+    'growthDays': '15+8',
   },
   {
     'name': '可可豆',
     'category': '果樹',
     'season': ['夏'],
+    'growthDays': '15+8',
   },
   {
     'name': '椰子',
     'category': '果樹',
     'season': ['夏'],
+    'growthDays': '15+8',
   },
   {
     'name': '檸檬',
     'category': '果樹',
     'season': ['夏'],
+    'growthDays': '15+8',
   },
   {
     'name': '香蕉',
     'category': '果樹',
     'season': ['夏'],
+    'growthDays': '15+8',
   },
   {
     'name': '桃子',
     'category': '果樹',
     'season': ['夏'],
     'hasVariant': true,
+    'growthDays': '15+8',
   },
   {
     'name': '黃金桃子',
     'category': '果樹',
     'season': ['夏'],
     'hasVariant': true,
+    'growthDays': '15+8',
   },
   {
     'name': '芒果',
     'category': '果樹',
     'season': ['夏'],
+    'growthDays': '15+8',
   },
   {
     'name': '橄欖',
     'category': '果樹',
     'season': ['秋'],
+    'growthDays': '15+8',
   },
   {
     'name': '葡萄',
     'category': '果樹',
     'season': ['秋'],
+    'growthDays': '15+8',
   },
   {
     'name': '蘋果',
     'category': '果樹',
     'season': ['秋'],
     'hasVariant': true,
+    'growthDays': '15+8',
   },
   {
     'name': '黃金蘋果',
     'category': '果樹',
     'season': ['秋'],
     'hasVariant': true,
+    'growthDays': '15+8',
   },
   {
     "name": "洋蔥",
@@ -99,6 +116,7 @@ const cropRawDataZHTW = [
       "春",
       "夏",
     ],
+    "growthDays": "6",
   },
   {
     "name": "蕪菁",
@@ -107,6 +125,7 @@ const cropRawDataZHTW = [
       "春",
     ],
     "hasVariant": true,
+    "growthDays": "4",
   },
   {
     "name": "巨大蕪菁",
@@ -123,6 +142,7 @@ const cropRawDataZHTW = [
       "春",
     ],
     "hasVariant": true,
+    "growthDays": "8",
   },
   {
     "name": "黃金草莓",
@@ -138,6 +158,7 @@ const cropRawDataZHTW = [
     "season": [
       "春",
     ],
+    "growthDays": "7+4+4",
   },
   {
     "name": "大蒜",
@@ -145,6 +166,7 @@ const cropRawDataZHTW = [
     "season": [
       "春",
     ],
+    "growthDays": "5+4+4",
   },
   {
     "name": "櫻桃蘿蔔",
@@ -154,6 +176,7 @@ const cropRawDataZHTW = [
       "夏",
       "秋"
     ],
+    "growthDays": "5",
   },
 
   {
@@ -162,6 +185,7 @@ const cropRawDataZHTW = [
     "season": [
       "夏"
     ],
+    "growthDays": "5",
   },
   {
     "name": "甜椒",
@@ -169,6 +193,7 @@ const cropRawDataZHTW = [
     "season": [
       "夏"
     ],
+    "growthDays": "7+4+4",
   },
   {
     "name": "玉蜀黍",
@@ -177,6 +202,7 @@ const cropRawDataZHTW = [
       "夏"
     ],
     "hasVariant": true,
+    "growthDays": "8+4+4",
   },
   {
     "name": "彩色玉蜀黍",
@@ -192,6 +218,7 @@ const cropRawDataZHTW = [
     "season": [
       "夏"
     ],
+    "growthDays": "8",
   },
   {
     "name": "鳳梨",
@@ -199,6 +226,7 @@ const cropRawDataZHTW = [
     "season": [
       "夏"
     ],
+    "growthDays": "6",
   },
   {
     "name": "西瓜",
@@ -207,6 +235,7 @@ const cropRawDataZHTW = [
       "夏"
     ],
     "topPrice": true,
+    "growthDays": "9",
   },
   {
     "name": "番茄",
@@ -216,6 +245,7 @@ const cropRawDataZHTW = [
       "秋",
     ],
     "hasVariant": true,
+    "growthDays": "6+4+4",
   },
   {
     "name": "巨大番茄",
@@ -234,6 +264,7 @@ const cropRawDataZHTW = [
       "秋",
     ],
     "hasVariant": true,
+    "growthDays": "7",
   },
   {
     "name": "珠寶哈密瓜",
@@ -251,6 +282,7 @@ const cropRawDataZHTW = [
       "夏"
     ],
     "hasVariant": true,
+    "growthDays": "7+4+4",
   },
   {
     "name": "圓球茄子",
@@ -266,6 +298,7 @@ const cropRawDataZHTW = [
     "season": [
       "夏"
     ],
+    "growthDays": "8+6+6",
   },
 
   {
@@ -275,6 +308,7 @@ const cropRawDataZHTW = [
       "秋",
     ],
     "hasVariant": true,
+    "growthDays": "4",
   },
   {
     "name": "愛心菠菜",
@@ -290,6 +324,7 @@ const cropRawDataZHTW = [
     "season": [
       "秋",
     ],
+    "growthDays": "8+4+4",
   },
   {
     "name": "蕃薯",
@@ -299,6 +334,7 @@ const cropRawDataZHTW = [
     ],
     "topPrice": true,
     "hasVariant": true,
+    "growthDays": "6+4+4",
   },
   {
     "name": "巨大蕃薯",
@@ -315,6 +351,7 @@ const cropRawDataZHTW = [
     "season": [
       "秋",
     ],
+    "growthDays": "9",
   },
   {
     "name": "胡蘿蔔",
@@ -323,6 +360,7 @@ const cropRawDataZHTW = [
       "秋",
       "冬",
     ],
+    "growthDays": "5",
   },
   {
     "name": "青江菜",
@@ -331,6 +369,7 @@ const cropRawDataZHTW = [
       "秋",
       "冬",
     ],
+    "growthDays": "9",
   },
   {
     "name": "白菜",
@@ -340,6 +379,7 @@ const cropRawDataZHTW = [
       "冬"
     ],
     "hasVariant": true,
+    "growthDays": "6",
   },
   {
     "name": "黃金白菜",
@@ -359,6 +399,7 @@ const cropRawDataZHTW = [
     ],
     "hasVariant": true,
     "topPrice": true,
+    "growthDays": "4",
   },
   {
     "name": "巨大的青蔥",
@@ -375,6 +416,7 @@ const cropRawDataZHTW = [
     "season": [
       "冬"
     ],
+    "growthDays": "7",
   },
   {
     "name": "馬鈴薯",
@@ -385,6 +427,7 @@ const cropRawDataZHTW = [
       "夏",
     ],
     "hasVariant": true,
+    "growthDays": "6",
   },
   {
     "name": "星型馬鈴薯",
@@ -403,6 +446,7 @@ const cropRawDataZHTW = [
       "冬",
       "春",
     ],
+    "growthDays": "7",
   },
   {
     "name": "綠花椰菜",
@@ -412,6 +456,7 @@ const cropRawDataZHTW = [
       "春",
     ],
     "topPrice": true,
+    "growthDays": "6+3+3",
   },
   {
     "name": "白蘿蔔",
@@ -420,7 +465,8 @@ const cropRawDataZHTW = [
       "冬",
       "春",
     ],
-    "hasVariant": true
+    "hasVariant": true,
+    "growthDays": "4",
   },
   {
     "name": "分岔白蘿蔔",
@@ -438,6 +484,7 @@ const cropRawDataZHTW = [
     "season": [
       "春"
     ],
+    "growthDays": "3",
   },
   {
     "name": "粉蝶花",
@@ -445,6 +492,7 @@ const cropRawDataZHTW = [
     "season": [
       "春"
     ],
+    "growthDays": "4",
   },
   {
     "name": "三色堇",
@@ -452,6 +500,7 @@ const cropRawDataZHTW = [
     "season": [
       "春"
     ],
+    "growthDays": "5",
   },
   {
     "name": "陸蓮花",
@@ -459,6 +508,7 @@ const cropRawDataZHTW = [
     "season": [
       "春"
     ],
+    "growthDays": "6",
   },
   {
     "name": "黑色三色堇",
@@ -466,6 +516,7 @@ const cropRawDataZHTW = [
     "season": [
       "春"
     ],
+    "growthDays": "6",
   },
 
   {
@@ -474,6 +525,7 @@ const cropRawDataZHTW = [
     "season": [
       "夏"
     ],
+    "growthDays": "3",
   },
   {
     "name": "矮牽牛",
@@ -481,6 +533,7 @@ const cropRawDataZHTW = [
     "season": [
       "夏"
     ],
+    "growthDays": "4",
   },
   {
     "name": "萬壽菊",
@@ -488,6 +541,7 @@ const cropRawDataZHTW = [
     "season": [
       "夏"
     ],
+    "growthDays": "5",
   },
   {
     "name": "向日葵",
@@ -495,6 +549,7 @@ const cropRawDataZHTW = [
     "season": [
       "夏"
     ],
+    "growthDays": "6",
   },
   {
     "name": "百合",
@@ -502,6 +557,7 @@ const cropRawDataZHTW = [
     "season": [
       "夏"
     ],
+    "growthDays": "6",
   },
 
   {
@@ -510,6 +566,7 @@ const cropRawDataZHTW = [
     "season": [
       "秋"
     ],
+    "growthDays": "3",
   },
   {
     "name": "乒乓菊",
@@ -517,6 +574,7 @@ const cropRawDataZHTW = [
     "season": [
       "秋"
     ],
+    "growthDays": "4",
   },
   {
     "name": "鐵線蓮",
@@ -524,6 +582,7 @@ const cropRawDataZHTW = [
     "season": [
       "秋"
     ],
+    "growthDays": "5",
   },
   {
     "name": "瑪格麗特",
@@ -531,6 +590,7 @@ const cropRawDataZHTW = [
     "season": [
       "秋"
     ],
+    "growthDays": "6",
   },
   {
     "name": "黑薔薇",
@@ -538,6 +598,7 @@ const cropRawDataZHTW = [
     "season": [
       "秋"
     ],
+    "growthDays": "6",
   },
 
   {
@@ -546,6 +607,7 @@ const cropRawDataZHTW = [
     "season": [
       "冬"
     ],
+    "growthDays": "3",
   },
   {
     "name": "報春花",
@@ -553,6 +615,7 @@ const cropRawDataZHTW = [
     "season": [
       "冬"
     ],
+    "growthDays": "4",
   },
   {
     "name": "秋海棠",
@@ -560,6 +623,7 @@ const cropRawDataZHTW = [
     "season": [
       "冬"
     ],
+    "growthDays": "5",
   },
   {
     "name": "風鈴草",
@@ -567,6 +631,7 @@ const cropRawDataZHTW = [
     "season": [
       "冬"
     ],
+    "growthDays": "6",
   },
   {
     "name": "聖誕玫瑰",
@@ -575,6 +640,7 @@ const cropRawDataZHTW = [
       "冬"
     ],
     "topPrice": true,
+    "growthDays": "6",
   },
 
   {
@@ -585,6 +651,7 @@ const cropRawDataZHTW = [
       "夏",
       "秋"
     ],
+    "growthDays": "14",
   },
   {
     "name": "小麥",
@@ -594,6 +661,7 @@ const cropRawDataZHTW = [
       "夏",
       "秋"
     ],
+    "growthDays": "12",
   },
   {
     "name": "茶葉",
@@ -603,6 +671,7 @@ const cropRawDataZHTW = [
       "夏",
       "秋"
     ],
+    "growthDays": "12",
   },
   {
     "name": "豆子",
@@ -612,6 +681,7 @@ const cropRawDataZHTW = [
       "夏",
       "秋"
     ],
+    "growthDays": "12",
   },
   {
     "name": "乾草飼料",
@@ -621,6 +691,7 @@ const cropRawDataZHTW = [
       "夏",
       "秋"
     ],
+    "growthDays": "5×6",
   },
 ];
 
@@ -632,6 +703,7 @@ const cropRawData = cropRawDataZHTW.map(crop => {
     season: crop.season,
     hasVariant: crop.hasVariant ?? false,
     topPrice: crop.topPrice ?? false,
+    growthDays: crop.growthDays ?? '',
   }
   return translatedCrop;
 })
