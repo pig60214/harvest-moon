@@ -20,7 +20,7 @@ export default function Map() {
   const rows = [];
   locationRawData.forEach((location) => {
     const { name, shortName, rowClass, colClass, openTime, closedDay } = location;
-    const isSelected = toGos.find(toGo => toGo.name === name);
+    const isSelected = toGos.find(toGo => toGo.name === name && (toGo.shopping || toGo.toGive));
     const selected = isSelected ? 'bg-stone-200' : '';
     const toShopping = toGos.find(toGo => toGo.name === name && toGo.shopping) ? 'bg-sky-600' : 'bg-sky-100';
     const toGive = toGos.find(toGo => toGo.name === name && toGo.toGive) ? 'bg-pink-600' : 'bg-pink-100';
