@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleLocation, toggleGoToShopping, toggleGoToGiveTheGift } from '../store/locationsSlice';
+// import { toggleLocation, toggleGoToShopping, toggleGoToGiveTheGift } from '../store/locationsSlice'; // if remove, also need to remove toggleLocation from locationsSlice
+import { toggleGoToShopping, toggleGoToGiveTheGift } from '../store/locationsSlice';
 import { useState } from 'react';
 import locationRawData from '../rawData/locationRawData';
 import { setupGAEventTracker } from 'GA';
@@ -21,24 +22,25 @@ export default function Map() {
   locationRawData.forEach((location) => {
     const { name, shortName, rowClass, colClass, openTime, closedDay } = location;
     const isSelected = toGos.find(toGo => toGo.name === name && (toGo.shopping || toGo.toGive));
-    const selected = isSelected ? 'bg-stone-200' : '';
-    const toShopping = toGos.find(toGo => toGo.name === name && toGo.shopping) ? 'bg-sky-600' : 'bg-sky-100';
-    const toGive = toGos.find(toGo => toGo.name === name && toGo.toGive) ? 'bg-pink-600' : 'bg-pink-100';
+    // const selected = isSelected ? 'bg-stone-200' : '';
+    const toShopping = toGos.find(toGo => toGo.name === name && toGo.shopping) ? 'bg-lime-500' : 'bg-lime-200';
+    const toGive = toGos.find(toGo => toGo.name === name && toGo.toGive) ? 'bg-yellow-600' : 'bg-yellow-200';
+    const clickLocation = () => { infoContent !== '' && !isSelected && popInfo(infoContent); gaEventTracker('地圖-Click Location');}
 
     const infoContent = [openTime, closedDay].join(' ').trim();
     rows.push(
-      <div key={name} className={`${rowClass} ${colClass}`}>
+      <div key={name} className={`${rowClass} ${colClass} relative`}>
+        <div className='absolute inset-0 flex border border-stone-600 rounded-lg overflow-x-auto'>
+            <div className={`flex-1 p-2 ${toShopping}`} onClick={() => { dispatch(toggleGoToShopping(name)); clickLocation() }}></div>
+            <div className={`flex-1 p-2 ${toGive}`} onClick={() => { dispatch(toggleGoToGiveTheGift(name)); clickLocation() }}></div>
+        </div>
         <div
-          className={`border border-stone-600 rounded-t-lg border-b-0 text-center h-15 overflow-x-auto relative ${selected}`}
-          onClick={() => { dispatch(toggleLocation(name)); infoContent !== '' && !isSelected && popInfo(infoContent); gaEventTracker('地圖-Click Location');}}
+          className={`text-center overflow-x-auto relative pointer-events-none`}
+          // onClick={() => { dispatch(toggleLocation(name)); infoContent !== '' && !isSelected && popInfo(infoContent); gaEventTracker('地圖-Click Location');}}
         >
-          <div className='whitespace-nowrap py-3 md:py-4'><span className='hidden md:inline'>{name}</span><span className='md:hidden'>{shortName}</span></div>
+          <div className='whitespace-nowrap py-4 md:py-8'><span className='hidden md:inline'>{name}</span><span className='md:hidden'>{shortName}</span></div>
           <div className='text-xs text-stone-500 hidden md:block absolute right-1 bottom-0'>{infoContent}</div>
           { infoContent !== '' && <div className='text-xs text-stone-500 block md:hidden absolute right-0.5 bottom-0'>ⓘ</div> }
-        </div>
-        <div className='flex border border-stone-600 rounded-b-lg overflow-x-auto'>
-            <div className={`flex-1 p-2 ${toShopping}`} onClick={() => dispatch(toggleGoToShopping(name))}></div>
-            <div className={`flex-1 p-2 ${toGive}`} onClick={() => dispatch(toggleGoToGiveTheGift(name))}></div>
         </div>
       </div>);
   });
@@ -47,10 +49,10 @@ export default function Map() {
   const description = (
     <ul className='mt-4'>
       <li className='flex gap-2 items-center'>
-        <div className='w-4 h-4 bg-sky-600 rounded'></div><div>買東西/找NPC</div>
+        <div className='w-4 h-4 bg-lime-500 rounded'></div><div>買東西/找NPC</div>
       </li>
       <li className='flex gap-2 items-center'>
-        <div className='w-4 h-4 bg-pink-600 rounded'></div><div>送禮物</div>
+        <div className='w-4 h-4 bg-yellow-600 rounded'></div><div>送禮物</div>
       </li>
     </ul>
   );

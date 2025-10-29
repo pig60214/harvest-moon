@@ -67,8 +67,8 @@ export default function ToDoList() {
       return <div className="cursor-pointer" onClick={() => dispatch(toggleLocation(name))}>去{name}</div>
     }
 
-    const shoppingDiv = <span className={`bg-sky-400 rounded p-1 cursor-pointer ${hightlighText}`} onClick={() => dispatch(toggleGoToShopping(name))}>買東西/找NPC</span>;
-    const toGiveDiv = <span className={`bg-pink-400 rounded p-1 cursor-pointer ${hightlighText}`} onClick={() => dispatch(toggleGoToGiveTheGift(name))}>送禮物</span>;
+    const shoppingDiv = <span className={`bg-lime-500 rounded p-1 cursor-pointer ${hightlighText}`} onClick={() => dispatch(toggleGoToShopping(name))}>買東西/找NPC</span>;
+    const toGiveDiv = <span className={`bg-yellow-600 rounded p-1 cursor-pointer ${hightlighText}`} onClick={() => dispatch(toggleGoToGiveTheGift(name))}>送禮物</span>;
     if (shopping && toGive) {
       return <div className="cursor-pointer" onClick={() => dispatch(toggleLocation(name))}>去{name}{shoppingDiv}{toGiveDiv}</div>;
     }
@@ -110,7 +110,7 @@ export default function ToDoList() {
       {toGetItems}
       {toAnimals}
       {toDoList.map(todo => <ToDo key={todo} content={todo} onClick={() => dispatch(removeToDo(todo))} />)}
-      {nothingToDo && <ToDo className='bg-gradient-to-r from-purple-500 to-pink-500 text-white' content='哇！太優秀了吧，待辦全空' /> }
+      {nothingToDo && <ToDo className='bg-gradient-to-r from-purple-500 to-violet-500 text-white' content='哇！太優秀了吧，待辦全空' /> }
     </ul>
     </>
   );
