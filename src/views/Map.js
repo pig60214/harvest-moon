@@ -23,16 +23,16 @@ export default function Map() {
     const { name, shortName, rowClass, colClass, openTime, closedDay } = location;
     const isSelected = toGos.find(toGo => toGo.name === name && (toGo.shopping || toGo.toGive));
     // const selected = isSelected ? 'bg-stone-200' : '';
-    const toShopping = toGos.find(toGo => toGo.name === name && toGo.shopping) ? 'bg-lime-500' : 'bg-lime-200';
-    const toGive = toGos.find(toGo => toGo.name === name && toGo.toGive) ? 'bg-yellow-600' : 'bg-yellow-200';
+    const toShopping = toGos.find(toGo => toGo.name === name && toGo.shopping) ? 'bg-lime-500' : 'bg-lime-100';
+    const toGive = toGos.find(toGo => toGo.name === name && toGo.toGive) ? 'bg-yellow-600' : 'bg-yellow-100';
     const clickLocation = () => { infoContent !== '' && !isSelected && popInfo(infoContent); gaEventTracker('地圖-Click Location');}
 
     const infoContent = [openTime, closedDay].join(' ').trim();
     rows.push(
       <div key={name} className={`${rowClass} ${colClass} relative`}>
-        <div className='absolute inset-0 flex border border-stone-600 rounded-lg overflow-x-auto'>
-            <div className={`flex-1 p-2 ${toShopping}`} onClick={() => { dispatch(toggleGoToShopping(name)); clickLocation() }}></div>
-            <div className={`flex-1 p-2 ${toGive}`} onClick={() => { dispatch(toggleGoToGiveTheGift(name)); clickLocation() }}></div>
+        <div className='absolute inset-0 flex overflow-x-auto'>
+            <div className={`flex-1 p-1.5 border-4 border-r-0 border-lime-600 rounded-l-lg ${toShopping}`} onClick={() => { dispatch(toggleGoToShopping(name)); clickLocation() }}></div>
+            <div className={`flex-1 p-1.5 border-4 border-l-0 border-yellow-700 rounded-r-lg ${toGive}`} onClick={() => { dispatch(toggleGoToGiveTheGift(name)); clickLocation() }}></div>
         </div>
         <div
           className={`text-center overflow-x-auto relative pointer-events-none`}
